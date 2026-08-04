@@ -1,0 +1,40 @@
+{
+  "id": "csc322",
+  "code": "CSC 322",
+  "title": "Innovation & Entrepreneurial Opportunities in IT",
+  "category": "Comp Sci",
+  "chapters": [
+    {
+      "id": "csc322-l1",
+      "number": 1,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "csc322-l2",
+      "number": 2,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "csc322-l3",
+      "number": 3,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "csc322-l4",
+      "number": 4,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    }
+  ]
+}

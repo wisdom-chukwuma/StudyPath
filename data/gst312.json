@@ -1,0 +1,4594 @@
+{
+  "id": "gst312",
+  "code": "GST 312",
+  "title": "Peace and Conflict Studies",
+  "category": "GEDS",
+  "chapters": [
+    {
+      "id": "gst312-r1",
+      "number": 1,
+      "title": "Practice Round 1 (Q1-25)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "A state of quiet or tranquillity can be referred to as?",
+          "options": [
+            "Violent",
+            "Turbidity",
+            "Peace",
+            "Silence"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "Peace and Conflict do not mean absence of?",
+          "options": [
+            "War",
+            "Crisis",
+            "Conflict",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "One of these is a factor that can destroy peace?",
+          "options": [
+            "Poverty",
+            "Intimidation",
+            "Fear",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "Non-violent value system can be a driver for?",
+          "options": [
+            "Peanut",
+            "Peace",
+            "Legacy",
+            "Community"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "One of these is a perspective of peace?",
+          "options": [
+            "The combat perspective",
+            "The sociological perspective",
+            "The classified structure",
+            "The phenomenon strategy"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The sociological perspective."
+        },
+        {
+          "question": "One of these scholars holds the view that peace is natural?",
+          "options": [
+            "John Locke",
+            "John Coleman",
+            "John Gabriel",
+            "Emmanuel Koli"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: John Locke."
+        },
+        {
+          "question": "To say that violence is inevitable in the society is to say it is?",
+          "options": [
+            "A disorder",
+            "An abnormal",
+            "Natural",
+            "Abysmal"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Natural."
+        },
+        {
+          "question": "Conflict can be used interchangeably with other concepts like?",
+          "options": [
+            "Discord",
+            "Rivalry",
+            "Contest",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "In politics, conflict and struggle between two or more people is about?",
+          "options": [
+            "Power",
+            "Control of resources",
+            "Authority",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "Boko Haram crisis can be classified as a?",
+          "options": [
+            "Conflict",
+            "War",
+            "Civil war",
+            "Conventional 9ight"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Another word to describe intra-personal conflict is?",
+          "options": [
+            "Man against woman",
+            "Man against God",
+            "Man against Man",
+            "Man against Self"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Man against Self."
+        },
+        {
+          "question": "Man against man is another word for?",
+          "options": [
+            "Intra-personal conflict",
+            "Inter-personal conflict",
+            "Intro-personal conflict",
+            "None of the options"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter-personal conflict."
+        },
+        {
+          "question": "Intra-unit conflict is an example of?",
+          "options": [
+            "Conflict in a school",
+            "Conflict in the family",
+            "Systemic conflict",
+            "Familiarize conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict in the family."
+        },
+        {
+          "question": "One of these is NOT a form of conflict?",
+          "options": [
+            "Protest",
+            "Mutiny",
+            "Colony",
+            "Revolution"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Colony."
+        },
+        {
+          "question": "The use of avoidance in conflict is a type of approach called?",
+          "options": [
+            "Conflict clamouring",
+            "Conflict altitude",
+            "Conflict management",
+            "Conflict non-negotiating style"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict management."
+        },
+        {
+          "question": "A win-lose is called negative sum while a lose-lose is called?",
+          "options": [
+            "Attention",
+            "Altitude",
+            "Aggression",
+            "Articulation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "The use of compromise as a way of handling conflict leads to?",
+          "options": [
+            "Aggression",
+            "Frustration",
+            "Abberation",
+            "Prevention"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Frustration."
+        },
+        {
+          "question": "The concept of Role-playing in handling conflict is?",
+          "options": [
+            "The 9irst party approach",
+            "The second party approach",
+            "The third party approach",
+            "Confidential approach"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: The third party approach."
+        },
+        {
+          "question": "In a Joint Problem Solving approach to conflict handling, the method used is?",
+          "options": [
+            "Confrontation",
+            "Bargaining",
+            "Politics",
+            "Propaganda"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Bargaining."
+        },
+        {
+          "question": "One can negotiate for position and interest but certainly not for?",
+          "options": [
+            "Car",
+            "Bus",
+            "Needs",
+            "Netflix"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Needs."
+        },
+        {
+          "question": "Development thrives where one of these exist?",
+          "options": [
+            "Power",
+            "Pact",
+            "Peace",
+            "Polar dichotomy"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "The Human Needs theory is a hierarchy of needs given by?",
+          "options": [
+            "Abraham Mawell",
+            "Abraham Maslow",
+            "Abraham Matthew",
+            "Adam Smith"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Abraham Maslow."
+        },
+        {
+          "question": "One of these is an example of theories of conflict?",
+          "options": [
+            "All of the options",
+            "Biological theory",
+            "Reality theory",
+            "Psycho-social theory"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "The meaning of Eros by Sigmund Freud is?",
+          "options": [
+            "Live life or survival instinct",
+            "Outward",
+            "None of the options",
+            "None"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Outward."
+        },
+        {
+          "question": "The concept of the state of nature as poor , nasty, brutish and short was stated by?",
+          "options": [
+            "Thomas Habalis",
+            "Thomas Norton",
+            "Thomas Hobbes",
+            "Ferdinand Tonnies"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Thomas Hobbes."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r2",
+      "number": 2,
+      "title": "Practice Round 2 (Q26-50)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "When Thanatos is approached outwards in Biological theory, it brings?",
+          "options": [
+            "Aggression",
+            "Appreciation",
+            "Agony",
+            "Agitation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "The Bourgeois and the Proletariat are concepts popularised by?",
+          "options": [
+            "Karl Marx",
+            "Karl Gabriel Marx Weber",
+            "Karl Maxwell",
+            "None"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Karl Marx."
+        },
+        {
+          "question": "Death instinct according to Sigmund Freud is called?",
+          "options": [
+            "Theme",
+            "Thanatos",
+            "Thematic",
+            "War"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Thanatos."
+        },
+        {
+          "question": "When an individual tries to solve a conflict between two parties, he is called a?",
+          "options": [
+            "Go-in-between",
+            "Bargainer",
+            "Mediator",
+            "Gossiper"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Mediator."
+        },
+        {
+          "question": "Physical assault can be any of these?",
+          "options": [
+            "Abuse",
+            "Beating",
+            "Mutilation",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "From Abraham Maslow's concept of needs, what is the most basic need?",
+          "options": [
+            "Self-esteem needs",
+            "Physiological needs",
+            "Self actualization",
+            "Food"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Physiological needs."
+        },
+        {
+          "question": "The act of trying to reach a win-win situation with another party is?",
+          "options": [
+            "Negotiation",
+            "Bargaining",
+            "Negotiation and Bargaining",
+            "None of the options"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Negotiation and Bargaining."
+        },
+        {
+          "question": "The concept of jaw-jaw in settling a conflict is?",
+          "options": [
+            "Having dialogue",
+            "Having confrontation",
+            "Having a 9ight",
+            "Propaganda"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Having dialogue."
+        },
+        {
+          "question": "Abraham Maslow's Needs theory is called?",
+          "options": [
+            "Needs of Hierarchy",
+            "Hierarchical Needs",
+            "Hierarchy of Needs",
+            "Hierarch of Self"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Hierarchy of Needs."
+        },
+        {
+          "question": "One of these factors can be a cause of conflict?",
+          "options": [
+            "Smiling",
+            "Economy",
+            "Water",
+            "None of the options"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Economy."
+        },
+        {
+          "question": "Avoidance is unassertive and?",
+          "options": [
+            "Cooperative",
+            "Uncooperative",
+            "Candid",
+            "Colourful"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Uncooperative."
+        },
+        {
+          "question": "Confrontation is assertive and?",
+          "options": [
+            "Uncooperative",
+            "Cooperative",
+            "Compromise",
+            "Collective"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Uncooperative."
+        },
+        {
+          "question": "Compromise is assertive and?",
+          "options": [
+            "Uncooperative",
+            "Cooperative",
+            "Unassertive",
+            "Candid"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Cooperative."
+        },
+        {
+          "question": "An example of a low intensity conflict is?",
+          "options": [
+            "Odi crisis",
+            "Ife-Modakeke",
+            "Ijaw-Ilaje",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "The Iirst conflict in scripture was recorded in?",
+          "options": [
+            "Revelation 12:7-11",
+            "Revelation 14:6-8",
+            "Genesis 3:1",
+            "Genesis 3:16"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Revelation 12:7-11."
+        },
+        {
+          "question": "Three dimensions for understanding the history of conflict include all EXCEPT?",
+          "options": [
+            "The immediate past",
+            "The distant past",
+            "The current event",
+            "The near future"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: The near future."
+        },
+        {
+          "question": "Social conflict can be described by all the following EXCEPT?",
+          "options": [
+            "Organized",
+            "Transitory",
+            "Physical",
+            "Mobile"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Mobile."
+        },
+        {
+          "question": "The awakening of two or more strong motives that cannot be solved together is?",
+          "options": [
+            "Sociological conflict",
+            "Biological conflict",
+            "Psychological conflict",
+            "Astronomical conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Psychological conflict."
+        },
+        {
+          "question": "The approaches to understanding conflicts include all EXCEPT?",
+          "options": [
+            "Classical approach",
+            "Human relations approach",
+            "Interactionist",
+            "Dynamic approach"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Dynamic approach."
+        },
+        {
+          "question": "An existing state of disagreement or hostility between people or groups is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Popular synonyms for conflict include all the following EXCEPT?",
+          "options": [
+            "Communication",
+            "Struggle",
+            "Contention",
+            "Discord"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Communication."
+        },
+        {
+          "question": "A state of mutually declared aggression between two or more parties is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: War."
+        },
+        {
+          "question": "Violence, outright hostility and aggression are manifestations of which stage?",
+          "options": [
+            "Crisis stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Crisis stage."
+        },
+        {
+          "question": "The Nigeria Civil War and Rwanda Genocide are examples of?",
+          "options": [
+            "Intra group conflict",
+            "Inter state conflict",
+            "Intra state conflict",
+            "Family conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Intra state conflict."
+        },
+        {
+          "question": "Conflict handling style where one party accepts the other's position is?",
+          "options": [
+            "Avoidance",
+            "Admission",
+            "Accommodation",
+            "Compromise"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Accommodation."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r3",
+      "number": 3,
+      "title": "Practice Round 3 (Q51-75)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "An often violent and complete change of the status quo is called?",
+          "options": [
+            "Motina",
+            "Revolt",
+            "Revolution",
+            "Protest"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Revolution."
+        },
+        {
+          "question": "The three-dimensional perspective for understanding conflict includes?",
+          "options": [
+            "Cognitive",
+            "Emotional",
+            "Evaluative",
+            "Behavioural"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Evaluative."
+        },
+        {
+          "question": "Which of these is NOT a major cause of conflict?",
+          "options": [
+            "Communication",
+            "Values",
+            "History",
+            "Benevolence"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Benevolence."
+        },
+        {
+          "question": "Individual beliefs about what is important, right, or wrong are called?",
+          "options": [
+            "Emotions",
+            "Values",
+            "Expectations",
+            "Objectives"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Values."
+        },
+        {
+          "question": "Dialogue alone is not efficient in resolving conflict at the?",
+          "options": [
+            "Discomfort stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "The process of securing the support of friends or allies in a conflict is?",
+          "options": [
+            "Spitting",
+            "Taking time",
+            "Taking sides",
+            "Alliance formation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Taking sides."
+        },
+        {
+          "question": "Which one of these is efficient for resolving conflicts?",
+          "options": [
+            "Dialogue",
+            "Force",
+            "Mediation",
+            "Litigation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Dialogue."
+        },
+        {
+          "question": "Family conflict can also be described as?",
+          "options": [
+            "Interparty conflict",
+            "Inter unit conflict",
+            "Group conflict",
+            "Family disputes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter unit conflict."
+        },
+        {
+          "question": "Inter-State conflicts are also known as?",
+          "options": [
+            "International conflicts",
+            "Intentional conflict",
+            "Civil wars",
+            "Integrational conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: International conflicts."
+        },
+        {
+          "question": "Intra-State conflicts are also known as?",
+          "options": [
+            "International conflicts",
+            "Intentional conflict",
+            "Civil wars",
+            "Integrational conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Civil wars."
+        },
+        {
+          "question": "Which is an act of disobedience or an uprising in the military?",
+          "options": [
+            "Motina",
+            "Mutiny",
+            "Disorder",
+            "Arrogance"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Mutiny."
+        },
+        {
+          "question": "Which of these is believed to be at the center of all conflicts?",
+          "options": [
+            "Influence",
+            "Profit",
+            "Human needs",
+            "Property"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Human needs."
+        },
+        {
+          "question": "The process of taking sides in a conflict is also called?",
+          "options": [
+            "Trangulation",
+            "Triangulation",
+            "Tranquility",
+            "Transformation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Triangulation."
+        },
+        {
+          "question": "The use of force as a method of conflict resolution should be a?",
+          "options": [
+            "Last resort",
+            "Best resort",
+            "Yielding higher returns",
+            "Very effective for certain conflicts"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Last resort."
+        },
+        {
+          "question": "Conflict handling style that involves inviting a third party is?",
+          "options": [
+            "Triangulation",
+            "Splitting",
+            "Third Party Intervention",
+            "Mutiny"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Third Party Intervention."
+        },
+        {
+          "question": "The competing style of handling conflict involves a?",
+          "options": [
+            "Win-win approach",
+            "Win-lose approach",
+            "Lose-lose approach",
+            "Non-zero sum approach"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Win-lose approach."
+        },
+        {
+          "question": "The death instinct of man is described as?",
+          "options": [
+            "Eros",
+            "Thanatos",
+            "Biology",
+            "Psychology"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Thanatos."
+        },
+        {
+          "question": "The life instinct of man is described as?",
+          "options": [
+            "Eros",
+            "Thanatos",
+            "Biology",
+            "Psychology"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Eros."
+        },
+        {
+          "question": "The assumption that competition over power and resources causes conflict is the?",
+          "options": [
+            "Psycho-social theory",
+            "Psychological theory",
+            "Biological theory",
+            "Economic livelihood theory"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Economic livelihood theory."
+        },
+        {
+          "question": "The highest human need is?",
+          "options": [
+            "Self worth",
+            "Self-actualization",
+            "Financial wealth",
+            "Material possession"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Self-actualization."
+        },
+        {
+          "question": "Abstract words that represent or describe a concrete phenomenon are?",
+          "options": [
+            "Core phenomena",
+            "Concepts",
+            "Definitions",
+            "Key Words"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Concepts."
+        },
+        {
+          "question": "Which one of these is NOT a key element of a theory?",
+          "options": [
+            "Assumption",
+            "Concepts",
+            "Core phenomena",
+            "Proponent"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Core phenomena."
+        },
+        {
+          "question": "Theories are useful for all the following EXCEPT?",
+          "options": [
+            "Understand facts",
+            "Explain reality",
+            "Prophesy",
+            "Highlight relevant elements of a phenomena"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Prophesy."
+        },
+        {
+          "question": "Conflict handling style where conflict parties try to uphold rules and ethics impartially is?",
+          "options": [
+            "Role playing",
+            "Bangwagon",
+            "Bandage",
+            "Third Party intervention"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Role playing."
+        },
+        {
+          "question": "Which of these is NOT a justification for 'avoidance' in conflict?",
+          "options": [
+            "The issue is trivial",
+            "There are no chances of winning",
+            "The issue is very costly to resolve",
+            "The conflict parties are from different states"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: The conflict parties are from different states."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r4",
+      "number": 4,
+      "title": "Practice Round 4 (Q76-100)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Which one of these conflict handling styles involves physical and mental withdrawal?",
+          "options": [
+            "Role playing",
+            "Band Aid",
+            "Avoidance",
+            "Third Party intervention"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Avoidance."
+        },
+        {
+          "question": "One of these conflict handling styles is also called the Tortoise Style?",
+          "options": [
+            "Avoidance",
+            "Band Aid",
+            "Role Playing",
+            "Competing"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Avoidance."
+        },
+        {
+          "question": "Which one of these conflict handling styles involves a collaborative approach?",
+          "options": [
+            "Role playing",
+            "Collaboration",
+            "Avoidance",
+            "Third Party intervention"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Collaboration."
+        },
+        {
+          "question": "One of the following individuals is credited for creating the concept of structural violence?",
+          "options": [
+            "Karl Marx",
+            "John Andrew",
+            "Johan Galtung",
+            "John Gluton"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Johan Galtung."
+        },
+        {
+          "question": "The use of active force in stopping or ending an ongoing conflict is?",
+          "options": [
+            "Peace enforcement",
+            "Peacemaking",
+            "Peacebuilding",
+            "Peacekeeping"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Peace enforcement."
+        },
+        {
+          "question": "One of the following is NOT an alternative dispute resolution method?",
+          "options": [
+            "Negotiation",
+            "Mediation",
+            "Conciliation",
+            "Argumentation"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Argumentation."
+        },
+        {
+          "question": "A structural mechanism involving a wide range of efforts to build positive peace is?",
+          "options": [
+            "Peace enforcement",
+            "Peacemaking",
+            "Peacebuilding",
+            "Peacekeeping"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peacebuilding."
+        },
+        {
+          "question": "A conflict arising from men standing up against certain social practices is?",
+          "options": [
+            "Protest",
+            "Insurgency",
+            "Man against Nature",
+            "Man against society"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Man against society."
+        },
+        {
+          "question": "An organized, mass, peaceful or violent demonstration against authority is a?",
+          "options": [
+            "Revolt",
+            "Protest",
+            "Insurgency",
+            "Mutiny"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Protest."
+        },
+        {
+          "question": "An uprising against the state, led by a religious, political, or ideological group is?",
+          "options": [
+            "Revolt",
+            "Revolution",
+            "Insurgency",
+            "Mutiny"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Insurgency."
+        },
+        {
+          "question": "Peacekeepers are guided by three basic principles. Which is NOT one of them?",
+          "options": [
+            "Consent of the parties",
+            "Impartiality",
+            "Non use of force",
+            "Providing legal service for any side that can afford it"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Providing legal service for any side that can afford it."
+        },
+        {
+          "question": "Conflict is _______ in our daily lives?",
+          "options": [
+            "Development",
+            "Inevitable",
+            "Aggressive",
+            "Violent"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inevitable."
+        },
+        {
+          "question": "Conflict has different meaning to different people because it is?",
+          "options": [
+            "Violent",
+            "Controversial",
+            "Conflictual",
+            "Qualities"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Controversial."
+        },
+        {
+          "question": "All the following are the basis of conflict EXCEPT?",
+          "options": [
+            "Political",
+            "Racial",
+            "Class",
+            "Quantities"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Quantities."
+        },
+        {
+          "question": "The aftermath of war caused _____ of every three angels from heaven to be cast down?",
+          "options": [
+            "Half",
+            "One of three",
+            "One of four",
+            "One of six"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: One of three."
+        },
+        {
+          "question": "Researchers have seen conflict as a concept that relates to?",
+          "options": [
+            "Human relations",
+            "Conflictual",
+            "Violent",
+            "Quality"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Human relations."
+        },
+        {
+          "question": "The following are diverse of peace EXCEPT?",
+          "options": [
+            "Good governance",
+            "Good fellowship",
+            "Free 9low of communication",
+            "Perspective governance"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Perspective governance."
+        },
+        {
+          "question": "The theory of economic and political struggles between classes is the?",
+          "options": [
+            "Structural theory",
+            "Marxist theory",
+            "Realist theory",
+            "Biological theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Marxist theory."
+        },
+        {
+          "question": "The study of peace was developed in the?",
+          "options": [
+            "1930s",
+            "1940s",
+            "1950s",
+            "1960s"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: 1940s."
+        },
+        {
+          "question": "A conflict between two desired gratifications is called?",
+          "options": [
+            "Approach approach conflict",
+            "Approach conflict",
+            "Controversial",
+            "Conflictual"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Approach conflict."
+        },
+        {
+          "question": "A conflict between two dangers or threats is known as?",
+          "options": [
+            "Controversial",
+            "Approach Conflict",
+            "Avoidance-avoidance conflict",
+            "Avoidance conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Avoidance-avoidance conflict."
+        },
+        {
+          "question": "The view that indicates conflict is a sign of malfunctioning within a system is the?",
+          "options": [
+            "Human relations",
+            "Traditional",
+            "Interactionist",
+            "Approach"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Traditional."
+        },
+        {
+          "question": "The approach that conflict is a natural and inevitable occurrence is the?",
+          "options": [
+            "Approach",
+            "Traditional",
+            "Interactionist",
+            "Human relations"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Human relations."
+        },
+        {
+          "question": "A process when parties in conflict look for support from others is?",
+          "options": [
+            "Crisis stage",
+            "Taking sides",
+            "Incident stage",
+            "Peace building"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Taking sides."
+        },
+        {
+          "question": "The approach that conflict can be a positive force if properly managed is the?",
+          "options": [
+            "Approach",
+            "Traditional",
+            "Interactionist",
+            "Human relations"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Human relations."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r5",
+      "number": 5,
+      "title": "Practice Round 5 (Q101-125)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "The other name for peace making is called?",
+          "options": [
+            "Restorative Justice",
+            "Relational Justice",
+            "Peace building",
+            "Approaches"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Restorative Justice."
+        },
+        {
+          "question": "Classical Approach in conflict is also known as?",
+          "options": [
+            "Human relations",
+            "Traditional",
+            "Interactionist",
+            "Approach"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Traditional."
+        },
+        {
+          "question": "A stage where conflict manifests in words and actions is the?",
+          "options": [
+            "Discomfort stage",
+            "Incident stage",
+            "Tension stage",
+            "Misunderstanding stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "When conflict manifests in misunderstandings and confusion, it is the?",
+          "options": [
+            "Incident stage",
+            "Tension stage",
+            "Misunderstanding stage",
+            "Discomfort stage"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Discomfort stage."
+        },
+        {
+          "question": "The study of peace research was developed in?",
+          "options": [
+            "Asia",
+            "Europe",
+            "Africa",
+            "USA"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Europe."
+        },
+        {
+          "question": "Gaya Best opines which feature in conflict resolution?",
+          "options": [
+            "Problem-Solving",
+            "Cross-Cultural Issues",
+            "Development",
+            "Non-violent"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Development."
+        },
+        {
+          "question": "When conflict becomes toxic and close to becoming violent, it is the?",
+          "options": [
+            "Tension stage",
+            "Misunderstanding stage",
+            "Discomfort stage",
+            "Non-violent stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "The basic concept of peace studies include all EXCEPT?",
+          "options": [
+            "Peace Making",
+            "Peace Relations",
+            "Peace building",
+            "Peace Keeping"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace Relations."
+        },
+        {
+          "question": "Peacekeeping is guided by these three basic principles. Which is NOT one?",
+          "options": [
+            "Consent of the parties",
+            "Impartiality",
+            "Non-use of force",
+            "Relational"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Relational."
+        },
+        {
+          "question": "Cranaplus stages of conflict include the following EXCEPT?",
+          "options": [
+            "Discomfort stage",
+            "Incident stage",
+            "Understanding",
+            "Misunderstanding stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Understanding."
+        },
+        {
+          "question": "The initial or Iirst stage of conflict is called?",
+          "options": [
+            "Discomfort stage",
+            "Incident stage",
+            "Understanding",
+            "Misunderstanding stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Discomfort stage."
+        },
+        {
+          "question": "A stage where conflicting parties resort to hostility and attacks is the?",
+          "options": [
+            "Tension stage",
+            "Misunderstanding stage",
+            "Discomfort stage",
+            "Crisis stage"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Crisis stage."
+        },
+        {
+          "question": "The other name for taking sides in conflict is called?",
+          "options": [
+            "Crisis stage",
+            "Triangulation",
+            "Understanding",
+            "Incident stage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Triangulation."
+        },
+        {
+          "question": "Splitting in conflict is also known as?",
+          "options": [
+            "Trangulation",
+            "Incident stage",
+            "Understanding",
+            "Misunderstanding stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Trangulation."
+        },
+        {
+          "question": "The most efficient method of resolving conflicts among parties is?",
+          "options": [
+            "Conflictual",
+            "Understanding",
+            "Dialogue",
+            "Incident stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Dialogue."
+        },
+        {
+          "question": "The physical and mental withdrawal from the conflict situation is?",
+          "options": [
+            "Compromise",
+            "Confrontation",
+            "Avoidance",
+            "Settlement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Avoidance."
+        },
+        {
+          "question": "An act of searching for middle ground or being willing to give and take is?",
+          "options": [
+            "Compromise",
+            "Confrontation",
+            "Avoidance",
+            "Settlement"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Compromise."
+        },
+        {
+          "question": "The other name for physical and mental withdrawal in conflict is?",
+          "options": [
+            "Avoidance",
+            "Settlement",
+            "Tortoise Style",
+            "Collaboration"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tortoise Style."
+        },
+        {
+          "question": "Conflict between two or more religious, ethnic or social groups is?",
+          "options": [
+            "Intergroup conflict",
+            "Interpersonal conflict",
+            "Bargaining conflict",
+            "Intrapersonal conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Intergroup conflict."
+        },
+        {
+          "question": "All the following are known land disputes in Nigeria EXCEPT?",
+          "options": [
+            "Sagamu/Ikorodu",
+            "Ife-Modakeke",
+            "Aguleri/Umuleri",
+            "Bakkassi Peninsula/Cameroun"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Sagamu/Ikorodu."
+        },
+        {
+          "question": "The other name for collaboration is?",
+          "options": [
+            "Tortoise Style",
+            "Avoidance",
+            "Cooperative Style",
+            "Bargaining"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Cooperative Style."
+        },
+        {
+          "question": "An approach of facing conflict directly and working it out is?",
+          "options": [
+            "Collaboration",
+            "Compromise",
+            "Confrontation",
+            "Settlement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Confrontation."
+        },
+        {
+          "question": "A conflict shaped by man against man is called?",
+          "options": [
+            "Family conflict",
+            "Interpersonal conflict",
+            "Bargaining conflict",
+            "Intrapersonal conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Interpersonal conflict."
+        },
+        {
+          "question": "One of the following is NOT a type of conflict?",
+          "options": [
+            "Family conflict",
+            "Interpersonal conflict",
+            "Bargaining conflict",
+            "Intrapersonal conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Bargaining conflict."
+        },
+        {
+          "question": "When both parties put heads together to collaborate on resolving conflict, it is called?",
+          "options": [
+            "Settlement",
+            "Collaboration",
+            "Compromise",
+            "Confrontation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Compromise."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r6",
+      "number": 6,
+      "title": "Practice Round 6 (Q126-150)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Maitatsine disputes is an example of?",
+          "options": [
+            "Land disputes",
+            "Power disputes",
+            "Religion disputes",
+            "Resource dispute"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Religion disputes."
+        },
+        {
+          "question": "Who defined conflict as an existing state of disagreement between parties?",
+          "options": [
+            "Nicholson 1992",
+            "Nicholas 1992",
+            "Nichols 1992",
+            "Nichalos 1992"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Nicholson 1992."
+        },
+        {
+          "question": "Conflict among a group, association or clubs is called?",
+          "options": [
+            "Inter group conflict",
+            "Interpersonal conflict",
+            "Bargaining conflict",
+            "Intrapersonal conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Inter group conflict."
+        },
+        {
+          "question": "The WWI and WWII is a good example of?",
+          "options": [
+            "Intergroup conflict",
+            "Interpersonal conflict",
+            "Global conflict",
+            "Intrapersonal conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Global conflict."
+        },
+        {
+          "question": "An act of disobedience in the military organization is called?",
+          "options": [
+            "Revolution",
+            "Protest",
+            "Mutiny",
+            "Insurgency"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Mutiny."
+        },
+        {
+          "question": "One of the following is NOT a cause of conflict?",
+          "options": [
+            "Pressure",
+            "Value",
+            "Policies",
+            "Bargaining"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Bargaining."
+        },
+        {
+          "question": "What type of conflict can push a whole country into chaos?",
+          "options": [
+            "Inter-party conflict",
+            "Intra-party conflict",
+            "Inter-group conflict",
+            "Intra-group conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Inter-party conflict."
+        },
+        {
+          "question": "Facts that have been tested over time and found to be true are?",
+          "options": [
+            "Law",
+            "Hypothesis",
+            "Generalization",
+            "Theories"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Hypothesis."
+        },
+        {
+          "question": "Thomas Hobbes in a state of nature believed that man is?",
+          "options": [
+            "Good",
+            "Created by God",
+            "Created a beast",
+            "A political animal"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Created a beast."
+        },
+        {
+          "question": "When Eros is outward, it brings about somebody who is?",
+          "options": [
+            "Aggressive",
+            "A survivor",
+            "To survive and be aggressive",
+            "To be great"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: To survive and be aggressive."
+        },
+        {
+          "question": "When Thanatos is approached outwardly, it leads to?",
+          "options": [
+            "Freedom",
+            "Aggression",
+            "Demands",
+            "Liberty"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "What are the two dimensions of conflict?",
+          "options": [
+            "Intra and inter party conflict",
+            "Inter and intra group conflict",
+            "International and intra group conflict",
+            "Positive and negative conflict"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Positive and negative conflict."
+        },
+        {
+          "question": "In conflict management, avoidance method is also known as?",
+          "options": [
+            "Peaceful style",
+            "Tortoise style",
+            "Third party intervention",
+            "Bargaining style"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Tortoise style."
+        },
+        {
+          "question": "Confrontation yields what type of battle?",
+          "options": [
+            "A lose-lose battle",
+            "A win-lose battle",
+            "A win-win battle",
+            "Loose battle"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A win-lose battle."
+        },
+        {
+          "question": "The method of inviting somebody after the conflict to help resolve it is?",
+          "options": [
+            "Confrontation",
+            "Compromise",
+            "Third-party intervention",
+            "Negotiation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Third-party intervention."
+        },
+        {
+          "question": "Coming together to solve a conflict amicably is known as?",
+          "options": [
+            "Negotiation",
+            "Litigation",
+            "Joint problem solving",
+            "Third party intervention"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Joint problem solving."
+        },
+        {
+          "question": "Coming together to negotiate on the way out of conflict is called?",
+          "options": [
+            "Bargaining",
+            "Negotiation",
+            "Litigation",
+            "Compromise"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Bargaining."
+        },
+        {
+          "question": "Marxist theory is an economic theory based on?",
+          "options": [
+            "Bargaining",
+            "Negotiation",
+            "Class conflict",
+            "Litigation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Class conflict."
+        },
+        {
+          "question": "Economic theory encourages?",
+          "options": [
+            "Peace",
+            "War",
+            "Violence",
+            "Compromise"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Violence."
+        },
+        {
+          "question": "Conflict in its sense reflects?",
+          "options": [
+            "Peace",
+            "Position in opposition",
+            "Compromise",
+            "Litigation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Position in opposition."
+        },
+        {
+          "question": "Causes of conflict include all EXCEPT?",
+          "options": [
+            "Ideology",
+            "Racism",
+            "Dialogue",
+            "Religion"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Dialogue."
+        },
+        {
+          "question": "One can negotiate for position and interest, but certainly not for?",
+          "options": [
+            "Ideology",
+            "Religion",
+            "Needs",
+            "Poverty"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Needs."
+        },
+        {
+          "question": "Mention two dimensions of peace?",
+          "options": [
+            "Peace progression and peace regression",
+            "Negative peace and positive peace",
+            "Peace by peaceful means",
+            "Escalation and de-escalation peace"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Negative peace and positive peace."
+        },
+        {
+          "question": "Conflict is destructive when it is handled?",
+          "options": [
+            "Competitively",
+            "Peacefully",
+            "Truthfully",
+            "Ideologically"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Competitively."
+        },
+        {
+          "question": "Conflict between APC and PDP can be categorized under?",
+          "options": [
+            "Inter-party conflict",
+            "Intra-party conflict",
+            "Inter-group conflict",
+            "Intra-party conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Inter-party conflict."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r7",
+      "number": 7,
+      "title": "Practice Round 7 (Q151-175)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Conflict in Iraq is an example of?",
+          "options": [
+            "Intra-party conflict",
+            "Communal conflict",
+            "International conflict",
+            "National conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: International conflict."
+        },
+        {
+          "question": "Conflict within Ilishan can be called?",
+          "options": [
+            "Inter-group conflict",
+            "Communal conflict",
+            "International conflict",
+            "National conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Communal conflict."
+        },
+        {
+          "question": "What is role playing in conflict handling styles?",
+          "options": [
+            "Upholding rules and ethics without partiality",
+            "Conceding to the other party",
+            "Collaborate on an issue",
+            "Temporal relief"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Upholding rules and ethics without partiality."
+        },
+        {
+          "question": "Avoidance is unassertive and?",
+          "options": [
+            "Cooperative",
+            "Uncooperative",
+            "Unassertive",
+            "Collaborative"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Uncooperative."
+        },
+        {
+          "question": "Role playing is?",
+          "options": [
+            "Cooperative",
+            "Uncooperative",
+            "Third party",
+            "Assertive"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Third party."
+        },
+        {
+          "question": "Thomas Hobbes says man was born to be?",
+          "options": [
+            "Intelligent",
+            "Peaceful",
+            "Violent",
+            "A beast"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: A beast."
+        },
+        {
+          "question": "Alternative dispute resolution includes all the following EXCEPT?",
+          "options": [
+            "Negotiation",
+            "Mediation",
+            "Reconciliation",
+            "Competition"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Competition."
+        },
+        {
+          "question": "Bringing an existing conflict situation under effective control is?",
+          "options": [
+            "Conflict resolution",
+            "Conflict containment",
+            "Conflict prevention",
+            "Conflict management"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict containment."
+        },
+        {
+          "question": "Various activities involved in trying to broker peace between parties is?",
+          "options": [
+            "Peacekeeping",
+            "Peace making",
+            "Peace building",
+            "Peace resolution"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace making."
+        },
+        {
+          "question": "Preventive measures put in place to remove causes of conflict before it occurs is?",
+          "options": [
+            "Peacemaking",
+            "Peacekeeping",
+            "Peace building",
+            "Preventive diplomacy"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace building."
+        },
+        {
+          "question": "Deployment of neutral forces to areas of conflicts to monitor ceasefire is?",
+          "options": [
+            "Peace building",
+            "Peacekeeping",
+            "Peace making",
+            "Peace process"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peacekeeping."
+        },
+        {
+          "question": "There are chapters in the United Nations charter that relate to conflict. Which set is correct?",
+          "options": [
+            "Chapters 5, 6 and 8",
+            "Chapters 6, 7 and 8",
+            "Chapters 7, 8 and 9",
+            "Chapters 2, 3 and 8"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Chapters 6, 7 and 8."
+        },
+        {
+          "question": "The role of peace keepers include all EXCEPT?",
+          "options": [
+            "Monitoring peace process",
+            "Protecting the weak",
+            "Using any kind of force",
+            "Obeying all laws of armed conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Using any kind of force."
+        },
+        {
+          "question": "A range of procedures and approaches other than litigation for resolving disputes is?",
+          "options": [
+            "Alternative Dispute Resolution",
+            "Cease-9ire",
+            "Aggression",
+            "Bargaining"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Alternative Dispute Resolution."
+        },
+        {
+          "question": "A bilateral or multilateral halt in all or selected military activities is a?",
+          "options": [
+            "Aggression",
+            "Bargaining",
+            "Genocide",
+            "Cease-Iire"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Cease-Iire."
+        },
+        {
+          "question": "This is not only the absence of war and violence but also involves justice and harmony?",
+          "options": [
+            "Cease-9ire",
+            "Alternative Dispute Resolution",
+            "Peace",
+            "Peacebuilding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "A social condition in which exploitation is minimized or eliminated is?",
+          "options": [
+            "Peacekeeping",
+            "Negative Peace",
+            "Peace-making",
+            "Positive Peace"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Positive Peace."
+        },
+        {
+          "question": "The peaceful application of military presence to prevent conflict is?",
+          "options": [
+            "Peacekeeping",
+            "Peace-making",
+            "Peacebuilding",
+            "Peace Enforcement"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Peacekeeping."
+        },
+        {
+          "question": "It aims at accomplishing full reconciliation among conflict parties?",
+          "options": [
+            "Peacebuilding",
+            "Peace Enforcement",
+            "Peace-making",
+            "Peacekeeping"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace-making."
+        },
+        {
+          "question": "It entails confidence building and providing tools and resources for post-conflict societies?",
+          "options": [
+            "Peacekeeping",
+            "Peacebuilding",
+            "Peace-making",
+            "Peace Enforcement"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peacebuilding."
+        },
+        {
+          "question": "Defensive in nature and therefore makes provision against attack is?",
+          "options": [
+            "Peace Enforcement",
+            "Early Warning",
+            "Peacekeeping",
+            "Peacebuilding"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Peace Enforcement."
+        },
+        {
+          "question": "Mechanism needed to generate information and disseminate it for conflict prevention?",
+          "options": [
+            "Peace-making",
+            "Reintegration",
+            "Demobilization",
+            "Early Warning"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Early Warning."
+        },
+        {
+          "question": "The collection, documentation, control and disposal of arms is?",
+          "options": [
+            "Peace Enforcement",
+            "Reintegration",
+            "Disarmament",
+            "Demobilization"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Disarmament."
+        },
+        {
+          "question": "The formal and controlled discharge of active combatants from armed forces is?",
+          "options": [
+            "Reintegration",
+            "Demobilization",
+            "Peace Enforcement",
+            "Disarmament"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Demobilization."
+        },
+        {
+          "question": "It involves constructive changes that include and benefit all in post-conflict situations?",
+          "options": [
+            "Conflict Transformation",
+            "Peace-making",
+            "Negative Peace",
+            "Structural Violence"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict Transformation."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r8",
+      "number": 8,
+      "title": "Practice Round 8 (Q176-200)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "This is viewed as interventionist efforts towards preventing the escalation of disputes?",
+          "options": [
+            "Conflict Prevention",
+            "Conflict Management",
+            "Conflict Resolution",
+            "Conflict Transformation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict Management."
+        },
+        {
+          "question": "It is a tool of foreign policy that involves representing one's country abroad?",
+          "options": [
+            "Bargaining",
+            "Diplomacy",
+            "Conflict Transformation",
+            "Structural Violence"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Diplomacy."
+        },
+        {
+          "question": "The removal of military or paramilitary forces from a geographic area is?",
+          "options": [
+            "Demilitarisation",
+            "Displaced Person",
+            "Negative Peace",
+            "Bargaining"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Demilitarisation."
+        },
+        {
+          "question": "Increase in quantity, intensity, or scope of violence in a conflict is?",
+          "options": [
+            "Escalation",
+            "Demilitarisation",
+            "Peacekeeping",
+            "Bargaining"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Escalation."
+        },
+        {
+          "question": "Actions, words, attitudes, structures or systems that cause harm to others indirectly?",
+          "options": [
+            "Alternative dispute resolution",
+            "Violence",
+            "Displaced Person",
+            "Conflict Transformation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Violence."
+        },
+        {
+          "question": "Human beings are hurt somatically, to the point of physical harm or death is?",
+          "options": [
+            "Displaced Person",
+            "Alternative dispute resolution",
+            "Physical Violence",
+            "Demilitarisation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Physical Violence."
+        },
+        {
+          "question": "Violence that targets the mind and the heart is?",
+          "options": [
+            "Psychological Violence",
+            "Alternative dispute resolution",
+            "Structural Violence",
+            "Bargaining"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Psychological Violence."
+        },
+        {
+          "question": "War between factions within a state trying to create a new government is?",
+          "options": [
+            "Intervention",
+            "Alternative dispute resolution",
+            "Reconciliation",
+            "Civil war"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Civil war."
+        },
+        {
+          "question": "Requested or imposed unilateral or multilateral action to stop violence is?",
+          "options": [
+            "Transitional Justice",
+            "Intervention",
+            "Reconciliation",
+            "Intergroup conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intervention."
+        },
+        {
+          "question": "A process that attempts to transform intense or long-standing conflict is?",
+          "options": [
+            "Reconciliation",
+            "Psychological Violence",
+            "Demilitarisation",
+            "Guerrilla war"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Reconciliation."
+        },
+        {
+          "question": "An approach that utilises both judicial and non-judicial mechanisms after conflict is?",
+          "options": [
+            "Reconciliation",
+            "Transitional Justice",
+            "Psychological Violence",
+            "Intergroup conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Transitional Justice."
+        },
+        {
+          "question": "Conflict between two individuals is?",
+          "options": [
+            "Conflict Management",
+            "Guerrilla war",
+            "Intervention",
+            "Interpersonal conflict"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Interpersonal conflict."
+        },
+        {
+          "question": "Conflict among individuals within a team or group is?",
+          "options": [
+            "Intragroup conflict",
+            "Guerrilla war",
+            "Demilitarisation",
+            "Alternative dispute resolution"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Intragroup conflict."
+        },
+        {
+          "question": "Conflict among different teams within an organization is?",
+          "options": [
+            "Reconciliation",
+            "Intergroup conflict",
+            "Reconciliation",
+            "Individual Differences"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intergroup conflict."
+        },
+        {
+          "question": "Hostility within the boundary of a country is?",
+          "options": [
+            "Intergroup conflict",
+            "Positive Peace",
+            "National or Intra-state conflicts",
+            "Conflict Management"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: National or Intra-state conflicts."
+        },
+        {
+          "question": "Hostility between one country and another is?",
+          "options": [
+            "International Conflicts",
+            "Reconciliation",
+            "Transitional Justice",
+            "Conflict Management"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: International Conflicts."
+        },
+        {
+          "question": "Beliefs viewed from different perspectives may give rise to?",
+          "options": [
+            "Religious Conflicts",
+            "Conflict Management",
+            "Reconciliation",
+            "Positive Peace"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Religious Conflicts."
+        },
+        {
+          "question": "Conflict within a family or home is?",
+          "options": [
+            "Reintegration",
+            "Displaced Person",
+            "Domestic Conflicts",
+            "Peace Enforcement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Domestic Conflicts."
+        },
+        {
+          "question": "Unfair access to natural resources and the unjust distribution of wealth leads to?",
+          "options": [
+            "Reintegration",
+            "Peace Enforcement",
+            "Ecological Conflicts",
+            "Displaced Person"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Ecological Conflicts."
+        },
+        {
+          "question": "Causes of conflict on account of their nature, attitudes, and personalities are?",
+          "options": [
+            "Cease-9ire",
+            "Reintegration",
+            "Displaced Person",
+            "Individual Differences"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Individual Differences."
+        },
+        {
+          "question": "When a part of society does not change along with the rest, it leads to?",
+          "options": [
+            "Social Change",
+            "Displaced Person",
+            "Bargaining",
+            "Reintegration"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Social Change."
+        },
+        {
+          "question": "An existing state of disagreement between two or more parties is?",
+          "options": [
+            "Conflict",
+            "Conflict Transformation",
+            "Conflict Resolution",
+            "Demobilization"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Defined as a conflict between political groups involving armed struggle for power is?",
+          "options": [
+            "Displacement",
+            "De-integration",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: War."
+        },
+        {
+          "question": "The state of tranquillity can be referred to as?",
+          "options": [
+            "Violent",
+            "Turbidity",
+            "Peace",
+            "Silence"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "Which one of these factors can destroy peace?",
+          "options": [
+            "Poverty",
+            "Intimidation",
+            "Fear",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r9",
+      "number": 9,
+      "title": "Practice Round 9 (Q201-225)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Which option of these is a perspective of peace?",
+          "options": [
+            "The combat perspective",
+            "The sociological perspective",
+            "The classified structure",
+            "The phenomenon strategy"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The sociological perspective."
+        },
+        {
+          "question": "The scholar that holds the view that peace is natural is?",
+          "options": [
+            "John Locke",
+            "John Coleman",
+            "John Gabriel",
+            "Emmanuel Koli"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: John Locke."
+        },
+        {
+          "question": "If one says that violence is inevitable in the society, it is?",
+          "options": [
+            "A disorder",
+            "An abnormal",
+            "Natural",
+            "Abysmal"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Natural."
+        },
+        {
+          "question": "Conflict can be used interchangeably with which other concept?",
+          "options": [
+            "Discord",
+            "Rivalry",
+            "Contest",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "Conflict and struggle between two or more people in politics is about?",
+          "options": [
+            "Power",
+            "Control of resources",
+            "Authority",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "The Boko Haram insurgency in Nigeria can be classified as a?",
+          "options": [
+            "Conflict",
+            "War",
+            "Civil war",
+            "Conventional 9ight"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Intra-personal conflict can be described as?",
+          "options": [
+            "Man against woman",
+            "Man against God",
+            "Man against Man",
+            "Man against Self"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Man against Self."
+        },
+        {
+          "question": "Which conflict is between man against man?",
+          "options": [
+            "Intra-personal conflict",
+            "Inter-personal conflict",
+            "Intro-personal conflict",
+            "None of the options"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter-personal conflict."
+        },
+        {
+          "question": "Which of these examples best describes Intra-unit conflict?",
+          "options": [
+            "Conflict in a school",
+            "Conflict in the family",
+            "Systemic conflict",
+            "Familiarize conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict in the family."
+        },
+        {
+          "question": "Which of these is NOT a form of conflict?",
+          "options": [
+            "Protest",
+            "Mutiny",
+            "Colony",
+            "Revolution"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Colony."
+        },
+        {
+          "question": "Using avoidance in conflict is a type of approach called?",
+          "options": [
+            "Conflict clamouring",
+            "Conflict altitude",
+            "Conflict management",
+            "Conflict non-negotiating style"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict management."
+        },
+        {
+          "question": "A situation of a win-lose is called negative sum, while a lose-lose is called?",
+          "options": [
+            "Attention",
+            "Altitude",
+            "Aggression",
+            "Articulation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "In the long run, compromise as a way of handling conflict leads to?",
+          "options": [
+            "Aggression",
+            "Frustration",
+            "Abberation",
+            "Prevention"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Frustration."
+        },
+        {
+          "question": "The concept of Role playing in handling conflict can be described as?",
+          "options": [
+            "The 9irst party approach",
+            "The second party approach",
+            "The third party approach",
+            "Confidential approach"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: The third party approach."
+        },
+        {
+          "question": "The process of Joint Problem Solving approach to conflict uses?",
+          "options": [
+            "Confrontation",
+            "Bargaining",
+            "Politics",
+            "Propaganda"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Bargaining."
+        },
+        {
+          "question": "Development can freely thrive in the situation where there is?",
+          "options": [
+            "Power",
+            "Pact",
+            "Peace",
+            "Polar dichotomy"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "Human Needs theory is a hierarchy of needs given by?",
+          "options": [
+            "Abraham Mawell",
+            "Abraham Maslow",
+            "Abraham Matthew",
+            "Adam Smith"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Abraham Maslow."
+        },
+        {
+          "question": "When Sigmund Freud talked about Eros he meant?",
+          "options": [
+            "Live life or survival instinct",
+            "Outward",
+            "None of the options",
+            "None"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Outward."
+        },
+        {
+          "question": "Who said that in the state of nature man is poor , nasty, brutish and short?",
+          "options": [
+            "Thomas Habalis",
+            "Thomas Norton",
+            "Thomas Hobbes",
+            "Ferdinand Tonnies"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Thomas Hobbes."
+        },
+        {
+          "question": "Physical assault is associated with which of the following?",
+          "options": [
+            "Abuse",
+            "Beating",
+            "Mutilation",
+            "All of the options"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: All of the options."
+        },
+        {
+          "question": "The individual who tries to solve a conflict between two parties is called a?",
+          "options": [
+            "Go-in-between",
+            "Bargainer",
+            "Mediator",
+            "Gossiper"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Mediator."
+        },
+        {
+          "question": "Avoidance involves being?",
+          "options": [
+            "Cooperative",
+            "Uncooperative",
+            "Candid",
+            "Colourful"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Uncooperative."
+        },
+        {
+          "question": "Confrontation is uncooperative and?",
+          "options": [
+            "Assertive",
+            "Cooperative",
+            "Compromise",
+            "Collective"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Assertive."
+        },
+        {
+          "question": "In the Bible, the Iirst conflict in scripture is recorded in?",
+          "options": [
+            "Revelation 12:7-11",
+            "Revelation 14:6-8",
+            "Genesis 3:1",
+            "Genesis 3:16"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Revelation 12:7-11."
+        },
+        {
+          "question": "To understand the dimensions of conflicts one needs to know?",
+          "options": [
+            "The immediate past",
+            "The distant past",
+            "The current event",
+            "The near future"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: The near future."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r10",
+      "number": 10,
+      "title": "Practice Round 10 (Q226-250)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "One of these is NOT a description of social conflict?",
+          "options": [
+            "Organized",
+            "Transitory",
+            "Physical",
+            "Mobile"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Mobile."
+        },
+        {
+          "question": "Which conflict handling style would have one party accept the other's position?",
+          "options": [
+            "Avoidance",
+            "Admission",
+            "Accommodation",
+            "Compromise"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Accommodation."
+        },
+        {
+          "question": "Which is NOT an example of communal conflict?",
+          "options": [
+            "Odi and Obasanjo crisis",
+            "Ife and Modakeke",
+            "Ijaw and Ilaje",
+            "Ogoni and Okrika"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Ogoni and Okrika."
+        },
+        {
+          "question": "The Abraham Maslow Needs is also referred to as the?",
+          "options": [
+            "Needs of Hierarchy",
+            "Hierarchical Needs",
+            "Hierarchy of Needs",
+            "Hierarch of Self"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Hierarchy of Needs."
+        },
+        {
+          "question": "Conflict can be caused by one of these options?",
+          "options": [
+            "Smiling",
+            "Economy",
+            "Water",
+            "None of the options"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Economy."
+        },
+        {
+          "question": "Reaching a win-win situation with another party can be achieved by?",
+          "options": [
+            "Negotiation",
+            "Bargaining",
+            "Negotiation and Bargaining",
+            "None of the options"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Negotiation and Bargaining."
+        },
+        {
+          "question": "Which of these best describes the idea of jaw-jaw in conflict resolution?",
+          "options": [
+            "Having dialogue",
+            "Having confrontation",
+            "Having a 9ight",
+            "Propaganda"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Having dialogue."
+        },
+        {
+          "question": "One of these is NOT a major cause of conflict?",
+          "options": [
+            "Communication",
+            "Values",
+            "History",
+            "Benevolence"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Benevolence."
+        },
+        {
+          "question": "A state of mutually declared aggression between two parties is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: War."
+        },
+        {
+          "question": "Conflict that occurs within a family can be described as?",
+          "options": [
+            "Interparty conflict",
+            "Inter unit conflict",
+            "Group conflict",
+            "Family disputes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter unit conflict."
+        },
+        {
+          "question": "The conflict described as man against man is called?",
+          "options": [
+            "Interpersonal conflict",
+            "Intrapersonal conflict",
+            "Violent conflict",
+            "Man against nature conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Interpersonal conflict."
+        },
+        {
+          "question": "The Nigeria Civil War is an example of which type of conflict?",
+          "options": [
+            "Intra group conflict",
+            "Inter state conflict",
+            "Intra state conflict",
+            "Family conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Intra state conflict."
+        },
+        {
+          "question": "The Rwanda genocide is an example of which type of conflict?",
+          "options": [
+            "Intra group conflict",
+            "Inter state conflict",
+            "Intra state conflict",
+            "Family conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Intra state conflict."
+        },
+        {
+          "question": "Outright hostility is manifestation of which stage of conflict?",
+          "options": [
+            "Crisis stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Crisis stage."
+        },
+        {
+          "question": "One of these is efficient for resolving conflicts?",
+          "options": [
+            "Dialogue",
+            "Force",
+            "Mediation",
+            "Litigation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Dialogue."
+        },
+        {
+          "question": "Which one CANNOT be used as a synonym for conflict?",
+          "options": [
+            "Communication",
+            "Struggle",
+            "Contention",
+            "Discord"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Communication."
+        },
+        {
+          "question": "The state of disagreement between two or more people is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "The complete change of the status order through a violent uprising is?",
+          "options": [
+            "Motina",
+            "Revolt",
+            "Revolution",
+            "Protest"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Revolution."
+        },
+        {
+          "question": "Individual belief about what is right and wrong is?",
+          "options": [
+            "Emotions",
+            "Values",
+            "Expectations",
+            "Objectives"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Values."
+        },
+        {
+          "question": "At what stage in conflict would dialogue alone not be effective?",
+          "options": [
+            "Discomfort stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "One of these is NOT a driver of peace?",
+          "options": [
+            "Good governance",
+            "Good fellowship",
+            "Free 9low of communication",
+            "Perspective governance"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Perspective governance."
+        },
+        {
+          "question": "When was the study of peace developed?",
+          "options": [
+            "1930s",
+            "1940s",
+            "1950s",
+            "1960s"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: 1940s."
+        },
+        {
+          "question": "The process when parties in conflict look for support from others is?",
+          "options": [
+            "Crisis stage",
+            "Taking sides",
+            "Incident stage",
+            "Peace building"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Taking sides."
+        },
+        {
+          "question": "The stage where conflict manifests in words and actions is the?",
+          "options": [
+            "Discomfort stage",
+            "Incident stage",
+            "Tension stage",
+            "Misunderstanding stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "In which region was peace research developed?",
+          "options": [
+            "Asia",
+            "Europe",
+            "Africa",
+            "USA"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Europe."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r11",
+      "number": 11,
+      "title": "Practice Round 11 (Q251-275)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "One of these is NOT a basic concept of peace studies?",
+          "options": [
+            "Peace Making",
+            "Peace Relations",
+            "Peace building",
+            "Peace Keeping"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace Relations."
+        },
+        {
+          "question": "The resolution of conflict brings about?",
+          "options": [
+            "Violence",
+            "Peace",
+            "Peace keeping",
+            "Peacebuilding"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace."
+        },
+        {
+          "question": "The following define peace EXCEPT?",
+          "options": [
+            "Tranquility",
+            "Conflict studies",
+            "Absence of violence",
+            "Peace of mind"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict studies."
+        },
+        {
+          "question": "Negative peace defines which of the following?",
+          "options": [
+            "Peace of mind",
+            "Absence of war",
+            "Absence of structural violence",
+            "Absence of cultural violence"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Absence of war."
+        },
+        {
+          "question": "Positive peace defines which of the following?",
+          "options": [
+            "Absence of war",
+            "Absence of structural violence",
+            "Peace of the graveyard",
+            "Permanent peace"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Absence of structural violence."
+        },
+        {
+          "question": "A state of contradiction arising from pursuit of incompatible goals is?",
+          "options": [
+            "Peace",
+            "Conflict",
+            "Peace process",
+            "Peace enforcement"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Which of the following breeds conflicts?",
+          "options": [
+            "Understanding",
+            "Clash of interest",
+            "Harmonized interest",
+            "Satisfaction"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Clash of interest."
+        },
+        {
+          "question": "The following are strategic terms in conflict resolution EXCEPT?",
+          "options": [
+            "Peace keeping",
+            "Peace loving",
+            "Peace building",
+            "Peace making"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace loving."
+        },
+        {
+          "question": "Which of the following is usually introduced in areas of armed conflict?",
+          "options": [
+            "Peace loving",
+            "Peace keeping",
+            "Peace building",
+            "Peace"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace keeping."
+        },
+        {
+          "question": "Breach or breaches of peace bring about?",
+          "options": [
+            "Love",
+            "Conflict",
+            "Understanding",
+            "Multiple peace"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Conflicts can be triggered by all but one of the following types of violence?",
+          "options": [
+            "Structure violence",
+            "Peaceful violence",
+            "Physical violence",
+            "Cultural violence"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peaceful violence."
+        },
+        {
+          "question": "True and absolute peace can be found in?",
+          "options": [
+            "The US",
+            "The coming of Christ",
+            "Nigeria's Aso Rock",
+            "America's White House"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The coming of Christ."
+        },
+        {
+          "question": "The Nigerian civil war is an example of which of the following?",
+          "options": [
+            "Foreign conflict",
+            "National conflict",
+            "Inter-state conflict",
+            "Inter-group conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: National conflict."
+        },
+        {
+          "question": "Conflicts within the members of a family or household are called?",
+          "options": [
+            "International conflicts",
+            "Domestic conflicts",
+            "National conflicts",
+            "Group conflicts"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Domestic conflicts."
+        },
+        {
+          "question": "One of these listed is a cause of conflict?",
+          "options": [
+            "Peace building",
+            "Resources",
+            "Peace making",
+            "Peace enforcement"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Resources."
+        },
+        {
+          "question": "Political conflicts can be caused by all but one of the following?",
+          "options": [
+            "Power struggle",
+            "Political unity",
+            "Political nomination",
+            "Party leadership"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Political unity."
+        },
+        {
+          "question": "Irreconcilable differences usually result in?",
+          "options": [
+            "Peace",
+            "Conflict",
+            "Agreement",
+            "Conflict resolution"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "One of the objectives of this course is to imbibe a culture of peace for?",
+          "options": [
+            "Only family members",
+            "All men",
+            "Only class members",
+            "Only selected persons"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: All men."
+        },
+        {
+          "question": "Conflicts arising from competing values, ideology or interests are?",
+          "options": [
+            "National conflict",
+            "Intra-personal conflict",
+            "Interpersonal conflict",
+            "Specific conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intra-personal conflict."
+        },
+        {
+          "question": "The leadership tussle between Seyi Makinde and Ayo Fayose is an example of?",
+          "options": [
+            "National conflict",
+            "Political conflict",
+            "Inter-group conflict",
+            "Ethnic conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Political conflict."
+        },
+        {
+          "question": "The World War II is an example of?",
+          "options": [
+            "Intra-state conflict",
+            "International conflict",
+            "Ethnic conflict",
+            "Political conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: International conflict."
+        },
+        {
+          "question": "Resources constitute a source of conflict because they are?",
+          "options": [
+            "Abundant",
+            "Scarce",
+            "Everywhere",
+            "Not marketable"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Scarce."
+        },
+        {
+          "question": "The following are examples of natural resources EXCEPT?",
+          "options": [
+            "Crude oil",
+            "Buildings",
+            "Water",
+            "Minerals"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Buildings."
+        },
+        {
+          "question": "Conflicts between persons or units belonging to the same group are?",
+          "options": [
+            "Inter-person conflict",
+            "Intra-group conflict",
+            "Inter-group conflict",
+            "Multi-units conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intra-group conflict."
+        },
+        {
+          "question": "To be effective, conflict resolution should address the root cause of conflict which is?",
+          "options": [
+            "Punishment for the vanquished",
+            "The remote causes",
+            "Apportionment of blame",
+            "None"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The remote causes."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r12",
+      "number": 12,
+      "title": "Practice Round 12 (Q276-300)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "One of the following is a cause of conflict?",
+          "options": [
+            "Necessary resources",
+            "Scarce resources",
+            "Adequate resources",
+            "Abundant resources"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Scarce resources."
+        },
+        {
+          "question": "Group conflict can ensue as a result of one of the following?",
+          "options": [
+            "Common goal",
+            "Divergent goal",
+            "Efficient goal",
+            "Committed followers"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Divergent goal."
+        },
+        {
+          "question": "The following are likely causes of national conflict EXCEPT?",
+          "options": [
+            "Marginalization",
+            "Good governance",
+            "Unjust treatment",
+            "Ethnic diversity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Good governance."
+        },
+        {
+          "question": "The following are theories in peace and conflict EXCEPT?",
+          "options": [
+            "Human needs",
+            "Crisis escalation",
+            "Relative deprivation",
+            "Frustration-aggression"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Crisis escalation."
+        },
+        {
+          "question": "Conflicts within the same group are?",
+          "options": [
+            "Relative group conflict",
+            "Intra-group conflict",
+            "Intra-group conflict",
+            "Domestic conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intra-group conflict."
+        },
+        {
+          "question": "Who among these is identified with the theory of structural violence?",
+          "options": [
+            "David Easton",
+            "Johan Galtung",
+            "David Ricardo",
+            "Herbert Spencer"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Johan Galtung."
+        },
+        {
+          "question": "Hunger and deprivation are examples of?",
+          "options": [
+            "Physical violence",
+            "Structural violence",
+            "Armed violence",
+            "Cultural violence"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Structural violence."
+        },
+        {
+          "question": "The approaches to conflict resolutions include the following EXCEPT?",
+          "options": [
+            "Mediation",
+            "Acculturation",
+            "Adjudication",
+            "Arbitration"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Acculturation."
+        },
+        {
+          "question": "Which of these theories posits that anger and aggression arise from blocking of goals?",
+          "options": [
+            "Relative deprivation theory",
+            "Innate aggression theory",
+            "Human needs theory",
+            "Frustration-aggression theory"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Frustration-aggression theory."
+        },
+        {
+          "question": "Stages of conflict include these EXCEPT?",
+          "options": [
+            "Escalation stage",
+            "Transnational stage",
+            "Transformative stage",
+            "De-escalation stage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Transnational stage."
+        },
+        {
+          "question": "The contradictions between Alli and his father over family decisions is an example of?",
+          "options": [
+            "National conflict",
+            "Domestic conflict",
+            "Educational conflict",
+            "Legal conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Domestic conflict."
+        },
+        {
+          "question": "Peace making is essential in conflict situation in order to?",
+          "options": [
+            "Escalate the crisis",
+            "De-escalate the crisis",
+            "Support the winner",
+            "Punish the loser"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: De-escalate the crisis."
+        },
+        {
+          "question": "The border dispute between Nigeria and Cameroon is an example of?",
+          "options": [
+            "Intra-state conflict",
+            "Inter-state conflict",
+            "National conflict",
+            "Accidental conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter-state conflict."
+        },
+        {
+          "question": "The idea of negative peace and positive peace is credited to the?",
+          "options": [
+            "Structural-functional theory",
+            "Structural violence theory",
+            "Frustration-aggression theory",
+            "Relative deprivation theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Structural violence theory."
+        },
+        {
+          "question": "The following are generally true EXCEPT?",
+          "options": [
+            "Conflict is preventable",
+            "Politicians are responsible for all conflicts",
+            "Conflict can be minimized",
+            "Peace is desirable"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Politicians are responsible for all conflicts."
+        },
+        {
+          "question": "One of these posits that conflicts result from individuals comparing themselves to others?",
+          "options": [
+            "Frustration-aggression theory",
+            "Innate aggression theory",
+            "Social identity theory",
+            "Deterrence theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Innate aggression theory."
+        },
+        {
+          "question": "These listed are alternative dispute resolution methods EXCEPT?",
+          "options": [
+            "Negotiation",
+            "Armed or military resolution",
+            "Conciliation",
+            "Arbitration"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Armed or military resolution."
+        },
+        {
+          "question": "Albert Bandura is associated with one of these listed theories?",
+          "options": [
+            "Social identity theory",
+            "Social learning theory",
+            "Game theory",
+            "Deterrence theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Social learning theory."
+        },
+        {
+          "question": "Which of these theories posits that aggressive behaviour is learned through observation?",
+          "options": [
+            "Social identity theory",
+            "Social learning theory",
+            "Social contract theory",
+            "Social studies theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Social learning theory."
+        },
+        {
+          "question": "Anger and aggressive behaviours arising from unmet needs is the?",
+          "options": [
+            "Game theory",
+            "Frustration-aggression theory",
+            "Deterrence theory",
+            "Political economy theory"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Frustration-aggression theory."
+        },
+        {
+          "question": "Approaches or styles of handling conflicts include the following EXCEPT?",
+          "options": [
+            "Confrontation",
+            "Conflict construction",
+            "Avoidance/withdrawal",
+            "Compromising"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict construction."
+        },
+        {
+          "question": "One of these listed is NOT a type of gaming identified in conflict theory?",
+          "options": [
+            "Two-person zero-sum game",
+            "General friendly game",
+            "Two-person non-zero-sum game",
+            "N-person game"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: General friendly game."
+        },
+        {
+          "question": "The social identity theory of conflict is usually applied to?",
+          "options": [
+            "Individuals",
+            "Groups",
+            "Students",
+            "Professionals"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Groups."
+        },
+        {
+          "question": "Acts aiming to significantly reduce or eliminate ethnic groups is?",
+          "options": [
+            "Community murder",
+            "Official Killings",
+            "Ethnic cleansing",
+            "Genocide"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Genocide."
+        },
+        {
+          "question": "In defining peace, the following must be considered EXCEPT?",
+          "options": [
+            "War",
+            "Violence",
+            "Justice",
+            "Law"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Law."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r13",
+      "number": 13,
+      "title": "Practice Round 13 (Q301-325)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Providing a barrier against unwanted war or an international conflict is?",
+          "options": [
+            "Negotiation",
+            "Peace building",
+            "Peace keeping",
+            "Peace making"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Peace making."
+        },
+        {
+          "question": "Aiming at accomplishing full reconciliation among parties is?",
+          "options": [
+            "Conflict",
+            "Peacekeeping",
+            "Violence",
+            "Peacemaking"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Peacemaking."
+        },
+        {
+          "question": "A non-consensual operation undertaken to bring about peace is?",
+          "options": [
+            "Forceful peace",
+            "Peace enforcement",
+            "Reconciliation",
+            "Peace pact"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Peace enforcement."
+        },
+        {
+          "question": "A mechanism needed to generate information and disseminate it for preventing conflict is?",
+          "options": [
+            "Early warning",
+            "Early message",
+            "Early peace",
+            "Early sign"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Early warning."
+        },
+        {
+          "question": "Longer-term social and economic process with an opportunity to rebuild is?",
+          "options": [
+            "Social welfare",
+            "Rehabilitation",
+            "Reintegration",
+            "Reinforcement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Reintegration."
+        },
+        {
+          "question": "The interventionist efforts towards preventing the escalation of disputes is?",
+          "options": [
+            "Conflict management",
+            "Conflict containment",
+            "Conflict control",
+            "Conflict resolution"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict management."
+        },
+        {
+          "question": "A variety of approaches aimed at resolving conflicts through negotiation is?",
+          "options": [
+            "Conflict prevention",
+            "Conflict resolution",
+            "Conflict management",
+            "Conflict control"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict resolution."
+        },
+        {
+          "question": "The practice which deals with the wider social and political changes needed after conflict is?",
+          "options": [
+            "Conflict transformation",
+            "Conflict prevention",
+            "Conflict resolution",
+            "Conflict management"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict transformation."
+        },
+        {
+          "question": "The following are types of wars EXCEPT?",
+          "options": [
+            "Vengeful war",
+            "Harmonic war",
+            "Total war",
+            "Civil war"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Vengeful war."
+        },
+        {
+          "question": "Essential elements in describing conflict include all EXCEPT?",
+          "options": [
+            "Interdependency",
+            "Interactive struggle",
+            "Interactive conflict",
+            "Incompatible goals"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Interactive conflict."
+        },
+        {
+          "question": "One of the following is a misconception about conflict?",
+          "options": [
+            "Conflict is attractive",
+            "Conflict is a welcomed situation",
+            "Conflict is abnormal",
+            "Conflict occurs among two individuals"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict is abnormal."
+        },
+        {
+          "question": "The Iirst conflict as recorded in the bible was between?",
+          "options": [
+            "Adam and Eve",
+            "Cain and Abel",
+            "Noah and Sham",
+            "Adam and Cain"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Cain and Abel."
+        },
+        {
+          "question": "There are three approaches to how management views conflict. Which is NOT one?",
+          "options": [
+            "Classical/Traditional Approach",
+            "Integrationist Approach",
+            "Human Relations Approach",
+            "Intractionnist Approach"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Classical/Traditional Approach."
+        },
+        {
+          "question": "One of the following is an advantage of conflict?",
+          "options": [
+            "Allows for positive change",
+            "Separate colleagues from having crises",
+            "Helps individuals to know their place",
+            "Create division among friends"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Allows for positive change."
+        },
+        {
+          "question": "The following are part of the effects of conflict EXCEPT?",
+          "options": [
+            "Health concerns",
+            "Reproduction in productivity",
+            "Violence",
+            "Distract secondary purposes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Reproduction in productivity."
+        },
+        {
+          "question": "One of the following creates internal conflict in individuals?",
+          "options": [
+            "Believes and rules inherited from parents",
+            "Religious believes or creeds we were indoctrinated to",
+            "The societal values and ideals we adopted while growing up",
+            "Personal ideas acquired from friends"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Personal ideas acquired from friends."
+        },
+        {
+          "question": "One of the following is NOT a broad source of conflict?",
+          "options": [
+            "Values",
+            "Skills",
+            "Information",
+            "Persuasion"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Persuasion."
+        },
+        {
+          "question": "One of the following is NOT a source of conflict?",
+          "options": [
+            "Selfishness",
+            "Friendship",
+            "Office",
+            "Corporate gathering"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Friendship."
+        },
+        {
+          "question": "One of the following is a source of unrealistic expectations in conflict?",
+          "options": [
+            "Organizational change",
+            "Self",
+            "Information",
+            "Values"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Organizational change."
+        },
+        {
+          "question": "The following are levels of conflict, with the exclusion of one?",
+          "options": [
+            "Intrapersonal Conflict",
+            "Interpersonal Conflict",
+            "Intergroup Conflict",
+            "Interpeople Conflict"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Interpeople Conflict."
+        },
+        {
+          "question": "Intergroup conflict includes the following EXCEPT?",
+          "options": [
+            "National/interstate conflict",
+            "International Conflict",
+            "Religious conflict",
+            "Land dispute"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Land dispute."
+        },
+        {
+          "question": "The following includes four stages of conflict EXCEPT?",
+          "options": [
+            "Formation Stage",
+            "Evaluation stage",
+            "Escalation Stage",
+            "Crisis Stage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Evaluation stage."
+        },
+        {
+          "question": "The stage of conflict where compromise, avoidance, and denial take place is the?",
+          "options": [
+            "Avoidance stage",
+            "Formation stage",
+            "Escalation stage",
+            "Formulation stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Avoidance stage."
+        },
+        {
+          "question": "The conflict stage that is embedded with important decisions that shape outcomes is the?",
+          "options": [
+            "De-escalation stage",
+            "Survival stage",
+            "Crises stage",
+            "Formulation stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Crises stage."
+        },
+        {
+          "question": "At what stage in a conflict situation do the two parties start to improve relations?",
+          "options": [
+            "Escalation stage",
+            "Interpretation stage",
+            "Improvement stage",
+            "Reinforcement stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Improvement stage."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r14",
+      "number": 14,
+      "title": "Practice Round 14 (Q326-350)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "A conflict management approach where one party allows the other to win is?",
+          "options": [
+            "Avoidance approach",
+            "Accommodation approach",
+            "Competition",
+            "Compromise"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Accommodation approach."
+        },
+        {
+          "question": "The conflict management approach where a party seeks to satisfy only their own concerns is?",
+          "options": [
+            "Competition",
+            "Avoidance",
+            "Accommodation",
+            "Compromise"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Competition."
+        },
+        {
+          "question": "The management approach that allows each party in conflict to give and take is?",
+          "options": [
+            "Accommodation",
+            "Avoidance",
+            "Compromise",
+            "Conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Compromise."
+        },
+        {
+          "question": "The management approach where parties cooperate and seek mutual benefit is?",
+          "options": [
+            "Avoidance",
+            "Conflict",
+            "Compromise",
+            "Collaboration"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Collaboration."
+        },
+        {
+          "question": "An individual forced to leave his or her home province due to violence or conflict is a?",
+          "options": [
+            "Displaced person",
+            "Discarded person",
+            "Demobilized person",
+            "Disengaged person"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Displaced person."
+        },
+        {
+          "question": "A tool of foreign policy that involves representing one's country abroad is?",
+          "options": [
+            "Foreign document",
+            "International treaty",
+            "Diplomacy",
+            "Diplomat"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Diplomacy."
+        },
+        {
+          "question": "In conflict analysis tool, identify the tool that shows a visual map of all parties involved?",
+          "options": [
+            "Conflict tree",
+            "Conflict wheel",
+            "Conflict mapping",
+            "Needs-fears Mapping"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflict wheel."
+        },
+        {
+          "question": "The use of armed force by a state against the sovereignty of another state is?",
+          "options": [
+            "War",
+            "Power",
+            "Aggression",
+            "Solidarity"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "An approach other than litigation aimed at resolving disputes is abbreviated as?",
+          "options": [
+            "AIM",
+            "RDA",
+            "ADR",
+            "ARD"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: ARD."
+        },
+        {
+          "question": "A bilateral or multilateral halt in all or selected military activities is called?",
+          "options": [
+            "Concession",
+            "Aggression",
+            "Cease-Fire",
+            "Peace"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Cease-Fire."
+        },
+        {
+          "question": "Mechanisms of ADR include the following EXCEPT?",
+          "options": [
+            "Arbitration",
+            "Aggression",
+            "Mediation",
+            "Multi- Track"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Aggression."
+        },
+        {
+          "question": "The one that creates an offensive act of hostility in a conflict is the?",
+          "options": [
+            "Solidarity",
+            "ADR",
+            "Aggressor",
+            "Wanted"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Aggressor."
+        },
+        {
+          "question": "Genocide is the act of reducing or eliminating any of the following groups EXCEPT?",
+          "options": [
+            "National",
+            "Village",
+            "Racial",
+            "Ethnic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Village."
+        },
+        {
+          "question": "The constructive solving of conflict distinct from management is?",
+          "options": [
+            "Conflict Management",
+            "Peace Building",
+            "Peace Keeping",
+            "Conflict resolution"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Conflict resolution."
+        },
+        {
+          "question": "The Greek word for diplomacy is?",
+          "options": [
+            "Dipperie",
+            "Deeper",
+            "Diploun",
+            "Dippe"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Diploun."
+        },
+        {
+          "question": "Who defined violence as actions that cause physical or psychological harm?",
+          "options": [
+            "Dipperie",
+            "Macron",
+            "ADR",
+            "Fisher"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Fisher."
+        },
+        {
+          "question": "The following are types of violence EXCEPT?",
+          "options": [
+            "Physical",
+            "Structural",
+            "Psychological",
+            "War"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: War."
+        },
+        {
+          "question": "Categorizations of war have been identified as all EXCEPT?",
+          "options": [
+            "Warlord",
+            "Civil War",
+            "Hegemonic War",
+            "Total War"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Warlord."
+        },
+        {
+          "question": "The term conflict is derived from the Latin verb meaning?",
+          "options": [
+            "Conflictual",
+            "Conflictus",
+            "Contigentual",
+            "Congentus"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conflictus."
+        },
+        {
+          "question": "Gangel and Canine (2002) provides how many basic issues of conflict?",
+          "options": [
+            "4",
+            "3",
+            "2",
+            "5"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: 5."
+        },
+        {
+          "question": "Who defines conflict as a struggle over values with the aim of neutralizing rivals?",
+          "options": [
+            "Gangel and Canine",
+            "Lewis Coser",
+            "Fisher",
+            "Teacher"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Lewis Coser."
+        },
+        {
+          "question": "Claplin defined conflict as occurrences of two opposing forces in which year?",
+          "options": [
+            "1979",
+            "1980",
+            "1982",
+            "1981"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: 1979."
+        },
+        {
+          "question": "The following are examples of violence with the exception of one?",
+          "options": [
+            "Gazing",
+            "Acid bath",
+            "Battering",
+            "Kicking"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Gazing."
+        },
+        {
+          "question": "Alternative Dispute Resolution (ADR) originated in?",
+          "options": [
+            "Britain",
+            "USA",
+            "Kenya",
+            "Guinea"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: USA."
+        },
+        {
+          "question": "What refers to untested explanations about a phenomenon?",
+          "options": [
+            "Concepts",
+            "Variables",
+            "Propositions",
+            "Assumptions"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Assumptions."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r15",
+      "number": 15,
+      "title": "Practice Round 15 (Q351-375)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "ADR means?",
+          "options": [
+            "Alternate Disputing Resolution",
+            "Alternating Dispute Resolution",
+            "Alternate Dispute Resolve",
+            "Alternative Dispute Resolution"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Alternative Dispute Resolution."
+        },
+        {
+          "question": "One of these is NOT a stage of mediation?",
+          "options": [
+            "Story telling",
+            "Appeal",
+            "Introduction",
+            "Agreement"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Appeal."
+        },
+        {
+          "question": "The Iirst conflict in scripture was recorded in?",
+          "options": [
+            "Revelation 12:7-11",
+            "Revelation 14:6-8",
+            "Genesis 3:1",
+            "Genesis 3:16"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Revelation 12:7-11."
+        },
+        {
+          "question": "Three dimensions for understanding the history of conflict include all EXCEPT?",
+          "options": [
+            "The immediate past",
+            "The distant past",
+            "The current event",
+            "The near future"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: The near future."
+        },
+        {
+          "question": "Social conflict can be described by all the following EXCEPT?",
+          "options": [
+            "Organized",
+            "Transitory",
+            "Physical",
+            "Mobile"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Mobile."
+        },
+        {
+          "question": "The approaches to understanding conflicts include all EXCEPT?",
+          "options": [
+            "Classical approach",
+            "Human relations approach",
+            "Interactionist",
+            "Dynamic approach"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Dynamic approach."
+        },
+        {
+          "question": "Which one of these is NOT a manifestation of a baby in conflict?",
+          "options": [
+            "Crying",
+            "Biting",
+            "Scratches",
+            "Peeing on the Iloor"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Peeing on the Iloor."
+        },
+        {
+          "question": "An existing state of disagreement or hostility between people or groups is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict."
+        },
+        {
+          "question": "Popular synonyms for conflict include all the following EXCEPT?",
+          "options": [
+            "Communication",
+            "Struggle",
+            "Contention",
+            "Discord"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Communication."
+        },
+        {
+          "question": "A state of mutually declared aggression between two parties is?",
+          "options": [
+            "Interaction",
+            "Conversation",
+            "Conflict",
+            "War"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: War."
+        },
+        {
+          "question": "Which of these types of conflict is also described as man against man?",
+          "options": [
+            "Interpersonal conflict",
+            "Intrapersonal conflict",
+            "Violent conflict",
+            "Man against nature conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Interpersonal conflict."
+        },
+        {
+          "question": "Violence, outright hostility and aggression are manifestations of the?",
+          "options": [
+            "Crisis stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Crisis stage."
+        },
+        {
+          "question": "The Nigeria Civil War and Rwanda Genocide are examples of?",
+          "options": [
+            "Intra group conflict",
+            "Inter state conflict",
+            "Intra state conflict",
+            "Family conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Intra state conflict."
+        },
+        {
+          "question": "Conflict handling style where one party accepts the other's terms is?",
+          "options": [
+            "Avoidance",
+            "Admission",
+            "Accommodation",
+            "Compromise"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Accommodation."
+        },
+        {
+          "question": "An often violent and complete change of the status quo is called?",
+          "options": [
+            "Motina",
+            "Revolt",
+            "Revolution",
+            "Protest"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Revolution."
+        },
+        {
+          "question": "Which of these is NOT a major cause of conflict?",
+          "options": [
+            "Communication",
+            "Values",
+            "History",
+            "Benevolence"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Benevolence."
+        },
+        {
+          "question": "Individual beliefs about what is important, right, or wrong are called?",
+          "options": [
+            "Emotions",
+            "Values",
+            "Expectations",
+            "Objectives"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Values."
+        },
+        {
+          "question": "Dialogue alone is not efficient in resolving conflict at the?",
+          "options": [
+            "Discomfort stage",
+            "Misunderstanding stage",
+            "Tension stage",
+            "Incident stage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tension stage."
+        },
+        {
+          "question": "Which one of these is efficient for resolving conflicts?",
+          "options": [
+            "Dialogue",
+            "Force",
+            "Mediation",
+            "Litigation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Dialogue."
+        },
+        {
+          "question": "Family conflict can also be described as?",
+          "options": [
+            "Interparty conflict",
+            "Inter unit conflict",
+            "Group conflict",
+            "Family disputes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inter unit conflict."
+        },
+        {
+          "question": "Inter-State conflicts are also known as?",
+          "options": [
+            "International conflicts",
+            "Intentional conflict",
+            "Civil wars",
+            "Integrational conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: International conflicts."
+        },
+        {
+          "question": "Intra-State conflicts are also known as?",
+          "options": [
+            "International conflicts",
+            "Intentional conflict",
+            "Civil wars",
+            "Integrational conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Civil wars."
+        },
+        {
+          "question": "Which is an act of disobedience or an uprising in the military?",
+          "options": [
+            "Motina",
+            "Mutiny",
+            "Disorder",
+            "Arrogance"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Mutiny."
+        },
+        {
+          "question": "Which of these is believed to be at the center of all conflicts?",
+          "options": [
+            "Influence",
+            "Profit",
+            "Human needs",
+            "Property"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Human needs."
+        },
+        {
+          "question": "The process of taking sides in a conflict is also called?",
+          "options": [
+            "Trangulation",
+            "Triangulation",
+            "Tranquility",
+            "Transformation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Triangulation."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r16",
+      "number": 16,
+      "title": "Practice Round 16 (Q376-400)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "The use of force as a method of conflict resolution should be a?",
+          "options": [
+            "Last resort",
+            "Best resort",
+            "Yielding higher returns",
+            "Very effective for certain conflicts"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Last resort."
+        },
+        {
+          "question": "Conflict handling style that involves inviting a third party is?",
+          "options": [
+            "Triangulation",
+            "Splitting",
+            "Third Party Intervention",
+            "Mutiny"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Third Party Intervention."
+        },
+        {
+          "question": "The competing style of handling conflict involves a?",
+          "options": [
+            "Win-win approach",
+            "Win-lose approach",
+            "Lose-lose approach",
+            "Non-zero sum approach"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Win-lose approach."
+        },
+        {
+          "question": "The death instinct of man is described as?",
+          "options": [
+            "Eros",
+            "Thanatos",
+            "Biology",
+            "Psychology"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Thanatos."
+        },
+        {
+          "question": "The life instinct of man is described as?",
+          "options": [
+            "Eros",
+            "Thanatos",
+            "Biology",
+            "Psychology"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Eros."
+        },
+        {
+          "question": "The assumption that competition over power and resources causes conflict is the?",
+          "options": [
+            "Psycho-social theory",
+            "Psychological theory",
+            "Biological theory",
+            "Economic livelihood theory"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Economic livelihood theory."
+        },
+        {
+          "question": "The highest human need is?",
+          "options": [
+            "Self worth",
+            "Self-actualization",
+            "Financial wealth",
+            "Material possession"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Self-actualization."
+        },
+        {
+          "question": "Abstract words that represent or describe a concrete phenomenon are?",
+          "options": [
+            "Core phenomena",
+            "Concepts",
+            "Definitions",
+            "Key Words"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Concepts."
+        },
+        {
+          "question": "Which one of these is NOT a key element of a theory?",
+          "options": [
+            "Assumption",
+            "Concepts",
+            "Core phenomena",
+            "Proponent"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Core phenomena."
+        },
+        {
+          "question": "Theories are useful for all the following EXCEPT?",
+          "options": [
+            "Understand facts",
+            "Explain reality",
+            "Prophesy",
+            "Highlight relevant elements of a phenomena"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Prophesy."
+        },
+        {
+          "question": "Conflict handling style where conflict parties try to uphold rules and ethics impartially is?",
+          "options": [
+            "Role playing",
+            "Bangwagon",
+            "Bandage",
+            "Third Party intervention"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Role playing."
+        },
+        {
+          "question": "Which of these is NOT a justification for avoidance in conflict?",
+          "options": [
+            "The issue is trivial",
+            "There are no chances of winning",
+            "The issue is very costly to resolve",
+            "The conflict parties are from different states"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: The conflict parties are from different states."
+        },
+        {
+          "question": "Which one of these conflict handling styles involves physical and mental withdrawal?",
+          "options": [
+            "Role playing",
+            "Band Aid",
+            "Avoidance",
+            "Third Party intervention"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Avoidance."
+        },
+        {
+          "question": "One of these conflict handling styles is also called the Tortoise Style?",
+          "options": [
+            "Avoidance",
+            "Band Aid",
+            "Role Playing",
+            "Competing"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Avoidance."
+        },
+        {
+          "question": "Which one of these conflict handling styles involves a collaborative approach?",
+          "options": [
+            "Role playing",
+            "Collaboration",
+            "Avoidance",
+            "Third Party intervention"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Collaboration."
+        },
+        {
+          "question": "One of the following individuals is credited for creating the concept of structural violence?",
+          "options": [
+            "Karl Marx",
+            "John Andrew",
+            "Johan Galtung",
+            "John Gluton"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Johan Galtung."
+        },
+        {
+          "question": "The use of active force in stopping or ending an ongoing conflict is?",
+          "options": [
+            "Peace enforcement",
+            "Peacemaking",
+            "Peacebuilding",
+            "Peacekeeping"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Peace enforcement."
+        },
+        {
+          "question": "One of the following is NOT an alternative dispute resolution method?",
+          "options": [
+            "Negotiation",
+            "Mediation",
+            "Conciliation",
+            "Argumentation"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Argumentation."
+        },
+        {
+          "question": "A structural mechanism involving a wide range of efforts to build positive peace is?",
+          "options": [
+            "Peace enforcement",
+            "Peacemaking",
+            "Peacebuilding",
+            "Peacekeeping"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Peacebuilding."
+        },
+        {
+          "question": "A conflict arising from men standing up against certain social practices is?",
+          "options": [
+            "Protest",
+            "Insurgency",
+            "Man against Nature",
+            "Man against society"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Man against society."
+        },
+        {
+          "question": "An organized, mass, peaceful or violent demonstration against authority is a?",
+          "options": [
+            "Revolt",
+            "Protest",
+            "Insurgency",
+            "Mutiny"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Protest."
+        },
+        {
+          "question": "An uprising against the state, led by a religious, political, or ideological group is?",
+          "options": [
+            "Revolt",
+            "Revolution",
+            "Insurgency",
+            "Mutiny"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Insurgency."
+        },
+        {
+          "question": "Peacekeepers are guided by three basic principles. Which is NOT one of them?",
+          "options": [
+            "Consent of the parties",
+            "Impartiality",
+            "Non use of force",
+            "Providing legal service for any side that can afford it"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Providing legal service for any side that can afford it."
+        },
+        {
+          "question": "The interventionist efforts towards preventing the escalation of disputes is?",
+          "options": [
+            "Conflict management",
+            "Conflict containment",
+            "Conflict control",
+            "Conflict resolution"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict management."
+        },
+        {
+          "question": "The practice which deals with the wider social and political changes needed after conflict is?",
+          "options": [
+            "Conflict transformation",
+            "Conflict prevention",
+            "Conflict resolution",
+            "Conflict management"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Conflict transformation."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "gst312-r17",
+      "number": 17,
+      "title": "Practice Round 17 (Q401-403)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "One of the following is a misconception of conflict?",
+          "options": [
+            "Conflict is attractive",
+            "Conflict is a welcomed situation",
+            "Conflict is abnormal",
+            "Conflict occurs among two individuals"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conflict is abnormal."
+        },
+        {
+          "question": "The three approaches to how management views conflict. Which is NOT one?",
+          "options": [
+            "Classical/Traditional Approach",
+            "Integrationist Approach",
+            "Human Relations Approach",
+            "Intractionnist Approach"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Classical/Traditional Approach."
+        },
+        {
+          "question": "Each of the following are part of the effects of conflict EXCEPT?",
+          "options": [
+            "Health concerns",
+            "Reproduction in productivity",
+            "Violence",
+            "Distract secondary purposes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Reproduction in productivity."
+        }
+      ],
+      "theory": []
+    }
+  ]
+}

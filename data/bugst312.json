@@ -1,0 +1,902 @@
+{
+  "id": "bugst312",
+  "code": "BU-GST 312",
+  "title": "Family Life Education",
+  "category": "GEDS",
+  "chapters": [
+    {
+      "id": "bugst312-r1",
+      "number": 1,
+      "title": "Practice Round 1 (Q1-25)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "God instituted marriage in the?",
+          "options": [
+            "River Jordan",
+            "Garden at Gethsemane",
+            "Garden of Eden",
+            "Book of Exodus"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Garden of Eden."
+        },
+        {
+          "question": "_________ is the oldest social institution in the history of mankind?",
+          "options": [
+            "Marriage",
+            "Love",
+            "Sabbath",
+            "Dating"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Marriage."
+        },
+        {
+          "question": "The biblical foundation of marriage is found in?",
+          "options": [
+            "Gen 2:23",
+            "Gen 2:24",
+            "Gen 2:25",
+            "Gen 2:26"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Gen 2:24."
+        },
+        {
+          "question": "“Therefore shall a man leave his father and his mother, and shall cleave unto his wife and they shall be one flesh.” This is a biblical foundation of marriage that can be found in?",
+          "options": [
+            "Gen 2:24",
+            "Gen 2:23",
+            "Gen 1:27",
+            "Ephesians 5:31"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Gen 2:24."
+        },
+        {
+          "question": "Which of the following is not a biblical foundation of marriage?",
+          "options": [
+            "Mark 10:7-9",
+            "Gen 2:20-24",
+            "Gen 2:18",
+            "Matthew 19:5",
+            "Gen 1:27",
+            "Colossians 2:1",
+            "Ephesians 5:31"
+          ],
+          "correctIndex": 5,
+          "explanation": "Correct answer: Colossians 2:1."
+        },
+        {
+          "question": "The pillars/conditions for marriage is based on?",
+          "options": [
+            "Mark 10:7-9",
+            "Matthew 19:5",
+            "Genesis 2:24",
+            "Colossians 2:1"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Genesis 2:24."
+        },
+        {
+          "question": "Which one of these is not one of the four pillars/conditions for marriage?",
+          "options": [
+            "The two shall become one flesh",
+            "The man shall leave apart from his wife",
+            "A man shall leave",
+            "Full stop (.)",
+            "The two shall cleave"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The man shall leave apart from his wife."
+        },
+        {
+          "question": "________ is the formal union of a man and a woman typically recognized by law, by which they become husband and wife.",
+          "options": [
+            "Courtship",
+            "Marriage",
+            "Dating",
+            "Divorce"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Marriage."
+        },
+        {
+          "question": "Which of these is not a feature/attribute of marriage?",
+          "options": [
+            "Complexity",
+            "Sincerity",
+            "Modesty",
+            "Desire to please and honor God",
+            "Simplicity"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Complexity."
+        },
+        {
+          "question": "Which of these is not a purpose for marriage?",
+          "options": [
+            "Marriage is for procreation (Genesis 2:18B)",
+            "Marriage is for friendship (Genesis 2: 24)",
+            "Marriage is for companionship (Genesis 2:18B)",
+            "Marriage is for punishment (Genesis 1:18)",
+            "Marriage is a helping relationship (Genesis 2:18B)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Marriage is for punishment (Genesis 1:18)."
+        },
+        {
+          "question": "Which one of these is not a stage/process of marriage?",
+          "options": [
+            "Intimate friendship",
+            "Engagement",
+            "Divorce",
+            "Casual  friendship",
+            "Dating",
+            "Introduction",
+            "Courtship",
+            "Marriage life",
+            "Marriage ceremony"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Divorce."
+        },
+        {
+          "question": "________ is a period of winning an affection of an individual with a view of getting married.",
+          "options": [
+            "Dating",
+            "Casual friendship",
+            "Courtship",
+            "Engagement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Courtship."
+        },
+        {
+          "question": "________ can be seen as a workshop in which you can help develop the skills needed to achieve a positive, reasonable, and intimate relationship in marriage.",
+          "options": [
+            "Dating",
+            "Casual friendship",
+            "Courtship",
+            "Engagement"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Dating."
+        },
+        {
+          "question": "________ is a period of further study and understanding of one another to know if you can spend the rest of your lives together.",
+          "options": [
+            "Dating",
+            "Casual friendship",
+            "Courtship",
+            "Engagement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Courtship."
+        },
+        {
+          "question": "Which of these statements is true about marriage?",
+          "options": [
+            "Not all courtships end in marriage",
+            "Most courtships end in marriage",
+            "All courtships always end in marriage",
+            "All casual friendships leads to courtship"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Not all courtships end in marriage."
+        },
+        {
+          "question": "Which of these is not a practice that should be avoided during dating?",
+          "options": [
+            "Sleeping overnight",
+            "Swearing of oath",
+            "Tight hugs",
+            "Going out together without friends",
+            "Sex",
+            "Kissing",
+            "Cooking"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Going out together without friends."
+        },
+        {
+          "question": "The people involved in courtship decide whether to make it public or private?",
+          "options": [
+            "True",
+            "False"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: True."
+        },
+        {
+          "question": "Which of the following is not a good reason for dating?",
+          "options": [
+            "Prestige",
+            "Personal development",
+            "To find a future life partner",
+            "To develop spiritual growth",
+            "To fill the social need for recreation and fun",
+            "To fill the human need for love",
+            "To know and understand the other person better"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Prestige."
+        },
+        {
+          "question": "Which of these is not a wrong reason for dating?",
+          "options": [
+            "For sexual activities",
+            "Prestige",
+            "To fill the social need for recreation and fun",
+            "For material gain",
+            "To make someone jealous"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: To fill the social need for recreation and fun."
+        },
+        {
+          "question": "Which of these is not a factor to consider during courtship?",
+          "options": [
+            "Compatibility",
+            "Physical and mental health",
+            "Home training",
+            "Interests",
+            "Love",
+            "Emotional maturity",
+            "Standard of living",
+            "Romantic attraction",
+            "Supportive environment"
+          ],
+          "correctIndex": 6,
+          "explanation": "Correct answer: Standard of living."
+        },
+        {
+          "question": "Which of these is not a type of compatibility?",
+          "options": [
+            "Spiritual compatibility",
+            "Physical compatibility",
+            "Social compatibility",
+            "Intellectual compatibility",
+            "Emotional compatibility",
+            "Physiological compatibility",
+            "Financial compatibility"
+          ],
+          "correctIndex": 6,
+          "explanation": "Correct answer: Financial compatibility."
+        },
+        {
+          "question": "What type of compatibility comprises of being extrovert and introvert?",
+          "options": [
+            "Social compatibility",
+            "Emotional compatibility",
+            "Intellectual compatibility",
+            "Physical compatibility"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Social compatibility."
+        },
+        {
+          "question": "What type of compatibility comprises of age, stature and beauty?",
+          "options": [
+            "a.\tSocial compatibility",
+            "b.\tEmotional compatibility",
+            "c.\tIntellectual compatibility",
+            "d.\tPhysical compatibility"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: d.\tPhysical compatibility."
+        },
+        {
+          "question": "Which type of compatibility comprises of temperament and personality disposition?",
+          "options": [
+            "a. Social compatibility",
+            "b.\tEmotional compatibility",
+            "c.\tIntellectual compatibility",
+            "d.\tPhysical compatibility"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: b.\tEmotional compatibility."
+        },
+        {
+          "question": "Which type of compatibility comprises of genetic make-up e.g. blood group, genotype etc.",
+          "options": [
+            "Physiological compatibility",
+            "Physical compatibility",
+            "Intellectual compatibility",
+            "Spiritual compatibility"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Physiological compatibility."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "bugst312-r2",
+      "number": 2,
+      "title": "Practice Round 2 (Q26-50)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Which type of compatibility comprises of reasoning capacity?",
+          "options": [
+            "a.\tPhysiological compatibility",
+            "b.\tPhysical compatibility",
+            "c.\tIntellectual compatibility",
+            "d.\tSpiritual compatibility"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: c.\tIntellectual compatibility."
+        },
+        {
+          "question": "Which of these is not an important factor to consider in readiness for marriage?",
+          "options": [
+            "Physical and mental readiness",
+            "Emotional readiness",
+            "Domestic readiness",
+            "Egotistical readiness",
+            "Economic readiness",
+            "Readiness for fidelity",
+            "Spiritual readiness"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Egotistical readiness."
+        },
+        {
+          "question": "What are the three major decisions to be made in life?",
+          "options": [
+            "Career, who to worship and marriage",
+            "Career, sexual orientation and dating",
+            "Marriage, who to worship and education",
+            "Education, career, life goals"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Career, who to worship and marriage."
+        },
+        {
+          "question": "_____ can be defined religiously as the union of a matured man and woman in holy wedlock.",
+          "options": [
+            "Marriage",
+            "Dating",
+            "Courtship",
+            "Sex"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Marriage."
+        },
+        {
+          "question": "Which one of this statements is false about marriage?",
+          "options": [
+            "Marriage could be in form of contract or covenant",
+            "Marriage is done to only procreate",
+            "Marriage is a biblical and heavenly ordained culture",
+            "Marriage is one of the two institutions beside Sabbath that God established in Eden"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Marriage is done to only procreate."
+        },
+        {
+          "question": "The bible records God instituted both marriage and Sabbath in ____ and ____ respectively.",
+          "options": [
+            "Genesis 2: 4-7 and Genesis 2: 12",
+            "Genesis 3: 22 and Genesis 2: 2 &3",
+            "Genesis 2: 24 and Genesis 2: 3 &4",
+            "Genesis 2: 24 and Genesis 2: 2 &3"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Genesis 2: 24 and Genesis 2: 2 &3."
+        },
+        {
+          "question": "Marriage is the foundation of human society, hence, should be characterized of _____, ____, _____ and _______?",
+          "options": [
+            "Happiness, love, goodwill and God",
+            "Modesty, simplicity, sincerity and earnest purpose",
+            "Happiness, sincerity, love and God",
+            "God, sincerity, love and goodwill"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Modesty, simplicity, sincerity and earnest purpose."
+        },
+        {
+          "question": "The four major functions of marriage include the following except?",
+          "options": [
+            "Punishment (Gen 5:3)",
+            "Helpmeet (Gen 2:18b)",
+            "Procreation (Gen 1:28)",
+            "Companionship (Gen 2:18b)",
+            "Friendship aversion of immorality (1 cor7: 12)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Punishment (Gen 5:3)."
+        },
+        {
+          "question": "The following are the processes or steps involved in marriage except?",
+          "options": [
+            "Break-up",
+            "Intimate friendship",
+            "Engagement",
+            "Marriage life",
+            "Marriage ceremony",
+            "Introduction to the family members",
+            "Dating",
+            "Casual friendship"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Break-up."
+        },
+        {
+          "question": "_____ is an arranged social meeting at a certain time and place?",
+          "options": [
+            "Courtship",
+            "Sex",
+            "Marriage",
+            "Dating"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Dating."
+        },
+        {
+          "question": "______ is the stage of promising each other of marriage with or without the involvement of family members?",
+          "options": [
+            "Dating",
+            "Sex",
+            "Engagement",
+            "Courtship"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Engagement."
+        },
+        {
+          "question": "_____ is where the reality of the union is put to action?",
+          "options": [
+            "Engagement",
+            "Sex",
+            "Marriage ceremony",
+            "Marriage life"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Marriage life."
+        },
+        {
+          "question": "_____ is done in the church, mosque, court or couples residence?",
+          "options": [
+            "Dating",
+            "Marriage ceremony",
+            "Courtship",
+            "Marriage life"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Marriage ceremony."
+        },
+        {
+          "question": "____ is making the marriage intention known to family members?",
+          "options": [
+            "Introduction to the family members",
+            "Courtship",
+            "Dating",
+            "Marriage ceremony"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Introduction to the family members."
+        },
+        {
+          "question": "Which of these is not factor to consider at courtship?",
+          "options": [
+            "Compatibility, True love and infatuation",
+            "Compatibility, true love and companionship",
+            "true love, Godliness and compatibility",
+            "compatibility, infatuation and money"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Compatibility, True love and infatuation."
+        },
+        {
+          "question": "which of these is not a characteristic of infatuation?",
+          "options": [
+            "Headstrong and rash",
+            "Blind and uncontrollable",
+            "Honest and quick",
+            "Deaf to the voice of reason and conscience",
+            "Unreasonable and defiant"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Honest and quick."
+        },
+        {
+          "question": "Which of these is not a type of compatibility?",
+          "options": [
+            "Dental compatibility",
+            "Physical compatibility",
+            "Emotional compatibility",
+            "Physiological compatibility",
+            "Intellectual or mental compatibility",
+            "Social compatibility",
+            "Spiritual compatibility"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Dental compatibility."
+        },
+        {
+          "question": "Which of these is not a characteristic of true love?",
+          "options": [
+            "Pure and holy",
+            "God moral and Godly",
+            "Always in harmony with Gods spirit",
+            "Unreasonable and blind",
+            "Precious gift of God"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Unreasonable and blind."
+        },
+        {
+          "question": "Which of these is not a practice to avoid during courtship?",
+          "options": [
+            "Sowing wild oaths",
+            "Deceptive practices",
+            "Praying together",
+            "Keeping late hours",
+            "Downward step",
+            "Trifling with hearts"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Praying together."
+        },
+        {
+          "question": "Readiness for marriage takes place at the ____ and ____ stage?",
+          "options": [
+            "Engagement and introduction",
+            "Dating and courtship",
+            "Friends and dating",
+            "Married and divorce"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Engagement and introduction."
+        },
+        {
+          "question": "Which of these is not a factor to consider for readiness of marriage?",
+          "options": [
+            "Physical readiness",
+            "Economic readiness",
+            "Emotional readiness",
+            "Spiritual readiness",
+            "Godly readiness",
+            "Domestic training or readiness"
+          ],
+          "correctIndex": 4,
+          "explanation": "Correct answer: Godly readiness."
+        },
+        {
+          "question": "Upon no account should the marriage relationship be entered upon  until?",
+          "options": [
+            "a family member agrees",
+            "both parties have good knowledge of duties of practical domestic life",
+            "A lawyer is present",
+            "A pastor ordained it"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: both parties have good knowledge of duties of practical domestic life."
+        },
+        {
+          "question": "Marriages which Godly parents are not in support of can be found in?",
+          "options": [
+            "Eph 6:1",
+            "Eph 6: 2",
+            "Eph 6: 3",
+            "Eph 6: 4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Eph 6:1."
+        },
+        {
+          "question": "Marriages which Godly parents are not in support of can result in the following except?",
+          "options": [
+            "Psychological or active divorce",
+            "Sound mind and productivity",
+            "Spiritual inactivity",
+            "Risk of heavenly enjoyment",
+            "Home where shadows are never lifted and unhappiness"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Sound mind and productivity."
+        },
+        {
+          "question": "Forbidden marriage can be avoid through?",
+          "options": [
+            "Fasting and baptism",
+            "Asking friends for help",
+            "Christian or Godly reasoning",
+            "Self-decision making"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Christian or Godly reasoning."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "bugst312-r3",
+      "number": 3,
+      "title": "Practice Round 3 (Q51-75)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Where forbidden marriage is already committed then there is need for unconditional love, meekness and commitment to intercessory prayers by the believing partner.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: True."
+        },
+        {
+          "question": "The three major life decisions are\\?",
+          "options": [
+            "Whom to worship, what career to take and whom to marry",
+            "Whom to marry, whom to worship and whom to befriend",
+            "What school to attend, what career to take and what path to follow in life",
+            "Whom to worship, whom to befriend and whom to date"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Whom to worship, what career to take and whom to marry."
+        },
+        {
+          "question": "Which of these statements is wrong?",
+          "options": [
+            "Any mistake in any of the life decisions can amount to a life of mistakes",
+            "Happy or unhappy marriage is an individual choice",
+            "You must first understand what marriage is before you can get married",
+            "Marriage is a sacred union ordained by God"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: You must first understand what marriage is before you can get married."
+        },
+        {
+          "question": "_____ is a public declaration of a relationship that has been existing during courtship and engagement.",
+          "options": [
+            "Dating",
+            "Marriage",
+            "Wedding ceremony",
+            "Divorce"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Wedding ceremony."
+        },
+        {
+          "question": "The three types of marriage are?",
+          "options": [
+            "Legal marriage, closed marriage and combined marriage",
+            "Church marriage, reception marriage and traditional marriage",
+            "Legal marriage, traditional marriage and religious marriage",
+            "Consummation marriage, arranged marriage and religious marriage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Legal marriage, traditional marriage and religious marriage."
+        },
+        {
+          "question": "______ marriage involves swearing of oath of marriage according to the law of the land?",
+          "options": [
+            "Legal marriage",
+            "Traditional marriage",
+            "Arranged marriage",
+            "Religious marriage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Legal marriage."
+        },
+        {
+          "question": "Legal marriage is characterized by the following except?",
+          "options": [
+            "It is simple",
+            "It is hard to document",
+            "It is inexpensive",
+            "It allows less number of people"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: It is hard to document."
+        },
+        {
+          "question": "_____ Marriage calls for the cultural way of celebrating marriage in accordance to the accepted order of the community and usually takes place in the bride’s residence or place of choice of the bride’s family.",
+          "options": [
+            "Religious marriage",
+            "Court marriage",
+            "Traditional marriage",
+            "Legal marriage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Traditional marriage."
+        },
+        {
+          "question": "____ Marriage takes place in the church or mosque and is commonly called white wedding.",
+          "options": [
+            "Religious marriage",
+            "Legal marriage",
+            "Traditional marriage’",
+            "Church marriage"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Religious marriage."
+        },
+        {
+          "question": "Which of these is wrong about legal marriage?",
+          "options": [
+            "Presence of at least 2 witnesses to sign the marriage certificate or document",
+            "Religious items such as the Bible, Quran or physical ring are used in sealing up the oath of allegiance to each other.",
+            "It attracts 7years jail term according to the Nigerian constitution",
+            "It records false documentation of the wedding process and can be easily forged",
+            "Allows wearing of any type of affordable attire by couples",
+            "It is normally conducted or performed by the court officials who are in charge of marriage ceremony"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: It records false documentation of the wedding process and can be easily forged."
+        },
+        {
+          "question": "_____ marriage involves prayer from the elderly ones to the newly wedded couples?",
+          "options": [
+            "Legal marriage",
+            "Traditional marriage",
+            "Religious marriage",
+            "Arranged marriage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Traditional marriage."
+        },
+        {
+          "question": "Religious marriage is called white wedding because?",
+          "options": [
+            "The bride wears a white and decorated gown and it is often more expensive than the other two types of weddings",
+            "The bride wears a white dress",
+            "The wedding is often more expensive than the other two types of weddings",
+            "The hall is decorated in white and everyone wears white"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: The bride wears a white and decorated gown and it is often more expensive than the other two types of weddings."
+        },
+        {
+          "question": "______ Marriage involves the engagement ceremony before the church or mosque.",
+          "options": [
+            "Legal marriage",
+            "Traditional marriage",
+            "Religious marriage",
+            "Church marriage"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Religious marriage."
+        },
+        {
+          "question": "Due to individuality and individual differences of the couples, there often exists moments of inability to agree on issues. The experience of such disagreement is known as _______?",
+          "options": [
+            "Marital conflict",
+            "Marital bliss",
+            "Marital disagreement",
+            "Marital violence"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Marital conflict."
+        },
+        {
+          "question": "The following are the major kinds of marital conflict except?",
+          "options": [
+            "Monetary conflict",
+            "Love conflict",
+            "Sexual conflict",
+            "Religious conflict",
+            "In-law conflict"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Love conflict."
+        },
+        {
+          "question": "_____ conflict often arise as a result of proper or inadequate sex education or sexual misconception by both or one of the couple?",
+          "options": [
+            "Monetary conflict",
+            "Love conflict",
+            "Sexual conflict",
+            "Religious conflict",
+            "In-law conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Sexual conflict."
+        },
+        {
+          "question": "There is need for couples to know and practice the appropriate sexual behavior in marriage.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: True."
+        },
+        {
+          "question": "Sexual relationships is ordained in marriage is honorable among all, the bed is undefiled.",
+          "options": [
+            "Heb 13:4",
+            "Psalm 103:2",
+            "Genesis 2:24",
+            "1 Cor 3:23"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Heb 13:4."
+        },
+        {
+          "question": "The love of money is the root of all evils?",
+          "options": [
+            "Proverbs 6:10",
+            "Psalm 119: 10",
+            "1 Timothy 6:10",
+            "Ecclesiastes 3:10"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: 1 Timothy 6:10."
+        },
+        {
+          "question": "_____ is a flexible, workable plan of spending money in a family?",
+          "options": [
+            "Family payments",
+            "Financial records",
+            "Family budget",
+            "Family savings"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Family budget."
+        },
+        {
+          "question": "Two cannot go together except they agree?",
+          "options": [
+            "Proverbs 10:10",
+            "Songs of Solomon 4:10",
+            "1 timothy 6:10",
+            "Amos 3:3"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Amos 3:3."
+        },
+        {
+          "question": "______ is the act of giving birth to children?",
+          "options": [
+            "Child cultivation",
+            "Child bearing",
+            "Family downsizing",
+            "Child rearing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Child bearing."
+        },
+        {
+          "question": "______ is the act of training children?",
+          "options": [
+            "Informal education",
+            "Child training",
+            "Child bearing",
+            "Child rearing"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Child rearing."
+        },
+        {
+          "question": "Thy children like olive plant round about thy table?",
+          "options": [
+            "1 Timothy 6:10",
+            "Proverbs 3:9",
+            "Psalms 128:3",
+            "Psalms 19:10"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Psalms 128:3."
+        },
+        {
+          "question": "Childless couples should do the following except?",
+          "options": [
+            "Avoid self-pity and selfishness",
+            "Kidnap someone’s child",
+            "Show love to each other",
+            "Care for other children through adoption"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Kidnap someone’s child."
+        }
+      ],
+      "theory": []
+    }
+  ]
+}

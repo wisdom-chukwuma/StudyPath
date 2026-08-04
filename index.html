@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyPath</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar glass">
+  <div class="brand-group">
+    <span class="brand">StudyPath<span class="brand-badge">Post-SIWES</span></span>
+  </div>
+  <div class="stats">
+    <span class="stat stat-xp" title="Total XP"><span class="icon icon-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 6.9L12 17l-6.3 3.8 1.7-6.9L2 8.2l7.1-.6z"/></svg></span> <b id="stat-xp">0</b></span>
+    <span class="stat stat-streak" title="Day streak"><span class="icon icon-flame"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 23c-4.42 0-8-3.4-8-7.6 0-3.6 2.6-6.4 3.8-9.9.7 1.7 1.7 2.6 1.7 4.3 0 1.3-.9 2.2-.9 3.5a2.9 2.9 0 005.8 0c0-1.3-.9-1.8-.9-3.2 0-.9.4-1.3.9-1.8 2.7 1.8 4.6 4.9 4.6 7.1 0 4.2-3.58 7.6-8 7.6z"/></svg></span> <b id="stat-streak">0</b></span>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<template id="tpl-course-card">
+  <button class="course-card glass">
+    <div class="course-card-top">
+      <div class="course-code"></div>
+      <span class="course-soon-badge">Coming soon</span>
+    </div>
+    <div class="course-title"></div>
+    <div class="course-progress"><div class="course-progress-bar"></div></div>
+  </button>
+</template>
+
+<template id="tpl-chapter-node">
+  <button class="chapter-node">
+    <div class="node-circle"><span class="node-num"></span></div>
+    <div class="node-title"></div>
+  </button>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

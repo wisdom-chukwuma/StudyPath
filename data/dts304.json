@@ -1,0 +1,184 @@
+{
+  "id": "dts304",
+  "code": "DTS 304",
+  "title": "Data Management I",
+  "category": "Comp Sci",
+  "chapters": [
+    {
+      "id": "dts304-ch1",
+      "number": 1,
+      "title": "Information Management Concepts",
+      "cards": [
+        {
+          "heading": "Why this chapter exists",
+          "body": "Picture this: it's registration week. A guy swears on his life he paid his fees. He's got the alert. But the portal says \"not registered.\" The bank's copy says paid. The department's Excel sheet says something else entirely. Nobody's version agrees, and 400 students are now queuing outside one poor officer's desk who did NOT sign up for this today.\n\nThat's not \"network wahala.\" That's what happens when nobody is managing information properly: records go missing, get duplicated, contradict each other, or just take forever to find. You've basically already lived Chapter 1 in real life — this is just the vocabulary for the disaster you already know."
+        },
+        {
+          "heading": "The DIKW Pyramid",
+          "body": "Think Spotify Wrapped. Spotify's servers logging \"you streamed this song 1,847 times\" is just raw Data — no context, no meaning.\n\nWhen Wrapped tells you \"you're in the top 0.5% of listeners for this artist,\" that's Information — same numbers, now with context.\n\nWhen YOU notice \"wait, I only run sad playlists during exam season\" — that's Knowledge, you spotted a pattern.\n\nWhen you go \"let me build a hype playlist before finals so I don't spiral\" — that's Wisdom, you used the pattern to make an actual decision.\n\nData → Information → Knowledge → Wisdom — each level adds meaning to the one below it.\n\nExam tip, stated directly on the slide: they want YOUR OWN example (banking, retail, health) — not Spotify, so don't try to recycle this one in the exam.\n\nOfficial slide example, in case it shows up almost word-for-word: raw facts like 812, CSC201, 2025/2026, \"MTR/25/0143\" = Data. \"812 students registered for CSC201\" = Information. \"CSC201 always fills up early\" (a spotted pattern) = Knowledge. \"Offer CSC201 twice next session\" (an actual decision) = Wisdom."
+        },
+        {
+          "heading": "What is Information Management?",
+          "body": "It's the full job of handling information properly through its whole life: planning, capturing, organising, storing, protecting, retrieving and using it — right info, right people, right time, without wasting money doing it.\n\nHere's the trap: it is NOT just \"having a database.\" A database with zero rules around it is just an expensive place to lose things faster. IM is three things working together:\n• Policies — who's allowed to see what, how long you're legally required to keep records\n• Processes — how info gets captured, double-checked, corrected, eventually deleted\n• Technology — the actual systems: files, DBMSs, search engines\n\nA database with no policy is just chaos with better formatting."
+        },
+        {
+          "heading": "The Information Lifecycle",
+          "body": "Same shape as posting something online, honestly:\n\nCapture (you take the photo) → Organise (caption it, tag people) → Store (post it / save it) → Retrieve (dig through your camera roll for it 8 months later) → Use/Share (repost, screenshot, send in the group chat) → Archive/Dispose (archive the story, or delete it because your ex is in it).\n\n• Capture errors poison everything downstream — a blurry screenshot stays blurry forever (Ch.2)\n• Retrieve speed depends on indexing — this is why searching your gallery by date works and scrolling doesn't (Ch.3)\n\nMemorise this exact order — later chapters are literally built stage by stage around it."
+        },
+        {
+          "heading": "Storage & Retrieval: three ideas that repeat all course",
+          "body": "1. You never touch storage directly. A DBMS is the bouncer at the door — every request goes through it, which is exactly what keeps things secure and consistent instead of everyone editing raw files themselves.\n\n2. The index is the shortcut. It's the difference between using Ctrl+F / a search bar and manually scrolling through 4,000 photos to find one. A small side-structure maps terms to locations so the system never has to scan everything (this comes back hard in Ch.3 and Ch.11).\n\n3. Retrieval quality has two separate scores: Effectiveness (did you actually get the right answers?) and Efficiency (how fast, at what cost?). You can ace one and fail the other."
+        },
+        {
+          "heading": "The six flavors of Information Management systems",
+          "body": "Every system that touches information is built for one specific job. This is the actual diagram from the slide — six classes, know them cold:\n\n• TPS (Transaction Processing System) — many fast writes, right now. e.g. course registration, fee payments — the debit alert energy from the next card.\n• MIS (Management Information System) — routine, scheduled reports for management. e.g. \"enrolment summary report,\" the boring weekly recap your class rep sends the HOD.\n• DSS (Decision Support System) — answers one specific \"what should we do?\" question. e.g. \"should we open a second CYB206 class since one filled up?\"\n• BI (Business Intelligence System) — dashboards of trends over time. e.g. performance dashboards, the VC watching enrolment trends across sessions.\n• IR (Search & Retrieval System) — you search, it finds. e.g. the library catalogue, or literally Googling something.\n• RMS (Records Management System) — long-term official records, rarely written, must always be trustworthy. e.g. transcripts, staff files, archives — your WAEC result 10 years later.\n\nThe classic mix-up on exams is MIS vs DSS: MIS = routine report on a schedule, nobody asked a specific question. DSS = someone asked a specific decision question and the system was built to answer THAT."
+        },
+        {
+          "heading": "Transactional vs Analytical — the distinction that matters most",
+          "body": "Transactional (TPS): the debit alert that hits your phone the second you pay for suya. Many small, fast writes. Strict accuracy on every single record — nobody wants \"maybe\" as their bank balance. Current data only. Protected hard by normalisation (Ch.10). Example: the registration portal.\n\nAnalytical (BI): your bank's \"you spent 30% more this month\" summary. Few, heavy reads over historical data, trends, KPIs. Often deliberately denormalised — the design rules get relaxed on purpose because speed over huge trends matters more than eliminating repeats (Ch.10). Example: the VC's enrolment dashboard.\n\nSame underlying data, two completely different database designs depending on the job it's doing.\n\nAnother way to feel this one: BBNaija's 24/7 uncut live feed logging every single housemate action in real time is TPS energy — raw, constant, current. Sunday night's edited highlights-and-eviction show is BI energy — someone already crunched a week of footage into \"here's what actually mattered.\" Same house, same housemates, two completely different jobs."
+        },
+        {
+          "heading": "The running case study: Beacon University",
+          "body": "One database, twelve chapters, zero mercy. You'll design it, build it in MySQL, query it, normalise it, tune it, deliberately break it, recover it, and defend it from SQL injection.\n\nDomain facts (get formally modeled in Ch.6, so bank these now):\n• A student belongs to one programme; a programme to one department\n• Each semester a student registers for several courses; each course has many students\n• A lecturer may teach several courses\n• Every registration eventually gets a score and a grade\n• Every fee payment must be traceable — no repeat of the opening scenario"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A hospital dashboard shows \"35% of ER patients this quarter were readmitted within 30 days.\" Which DIKW level is this?",
+          "options": [
+            "Data",
+            "Information",
+            "Knowledge",
+            "Wisdom"
+          ],
+          "correctIndex": 1,
+          "explanation": "It's Information: raw readmission records (Data) got context added by computing a meaningful percentage — like Spotify Wrapped turning stream counts into \"top 0.5% listener.\" It'd only become Knowledge if it spotted a pattern (e.g. \"readmissions spike among early-discharge patients\"), and Wisdom if that pattern drove an actual decision (e.g. \"extend observation time for high-risk patients\")."
+        },
+        {
+          "question": "Which of these is explicitly called NOT the full definition of Information Management?",
+          "options": [
+            "Capture, store, retrieve throughout the info lifecycle",
+            "Just using a database",
+            "Policies + processes + technology combined",
+            "The right information to the right people, at the right time"
+          ],
+          "correctIndex": 1,
+          "explanation": "The slides say it directly: IM is broader than \"using a database.\" A database is just the technology piece — the bouncer with no rulebook. IM also covers policies (who can see what, retention rules) and processes (capture, verification, correction, disposal)."
+        },
+        {
+          "question": "In the information lifecycle, which stage comes immediately before \"Retrieve\"?",
+          "options": [
+            "Capture",
+            "Organise",
+            "Store",
+            "Use/Share"
+          ],
+          "correctIndex": 2,
+          "explanation": "The order is Capture → Organise → Store → Retrieve → Use/Share → Archive/Dispose. You have to store something durably before you can retrieve it."
+        },
+        {
+          "question": "What is the main job of an index in a retrieval system?",
+          "options": [
+            "Encrypt the data",
+            "Avoid scanning the entire dataset",
+            "Back up the database",
+            "Normalize the tables"
+          ],
+          "correctIndex": 1,
+          "explanation": "An index is a small side-structure mapping terms to locations, so a query can jump straight to the right rows instead of scrolling through your whole camera roll every time. Encryption, backups, and normalization are all separate concerns."
+        },
+        {
+          "question": "Beacon University's course registration portal — many small fast writes, strict integrity, current data — is an example of:",
+          "options": [
+            "DSS",
+            "Analytical/BI system",
+            "Transactional/TPS system",
+            "IR system"
+          ],
+          "correctIndex": 2,
+          "explanation": "That description is the textbook definition of a Transactional (TPS) system — think debit alerts, not month-end summaries. BI/analytical systems are the opposite profile: few heavy reads over historical data, often denormalised on purpose."
+        },
+        {
+          "question": "True or False: Analytical (BI) systems are typically MORE strictly normalized than transactional systems, because accuracy matters more for decision-making.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "correctIndex": 1,
+          "explanation": "False — it's the reverse. Transactional systems are strictly normalised to protect integrity on every single write. Analytical systems are often deliberately denormalised on purpose, because for BI, fast heavy reads over historical trends matter more than eliminating redundancy."
+        },
+        {
+          "question": "Your HOD's office runs a routine report every semester showing total enrolments per programme — nobody asked a specific question, it just runs on schedule. This is an example of a(n):",
+          "options": [
+            "TPS",
+            "MIS",
+            "DSS",
+            "RMS"
+          ],
+          "correctIndex": 1,
+          "explanation": "That's MIS — a routine, scheduled report for management oversight. It would be DSS instead if it existed to answer one specific decision question, like \"should we open a second CYB206 class next session?\" TPS handles live transactional writes (registration, payments); RMS is long-term archival records like transcripts."
+        },
+        {
+          "question": "Searching your school's online library catalogue for a textbook is an example of a(n):",
+          "options": [
+            "RMS",
+            "IR (Search & Retrieval) system",
+            "DSS",
+            "MIS"
+          ],
+          "correctIndex": 1,
+          "explanation": "That's an IR system — you search, it finds, same job as Googling something. RMS is about long-term official record-keeping (transcripts, staff files), not searching for something specific."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch2",
+      "number": 2,
+      "title": "Information Capture and Representation",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch3",
+      "number": 3,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch4",
+      "number": 4,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch6",
+      "number": 6,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch9",
+      "number": 9,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "dts304-ch12",
+      "number": 12,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    }
+  ]
+}

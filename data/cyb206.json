@@ -1,0 +1,299 @@
+{
+  "id": "cyb206",
+  "code": "CYB 202",
+  "title": "Introduction to Cybersecurity and Strategy",
+  "category": "Comp Sci",
+  "chapters": [
+    {
+      "id": "cyb202-m1a",
+      "number": "1a",
+      "title": "Module 1a — Key Concepts & Terminology",
+      "cards": [
+        {
+          "heading": "Cyber vs Security vs Information Security",
+          "body": "Cyber — the environment where digital stuff happens: the internet, local networks, cloud infrastructure. Basically anywhere your data can travel.\n\nSecurity — the measures and protocols that protect systems, networks and data from unauthorized access, tampering, or destruction.\n\nInformation Security vs Cybersecurity — these get mixed up constantly on exams, but they're not the same:\n• Information Security = the whole umbrella — protecting sensitive info generally, whether it's digital OR physical (your WAEC result in a filing cabinet counts too).\n• Cybersecurity = specifically the slice of that umbrella covering networks and digital/cyber systems.\n\nIt's the difference between \"don't tell anybody your business\" (Information Security — could be gist, could be a paper file, could be anything) and \"don't fall for anything online\" (Cybersecurity — specifically the internet/network side)."
+        },
+        {
+          "heading": "Vulnerability — the open door nobody noticed yet",
+          "body": "A vulnerability is a weakness or flaw in a system, network, or app that could be exploited. It's NOT the attack — it's the unlocked gate before anyone's even tried the handle.\n\nCommon real examples: unpatched software (that update notification you keep swiping away), weak passwords (still \"password123\" or your birthday in 2026?), misconfigured systems (someone left the admin settings on default).\n\nEvery single hack you've ever heard about — from a friend's Instagram getting \"hacked\" to a bank losing millions — started with somebody finding a vulnerability first. No open door, no story."
+        },
+        {
+          "heading": "Threat, Exploit, Attack — the chain reaction",
+          "body": "Picture a Nollywood heist scene. The vulnerability is the compound with a weak back fence. Now:\n\n• Threat — the possibility that someone COULD come exploit that weak fence. Just the danger existing, nobody's acted yet.\n• Exploit — the specific tool or method used once someone decides to act. The wire cutters for the fence, the fake key, whatever gets them through.\n• Attack — them actually doing it. Can be Passive (someone just watching who comes and goes, taking notes — like network sniffing/eavesdropping, nothing's touched yet) or Active (they're actually inside now, moving things, breaking things — like malware or a denial-of-service attack).\n\nExam-safe chain: a vulnerability exists → a threat could exploit it → an exploit is the tool that does it → an attack is the act itself happening."
+        },
+        {
+          "heading": "Defence — the toolkit",
+          "body": "Defence is the strategies and tools used to protect against threats and attacks: firewalls, antivirus software, encryption, incident response protocols. The goal is minimizing risk and keeping systems/data secure.\n\nNobody serious relies on just ONE layer. Think of your compound: a gate AND a gateman AND dogs AND cameras. If the gate fails, the dogs are still there. Defence in cybersecurity works the same way — layered, on purpose, because any single tool WILL eventually fail on its own."
+        },
+        {
+          "heading": "Operations — the 24/7 job, not a one-time setup",
+          "body": "Operations is the ongoing, day-to-day activity that maintains security: threat monitoring, incident detection, forensic analysis, system recovery after an attack.\n\nDefence is buying the cameras. Operations is someone actually watching the live feed at 3am. Cybersecurity isn't \"set it and forget it\" — it's the diary session every single day, not just the launch night. If nobody's watching, the cameras were decoration."
+        },
+        {
+          "heading": "Firewall — the bouncer at the door",
+          "body": "A firewall is a security device or software that monitors and controls incoming/outgoing network traffic based on predetermined rules. It sits between your trusted internal network and the untrusted outside world.\n\nExactly like a bouncer at a party: checks every single person against the guest list (the rules), blocks anyone not on it, doesn't care how much they beg or how good their outfit is. Good traffic gets waved through, bad traffic gets turned away at the door before it even reaches the dance floor."
+        },
+        {
+          "heading": "Encryption — writing gist nobody else can read",
+          "body": "Encryption converts plain text into coded text (ciphertext) so only someone with the correct decryption key can read it.\n\nYou already do a version of this in real life — slang your parents can't decode, or that WhatsApp notice \"messages are end-to-end encrypted\" that everyone ignores but is literally this exact concept in action. Even if someone intercepts the message, all they get is gibberish without the key. No key, no gist."
+        },
+        {
+          "heading": "A phishing attack, told term by term — part 1: the setup",
+          "body": "Instead of memorizing the rest of the glossary as a list, here's how it actually plays out as one story:\n\nSomeone gets a call: \"Hi, this is IT Support, we need your password to fix your account.\" That's Social Engineering — manipulating a PERSON, not a system. It works because it targets trust, not code.\n\nThey fall for it, click the link. It exploits a Zero-Day Vulnerability — a flaw nobody had patched yet, because nobody, including the software vendor, even knew it existed. If the company had stayed strict on Patch Management (regularly updating software to close known holes), this exact door might already be shut — but zero-days by definition sneak past that, since there's no patch for a hole nobody's found yet.\n\nMalware quietly drops onto the laptop, turning it into one soldier in a Botnet — a small army of hijacked devices the attacker now controls remotely, with the owner having zero clue their laptop is part of someone else's crime."
+        },
+        {
+          "heading": "A phishing attack, told term by term — part 2: the payoff",
+          "body": "Weeks later, that botnet gets used to fire a Denial-of-Service (DoS) Attack at a completely different target — flooding it with traffic until real users can't get through, like a road so jammed with fake cars that nobody's actual commute moves.\n\nMeanwhile, back at the original company, their Intrusion Detection System (IDS) finally flags weird outbound traffic at 2am. Security investigates and confirms it: a Data Breach — sensitive info accessed without authorization.\n\nAfterward, the security team feeds what they learned into their Threat Intelligence (so they can spot the next one faster) and rolls out Multi-Factor Authentication (MFA) company-wide, so a stolen password alone is never enough again.\n\nOne more term worth bolting on here: Penetration Testing — ethically hacking your OWN system on purpose. Exactly what should've found that zero-day before the real attacker did. Nine terms, one story: Social Engineering, Zero-Day Vulnerability, Patch Management, Botnet, DoS Attack, IDS, Data Breach, Threat Intelligence, MFA, Pen Testing."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A flaw in a system, network, or app that could be exploited is called a:",
+          "options": ["Vulnerability", "Threat", "Exploit", "Attack"],
+          "correctIndex": 0,
+          "explanation": "Vulnerability is the weak point itself — the unlocked gate. Threat is the potential danger that could use it, Exploit is the tool used to actually take advantage of it, and Attack is the act of breaching security."
+        },
+        {
+          "question": "Reading someone's screen over their shoulder without altering anything they're doing is an example of a:",
+          "options": ["Active attack", "Passive attack", "Zero-day exploit", "Botnet"],
+          "correctIndex": 1,
+          "explanation": "Passive attacks eavesdrop or monitor without changing anything (like network sniffing). Active attacks disrupt or alter things directly, e.g. injecting malware or a DoS attack."
+        },
+        {
+          "question": "Which tool converts plain text into unreadable ciphertext so only someone with the correct key can read it?",
+          "options": ["Firewall", "Encryption", "IDS", "Patch Management"],
+          "correctIndex": 1,
+          "explanation": "That's Encryption — writing your gist in a language only your guy understands. A Firewall filters traffic based on rules, it doesn't scramble data."
+        },
+        {
+          "question": "A flaw that's unknown to the vendor, with no patch yet available, is called a:",
+          "options": ["Botnet", "Zero-Day Vulnerability", "Data Breach", "Firewall"],
+          "correctIndex": 1,
+          "explanation": "Zero-Day Vulnerability — \"zero days\" of warning before it gets exploited, since nobody (including the vendor) knew it existed yet."
+        },
+        {
+          "question": "Tricking a PERSON (not a system) into revealing confidential information, like a fake \"IT Support\" call asking for your password, is called:",
+          "options": ["Penetration Testing", "Social Engineering", "Multi-Factor Authentication", "Threat Intelligence"],
+          "correctIndex": 1,
+          "explanation": "Social Engineering targets human trust, not a technical flaw. Penetration Testing is the opposite spirit — ethically hacking your OWN system on purpose to find weaknesses first."
+        },
+        {
+          "question": "An Intrusion Detection System (IDS) does which of these?",
+          "options": ["Blocks all suspicious traffic automatically", "Monitors traffic and raises an alert when something looks suspicious", "Encrypts all outgoing data", "Stores backup copies of files"],
+          "correctIndex": 1,
+          "explanation": "IDS flags and alerts — it doesn't block on its own (that's closer to an Intrusion PREVENTION System). It's the security guard who radios for backup, not the one who tackles the intruder."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss Cybercrime and give examples.",
+          "modelAnswer": "Cybercrime is criminal activity that targets or uses computers, networks, or the internet to cause harm — theft, fraud, or disruption. It's specifically the illegal side of the broader \"cyberattack\" category. Examples include phishing (stealing credentials via fake emails/links), ransomware attacks (e.g. WannaCry in 2017, which encrypted data across 150 countries and demanded Bitcoin payment), identity theft, online fraud, unauthorized hacking to steal data, and DDoS attacks against a service.",
+          "keyPoints": [
+            "Definition: illegal/criminal activity involving computers, networks or the internet",
+            "Examples: phishing, ransomware (e.g. WannaCry), identity theft, online fraud, unauthorized hacking, DDoS",
+            "Distinguish from a generic 'attack': cybercrime specifically implies it's illegal"
+          ]
+        },
+        {
+          "question": "List 10 Cyber Security Key Concepts and explain any 5.",
+          "modelAnswer": "Ten key concepts: Cyber, Security, Threat, Attack, Defence, Operations, Vulnerability, Exploit, Firewall, Encryption. Explaining five: Vulnerability is a weakness in a system that can be exploited; Threat is any potential danger that could exploit that vulnerability; Attack is the deliberate act of breaching security (passive or active); Firewall is a barrier that filters network traffic based on predetermined rules; Encryption converts plain text into unreadable ciphertext to protect data from anyone without the decryption key.",
+          "keyPoints": [
+            "Name at least 10 (Cyber, Security, Threat, Attack, Defence, Operations, Vulnerability, Exploit, Firewall, Encryption — or others like Social Engineering, MFA, IDS)",
+            "Explain any 5 in 1-2 sentences each",
+            "Strong answers show the vulnerability → threat → exploit → attack relationship, since it explains several terms at once"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m1b",
+      "number": "1b",
+      "title": "Module 1b — Methods & Elements of Cybersecurity",
+      "cards": [
+        {
+          "heading": "Preventive Measures — stop wahala before it starts",
+          "body": "Preventive measures aim to stop cyber-attacks before they ever occur: firewalls (acting as barriers), access controls (limiting who can do what based on role), antivirus software (detecting and removing malicious programs).\n\nSame energy as locking your door AND not posting your travel dates on Instagram before you leave. Prevention isn't one thing, it's every small habit stacked together so there's simply nothing easy to grab."
+        },
+        {
+          "heading": "Detection Mechanisms — the smoke detector, not the fire extinguisher",
+          "body": "Detection mechanisms identify ongoing or potential threats: Intrusion Detection Systems (IDS) monitoring network traffic for suspicious activity, and Log Analysis examining system logs to uncover unusual patterns.\n\nA smoke detector doesn't put out the fire — it screams before the whole house is gone. That's the entire job of detection: not to stop the attack (that's prevention's job) but to make sure nobody's finding out about it three weeks too late."
+        },
+        {
+          "heading": "Incident Response — the four-step cleanup",
+          "body": "What happens right after a threat is detected, minimizing damage in order:\n\n1. Containment — isolate the affected system so it can't spread further.\n2. Eradication — actually remove the threat from the system.\n3. Recovery — restore everything to normal operation.\n4. Post-Incident Analysis — evaluate what happened to improve future defenses.\n\nSame order as rice burning on the stove: pot off the heat first (containment), scrape out the burnt part (eradication), salvage or cook a fresh pot (recovery), then figure out why it burnt so it doesn't happen next Sunday too (post-incident analysis)."
+        },
+        {
+          "heading": "Risk Management — planning an Owambe, basically",
+          "body": "An ongoing cycle, not a one-time task: Identify Risk → Assess Risk → Mitigate Risk → Monitor Controls, then it loops back to Identify again.\n\nExactly like planning a big Nigerian party: figure out what could go wrong (rain, NEPA taking light, gate-crashers) — that's Identify. Decide how bad each one would actually be — Assess. Put a plan in place for the worst ones: generator on standby, canopy rented — Mitigate. Keep checking on the actual day that everything's still holding — Monitor. And you do this again for the next event, not just once."
+        },
+        {
+          "heading": "Education & Awareness — the actual reason 419 messages fool fewer people now",
+          "body": "Educating users and organizations is essential to reduce vulnerabilities. Training focuses on recognizing phishing attacks, creating strong passwords, using two-step verification, avoiding public Wi-Fi, and ignoring mail from unknown senders.\n\nThink about it: those obvious \"I am a Prince\" scam emails barely catch anyone in 2026 compared to 2005 — not because the scams got worse, but because awareness spread. That's this entire method working at population scale. The weakest link in any system is usually a person, and education is the patch for that."
+        },
+        {
+          "heading": "Confidentiality — your DM privacy settings, but for real stakes",
+          "body": "Confidentiality ensures sensitive information is accessible only to authorized individuals. Common techniques: Encryption (encoding data so it's unreadable without the key) and Access Controls (restricting who can even attempt to view it).\n\nIt's the same instinct as controlling who can see your private account — except here, the \"account\" might be a hospital's patient records or a bank's transaction history, so the stakes are a bit higher than who sees your story."
+        },
+        {
+          "heading": "Integrity — the screenshot that looks a little too edited",
+          "body": "Integrity protects data from unauthorized alteration, ensuring its accuracy and reliability. Methods: Hashing (creating a unique fingerprint for data to detect any change) and Digital Signatures (verifying authenticity and integrity of digital messages).\n\nYou already do this instinctively — when a screenshot of a chat has weird spacing or a font that doesn't match, you immediately suspect it's been edited. Hashing is that same instinct, automated: change even one character in a file and its fingerprint changes completely, so tampering can't hide."
+        },
+        {
+          "heading": "Availability — your network NOT dying at 11:58pm",
+          "body": "Availability ensures that systems and data are accessible when needed. Techniques: Redundancy (backup systems to minimize downtime) and Load Balancing (distributing workloads to prevent system overloads).\n\nEveryone who has ever tried to submit an assignment online two minutes before the portal closes, only for the site to crash from everyone doing the same thing at once, has personally experienced an Availability failure. Redundancy and load balancing exist specifically so that never happens to a system that actually invested in it."
+        },
+        {
+          "heading": "Authentication — proving it's really you",
+          "body": "Authentication verifies the identity of users or systems. Common methods: Passwords (traditional, widely used), Biometrics (fingerprints, facial recognition), and Multi-Factor Authentication — MFA (combining multiple methods for stronger security).\n\nLike the layered ways a serious event checks you're actually on the list: your name against the guest list (password), your face matching your ID (biometrics), and sometimes a wristband stamp on top of both (MFA). One layer alone is easy to fake. Three layers together, much harder."
+        },
+        {
+          "heading": "Non-Repudiation & Accountability — the receipts don't lie",
+          "body": "Non-Repudiation ensures actions or communications can't be denied by the people involved — achieved through Digital Signatures (proof of authenticity) and Audit Trails (recording activities for accountability). It's the \"seen\" tick that kills any \"I never got your message\" excuse.\n\nAccountability ensures actions within a system can always be traced back to a specific individual, through Logging (recording system events) and Monitoring (observing activity in real time). Basically CCTV footage for your network — it doesn't stop anything by itself, but it guarantees nobody can act and disappear without a trace."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Isolating an affected system to stop a threat from spreading further is which incident response step?",
+          "options": ["Eradication", "Containment", "Recovery", "Post-Incident Analysis"],
+          "correctIndex": 1,
+          "explanation": "Containment comes first — isolate it before you can safely remove it (Eradication), then restore normal operation (Recovery), then review what happened (Post-Incident Analysis)."
+        },
+        {
+          "question": "Which CIA Triad element is protected mainly through hashing and digital signatures?",
+          "options": ["Confidentiality", "Integrity", "Availability", "Accountability"],
+          "correctIndex": 1,
+          "explanation": "Integrity is about the data not being secretly changed — hashing creates a fingerprint that breaks if the data is altered. Confidentiality uses encryption/access controls; Availability uses redundancy/load balancing."
+        },
+        {
+          "question": "Using backup systems and load balancing to keep a service accessible protects which CIA element?",
+          "options": ["Confidentiality", "Integrity", "Availability", "Non-Repudiation"],
+          "correctIndex": 2,
+          "explanation": "Availability = the system is actually there when you need it. Redundancy and load balancing exist specifically to stop downtime."
+        },
+        {
+          "question": "In the Risk Management cycle, which step comes first?",
+          "options": ["Mitigate Risk", "Identify Risk", "Monitor Controls", "Assess Risk"],
+          "correctIndex": 1,
+          "explanation": "The order is Identify → Assess → Mitigate → Monitor, then it loops back to Identify again. You can't assess or mitigate a risk you haven't identified yet."
+        },
+        {
+          "question": "Proving that someone can't later deny having sent a message or performed an action is called:",
+          "options": ["Authentication", "Accountability", "Non-Repudiation", "Confidentiality"],
+          "correctIndex": 2,
+          "explanation": "Non-Repudiation, enforced via digital signatures and audit trails — like a \"seen\" receipt that kills any \"I never got it\" excuse. Authentication is about proving WHO you are, not that you can't deny an action."
+        }
+      ],
+      "theory": [
+        {
+          "question": "What are the methods involved in Cyber Security?",
+          "modelAnswer": "Five main methods: Preventive Measures (firewalls, access controls, antivirus — stop attacks before they happen), Detection Mechanisms (IDS, log analysis — catch threats as they occur), Incident Response (containment, eradication, recovery, post-incident analysis — what you do after detection), Risk Management (identify, assess, mitigate, monitor — an ongoing cycle), and Education & Awareness (training users on phishing recognition, strong passwords, and security policy).",
+          "keyPoints": [
+            "Preventive Measures — firewalls, access controls, antivirus",
+            "Detection Mechanisms — IDS, log analysis",
+            "Incident Response — containment, eradication, recovery, post-incident analysis",
+            "Risk Management — identify, assess, mitigate, monitor (a repeating cycle)",
+            "Education & Awareness — training people, since humans are often the weak point"
+          ]
+        },
+        {
+          "question": "What is the CIA Triad in Cyber Security?",
+          "modelAnswer": "The CIA Triad is the core goal model of cybersecurity: Confidentiality (only authorized people can access sensitive data, enforced via encryption and access controls), Integrity (data is accurate and hasn't been tampered with, enforced via hashing and digital signatures), and Availability (systems/data are accessible to authorized users when needed, enforced via redundancy and load balancing). Every cybersecurity measure ultimately serves one or more of these three goals.",
+          "keyPoints": [
+            "Confidentiality — only authorized access (encryption, access controls)",
+            "Integrity — data accuracy, no tampering (hashing, digital signatures)",
+            "Availability — accessible when needed (redundancy, load balancing)",
+            "CIA is the overarching goal every other security measure ultimately serves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m1c",
+      "number": "1c",
+      "title": "Module 1c — The Role of Cybersecurity",
+      "cards": [
+        {
+          "heading": "Protecting Sensitive Information",
+          "body": "Personal data, financial records, and intellectual property are constantly at risk in modern digital systems. Cybersecurity ensures their confidentiality, integrity and availability through encryption, access controls, and secure storage.\n\nThink of everything currently sitting in your phone: your bank app, your ID photos, your private chats. That's the exact category of \"sensitive information\" this role protects — just at the scale of an entire hospital's patient database or a bank's full customer list instead of one person's phone."
+        },
+        {
+          "heading": "Ensuring Business Continuity",
+          "body": "Businesses rely on digital systems for day-to-day operations. Cybersecurity measures like intrusion prevention systems (IPS), backup solutions, and disaster recovery plans help ensure uninterrupted operations, even in the face of cyber threats or system failures.\n\nLike a shop that still opens for business the morning after a break-in because they had a backup generator, spare stock, and a plan — instead of just shutting down for a month to recover. Continuity means the disruption doesn't get to win."
+        },
+        {
+          "heading": "Safeguarding Critical Infrastructure",
+          "body": "Critical infrastructure sectors — healthcare, energy, and transportation — depend on secure digital systems to function effectively. Cybersecurity protects these systems from attacks that could cause widespread disruption or harm to society.\n\nThis is the one role where \"just an inconvenience\" isn't the worst-case outcome. A hacked hospital system or power grid doesn't just annoy people, it can genuinely hurt them. This is why critical infrastructure gets treated as a completely different tier of seriousness."
+        },
+        {
+          "heading": "Supporting E-Commerce and Online Services",
+          "body": "The growth of e-commerce and online platforms brought convenience but also increased the risk of fraud and data breaches. Cybersecurity ensures secure transactions through secure payment gateways, fraud detection systems, and compliance with data protection regulations.\n\nEvery single time you transfer money and get an instant debit alert, or checkout online and it asks for an OTP before completing payment, that's this role working in the background. Convenience only stayed convenient because someone secured it first."
+        },
+        {
+          "heading": "Protecting National Security",
+          "body": "Governments rely on cybersecurity to protect classified information, secure communication channels, and prevent cyber espionage. Cybersecurity strategies also include defending against nation-state attacks targeting critical infrastructure or government institutions.\n\nThis is the scale where cybersecurity stops being about one person's data and becomes about an entire country's ability to function — classified files, military comms, election systems, all of it."
+        },
+        {
+          "heading": "Enhancing User Trust",
+          "body": "Users are more likely to engage with digital services that prioritize their security and privacy. Implementing strong cybersecurity measures builds trust and confidence, fostering greater adoption of digital technologies.\n\nThink about why you'd hesitate to save your card details on a random unknown website but won't think twice on a big established app. That hesitation IS the absence of trust — and trust is a direct result of visible, credible security, not a marketing slogan."
+        },
+        {
+          "heading": "Enabling Innovation and Growth",
+          "body": "Cybersecurity supports the safe adoption of emerging technologies such as cloud computing, artificial intelligence, and the Internet of Things (IoT). By addressing security challenges, organizations can focus on innovation without compromising on safety.\n\nThis is the quiet role: nobody notices cybersecurity when it's working, they just notice that new tech keeps showing up and mostly doesn't break their life. Good security is what lets \"try the new thing\" stay a reasonable decision instead of a gamble."
+        },
+        {
+          "heading": "Cybersecurity in practice — a quick checklist",
+          "body": "Personal Security: strong unique passwords, two-factor authentication on sensitive apps, regularly updating software, avoiding suspicious links.\n\nBusiness Security: deploying IPS to monitor/block malicious traffic, conducting penetration tests to find vulnerabilities before attackers do, developing comprehensive incident response plans.\n\nGovernment & National Security: implementing advanced encryption for classified data, establishing cyber defense units to counter nation-state attacks, enforcing strict regulatory policies for critical infrastructure.\n\nNotice the pattern: every tier (personal, business, government) is really doing the same 3 things at different scale — lock the doors, watch for trouble, have a plan for when watching wasn't enough."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Deploying intrusion prevention systems (IPS), backup solutions, and disaster recovery plans mainly supports which role of cybersecurity?",
+          "options": ["Protecting National Security", "Ensuring Business Continuity", "Enhancing User Trust", "Supporting E-Commerce"],
+          "correctIndex": 1,
+          "explanation": "That's Business Continuity — keeping day-to-day operations running even when a cyber threat or system failure hits."
+        },
+        {
+          "question": "Protecting hospitals, power grids, and transport systems from cyber-attack falls mainly under which role?",
+          "options": ["Safeguarding Critical Infrastructure", "Supporting E-Commerce and Online Services", "Enabling Innovation and Growth", "Enhancing User Trust"],
+          "correctIndex": 0,
+          "explanation": "Critical Infrastructure — healthcare, energy, transportation. Attacks here can cause widespread disruption or real harm to society, not just inconvenience."
+        },
+        {
+          "question": "Secure payment gateways and fraud detection systems mainly support which role of cybersecurity?",
+          "options": ["Protecting National Security", "Supporting E-Commerce and Online Services", "Safeguarding Critical Infrastructure", "Ensuring Business Continuity"],
+          "correctIndex": 1,
+          "explanation": "E-Commerce and Online Services — the growth of online shopping/banking increased fraud risk, so secure payment gateways and fraud detection exist specifically to keep those transactions safe."
+        },
+        {
+          "question": "The idea that people are more likely to use a digital service if they believe it takes their security seriously is called:",
+          "options": ["Enhancing User Trust", "Enabling Innovation and Growth", "Protecting National Security", "Business Continuity"],
+          "correctIndex": 0,
+          "explanation": "Enhancing User Trust — strong visible security builds the confidence that drives adoption of a service in the first place."
+        }
+      ],
+      "theory": [
+        {
+          "question": "What are the Roles of Cybersecurity in Modern Digital Systems?",
+          "modelAnswer": "Seven roles: (1) Protecting Sensitive Information — personal data, financial records, IP; (2) Ensuring Business Continuity — keeping operations running via IPS, backups, disaster recovery; (3) Safeguarding Critical Infrastructure — healthcare, energy, transportation; (4) Supporting E-Commerce and Online Services — secure payments, fraud detection, compliance; (5) Protecting National Security — classified info, secure comms, defending against nation-state attacks; (6) Enhancing User Trust — people engage more with services that prioritize their security; (7) Enabling Innovation and Growth — safe adoption of cloud, AI, and IoT.",
+          "keyPoints": [
+            "Protecting Sensitive Information",
+            "Ensuring Business Continuity",
+            "Safeguarding Critical Infrastructure",
+            "Supporting E-Commerce and Online Services",
+            "Protecting National Security",
+            "Enhancing User Trust",
+            "Enabling Innovation and Growth"
+          ]
+        }
+      ]
+    },
+    { "id": "cyb202-m2", "number": 2, "title": "Module 2 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m3", "number": 3, "title": "Module 3 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m4", "number": 4, "title": "Module 4 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m5", "number": 5, "title": "Module 5 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m6", "number": 6, "title": "Module 6 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m7", "number": 7, "title": "Module 7 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m8", "number": 8, "title": "Module 8 — coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "cyb202-m9", "number": 9, "title": "Module 9 — coming soon", "cards": [], "quiz": [], "theory": [] }
+  ]
+}

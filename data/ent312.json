@@ -1,0 +1,1713 @@
+{
+  "id": "ent312",
+  "code": "ENT 312",
+  "title": "Venture Creation",
+  "category": "GEDS",
+  "note": "Currently covers Chapters 1-3 (Venture Creation, Market Opportunities, Idea Development). Chapters 4-8 aren't in yet.",
+  "chapters": [
+    {
+      "id": "ent312-r1",
+      "number": 1,
+      "title": "Practice Round 1 (Q1-25)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "What is the primary aim of a business venture?",
+          "options": [
+            "To eliminate all market competition",
+            "To address a specific market need while generating profits",
+            "To maximize government subsidies",
+            "To avoid financial risks entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: To address a specific market need while generating profits."
+        },
+        {
+          "question": "Which of the following best describes a business venture?",
+          "options": [
+            "A government-owned enterprise",
+            "A non-profit organization",
+            "A project where entrepreneurs create, organize, and manage companies",
+            "A fully established corporation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: A project where entrepreneurs create, organize, and manage companies."
+        },
+        {
+          "question": "Most business ventures are referred to as small businesses because they:?",
+          "options": [
+            "Operate only in rural areas",
+            "Avoid seeking investors",
+            "Usually start with an idea and limited finances",
+            "Only sell physical goods"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Usually start with an idea and limited finances."
+        },
+        {
+          "question": "Which characteristic of a business venture involves introducing new ideas to differentiate from competitors?",
+          "options": [
+            "Risk management",
+            "Growth potential",
+            "Financial investment",
+            "Innovation"
+          ],
+          "correctIndex": 3,
+          "explanation": "Correct answer: Innovation."
+        },
+        {
+          "question": "What makes scalable startups different from small business ventures?",
+          "options": [
+            "They avoid technology",
+            "They aim for rapid growth and often seek external funding",
+            "They only operate locally",
+            "They do not require investors"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: They aim for rapid growth and often seek external funding."
+        },
+        {
+          "question": "Which is the FIRST step in the new venture creation process?",
+          "options": [
+            "Securing funding",
+            "Launching operations",
+            "Idea generation",
+            "Market branding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Idea generation."
+        },
+        {
+          "question": "Opportunity assessment in venture creation involves:?",
+          "options": [
+            "Hiring the first employees",
+            "Evaluating feasibility and market potential of the idea",
+            "Designing a product logo",
+            "Finalizing legal structures"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Evaluating feasibility and market potential of the idea."
+        },
+        {
+          "question": "Which component is NOT part of a business plan?",
+          "options": [
+            "Executive Summary",
+            "Market Analysis",
+            "Employee Salary History",
+            "Financial Plan"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Employee Salary History."
+        },
+        {
+          "question": "Crowdfunding as a funding option involves:?",
+          "options": [
+            "Borrowing from a single large bank",
+            "Using only personal savings",
+            "Raising small amounts from many people via online platforms",
+            "Selling company shares on stock market"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Raising small amounts from many people via online platforms."
+        },
+        {
+          "question": "Which company is cited as an example of securing venture capital funding in the early stages?",
+          "options": [
+            "Airbnb",
+            "Tesla",
+            "Flipkart",
+            "Zomato"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Flipkart."
+        },
+        {
+          "question": "In the venture creation process, prototyping and testing are associated with which stage?",
+          "options": [
+            "Business planning",
+            "Idea generation",
+            "Product or service development",
+            "Marketing and branding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Product or service development."
+        },
+        {
+          "question": "Which company's marketing strategy involved app-based promotions and partnerships to gain popularity?",
+          "options": [
+            "Nykaa",
+            "Paytm",
+            "Zomato",
+            "Tesla"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Zomato."
+        },
+        {
+          "question": "What does the 'Maturity or Exit' stage of a venture typically involve?",
+          "options": [
+            "Launching the first product",
+            "Conducting initial market research",
+            "Acquisition, IPO, or transition to new ownership",
+            "Hiring the founding team"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Acquisition, IPO, or transition to new ownership."
+        },
+        {
+          "question": "Which challenge in new venture creation involves competing against established players with greater resources?",
+          "options": [
+            "Financial constraints",
+            "Talent acquisition",
+            "Intense competition",
+            "Regulatory issues"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Intense competition."
+        },
+        {
+          "question": "The solution to 'talent acquisition' challenges for new ventures includes:?",
+          "options": [
+            "Increasing product prices",
+            "Offering equity or profit-sharing to attract motivated individuals",
+            "Avoiding skilled workers",
+            "Reducing marketing budgets"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Offering equity or profit-sharing to attract motivated individuals."
+        },
+        {
+          "question": "Paytm is cited as an example of which growth strategy?",
+          "options": [
+            "Remaining focused on a single product",
+            "Starting as a mobile recharge platform and scaling into a fintech ecosystem",
+            "Limiting operations to rural areas",
+            "Avoiding technology infrastructure"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Starting as a mobile recharge platform and scaling into a fintech ecosystem."
+        },
+        {
+          "question": "Which strategy helps entrepreneurs overcome 'market uncertainty' in new ventures?",
+          "options": [
+            "Avoiding all market research",
+            "Conducting thorough research and staying flexible",
+            "Increasing product prices",
+            "Focusing only on existing markets"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conducting thorough research and staying flexible."
+        },
+        {
+          "question": "What is 'bootstrapping' in the context of venture funding?",
+          "options": [
+            "Borrowing from investors",
+            "Crowdfunding via online platforms",
+            "Using personal savings to fund the business",
+            "Applying for government grants"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Using personal savings to fund the business."
+        },
+        {
+          "question": "Which of the following is a key activity during idea generation?",
+          "options": [
+            "Preparing financial forecasts",
+            "Conducting market research to identify unmet needs",
+            "Designing the company logo",
+            "Recruiting board members"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Conducting market research to identify unmet needs."
+        },
+        {
+          "question": "The Airbnb founding story illustrates which step in the venture creation process?",
+          "options": [
+            "Securing funding",
+            "Growth and scaling",
+            "Idea generation through identifying a market problem",
+            "Legal compliance"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Idea generation through identifying a market problem."
+        },
+        {
+          "question": "Which of the following is a financial investment characteristic of business ventures?",
+          "options": [
+            "Ventures avoid financial risks",
+            "Ventures require considerable investment, often from investors",
+            "Ventures rely solely on government funding",
+            "Ventures generate profit without capital"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Ventures require considerable investment, often from investors."
+        },
+        {
+          "question": "Ola Cabs is cited as an example of which venture creation step?",
+          "options": [
+            "Business planning",
+            "Opportunity assessment",
+            "Securing funding",
+            "Marketing and branding"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Opportunity assessment."
+        },
+        {
+          "question": "SWOT analysis stands for:?",
+          "options": [
+            "Strategy, Work, Operations, Targets",
+            "Sales, Workforce, Objectives, Tactics",
+            "Strengths, Weaknesses, Opportunities, Threats",
+            "Systems, Workflow, Outputs, Timelines"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Strengths, Weaknesses, Opportunities, Threats."
+        },
+        {
+          "question": "Which strategy helps overcome 'operational inefficiencies' in new ventures?",
+          "options": [
+            "Avoiding technology adoption",
+            "Reducing the workforce",
+            "Investing in technology and automation to streamline processes",
+            "Increasing product complexity"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Investing in technology and automation to streamline processes."
+        },
+        {
+          "question": "Tesla's development process is cited as an example of which venture stage?",
+          "options": [
+            "Idea generation",
+            "Securing funding",
+            "Product or service development through R&D;",
+            "Marketing and branding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Product or service development through R&D;."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "ent312-r2",
+      "number": 2,
+      "title": "Practice Round 2 (Q26-50)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "A comprehensive business plan helps communicate the venture's vision to:?",
+          "options": [
+            "Competitors only",
+            "Stakeholders and ensure clarity in decision-making",
+            "Government agencies exclusively",
+            "International markets"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Stakeholders and ensure clarity in decision-making."
+        },
+        {
+          "question": "Which of the following describes a 'scalable business model'?",
+          "options": [
+            "One that remains fixed and never changes",
+            "One that operates only locally",
+            "One that can expand operations and increase revenue over time",
+            "One that avoids technology"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: One that can expand operations and increase revenue over time."
+        },
+        {
+          "question": "The solution to 'building brand awareness' challenges includes:?",
+          "options": [
+            "Avoiding social media",
+            "Focusing on storytelling and leveraging social media and influencer marketing",
+            "Reducing marketing budgets",
+            "Only using traditional print media"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Focusing on storytelling and leveraging social media and influencer marketing."
+        },
+        {
+          "question": "Which of the following is NOT a type of business venture mentioned in Chapter 1?",
+          "options": [
+            "Small business ventures",
+            "Scalable startups",
+            "Franchise-only ventures",
+            "Social enterprises"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Franchise-only ventures."
+        },
+        {
+          "question": "Continuous learning in venture creation involves:?",
+          "options": [
+            "Avoiding industry news",
+            "Staying updated on trends, best practices, and emerging technologies",
+            "Relying only on past experience",
+            "Reducing investment in training CHAPTER 2: Spotting Opportunities in Problems and High Potential Sectors"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Staying updated on trends, best practices, and emerging technologies."
+        },
+        {
+          "question": "A market opportunity is best defined as:?",
+          "options": [
+            "A threat posed by competitors",
+            "A favorable condition allowing businesses to meet unmet demand",
+            "A government regulation",
+            "A financial loss"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A favorable condition allowing businesses to meet unmet demand."
+        },
+        {
+          "question": "Which of the following is a type of market opportunity?",
+          "options": [
+            "Saturated markets with no room for growth",
+            "New customer segments within existing industries",
+            "Declining consumer needs",
+            "Outdated technologies"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: New customer segments within existing industries."
+        },
+        {
+          "question": "TAM/SAM/SOM are tools used for:?",
+          "options": [
+            "Measuring employee performance",
+            "Structuring financial reports",
+            "Prioritizing and analyzing market opportunities",
+            "Designing product packaging"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Prioritizing and analyzing market opportunities."
+        },
+        {
+          "question": "PESTLE analysis examines which of the following factors?",
+          "options": [
+            "Personal, Emotional, Social, Technical, Legal, Environmental",
+            "Political, Economic, Social, Technological, Legal, Environmental",
+            "Product, Equity, Sales, Time, Location, Expansion",
+            "Price, Efficiency, Strategy, Talent, Location, Execution"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Political, Economic, Social, Technological, Legal, Environmental."
+        },
+        {
+          "question": "'Market sensitivity' in opportunity recognition involves:?",
+          "options": [
+            "Ignoring consumer feedback",
+            "Cultivating awareness of market trends and customer needs",
+            "Avoiding competitor analysis",
+            "Focusing only on pricing strategies"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Cultivating awareness of market trends and customer needs."
+        },
+        {
+          "question": "Airbnb's founding story illustrates which principle of opportunity recognition?",
+          "options": [
+            "Analytical rigor",
+            "Strategic networking",
+            "Customer-centric problem solving",
+            "Innovative mindset"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Customer-centric problem solving."
+        },
+        {
+          "question": "Dyson's bagless vacuum cleaner is an example of:?",
+          "options": [
+            "Customer-centric problem solving",
+            "An innovative mindset identifying a product flaw and creating a solution",
+            "Regulatory change adaptation",
+            "Economic indicator analysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: An innovative mindset identifying a product flaw and creating a solution."
+        },
+        {
+          "question": "Netflix's shift from DVD rentals to streaming demonstrates:?",
+          "options": [
+            "Strategic networking",
+            "Ignoring technological trends",
+            "Analytical rigor using data on viewing habits and technology trends",
+            "Market sensitivity to pricing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Analytical rigor using data on viewing habits and technology trends."
+        },
+        {
+          "question": "The GDPR regulation is cited as an example of which market opportunity driver?",
+          "options": [
+            "Consumer behavior shifts",
+            "Technological advancements",
+            "Regulatory changes creating demand for compliance services",
+            "Economic downturns"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Regulatory changes creating demand for compliance services."
+        },
+        {
+          "question": "During economic downturns, which type of business typically benefits?",
+          "options": [
+            "Luxury goods retailers",
+            "Discount and value-based retailers",
+            "High-end restaurants",
+            "Premium tech companies"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Discount and value-based retailers."
+        },
+        {
+          "question": "Uber identified an opportunity through which startup approach?",
+          "options": [
+            "Customer-centric approach to hotel lodging",
+            "Market analysis of the inefficient taxi industry",
+            "Feasibility of file storage",
+            "Competitive differentiation in messaging apps"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Market analysis of the inefficient taxi industry."
+        },
+        {
+          "question": "Dropbox addressed which startup problem?",
+          "options": [
+            "Expensive hotel accommodations",
+            "Unreliable transportation",
+            "File sharing and storage with a scalable cloud-based platform",
+            "Team messaging and collaboration"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: File sharing and storage with a scalable cloud-based platform."
+        },
+        {
+          "question": "Slack differentiated itself by focusing on:?",
+          "options": [
+            "Electric vehicles",
+            "Food delivery",
+            "Team collaboration and integrating with workflow tools",
+            "Online retail"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Team collaboration and integrating with workflow tools."
+        },
+        {
+          "question": "Root Cause Analysis (RCA) primarily asks which question iteratively?",
+          "options": [
+            "Who",
+            "When",
+            "Why or How",
+            "Where"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Why or How."
+        },
+        {
+          "question": "The Pareto Principle (80/20 Rule) suggests that:?",
+          "options": [
+            "80% of businesses fail in their first year",
+            "80% of effects come from 20% of causes",
+            "20% of products generate 80% of all revenue always",
+            "80% of employees drive only 20% of productivity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: 80% of effects come from 20% of causes."
+        },
+        {
+          "question": "Design thinking in problem-solving emphasizes:?",
+          "options": [
+            "A technology-first approach",
+            "A finance-first approach",
+            "A user-centric approach with empathy, prototyping, and testing",
+            "A competitor-driven approach"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: A user-centric approach with empathy, prototyping, and testing."
+        },
+        {
+          "question": "The Lean Startup Methodology emphasizes building a:?",
+          "options": [
+            "Maximum Viable Product (MxVP)",
+            "Minimum Viable Product (MVP)",
+            "Maximum Value Proposition (MVP)",
+            "Minimum Value Proposition (MnVP)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Minimum Viable Product (MVP)."
+        },
+        {
+          "question": "Beta testing involves:?",
+          "options": [
+            "Testing a prototype with no real users",
+            "Inviting users to test a nearly finished product to uncover issues",
+            "Analyzing competitor products",
+            "Running financial projections"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Inviting users to test a nearly finished product to uncover issues."
+        },
+        {
+          "question": "A/B testing is used to:?",
+          "options": [
+            "Compare two versions of a product feature to determine which performs better",
+            "Test two different pricing strategies only",
+            "Compare two competing companies",
+            "Analyze two financial reports"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Compare two versions of a product feature to determine which performs better."
+        },
+        {
+          "question": "Which of the following is NOT a market testing method mentioned in Chapter 2?",
+          "options": [
+            "Prototype testing",
+            "Focus groups",
+            "Competitor espionage",
+            "Customer interviews and surveys"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Competitor espionage."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "ent312-r3",
+      "number": 3,
+      "title": "Practice Round 3 (Q51-75)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Product adaptability during scaling means:?",
+          "options": [
+            "Keeping the product unchanged regardless of feedback",
+            "Removing features to reduce costs",
+            "Evolving the product to cater to a broader audience based on feedback",
+            "Limiting the product to the original target market"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Evolving the product to cater to a broader audience based on feedback."
+        },
+        {
+          "question": "Airbnb's scaling challenge cited in Chapter 2 involved:?",
+          "options": [
+            "Managing electric vehicle supply chains",
+            "Carefully planning market expansion timing for maximum profitability",
+            "Developing AI capabilities",
+            "Managing food delivery logistics"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Carefully planning market expansion timing for maximum profitability."
+        },
+        {
+          "question": "Uber's expansion into various countries required:?",
+          "options": [
+            "Ignoring local regulations",
+            "Standardizing a single global business model",
+            "Navigating diverse regulatory landscapes and sometimes altering its model",
+            "Avoiding technology investments"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Navigating diverse regulatory landscapes and sometimes altering its model."
+        },
+        {
+          "question": "Patagonia's commitment to sustainability is cited as an example of:?",
+          "options": [
+            "Infrastructure scaling",
+            "Financial management during growth",
+            "Sustainability enhancing brand identity and growth",
+            "Talent acquisition strategy"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Sustainability enhancing brand identity and growth."
+        },
+        {
+          "question": "Google's policy of allowing employees to spend 20% of their time on personal projects led to:?",
+          "options": [
+            "Increased employee turnover",
+            "The creation of Gmail and AdSense",
+            "Reduced company profits",
+            "Legal compliance issues"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The creation of Gmail and AdSense."
+        },
+        {
+          "question": "Strategic partnerships in continuous improvement provide access to:?",
+          "options": [
+            "Reduced employee salaries",
+            "New markets and technologies",
+            "Fewer regulatory requirements",
+            "Lower production costs only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: New markets and technologies."
+        },
+        {
+          "question": "A 'culture of open communication' in problem-solving encourages:?",
+          "options": [
+            "Only senior management to raise concerns",
+            "Team members to voice concerns and ideas without fear",
+            "Anonymous feedback only",
+            "Communication only during annual reviews"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Team members to voice concerns and ideas without fear."
+        },
+        {
+          "question": "Which of the following best describes 'market sensitivity'?",
+          "options": [
+            "The ability to detect price changes only",
+            "Reading between the lines of market trends and customer feedback",
+            "Measuring market share quarterly",
+            "Avoiding market research to save costs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Reading between the lines of market trends and customer feedback."
+        },
+        {
+          "question": "The surge in demand for home office equipment during the COVID-19 pandemic is an example of:?",
+          "options": [
+            "Technological advancement opportunity",
+            "Regulatory change opportunity",
+            "Consumer behavior analysis revealing an emerging market",
+            "Economic downturn benefit"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Consumer behavior analysis revealing an emerging market."
+        },
+        {
+          "question": "Which of the following is a key takeaway from Chapter 2 about identifying market opportunities?",
+          "options": [
+            "Opportunities can be found without any market research",
+            "Businesses that act on validated opportunities gain competitive advantage",
+            "Regional factors do not affect opportunity identification",
+            "Only technology companies can identify market opportunities CHAPTER 3: From Idea to Concept – Early Stages of Product Development"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Businesses that act on validated opportunities gain competitive advantage."
+        },
+        {
+          "question": "The three foundational stages of product development discussed in Chapter 3 are:?",
+          "options": [
+            "Production, Distribution, and Sales",
+            "Idea Generation, Idea Screening, and Concept Development and Testing",
+            "Marketing, Branding, and Launch",
+            "Research, Development, and Manufacturing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Idea Generation, Idea Screening, and Concept Development and Testing."
+        },
+        {
+          "question": "What is the key factor that enhances idea generation by bringing unique solutions?",
+          "options": [
+            "Homogeneous team composition",
+            "Avoiding customer feedback",
+            "Diversity of backgrounds, experiences, and perspectives in the team",
+            "Focusing only on existing products"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Diversity of backgrounds, experiences, and perspectives in the team."
+        },
+        {
+          "question": "Idea Screening focuses on identifying ideas with the highest potential based on:?",
+          "options": [
+            "Only the personal preferences of the founder",
+            "Feasibility, market potential, alignment with company goals, and ability to address needs",
+            "The number of employees in the team",
+            "The age of the company"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Feasibility, market potential, alignment with company goals, and ability to address needs."
+        },
+        {
+          "question": "A well-crafted product concept includes:?",
+          "options": [
+            "Only the price of the product",
+            "A product description, features, target audience, and unique selling propositions (USPs)",
+            "Only the manufacturing process",
+            "Only competitor analysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A product description, features, target audience, and unique selling propositions (USPs)."
+        },
+        {
+          "question": "What is the purpose of testing a concept with a sample of the target audience?",
+          "options": [
+            "To finalize pricing",
+            "To identify the CEO of the company",
+            "To gather feedback and refine the concept to align with market needs",
+            "To determine the company's legal structure"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: To gather feedback and refine the concept to align with market needs."
+        },
+        {
+          "question": "A business concept document is approximately:?",
+          "options": [
+            "Ten pages long",
+            "One page in length",
+            "Fifty pages long",
+            "Three pages long"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: One page in length."
+        },
+        {
+          "question": "The pitch statement in a business concept document is meant to:?",
+          "options": [
+            "Provide detailed financial projections",
+            "Describe the manufacturing process",
+            "Garner interest from potential investors by summarizing the business purpose",
+            "List all company employees"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Garner interest from potential investors by summarizing the business purpose."
+        },
+        {
+          "question": "A business concept differs from a business plan in that:?",
+          "options": [
+            "A business concept is longer and more detailed",
+            "A business plan only covers marketing",
+            "A business concept is a concise summary while a business plan is lengthy and detailed",
+            "There is no difference between them"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: A business concept is a concise summary while a business plan is lengthy and detailed."
+        },
+        {
+          "question": "The 'Competitive Analysis' section of a business concept document covers:?",
+          "options": [
+            "Employee salaries and benefits",
+            "How the business relates to competitors and plans to capture market share",
+            "The company's founding story only",
+            "Tax compliance strategies"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: How the business relates to competitors and plans to capture market share."
+        },
+        {
+          "question": "A Unique Selling Proposition (USP) describes:?",
+          "options": [
+            "The company's tax obligations",
+            "The physical location of the business",
+            "What makes the business stand out from competitors and offers unique value",
+            "The number of products the company sells"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: What makes the business stand out from competitors and offers unique value."
+        },
+        {
+          "question": "A Business-to-Business (B2B) concept focuses on:?",
+          "options": [
+            "Selling directly to individual consumers",
+            "Offering products or services to another business rather than regular consumers",
+            "Operating only in e-commerce",
+            "Retail-only businesses"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Offering products or services to another business rather than regular consumers."
+        },
+        {
+          "question": "Consumer goods businesses rely heavily on:?",
+          "options": [
+            "International trade agreements",
+            "Government subsidies",
+            "Brand recognition because consumers prefer to buy familiar products",
+            "Technological patents"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Brand recognition because consumers prefer to buy familiar products."
+        },
+        {
+          "question": "Consumer-to-Consumer (C2C) business concepts involve:?",
+          "options": [
+            "A corporation selling to another corporation",
+            "The direct sale of goods between consumers, often second-hand or upcycled items",
+            "Government procurement",
+            "Subscription-based business models"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The direct sale of goods between consumers, often second-hand or upcycled items."
+        },
+        {
+          "question": "E-commerce business concepts primarily revolve around:?",
+          "options": [
+            "Face-to-face transactions in physical stores",
+            "Selling products or services online without direct interaction",
+            "Government contracts",
+            "Manufacturing only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Selling products or services online without direct interaction."
+        },
+        {
+          "question": "Mobile business concepts focus on providing products and services through:?",
+          "options": [
+            "Traditional postal services",
+            "Television advertisements",
+            "Mobile devices like phones and tablets, often via apps",
+            "Physical storefronts only"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Mobile devices like phones and tablets, often via apps."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "ent312-r4",
+      "number": 4,
+      "title": "Practice Round 4 (Q76-100)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "The 'sharing economy' is associated with which type of business concept?",
+          "options": [
+            "Infrastructure concept",
+            "Consumer service concept (e.g., ride-sharing, accommodation-sharing)",
+            "Small business concept",
+            "B2B concept"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Consumer service concept (e.g., ride-sharing, accommodation-sharing)."
+        },
+        {
+          "question": "Infrastructure business concepts are characterized by:?",
+          "options": [
+            "Selling consumer goods online",
+            "Providing digital services via apps",
+            "Physical projects like buildings and facilities, often large-scale",
+            "Ride-sharing services"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Physical projects like buildings and facilities, often large-scale."
+        },
+        {
+          "question": "Which of the following is a sustainable meal kit delivery service's Unique Selling Proposition (USP)?",
+          "options": [
+            "Selling the cheapest meals regardless of quality",
+            "Using biodegradable packaging and partnering with local farms",
+            "Offering only fast food delivery",
+            "Providing meals only to businesses"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Using biodegradable packaging and partnering with local farms."
+        },
+        {
+          "question": "The revenue model of a sustainable meal kit service may include:?",
+          "options": [
+            "Only one-time purchases",
+            "A subscription basis or one-time purchases for special occasions",
+            "Government grants exclusively",
+            "Only B2B sales"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A subscription basis or one-time purchases for special occasions."
+        },
+        {
+          "question": "A Pet-Friendly Travel Agency is an example of a business concept that:?",
+          "options": [
+            "Caters to pet owners planning vacations with pet-friendly services",
+            "Provides pet food delivery",
+            "Operates veterinary clinics",
+            "Offers mobile pet grooming"
+          ],
+          "correctIndex": 0,
+          "explanation": "Correct answer: Caters to pet owners planning vacations with pet-friendly services."
+        },
+        {
+          "question": "According to Chapter 3, testing a business concept should occur:?",
+          "options": [
+            "Only after the business is fully launched",
+            "Before fully launching, through focus groups or market trials",
+            "After securing major investors",
+            "Once the company has been operating for a year"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Before fully launching, through focus groups or market trials."
+        },
+        {
+          "question": "A Mobile Car Wash Service uses which unique aspect in its concept?",
+          "options": [
+            "Permanent location-based operations",
+            "Eco-friendly cleaning products and travel to customer locations",
+            "Only serving commercial vehicles",
+            "Government fleet management"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Eco-friendly cleaning products and travel to customer locations."
+        },
+        {
+          "question": "Virtual Fitness Classes as a business concept cater to:?",
+          "options": [
+            "In-person gym members only",
+            "Government fitness programs",
+            "Individuals looking for flexible workout options from home",
+            "Professional athletes exclusively"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Individuals looking for flexible workout options from home."
+        },
+        {
+          "question": "Conducting market research in developing a business concept helps to:?",
+          "options": [
+            "Finalize employee contracts",
+            "Identify gaps, trends, customer feedback, and validate the idea",
+            "Determine office furniture purchases",
+            "Establish tax rates"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Identify gaps, trends, customer feedback, and validate the idea."
+        },
+        {
+          "question": "The 'Value Proposition' in a business concept refers to:?",
+          "options": [
+            "The company's debt repayment plan",
+            "What makes the business unique and how it delivers value to customers",
+            "The company's physical location",
+            "Employee compensation packages"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: What makes the business unique and how it delivers value to customers."
+        },
+        {
+          "question": "Which step comes AFTER writing a complete business plan in the steps for a successful business launch?",
+          "options": [
+            "Develop the initial business concept",
+            "Research the competition",
+            "Outline the people and resources required",
+            "Sell products or services"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Outline the people and resources required."
+        },
+        {
+          "question": "Small business concepts are characterized by:?",
+          "options": [
+            "Operating globally with thousands of employees",
+            "Targeting a more local customer base and being privately owned",
+            "Focusing on technology startups only",
+            "Requiring large-scale investment"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Targeting a more local customer base and being privately owned."
+        },
+        {
+          "question": "Which of the following is an example of online small business services?",
+          "options": [
+            "Building a highway",
+            "Online consulting, dropshipping, or graphic design services",
+            "Operating a chain restaurant",
+            "Managing government contracts"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Online consulting, dropshipping, or graphic design services."
+        },
+        {
+          "question": "Involving key stakeholders during Idea Screening is essential because:?",
+          "options": [
+            "It increases the marketing budget",
+            "Their insights help ensure alignment and support, increasing project success chances",
+            "It allows the company to avoid legal issues",
+            "It reduces the need for market research"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Their insights help ensure alignment and support, increasing project success chances."
+        },
+        {
+          "question": "A clearly defined business concept helps prevent:?",
+          "options": [
+            "Excessive profits",
+            "Customer satisfaction",
+            "Many common pitfalls that lead to business failure",
+            "Employee recruitment MIXED QUESTIONS: Applied & Cross-Chapter Concepts"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Many common pitfalls that lead to business failure."
+        },
+        {
+          "question": "The process of transforming a startup idea into a viable business entity is called:?",
+          "options": [
+            "Business termination",
+            "Market saturation",
+            "New venture creation",
+            "Corporate restructuring"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: New venture creation."
+        },
+        {
+          "question": "Which framework is described as a 'compass' for guiding entrepreneurs through problem-solving in startup ventures?",
+          "options": [
+            "SWOT analysis only",
+            "Strategic frameworks combining RCA, Pareto, Design Thinking, and Lean Startup",
+            "Financial forecasting tools only",
+            "HR management frameworks"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Strategic frameworks combining RCA, Pareto, Design Thinking, and Lean Startup."
+        },
+        {
+          "question": "'Opportunity scoring matrices' help businesses:?",
+          "options": [
+            "Manage employee performance",
+            "Prioritize the right opportunities based on structured analysis",
+            "Calculate tax liabilities",
+            "Design product packaging"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Prioritize the right opportunities based on structured analysis."
+        },
+        {
+          "question": "Which of the following describes the concept of 'iterative development' in startups?",
+          "options": [
+            "Building a product once and never changing it",
+            "Releasing an MVP, gathering user feedback, and refining continuously",
+            "Developing multiple products simultaneously",
+            "Avoiding user feedback to maintain vision"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Releasing an MVP, gathering user feedback, and refining continuously."
+        },
+        {
+          "question": "'Regulatory compliance' during business scaling is important because:?",
+          "options": [
+            "It increases product prices automatically",
+            "It reduces the number of employees needed",
+            "It prevents costly legal issues as businesses expand into new environments",
+            "It eliminates the need for marketing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: It prevents costly legal issues as businesses expand into new environments."
+        },
+        {
+          "question": "A 'concept statement' in a business concept document serves to:?",
+          "options": [
+            "Replace the full business plan entirely",
+            "Communicate the business concept succinctly to investors or partners",
+            "Provide a detailed product manual",
+            "Outline daily operational schedules"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Communicate the business concept succinctly to investors or partners."
+        },
+        {
+          "question": "Focus groups as a market testing tool are used to:?",
+          "options": [
+            "Hire new employees",
+            "Gather diverse opinions from a group about a product or service",
+            "Measure financial performance",
+            "Design marketing logos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Gather diverse opinions from a group about a product or service."
+        },
+        {
+          "question": "Analytics and data analysis in market testing provide:?",
+          "options": [
+            "Qualitative opinions from individuals",
+            "Legal documentation for the business",
+            "Quantitative feedback by tracking user interactions with the product",
+            "Human resource planning data"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Quantitative feedback by tracking user interactions with the product."
+        },
+        {
+          "question": "The 'risk of failure' challenge in new ventures is best addressed by:?",
+          "options": [
+            "Avoiding all forms of risk",
+            "Embracing a learning mindset and diversifying offerings",
+            "Copying competitor strategies exactly",
+            "Reducing product quality to save costs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Embracing a learning mindset and diversifying offerings."
+        },
+        {
+          "question": "Which of the following is a key component of 'operational efficiency' during scaling?",
+          "options": [
+            "Increasing manual labor for all processes",
+            "Automating repetitive tasks and streamlining processes",
+            "Avoiding technology investments",
+            "Reducing the customer service team"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Automating repetitive tasks and streamlining processes."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "ent312-r5",
+      "number": 5,
+      "title": "Practice Round 5 (Q101-125)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "The 'target market' section in a business concept identifies:?",
+          "options": [
+            "The company's financial backers",
+            "The problem the business intends to solve and who the potential customers are",
+            "The government regulations the business must comply with",
+            "The company's founding team members"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The problem the business intends to solve and who the potential customers are."
+        },
+        {
+          "question": "Which of the following best describes 'angel investors'?",
+          "options": [
+            "Government agencies providing grants",
+            "Investors who provide funds in exchange for equity and have faith in the concept",
+            "Banks offering business loans",
+            "Crowdfunding contributors"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Investors who provide funds in exchange for equity and have faith in the concept."
+        },
+        {
+          "question": "The primary difference between 'prototyping' and 'beta testing' is:?",
+          "options": [
+            "Prototyping uses real users while beta testing uses simulations",
+            "Beta testing is cheaper than prototyping",
+            "Prototyping tests core functionalities early, while beta testing involves a nearly finished product",
+            "There is no difference between them"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Prototyping tests core functionalities early, while beta testing involves a nearly finished product."
+        },
+        {
+          "question": "'Nykaa' is cited as an example of a company that launched with a focus on:?",
+          "options": [
+            "Electric vehicle manufacturing",
+            "Fintech ecosystem development",
+            "User-friendly e-commerce navigation and diverse beauty products",
+            "Agricultural technology"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: User-friendly e-commerce navigation and diverse beauty products."
+        },
+        {
+          "question": "Entrepreneurs who can recognize gaps in the market position themselves to:?",
+          "options": [
+            "Eliminate all competition",
+            "Create products and services that people truly need",
+            "Avoid market research costs",
+            "Secure government contracts automatically"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Create products and services that people truly need."
+        },
+        {
+          "question": "Which of the following is NOT a step in developing a business concept?",
+          "options": [
+            "Define your business idea",
+            "Identify your target market",
+            "Hire all employees before testing",
+            "Conduct market research"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Hire all employees before testing."
+        },
+        {
+          "question": "The 'Executive Summary' in a business plan is described as:?",
+          "options": [
+            "A detailed financial breakdown",
+            "A concise overview of the business",
+            "The marketing strategy document",
+            "The legal compliance section"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A concise overview of the business."
+        },
+        {
+          "question": "Which of the following is an example of leveraging 'diverse perspectives' in problem-solving?",
+          "options": [
+            "A homogeneous team making all decisions",
+            "A team with varied expertise assessing the feasibility of entering a new market",
+            "Senior management avoiding team input",
+            "Outsourcing all problem-solving to consultants"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A team with varied expertise assessing the feasibility of entering a new market."
+        },
+        {
+          "question": "The 'Lean Startup' approach emphasizes releasing an MVP to:?",
+          "options": [
+            "Impress investors with a complete product immediately",
+            "Gauge user response and refine the product before full-scale development",
+            "Avoid competition from established players",
+            "Reduce the need for market research"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Gauge user response and refine the product before full-scale development."
+        },
+        {
+          "question": "Which approach in idea generation involves bringing together teams with varied backgrounds?",
+          "options": [
+            "Homogeneous team building",
+            "Competitor analysis",
+            "Diversity-driven brainstorming",
+            "Financial forecasting sessions"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Diversity-driven brainstorming."
+        },
+        {
+          "question": "What does 'market penetration' during scaling involve?",
+          "options": [
+            "Reducing product quality to lower costs",
+            "Understanding and adapting to local markets when scaling geographically",
+            "Avoiding new market entry",
+            "Eliminating product variety"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Understanding and adapting to local markets when scaling geographically."
+        },
+        {
+          "question": "'Sustainable practices' in scaling businesses can:?",
+          "options": [
+            "Reduce revenue in all cases",
+            "Attract customers and employees who value corporate responsibility",
+            "Eliminate the need for marketing",
+            "Cause regulatory issues"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Attract customers and employees who value corporate responsibility."
+        },
+        {
+          "question": "Which venture creation step involves organizing a launch event or promotional campaign?",
+          "options": [
+            "Idea generation",
+            "Opportunity assessment",
+            "Launch and operations",
+            "Securing funding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Launch and operations."
+        },
+        {
+          "question": "The concept of 'market gaps' refers to:?",
+          "options": [
+            "Overcrowded markets with too many competitors",
+            "Unmet needs or underserved segments in the market",
+            "Physical gaps in retail store layouts",
+            "Differences in global pricing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Unmet needs or underserved segments in the market."
+        },
+        {
+          "question": "'Customer interviews and surveys' in market testing uncover:?",
+          "options": [
+            "Competitor pricing strategies",
+            "Specific customer needs and expectations about the product",
+            "Company financial performance",
+            "Employee satisfaction levels"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Specific customer needs and expectations about the product."
+        },
+        {
+          "question": "A fintech startup using 'design thinking' would:?",
+          "options": [
+            "Focus only on financial projections",
+            "Empathize with users, define problems, ideate, prototype, and test new features",
+            "Avoid user feedback to maintain original vision",
+            "Copy competitor designs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Empathize with users, define problems, ideate, prototype, and test new features."
+        },
+        {
+          "question": "The 'operational plan' section of a business plan covers:?",
+          "options": [
+            "Marketing strategies only",
+            "Financial projections only",
+            "Logistics, supply chain, and day-to-day activities",
+            "Competitor analysis only"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Logistics, supply chain, and day-to-day activities."
+        },
+        {
+          "question": "Which challenge involves complex licenses and compliance requirements that can delay operations?",
+          "options": [
+            "Financial constraints",
+            "Talent acquisition",
+            "Regulatory and legal issues",
+            "Market uncertainty"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Regulatory and legal issues."
+        },
+        {
+          "question": "'Niche markets' are leveraged to overcome which venture creation challenge?",
+          "options": [
+            "Financial constraints",
+            "Intense competition by finding areas where competition is less intense",
+            "Talent acquisition",
+            "Regulatory issues"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Intense competition by finding areas where competition is less intense."
+        },
+        {
+          "question": "A 'minimum viable product' (MVP) is primarily used to:?",
+          "options": [
+            "Launch the final version of a product immediately",
+            "Test core functionalities with real users before full investment",
+            "Satisfy investor demands for a complete product",
+            "Comply with regulatory requirements"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Test core functionalities with real users before full investment."
+        },
+        {
+          "question": "Which of the following is a benefit of 'strategic networking' in venture creation?",
+          "options": [
+            "Reducing employee salaries",
+            "Providing insights into problems across different industries",
+            "Eliminating market research needs",
+            "Avoiding regulatory compliance"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Providing insights into problems across different industries."
+        },
+        {
+          "question": "The 'growth and scaling' stage of venture creation involves:?",
+          "options": [
+            "Shutting down unprofitable ventures",
+            "Exploring new markets, diversifying offerings, and strengthening the brand",
+            "Returning to idea generation",
+            "Reducing operational capacity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Exploring new markets, diversifying offerings, and strengthening the brand."
+        },
+        {
+          "question": "'Learning from failures' as a strategy for continuous improvement is exemplified by:?",
+          "options": [
+            "A company that never launches new products",
+            "An e-commerce company that failed at auctioning but pivoted to become a successful retailer",
+            "A company that copies competitors without innovating",
+            "A business that avoids market research"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: An e-commerce company that failed at auctioning but pivoted to become a successful retailer."
+        },
+        {
+          "question": "The 'business model' section of a business concept outlines:?",
+          "options": [
+            "Only the company's history",
+            "How the business plans to make a profit, including pricing structure",
+            "Employee training programs",
+            "Social media marketing tactics only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: How the business plans to make a profit, including pricing structure."
+        },
+        {
+          "question": "Which of the following statements about 'idea screening' is correct?",
+          "options": [
+            "All generated ideas should be pursued equally",
+            "Ideas are screened based on feasibility, market potential, and strategic alignment",
+            "Idea screening eliminates the need for prototyping",
+            "Only the CEO screens ideas"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Ideas are screened based on feasibility, market potential, and strategic alignment."
+        }
+      ],
+      "theory": []
+    },
+    {
+      "id": "ent312-r6",
+      "number": 6,
+      "title": "Practice Round 6 (Q126-150)",
+      "cards": [],
+      "quiz": [
+        {
+          "question": "Tesla's market opportunity was identified by capitalizing on:?",
+          "options": [
+            "The decline of renewable energy",
+            "The shift towards sustainable energy and limited electric vehicle options",
+            "The growth of traditional fuel vehicles",
+            "The decline of mobile technology"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The shift towards sustainable energy and limited electric vehicle options."
+        },
+        {
+          "question": "The 'product or service' section of a business concept document describes:?",
+          "options": [
+            "The company's tax filing process",
+            "What product or service is offered, why it's being created, and how it fulfills needs",
+            "Only the pricing of the product",
+            "The company's legal structure"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: What product or service is offered, why it's being created, and how it fulfills needs."
+        },
+        {
+          "question": "'Brainstorming sessions that reward out-of-the-box thinking' are described as which problem-solving strategy?",
+          "options": [
+            "Systematic problem identification",
+            "Analytical thinking training",
+            "Encouraging creative solutions",
+            "Learning from setbacks"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Encouraging creative solutions."
+        },
+        {
+          "question": "The 'financial plan' section of a business plan includes:?",
+          "options": [
+            "Employee personal information",
+            "Budget, projections, and funding requirements",
+            "Social media content strategy",
+            "Product design specifications only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Budget, projections, and funding requirements."
+        },
+        {
+          "question": "Which of the following is a key principle in developing a business concept?",
+          "options": [
+            "Rushing to launch without testing",
+            "Avoiding market research to save time",
+            "Testing the concept with focus groups or market trials before full launch",
+            "Ignoring competitor analysis"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Testing the concept with focus groups or market trials before full launch."
+        },
+        {
+          "question": "'Investing in R&D;' for continuous improvement can lead to:?",
+          "options": [
+            "Reduced innovation capacity",
+            "Proprietary technologies offering competitive advantage",
+            "Increased regulatory compliance costs only",
+            "Fewer product offerings"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Proprietary technologies offering competitive advantage."
+        },
+        {
+          "question": "The importance of 'diversity' in idea generation teams is that it:?",
+          "options": [
+            "Reduces the number of ideas generated",
+            "Leads to conflicts that slow down decision-making",
+            "Uncovers unique solutions that might not emerge in a homogeneous group",
+            "Eliminates the need for market research"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Uncovers unique solutions that might not emerge in a homogeneous group."
+        },
+        {
+          "question": "Which of the following describes 'consumer behavior analysis' as a tool for market opportunity identification?",
+          "options": [
+            "Analyzing only the financial performance of competitors",
+            "Understanding evolving preferences and spending habits to reveal emerging markets",
+            "Measuring employee productivity",
+            "Tracking regulatory changes only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Understanding evolving preferences and spending habits to reveal emerging markets."
+        },
+        {
+          "question": "'Continuous monitoring and adjustments' after the business launch are important for:?",
+          "options": [
+            "Reducing product variety",
+            "Ensuring growth and sustainability of the venture",
+            "Avoiding investor reporting",
+            "Minimizing customer interactions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Ensuring growth and sustainability of the venture."
+        },
+        {
+          "question": "The key difference between 'opportunity assessment' and 'idea generation' is:?",
+          "options": [
+            "Idea generation evaluates feasibility while opportunity assessment brainstorms ideas",
+            "Opportunity assessment evaluates feasibility and market potential of an already identified idea",
+            "Both steps are identical in nature",
+            "Opportunity assessment focuses only on financial projections"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Opportunity assessment evaluates feasibility and market potential of an already identified idea."
+        },
+        {
+          "question": "'Influencer marketing' is described as a tool for:?",
+          "options": [
+            "Managing supply chains",
+            "Building brand awareness and creating visibility in the market",
+            "Regulatory compliance",
+            "Financial planning"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Building brand awareness and creating visibility in the market."
+        },
+        {
+          "question": "The 'market analysis' section of a business plan provides:?",
+          "options": [
+            "Only competitor names",
+            "Insights into the target market and competition",
+            "Employee recruitment plans",
+            "Product manufacturing details only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Insights into the target market and competition."
+        },
+        {
+          "question": "'Building a diverse network' helps entrepreneurs by:?",
+          "options": [
+            "Reducing the need for formal market research",
+            "Providing insights into problems across different industries and inspiring new solutions",
+            "Eliminating competition",
+            "Reducing product development costs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Providing insights into problems across different industries and inspiring new solutions."
+        },
+        {
+          "question": "Which of the following statements about 'business concepts' is TRUE?",
+          "options": [
+            "A business concept is always the same as a business plan",
+            "A business concept is a brief, foundational document guiding the development of a full plan",
+            "Business concepts are only needed for large corporations",
+            "A business concept does not include a target market section"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: A business concept is a brief, foundational document guiding the development of a full plan."
+        },
+        {
+          "question": "The 'Pareto Principle' helps startups prioritize by focusing on:?",
+          "options": [
+            "All problems equally",
+            "The 20% of causes responsible for 80% of effects",
+            "80% of team members' contributions",
+            "Quarterly financial reporting cycles"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: The 20% of causes responsible for 80% of effects."
+        },
+        {
+          "question": "'Emotional stress and fear of failure' are described as which type of challenge in venture creation?",
+          "options": [
+            "External regulatory challenges",
+            "Financial constraints",
+            "Personal and psychological challenges for entrepreneurs",
+            "Talent acquisition issues"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Personal and psychological challenges for entrepreneurs."
+        },
+        {
+          "question": "A startup that 'pivots' does what?",
+          "options": [
+            "Shuts down operations entirely",
+            "Merges with a larger company",
+            "Changes its strategy or business model based on market feedback or failures",
+            "Avoids all changes to its original plan"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Changes its strategy or business model based on market feedback or failures."
+        },
+        {
+          "question": "Which of the following correctly matches a company with its cited innovation?",
+          "options": [
+            "Airbnb – electric vehicles",
+            "Dropbox – ride-hailing",
+            "Tesla – sustainable electric vehicles",
+            "Slack – accommodation sharing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Tesla – sustainable electric vehicles."
+        },
+        {
+          "question": "'Customer-centric innovation' involves:?",
+          "options": [
+            "Ignoring customer usage data",
+            "Involving customers in the innovation process to align solutions with market needs",
+            "Developing products without user testing",
+            "Focusing only on production efficiency"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Involving customers in the innovation process to align solutions with market needs."
+        },
+        {
+          "question": "The 'competitive landscape' analysis in opportunity assessment helps entrepreneurs:?",
+          "options": [
+            "Avoid all forms of competition",
+            "Identify differentiation opportunities in the market",
+            "Reduce product pricing automatically",
+            "Secure government contracts"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Identify differentiation opportunities in the market."
+        },
+        {
+          "question": "Which of the following is a characteristic of 'infrastructure business concepts'?",
+          "options": [
+            "They focus on mobile app development",
+            "They involve large-scale physical projects with strict schedules and budgets",
+            "They primarily target individual consumers online",
+            "They are always government-owned"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: They involve large-scale physical projects with strict schedules and budgets."
+        },
+        {
+          "question": "'Brand identity' in marketing and branding includes:?",
+          "options": [
+            "Only the product's price tag",
+            "Logo, tagline, and messaging to differentiate the business in the market",
+            "Only the company's legal name",
+            "Employee uniforms only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Logo, tagline, and messaging to differentiate the business in the market."
+        },
+        {
+          "question": "Which of the following best describes the purpose of a 'business plan'?",
+          "options": [
+            "It is a single-page summary for investors",
+            "It acts as a roadmap defining the venture's goals, strategies, and resource requirements",
+            "It is only used for securing bank loans",
+            "It replaces market research entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: It acts as a roadmap defining the venture's goals, strategies, and resource requirements."
+        },
+        {
+          "question": "Entrepreneurs are advised to 'embrace failures as learning opportunities' because:?",
+          "options": [
+            "Failures automatically guarantee future success",
+            "Failures provide insights that shape more effective future strategies",
+            "Failures eliminate competition",
+            "Failures reduce business costs immediately"
+          ],
+          "correctIndex": 1,
+          "explanation": "Correct answer: Failures provide insights that shape more effective future strategies."
+        },
+        {
+          "question": "Which of the following is the FINAL step in the steps for a successful business launch mentioned in Chapter 3?",
+          "options": [
+            "Write a complete business plan",
+            "Brand the business",
+            "Conduct ongoing customer and market research",
+            "Obtain investors or financing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Correct answer: Conduct ongoing customer and market research."
+        }
+      ],
+      "theory": []
+    }
+  ]
+}
