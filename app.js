@@ -24,6 +24,32 @@ function withTransition(fn) {
   }
 }
 
+// Pushes a browser history entry so back/swipe-back steps through the app
+// (chapter -> path -> home) instead of leaving the page entirely, since
+// nothing else in this SPA ever calls pushState on its own.
+function goHome() {
+  history.pushState({ view: "home" }, "");
+  renderHome();
+}
+function goPath(courseId) {
+  history.pushState({ view: "path", courseId }, "");
+  renderPath(courseId);
+}
+function goChapter(courseId, chapterId) {
+  history.pushState({ view: "chapter", courseId, chapterId }, "");
+  startLesson(courseId, chapterId);
+}
+
+window.addEventListener("popstate", (e) => {
+  const s = e.state || { view: "home" };
+  if (s.view === "path") withTransition(() => renderPath(s.courseId));
+  // going back from anywhere inside a chapter (lesson/quiz/theory) lands on
+  // the path view, same as clicking "Exit lesson" — we don't track enough
+  // state to resume mid-question, and re-entering resets that attempt anyway.
+  else if (s.view === "chapter") withTransition(() => renderPath(s.courseId));
+  else withTransition(renderHome);
+});
+
 const app = document.getElementById("app");
 const statXp = document.getElementById("stat-xp");
 const statStreak = document.getElementById("stat-streak");
@@ -229,7 +255,7 @@ function renderHome() {
       btn.classList.add("empty");
       node.querySelector(".course-progress").remove();
     } else {
-      btn.addEventListener("click", () => withTransition(() => renderPath(course.id)));
+      btn.addEventListener("click", () => withTransition(() => goPath(course.id)));
     }
     list.appendChild(node);
   });
@@ -248,7 +274,7 @@ function renderPath(courseId) {
   const back = document.createElement("button");
   back.className = "back-btn";
   back.innerHTML = icon("arrowLeft") + "All courses";
-  back.addEventListener("click", () => withTransition(renderHome));
+  back.addEventListener("click", () => withTransition(goHome));
   app.appendChild(back);
 
   const heading = document.createElement("div");
@@ -275,7 +301,7 @@ function renderPath(courseId) {
       status === "empty" ? `Ch.${ch.number} — coming soon` : ch.title;
 
     if (status === "available" || status === "completed") {
-      btn.addEventListener("click", () => withTransition(() => startLesson(courseId, ch.id)));
+      btn.addEventListener("click", () => withTransition(() => goChapter(courseId, ch.id)));
     }
 
     wrap.appendChild(node);
@@ -310,7 +336,7 @@ function renderLessonCard() {
   const back = document.createElement("button");
   back.className = "back-btn";
   back.innerHTML = icon("x") + "Exit lesson";
-  back.addEventListener("click", () => withTransition(() => renderPath(nav.courseId)));
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   app.appendChild(back);
 
   const progress = document.createElement("div");
@@ -401,7 +427,7 @@ function renderQuizQuestion(qIndex) {
   const back = document.createElement("button");
   back.className = "back-btn";
   back.innerHTML = icon("x") + "Exit lesson";
-  back.addEventListener("click", () => withTransition(() => renderPath(nav.courseId)));
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   app.appendChild(back);
 
   const progress = document.createElement("div");
@@ -494,7 +520,7 @@ function renderTheoryQuestion(tIndex, revealed, draftAnswer = "") {
   const back = document.createElement("button");
   back.className = "back-btn";
   back.innerHTML = icon("x") + "Exit lesson";
-  back.addEventListener("click", () => withTransition(() => renderPath(nav.courseId)));
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   app.appendChild(back);
 
   const progress = document.createElement("div");
@@ -627,7 +653,7 @@ function finishChapter() {
   const btn = document.createElement("button");
   btn.className = "btn-primary";
   btn.textContent = "Back to path";
-  btn.addEventListener("click", () => withTransition(() => renderPath(nav.courseId)));
+  btn.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   bar.appendChild(btn);
   app.appendChild(done);
   app.appendChild(bar);
@@ -645,6 +671,7 @@ function escapeHtml(str) {
 
 (async function init() {
   renderStats();
+  history.replaceState({ view: "home" }, "");
   try {
     await loadCourses();
     renderHome();
