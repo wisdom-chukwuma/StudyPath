@@ -2,7 +2,9 @@
   "id": "gst312",
   "code": "GST 312",
   "title": "Peace and Conflict Studies",
-  "category": "GEDS",
+  "category": [
+    "GEDS"
+  ],
   "chapters": [
     {
       "id": "gst312-r1",

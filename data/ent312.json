@@ -2,7 +2,9 @@
   "id": "ent312",
   "code": "ENT 312",
   "title": "Venture Creation",
-  "category": "GEDS",
+  "category": [
+    "GEDS"
+  ],
   "note": "Currently covers Chapters 1-3 (Venture Creation, Market Opportunities, Idea Development). Chapters 4-8 aren't in yet.",
   "chapters": [
     {

@@ -2,7 +2,9 @@
   "id": "csc322",
   "code": "CSC 322",
   "title": "Innovation & Entrepreneurial Opportunities in IT",
-  "category": "Comp Sci",
+  "category": [
+    "Comp Sci"
+  ],
   "chapters": [
     {
       "id": "csc322-l1",

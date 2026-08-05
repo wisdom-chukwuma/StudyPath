@@ -5,5 +5,6 @@
   { "id": "gst312", "file": "gst312.json" },
   { "id": "bugst312", "file": "bugst312.json" },
   { "id": "csc308", "file": "csc308.json" },
-  { "id": "ent312", "file": "ent312.json" }
+  { "id": "ent312", "file": "ent312.json" },
+  { "id": "seng322", "file": "seng322.json" }
 ]

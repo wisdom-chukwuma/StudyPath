@@ -1,0 +1,16 @@
+{
+  "id": "seng322",
+  "code": "SENG 322",
+  "title": "Software Engineering Innovation and New Technology",
+  "category": ["Software Engineer"],
+  "chapters": [
+    {
+      "id": "seng322-w1",
+      "number": 1,
+      "title": "Coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    }
+  ]
+}

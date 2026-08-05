@@ -2,7 +2,9 @@
   "id": "dts304",
   "code": "DTS 304",
   "title": "Data Management I",
-  "category": "Comp Sci",
+  "category": [
+    "Comp Sci"
+  ],
   "chapters": [
     {
       "id": "dts304-ch1",

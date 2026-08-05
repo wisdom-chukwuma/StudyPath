@@ -2,7 +2,9 @@
   "id": "cyb206",
   "code": "CYB 202",
   "title": "Introduction to Cybersecurity and Strategy",
-  "category": "Comp Sci",
+  "category": [
+    "Comp Sci"
+  ],
   "chapters": [
     {
       "id": "cyb202-m1a",
@@ -49,37 +51,67 @@
       "quiz": [
         {
           "question": "A flaw in a system, network, or app that could be exploited is called a:",
-          "options": ["Vulnerability", "Threat", "Exploit", "Attack"],
+          "options": [
+            "Vulnerability",
+            "Threat",
+            "Exploit",
+            "Attack"
+          ],
           "correctIndex": 0,
           "explanation": "Vulnerability is the weak point itself — the unlocked gate. Threat is the potential danger that could use it, Exploit is the tool used to actually take advantage of it, and Attack is the act of breaching security."
         },
         {
           "question": "Reading someone's screen over their shoulder without altering anything they're doing is an example of a:",
-          "options": ["Active attack", "Passive attack", "Zero-day exploit", "Botnet"],
+          "options": [
+            "Active attack",
+            "Passive attack",
+            "Zero-day exploit",
+            "Botnet"
+          ],
           "correctIndex": 1,
           "explanation": "Passive attacks eavesdrop or monitor without changing anything (like network sniffing). Active attacks disrupt or alter things directly, e.g. injecting malware or a DoS attack."
         },
         {
           "question": "Which tool converts plain text into unreadable ciphertext so only someone with the correct key can read it?",
-          "options": ["Firewall", "Encryption", "IDS", "Patch Management"],
+          "options": [
+            "Firewall",
+            "Encryption",
+            "IDS",
+            "Patch Management"
+          ],
           "correctIndex": 1,
           "explanation": "That's Encryption — writing your gist in a language only your guy understands. A Firewall filters traffic based on rules, it doesn't scramble data."
         },
         {
           "question": "A flaw that's unknown to the vendor, with no patch yet available, is called a:",
-          "options": ["Botnet", "Zero-Day Vulnerability", "Data Breach", "Firewall"],
+          "options": [
+            "Botnet",
+            "Zero-Day Vulnerability",
+            "Data Breach",
+            "Firewall"
+          ],
           "correctIndex": 1,
           "explanation": "Zero-Day Vulnerability — \"zero days\" of warning before it gets exploited, since nobody (including the vendor) knew it existed yet."
         },
         {
           "question": "Tricking a PERSON (not a system) into revealing confidential information, like a fake \"IT Support\" call asking for your password, is called:",
-          "options": ["Penetration Testing", "Social Engineering", "Multi-Factor Authentication", "Threat Intelligence"],
+          "options": [
+            "Penetration Testing",
+            "Social Engineering",
+            "Multi-Factor Authentication",
+            "Threat Intelligence"
+          ],
           "correctIndex": 1,
           "explanation": "Social Engineering targets human trust, not a technical flaw. Penetration Testing is the opposite spirit — ethically hacking your OWN system on purpose to find weaknesses first."
         },
         {
           "question": "An Intrusion Detection System (IDS) does which of these?",
-          "options": ["Blocks all suspicious traffic automatically", "Monitors traffic and raises an alert when something looks suspicious", "Encrypts all outgoing data", "Stores backup copies of files"],
+          "options": [
+            "Blocks all suspicious traffic automatically",
+            "Monitors traffic and raises an alert when something looks suspicious",
+            "Encrypts all outgoing data",
+            "Stores backup copies of files"
+          ],
           "correctIndex": 1,
           "explanation": "IDS flags and alerts — it doesn't block on its own (that's closer to an Intrusion PREVENTION System). It's the security guard who radios for backup, not the one who tackles the intruder."
         }
@@ -154,31 +186,56 @@
       "quiz": [
         {
           "question": "Isolating an affected system to stop a threat from spreading further is which incident response step?",
-          "options": ["Eradication", "Containment", "Recovery", "Post-Incident Analysis"],
+          "options": [
+            "Eradication",
+            "Containment",
+            "Recovery",
+            "Post-Incident Analysis"
+          ],
           "correctIndex": 1,
           "explanation": "Containment comes first — isolate it before you can safely remove it (Eradication), then restore normal operation (Recovery), then review what happened (Post-Incident Analysis)."
         },
         {
           "question": "Which CIA Triad element is protected mainly through hashing and digital signatures?",
-          "options": ["Confidentiality", "Integrity", "Availability", "Accountability"],
+          "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "Accountability"
+          ],
           "correctIndex": 1,
           "explanation": "Integrity is about the data not being secretly changed — hashing creates a fingerprint that breaks if the data is altered. Confidentiality uses encryption/access controls; Availability uses redundancy/load balancing."
         },
         {
           "question": "Using backup systems and load balancing to keep a service accessible protects which CIA element?",
-          "options": ["Confidentiality", "Integrity", "Availability", "Non-Repudiation"],
+          "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "Non-Repudiation"
+          ],
           "correctIndex": 2,
           "explanation": "Availability = the system is actually there when you need it. Redundancy and load balancing exist specifically to stop downtime."
         },
         {
           "question": "In the Risk Management cycle, which step comes first?",
-          "options": ["Mitigate Risk", "Identify Risk", "Monitor Controls", "Assess Risk"],
+          "options": [
+            "Mitigate Risk",
+            "Identify Risk",
+            "Monitor Controls",
+            "Assess Risk"
+          ],
           "correctIndex": 1,
           "explanation": "The order is Identify → Assess → Mitigate → Monitor, then it loops back to Identify again. You can't assess or mitigate a risk you haven't identified yet."
         },
         {
           "question": "Proving that someone can't later deny having sent a message or performed an action is called:",
-          "options": ["Authentication", "Accountability", "Non-Repudiation", "Confidentiality"],
+          "options": [
+            "Authentication",
+            "Accountability",
+            "Non-Repudiation",
+            "Confidentiality"
+          ],
           "correctIndex": 2,
           "explanation": "Non-Repudiation, enforced via digital signatures and audit trails — like a \"seen\" receipt that kills any \"I never got it\" excuse. Authentication is about proving WHO you are, not that you can't deny an action."
         }
@@ -248,25 +305,45 @@
       "quiz": [
         {
           "question": "Deploying intrusion prevention systems (IPS), backup solutions, and disaster recovery plans mainly supports which role of cybersecurity?",
-          "options": ["Protecting National Security", "Ensuring Business Continuity", "Enhancing User Trust", "Supporting E-Commerce"],
+          "options": [
+            "Protecting National Security",
+            "Ensuring Business Continuity",
+            "Enhancing User Trust",
+            "Supporting E-Commerce"
+          ],
           "correctIndex": 1,
           "explanation": "That's Business Continuity — keeping day-to-day operations running even when a cyber threat or system failure hits."
         },
         {
           "question": "Protecting hospitals, power grids, and transport systems from cyber-attack falls mainly under which role?",
-          "options": ["Safeguarding Critical Infrastructure", "Supporting E-Commerce and Online Services", "Enabling Innovation and Growth", "Enhancing User Trust"],
+          "options": [
+            "Safeguarding Critical Infrastructure",
+            "Supporting E-Commerce and Online Services",
+            "Enabling Innovation and Growth",
+            "Enhancing User Trust"
+          ],
           "correctIndex": 0,
           "explanation": "Critical Infrastructure — healthcare, energy, transportation. Attacks here can cause widespread disruption or real harm to society, not just inconvenience."
         },
         {
           "question": "Secure payment gateways and fraud detection systems mainly support which role of cybersecurity?",
-          "options": ["Protecting National Security", "Supporting E-Commerce and Online Services", "Safeguarding Critical Infrastructure", "Ensuring Business Continuity"],
+          "options": [
+            "Protecting National Security",
+            "Supporting E-Commerce and Online Services",
+            "Safeguarding Critical Infrastructure",
+            "Ensuring Business Continuity"
+          ],
           "correctIndex": 1,
           "explanation": "E-Commerce and Online Services — the growth of online shopping/banking increased fraud risk, so secure payment gateways and fraud detection exist specifically to keep those transactions safe."
         },
         {
           "question": "The idea that people are more likely to use a digital service if they believe it takes their security seriously is called:",
-          "options": ["Enhancing User Trust", "Enabling Innovation and Growth", "Protecting National Security", "Business Continuity"],
+          "options": [
+            "Enhancing User Trust",
+            "Enabling Innovation and Growth",
+            "Protecting National Security",
+            "Business Continuity"
+          ],
           "correctIndex": 0,
           "explanation": "Enhancing User Trust — strong visible security builds the confidence that drives adoption of a service in the first place."
         }
@@ -287,13 +364,69 @@
         }
       ]
     },
-    { "id": "cyb202-m2", "number": 2, "title": "Module 2 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m3", "number": 3, "title": "Module 3 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m4", "number": 4, "title": "Module 4 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m5", "number": 5, "title": "Module 5 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m6", "number": 6, "title": "Module 6 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m7", "number": 7, "title": "Module 7 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m8", "number": 8, "title": "Module 8 — coming soon", "cards": [], "quiz": [], "theory": [] },
-    { "id": "cyb202-m9", "number": 9, "title": "Module 9 — coming soon", "cards": [], "quiz": [], "theory": [] }
+    {
+      "id": "cyb202-m2",
+      "number": 2,
+      "title": "Module 2 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m3",
+      "number": 3,
+      "title": "Module 3 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m4",
+      "number": 4,
+      "title": "Module 4 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m5",
+      "number": 5,
+      "title": "Module 5 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m6",
+      "number": 6,
+      "title": "Module 6 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m7",
+      "number": 7,
+      "title": "Module 7 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m8",
+      "number": 8,
+      "title": "Module 8 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    },
+    {
+      "id": "cyb202-m9",
+      "number": 9,
+      "title": "Module 9 — coming soon",
+      "cards": [],
+      "quiz": [],
+      "theory": []
+    }
   ]
 }

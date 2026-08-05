@@ -2,7 +2,9 @@
   "id": "bugst312",
   "code": "BU-GST 312",
   "title": "Family Life Education",
-  "category": "GEDS",
+  "category": [
+    "GEDS"
+  ],
   "chapters": [
     {
       "id": "bugst312-r1",

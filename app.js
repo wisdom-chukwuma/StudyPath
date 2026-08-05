@@ -212,7 +212,7 @@ function renderHome() {
   nav = { view: "home", courseId: null, chapterId: null };
   app.innerHTML = "";
 
-  const categories = ["All", ...new Set(COURSES.map(c => c.category).filter(Boolean))];
+  const categories = ["All", ...new Set(COURSES.flatMap(c => c.category || []))];
   if (categories.length > 2) {
     const tabs = document.createElement("div");
     tabs.className = "filter-tabs";
@@ -232,7 +232,7 @@ function renderHome() {
   const list = document.createElement("div");
   list.className = "course-list";
 
-  const visibleCourses = (homeFilter === "All" ? COURSES : COURSES.filter(c => c.category === homeFilter))
+  const visibleCourses = (homeFilter === "All" ? COURSES : COURSES.filter(c => (c.category || []).includes(homeFilter)))
     .slice()
     .sort((a, b) => a.code.localeCompare(b.code));
 
