@@ -365,44 +365,1074 @@
       ]
     },
     {
-      "id": "cyb202-m2",
-      "number": 2,
-      "title": "Module 2 — coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "cyb202-m2a",
+      "number": "2a",
+      "title": "Module 2a — Common Cyber Threats",
+      "cards": [
+        {
+          "heading": "Cyber threat — the danger before the damage",
+          "body": "A cyber threat is anything that could exploit a weakness in a system, network, or person. It may be malware, phishing, ransomware, a weak password, or a careless user opening the wrong link. A threat is the possibility of harm, not the harm itself.\n\nThink of it like leaving your gate unlocked overnight — nothing's happened yet, but the risk is sitting right there."
+        },
+        {
+          "heading": "Malware — the digital parasite",
+          "body": "Malware is malicious software designed to disrupt, damage, or gain unauthorized access. Common forms include viruses, worms, Trojans, spyware, and ransomware. The difference is mostly in how they spread and what damage they cause.\n\nDifferent species, same family — like different types of scam calls, they all just want access."
+        },
+        {
+          "heading": "Phishing — tricking the human first",
+          "body": "Phishing is a form of social engineering where attackers pretend to be trustworthy to get users to reveal information. It often comes through fake emails, messages, or login pages that look real. The weakness is often the human user, not just the technology.\n\nBasically the digital version of someone calling pretending to be your network provider to get your PIN."
+        },
+        {
+          "heading": "DoS and DDoS — too much traffic, no service",
+          "body": "A Denial-of-Service attack overwhelms a system with excessive traffic so that real users cannot access it. A Distributed Denial-of-Service attack uses many devices at once, making it harder to stop. The goal is usually disruption and downtime.\n\nImagine 10,000 people trying to squeeze into one small shop at once — nobody gets served, including the real customers."
+        },
+        {
+          "heading": "Insider threat — the danger from the inside",
+          "body": "An insider threat comes from someone with authorized access, such as an employee or contractor. The danger may come from carelessness, poor habits, or deliberate misuse. These threats are risky because the attacker already has some level of trust.\n\nThe scariest kind, because it's not a stranger at the gate — it's someone who already has the keys."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which of the following is malicious software designed to damage or disrupt a system?",
+          "options": [
+            "Firewall",
+            "Malware",
+            "Encryption",
+            "Backup"
+          ],
+          "correctIndex": 1,
+          "explanation": "Malware is software created to harm or compromise systems."
+        },
+        {
+          "question": "A fake email that tricks users into revealing login details is called:",
+          "options": [
+            "Phishing",
+            "Ransomware",
+            "Brute force",
+            "Firewalling"
+          ],
+          "correctIndex": 0,
+          "explanation": "Phishing uses deception to extract sensitive information from a person."
+        },
+        {
+          "question": "Which attack floods a system with traffic so real users cannot access it?",
+          "options": [
+            "Phishing",
+            "DDoS",
+            "Spyware",
+            "Encryption"
+          ],
+          "correctIndex": 1,
+          "explanation": "A DDoS attack overwhelms a service with excessive traffic."
+        },
+        {
+          "question": "Why are insider threats especially dangerous?",
+          "options": [
+            "They are always visible",
+            "They already have some level of access",
+            "They use only one device",
+            "They never involve people"
+          ],
+          "correctIndex": 1,
+          "explanation": "Insider threats come from people who already have some trust and access."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the main categories of cyber threats and how they differ.",
+          "modelAnswer": "Cyber threats include malware, phishing, DoS/DDoS, insider threats, and password attacks. Malware harms systems directly, phishing attacks people through deception, DoS and DDoS disrupt service availability, insider threats come from trusted users, and password attacks try to guess or crack credentials. Each threat exploits a different weakness in the system or the user.",
+          "keyPoints": [
+            "Malware attacks computers or networks directly",
+            "Phishing attacks people through deception",
+            "DoS/DDoS disrupt availability",
+            "Insider threats come from authorized users"
+          ]
+        }
+      ]
     },
     {
-      "id": "cyb202-m3",
-      "number": 3,
-      "title": "Module 3 — coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "cyb202-m2b",
+      "number": "2b",
+      "title": "Module 2b — Defensive Measures & Security Controls",
+      "cards": [
+        {
+          "heading": "Defensive measures — stopping the attack before it wins",
+          "body": "Defensive measures are controls used to reduce risk and minimize damage. They include firewalls, antivirus, access controls, encryption, regular updates, and backups. Good defense is usually layered.\n\nSame logic as a compound with a gate, a gateman, AND a dog — one layer failing shouldn't mean game over."
+        },
+        {
+          "heading": "Firewalls and access control",
+          "body": "A firewall filters traffic based on rules and blocks suspicious connections. Access control limits what users can see or do depending on their role. These two controls strengthen the first line of defense.\n\nA firewall is the bouncer; access control is the bouncer also checking your wristband colour before letting you past VIP."
+        },
+        {
+          "heading": "Encryption — protecting the content",
+          "body": "Encryption scrambles data so that only someone with the proper key can read it. It helps protect sensitive information both while it is stored and while it is being transmitted.\n\nLike sending gist in coded slang only your close friend understands — useless to anyone who intercepts it."
+        },
+        {
+          "heading": "Updates and patching",
+          "body": "Software updates close known security holes. Patch management is important because many attacks exploit systems that have not been updated. Regular patching reduces avoidable risk.\n\nIgnoring that update notification for months? That's leaving a known crack in the wall unfixed."
+        },
+        {
+          "heading": "User awareness training",
+          "body": "Many breaches begin with a user error, such as clicking a fake link or using a weak password. Awareness training helps users recognize threats and follow safer habits.\n\nThe reason your aunty stopped falling for \"Congratulations, you won!\" texts — someone finally explained the trick to her."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which of these is a defensive control?",
+          "options": [
+            "Phishing",
+            "Ransomware",
+            "Antivirus",
+            "Insider attack"
+          ],
+          "correctIndex": 2,
+          "explanation": "Antivirus is a defensive control used to detect and block malicious software."
+        },
+        {
+          "question": "Why are software updates important in cybersecurity?",
+          "options": [
+            "They remove the need for passwords",
+            "They reduce the risk from known vulnerabilities",
+            "They stop all phishing attacks",
+            "They replace firewalls"
+          ],
+          "correctIndex": 1,
+          "explanation": "Updates patch known weaknesses and reduce the chance that attackers can exploit them."
+        },
+        {
+          "question": "What is the main purpose of encryption?",
+          "options": [
+            "To make systems faster",
+            "To hide data from unauthorized users",
+            "To replace user awareness training",
+            "To stop all traffic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Encryption protects data by making it unreadable without the correct key."
+        },
+        {
+          "question": "What does access control do?",
+          "options": [
+            "It removes all risk",
+            "It limits what users can access or do",
+            "It changes the password automatically",
+            "It creates malware"
+          ],
+          "correctIndex": 1,
+          "explanation": "Access control restricts what a user can view or perform based on authorization."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss why layered defenses are better than relying on a single control.",
+          "modelAnswer": "Layered defenses are better because if one control fails, another can still protect the system. Firewalls, encryption, access control, antivirus, patching, and user training all reduce risk in different ways. This reduces the chance that one weakness will lead to a full compromise.",
+          "keyPoints": [
+            "Layered security improves resilience",
+            "Different controls defend against different threats",
+            "No single tool is enough for complete protection"
+          ]
+        }
+      ]
     },
     {
-      "id": "cyb202-m4",
-      "number": 4,
-      "title": "Module 4 — coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "cyb202-m2c",
+      "number": "2c",
+      "title": "Module 2c — Incident Response & Risk Management",
+      "cards": [
+        {
+          "heading": "Incident response — what happens when the alarm sounds",
+          "body": "Incident response is the process of handling a security event after it has been detected. It usually involves identifying the problem, containing it, removing the threat, recovering the system, and learning from the incident.\n\nSame as a fire outbreak — contain it, put it out, check the damage, then figure out why the extinguisher wasn't closer."
+        },
+        {
+          "heading": "Containment and eradication",
+          "body": "Containment stops the threat from spreading, while eradication removes it from the infected system. These steps come before full recovery so the organization can regain control safely.\n\nTurn off the tap before you start mopping the floor — stop the spread before you clean up."
+        },
+        {
+          "heading": "Recovery and lessons learned",
+          "body": "Recovery restores systems to normal operation and checks that they are safe. The final stage is reviewing what happened so the organization can improve future defenses.\n\nLike reviewing a lost match — not to feel bad, but so the same mistake doesn't repeat next time."
+        },
+        {
+          "heading": "Risk management — planning for the unexpected",
+          "body": "Risk management is the ongoing process of identifying risks, assessing their impact, choosing controls, and monitoring them. It helps organizations prepare for likely problems before they become disasters.\n\nBasically insurance-thinking — you're not predicting disaster, you're preparing so it doesn't wreck you if it happens."
+        },
+        {
+          "heading": "The goal of security practice",
+          "body": "The aim of cybersecurity is not only to stop attacks but also to reduce damage when attacks do occur. Prevention, detection, response, and recovery all work together.\n\nYou'll never be 100% attack-proof — the real goal is making sure an attack never becomes a catastrophe."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the main purpose of incident response?",
+          "options": [
+            "To create more passwords",
+            "To prevent all attacks forever",
+            "To handle a security event in an organized way",
+            "To replace firewalls"
+          ],
+          "correctIndex": 2,
+          "explanation": "Incident response helps an organization react quickly and systematically after a security event."
+        },
+        {
+          "question": "Which step comes first in incident response?",
+          "options": [
+            "Recovery",
+            "Containment",
+            "Post-incident review",
+            "Password reset"
+          ],
+          "correctIndex": 1,
+          "explanation": "Containment is used to stop the spread of the threat before recovery or cleanup."
+        },
+        {
+          "question": "What is risk management mainly about?",
+          "options": [
+            "Ignoring possible threats",
+            "Creating more viruses",
+            "Identifying and reducing risk",
+            "Deleting all logs"
+          ],
+          "correctIndex": 2,
+          "explanation": "Risk management helps an organization identify, assess, and reduce potential risks."
+        },
+        {
+          "question": "Why is post-incident review important?",
+          "options": [
+            "It makes attacks happen faster",
+            "It replaces backups",
+            "It helps improve future defenses",
+            "It removes all passwords"
+          ],
+          "correctIndex": 2,
+          "explanation": "Reviewing the incident helps the organization learn and strengthen its security."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss the importance of defensive measures and incident response in cybersecurity.",
+          "modelAnswer": "Defensive measures reduce the chance of attack and limit damage, while incident response ensures that when an attack happens, the organization can contain, remove, recover, and learn from it. Risk management ties the process together by helping organizations identify and reduce likely risks before they become emergencies.",
+          "keyPoints": [
+            "Defensive measures reduce impact",
+            "Incident response handles events in a structured way",
+            "Recovery and review improve future protection"
+          ]
+        }
+      ]
     },
     {
-      "id": "cyb202-m5",
-      "number": 5,
-      "title": "Module 5 — coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "cyb202-m3a",
+      "number": "3a",
+      "title": "Module 3a — Identifying & Detecting Threats",
+      "cards": [
+        {
+          "heading": "Vulnerability assessment — finding the weak spots early",
+          "body": "A vulnerability assessment is a systematic evaluation of a system, network, or application to discover weaknesses before attackers can exploit them. It helps security teams prioritize which issues need attention first.\n\nLike checking your own compound for weak spots before a thief does."
+        },
+        {
+          "heading": "Penetration testing — acting like an attacker on purpose",
+          "body": "Penetration testing is a simulated attack used to test the effectiveness of security controls. It can be black box, white box, or gray box depending on how much information the tester has.\n\nLiterally paying someone to try and break into your own house on purpose, so you find the weak lock first."
+        },
+        {
+          "heading": "Threat hunting — going out to look for hidden danger",
+          "body": "Threat hunting is a proactive approach where security teams search for threats that may have bypassed normal detection systems. It focuses on uncovering hidden actors that may already be inside the environment.\n\nNot waiting for the alarm — actively walking round checking if someone's already inside."
+        },
+        {
+          "heading": "Behavioral analytics — spotting strange behavior",
+          "body": "Behavioral analytics examines user and system behavior for unusual patterns. It is useful for identifying suspicious activities that traditional rules-based detection may miss.\n\nLike noticing a friend's account is suddenly typing in a completely different tone at 3am — something's off."
+        },
+        {
+          "heading": "Intrusion detection systems — the alarm system",
+          "body": "An Intrusion Detection System monitors network or system activity and alerts administrators when suspicious behavior is detected. IDS helps with early warning, but it does not always stop the attack by itself.\n\nThe security light that flicks on when something moves — it doesn't stop the intruder, it just makes sure somebody notices."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the purpose of a vulnerability assessment?",
+          "options": [
+            "To replace antivirus",
+            "To discover weaknesses before they are exploited",
+            "To delete logs",
+            "To shut down all users"
+          ],
+          "correctIndex": 1,
+          "explanation": "A vulnerability assessment identifies security gaps so they can be fixed before attackers exploit them."
+        },
+        {
+          "question": "Which type of penetration testing is done without prior knowledge of the system?",
+          "options": [
+            "White box",
+            "Gray box",
+            "Black box",
+            "Red box"
+          ],
+          "correctIndex": 2,
+          "explanation": "Black box testing simulates an outsider attack without prior knowledge of the system."
+        },
+        {
+          "question": "Threat hunting is mainly used to:",
+          "options": [
+            "Create more alerts",
+            "Find hidden threats that bypass normal detection",
+            "Block every user",
+            "Prevent all updates"
+          ],
+          "correctIndex": 1,
+          "explanation": "Threat hunting looks for threats that may have gone unnoticed by standard detection systems."
+        },
+        {
+          "question": "What is the main role of an IDS?",
+          "options": [
+            "To encrypt all files",
+            "To monitor activity and raise alerts",
+            "To replace passwords",
+            "To stop all traffic"
+          ],
+          "correctIndex": 1,
+          "explanation": "An IDS monitors activity and alerts administrators to possible intrusions."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the techniques used to identify and detect cyber threats.",
+          "modelAnswer": "Techniques include vulnerability assessments, penetration testing, threat hunting, behavioral analytics, and intrusion detection systems. Vulnerability assessment finds weak points, penetration testing simulates attacks, threat hunting searches for hidden threats, behavioral analytics looks for abnormal behavior, and IDS monitors activity to detect suspicious events. Together, these techniques improve early detection and reduce risk.",
+          "keyPoints": [
+            "Vulnerability assessments discover weaknesses",
+            "Pen testing simulates attacks",
+            "Threat hunting looks for hidden threats",
+            "Behavioral analytics detects unusual activity",
+            "IDS raises alerts for suspicious behavior"
+          ]
+        }
+      ]
     },
     {
-      "id": "cyb202-m6",
-      "number": 6,
-      "title": "Module 6 — coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "cyb202-m3b",
+      "number": "3b",
+      "title": "Module 3b — Defending Against Cyber Attacks",
+      "cards": [
+        {
+          "heading": "Firewalls — the first line of defense",
+          "body": "A firewall monitors incoming and outgoing traffic and blocks or allows traffic according to defined rules. It helps prevent unauthorized access to networks and systems.\n\nSame bouncer-at-the-door energy from Module 2 — still the first line, every time."
+        },
+        {
+          "heading": "Endpoint protection — securing devices",
+          "body": "Endpoint protection protects devices such as laptops, desktops, servers, and mobile devices. This includes antivirus, anti-malware, EDR, encryption, and application control.\n\nLocking every single door in the house, not just the front gate — laptop, phone, all of it."
+        },
+        {
+          "heading": "Access control mechanisms — controlling who gets in",
+          "body": "Access control regulates who can access systems, files, or resources. Methods include role-based access control, mandatory access control, and multi-factor authentication.\n\nNot everyone in the house should have keys to every room — RBAC and MFA are just formal versions of that instinct."
+        },
+        {
+          "heading": "Patch management — closing known holes",
+          "body": "Patch management is the process of updating software to fix known weaknesses and improve security. It is essential because many attacks exploit outdated systems.\n\nThe update you keep postponing is exactly the hole an attacker is hoping you postpone."
+        },
+        {
+          "heading": "Data encryption — making data unreadable to attackers",
+          "body": "Encryption converts readable data into unreadable ciphertext so that only authorized users with the proper key can access it. It protects data both at rest and in transit.\n\nSame coded-slang trick as before — useless to whoever intercepts it without the key."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the purpose of a firewall?",
+          "options": [
+            "To replace all passwords",
+            "To monitor and control traffic",
+            "To delete backups",
+            "To generate malware"
+          ],
+          "correctIndex": 1,
+          "explanation": "A firewall filters traffic and helps block unauthorized access."
+        },
+        {
+          "question": "Why is patch management important?",
+          "options": [
+            "It creates new devices",
+            "It closes known vulnerabilities",
+            "It removes all users",
+            "It increases traffic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Patch management helps fix known weaknesses and keep systems secure."
+        },
+        {
+          "question": "Which of these is a common access control method?",
+          "options": [
+            "Ransomware",
+            "Role-Based Access Control",
+            "DDoS",
+            "Phishing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Role-Based Access Control is used to limit access based on roles."
+        },
+        {
+          "question": "What does encryption protect?",
+          "options": [
+            "Only the CPU",
+            "Only the keyboard",
+            "Data from unauthorized access",
+            "Only the internet connection"
+          ],
+          "correctIndex": 2,
+          "explanation": "Encryption protects data by making it unreadable without the correct key."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss three ways of defending against cyber attacks.",
+          "modelAnswer": "Three common defense methods are firewalls, endpoint protection, and access control. Firewalls filter network traffic, endpoint protection secures devices, and access control ensures that only authorized people can access systems and data. Patch management and encryption further strengthen defense by reducing vulnerabilities and protecting information."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m3c",
+      "number": "3c",
+      "title": "Module 3c — Protecting Information Assets",
+      "cards": [
+        {
+          "heading": "Information assets — what the organization must protect",
+          "body": "Information assets are valuable resources or data that support the operations and goals of an organization. They may be physical, digital, or intellectual and must be protected because loss or compromise can cause major harm.\n\nBasically anything that would genuinely hurt if it leaked or got deleted — that's what's being protected here."
+        },
+        {
+          "heading": "Confidentiality, integrity, and availability",
+          "body": "Protecting information assets means maintaining confidentiality, integrity, and availability. Confidentiality keeps data private, integrity keeps it accurate, and availability ensures it can be accessed when needed.\n\nThe same CIA triad from Module 1, showing up again because it's the actual goal of everything in this course."
+        },
+        {
+          "heading": "Data classification — knowing what matters most",
+          "body": "Data classification helps organizations decide how sensitive information is and how strongly it should be protected. Highly sensitive data needs stronger controls than ordinary information.\n\nNot every file deserves a vault — classification is deciding what actually needs the extra locks."
+        },
+        {
+          "heading": "Backup and recovery — preparing for loss",
+          "body": "Backups ensure that important data can be restored when systems fail, files are corrupted, or ransomware attacks occur. Recovery plans are part of keeping services available.\n\nThe reason losing your phone doesn't mean losing your photos — if you actually backed them up first."
+        },
+        {
+          "heading": "Secure disposal and network segmentation",
+          "body": "Secure disposal removes data safely from outdated devices or documents, while network segmentation limits how far an attack can spread. Both are important for reducing risk.\n\nShredding old documents instead of binning them whole, and building internal walls so one breach doesn't flood the whole building."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What are information assets?",
+          "options": [
+            "Only physical files",
+            "Valuable information resources an organization protects",
+            "Only backup copies",
+            "Only passwords"
+          ],
+          "correctIndex": 1,
+          "explanation": "Information assets are valuable information resources that support the organization’s operations."
+        },
+        {
+          "question": "Which of the following is part of the CIA triad?",
+          "options": [
+            "Confidentiality",
+            "Networking",
+            "Password sharing",
+            "Hardware repair"
+          ],
+          "correctIndex": 0,
+          "explanation": "Confidentiality is one of the core principles of protecting information assets."
+        },
+        {
+          "question": "Why is backup and recovery important?",
+          "options": [
+            "It makes systems slower",
+            "It helps restore data after loss or attack",
+            "It replaces encryption",
+            "It prevents all login attempts"
+          ],
+          "correctIndex": 1,
+          "explanation": "Backups allow an organization to recover important data after loss, corruption, or attack."
+        },
+        {
+          "question": "What is network segmentation used for?",
+          "options": [
+            "To hide all files",
+            "To divide networks and limit attack spread",
+            "To remove all access control",
+            "To create more data"
+          ],
+          "correctIndex": 1,
+          "explanation": "Network segmentation limits how harmful an attack can be by isolating areas of the network."
+        }
+      ],
+      "theory": [
+        {
+          "question": "What are information assets and how can they be protected?",
+          "modelAnswer": "Information assets are valuable resources that an organization uses to operate effectively. They can be protected through data classification, backups and recovery, secure disposal, network segmentation, continuous monitoring, and strong security controls. The goal is to preserve confidentiality, integrity, and availability.",
+          "keyPoints": [
+            "Information assets are valuable organizational resources",
+            "Protection maintains confidentiality, integrity, and availability",
+            "Classification, backup, disposal, and segmentation are key controls"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m4a",
+      "number": "4a",
+      "title": "Module 4a — Cybersecurity in Civil Institutions",
+      "cards": [
+        {
+          "heading": "Cybersecurity and civil life",
+          "body": "Cybersecurity is now essential in civil institutions because modern society depends heavily on digital systems. Sectors such as healthcare, education, transport, finance, and government services all need strong protection to remain reliable and trusted.\n\nEvery sector you interact with daily — your bank app, your school portal, your hospital records — is running on this."
+        },
+        {
+          "heading": "Protection of critical infrastructure",
+          "body": "Critical infrastructure includes energy systems, transport networks, hospitals, and public utilities. A successful cyberattack on these systems can disrupt essential services and cause serious economic and human harm.\n\nThis is the tier where a cyberattack stops being an inconvenience and starts being a real emergency — power, transport, hospitals."
+        },
+        {
+          "heading": "Safeguarding personal data",
+          "body": "Civil institutions store large amounts of personal information. Cybersecurity helps protect this data from theft, misuse, and unauthorized access, supporting privacy laws and public trust.\n\nThe reason you (mostly) trust your bank app with your BVN — the assumption that someone's actually protecting it."
+        },
+        {
+          "heading": "Financial sector resilience",
+          "body": "Banks and financial institutions depend on secure systems for transactions, records, and customer trust. Strong cybersecurity helps prevent fraud, large-scale fraud attacks, and system failures.\n\nEvery failed bank transfer scare you've had is exactly why this matters."
+        },
+        {
+          "heading": "Public services and healthcare",
+          "body": "Cybersecurity keeps public services and healthcare systems functioning smoothly. It helps reduce disruptions that could otherwise affect service delivery, patient care, and public safety.\n\nA hospital's system going down isn't just annoying — it can be life-threatening."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why is cybersecurity important in civil institutions?",
+          "options": [
+            "It replaces all technology",
+            "It protects essential services and data",
+            "It removes the need for laws",
+            "It stops all internet usage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Civil institutions depend on secure digital systems to protect services, data, and public trust."
+        },
+        {
+          "question": "Which of these is an example of critical infrastructure?",
+          "options": [
+            "A school timetable",
+            "A power grid",
+            "A personal diary",
+            "A music playlist"
+          ],
+          "correctIndex": 1,
+          "explanation": "Critical infrastructure includes essential services such as electricity, transport, and healthcare systems."
+        },
+        {
+          "question": "Why is protecting personal data important?",
+          "options": [
+            "It makes websites slower",
+            "It prevents identity theft and privacy breaches",
+            "It removes the need for passwords",
+            "It stops emails"
+          ],
+          "correctIndex": 1,
+          "explanation": "Safeguarding personal data helps prevent identity theft and protects individual privacy."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the impact of cybersecurity on civil institutions.",
+          "modelAnswer": "Cybersecurity has a major impact on civil institutions because it helps protect critical infrastructure, personal data, financial systems, public services, and healthcare. Without strong cybersecurity, these sectors could face service disruption, data breaches, financial losses, and loss of public trust."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m4b",
+      "number": "4b",
+      "title": "Module 4b — Cybersecurity in Military Institutions",
+      "cards": [
+        {
+          "heading": "Military cybersecurity matters in modern warfare",
+          "body": "Military institutions depend on cybersecurity to protect communication networks, intelligence systems, and strategic operations. In modern conflict, cyber capability is just as important as physical defense.\n\nCyber capability is now as strategically important as having actual weapons — sometimes more so."
+        },
+        {
+          "heading": "Protection of communication and data",
+          "body": "Military communications must stay secure so that sensitive information cannot be intercepted or altered. Cybersecurity ensures confidentiality, integrity, and availability of this data.\n\nLeaked military comms isn't just a scandal, it's a national security failure."
+        },
+        {
+          "heading": "Securing defense systems and weapons",
+          "body": "Modern defense systems, including drones, satellites, radar systems, and missile infrastructure, must be protected from cyberattack. A compromised weapon or defense system could create serious national security risks.\n\nA hacked drone or radar system is a physical-world disaster caused by a digital-world breach."
+        },
+        {
+          "heading": "Cyber warfare and deterrence",
+          "body": "Cybersecurity supports both defense and offensive capability. It helps military organizations detect attacks, defend critical systems, and deter adversaries from launching cyber operations.\n\nSame logic as physical defense — the goal isn't just blocking attacks, it's making attacking too costly to try."
+        },
+        {
+          "heading": "Joint operations and intelligence",
+          "body": "Military alliances depend on secure data sharing and coordinated operations. Cybersecurity helps protect shared intelligence and ensures collaboration between defense forces remains trustworthy and reliable.\n\nAllied militaries sharing intel only works if both sides trust the channel isn't leaking."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why is cybersecurity important for military institutions?",
+          "options": [
+            "It replaces soldiers",
+            "It protects communication and defense systems",
+            "It removes all conflict",
+            "It prevents all weather changes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Military cybersecurity protects data, communications, and defense systems from compromise."
+        },
+        {
+          "question": "Which of these is a military cybersecurity concern?",
+          "options": [
+            "School timetable",
+            "Satellite systems",
+            "Music streaming",
+            "Personal photos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Military systems such as satellites and defense infrastructure must be protected from cyber threats."
+        },
+        {
+          "question": "What is one benefit of cybersecurity in joint operations?",
+          "options": [
+            "It stops all international cooperation",
+            "It enables secure sharing of information",
+            "It removes the need for planning",
+            "It prevents all wars"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cybersecurity helps allied forces share information securely and cooperate safely."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the impact of cybersecurity on military institutions.",
+          "modelAnswer": "Cybersecurity is crucial for military institutions because it protects communication, intelligence, defense systems, and operational data. It helps prevent espionage, protects national security, supports cyber defense, and allows military operations to remain effective and secure."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m4c",
+      "number": "4c",
+      "title": "Module 4c — Privacy, Business & Government Applications",
+      "cards": [
+        {
+          "heading": "Privacy in civil and military use",
+          "body": "Cybersecurity protects personal privacy and sensitive government or military information. Strong security prevents unauthorized access to data and supports trust in digital services.\n\nThe line between a government that protects your data and one that leaks it is entirely cybersecurity."
+        },
+        {
+          "heading": "Business and digital operations",
+          "body": "Businesses rely on cybersecurity to protect customer data, payment systems, intellectual property, and business operations. Cybersecurity also helps reduce fraud, ransomware attacks, and industrial espionage.\n\nEvery data-breach headline you've seen about a company losing customer info — this is the field trying to prevent that."
+        },
+        {
+          "heading": "Government and public administration",
+          "body": "Governments use cybersecurity to secure elections, tax data, welfare systems, public records, and communication channels. It helps maintain the continuity of public services and national operations.\n\nElections, tax records, welfare systems — imagine the chaos if any of these got tampered with."
+        },
+        {
+          "heading": "Challenges in cybersecurity",
+          "body": "Cybersecurity faces challenges such as evolving threats, complex systems, lack of skilled professionals, insider threats, privacy concerns, and supply chain vulnerabilities. These challenges affect both civil and military sectors.\n\nThe field never gets to relax — new tech means new holes, faster than defenders can patch them."
+        },
+        {
+          "heading": "Why the field keeps growing",
+          "body": "As technology advances, cybersecurity becomes more important in protecting society, business, and national security. Ongoing innovation and collaboration are needed to keep up with new risks.\n\nMore of life moves online every year, so this job never runs out of relevance."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "How does cybersecurity affect businesses?",
+          "options": [
+            "It makes them stop using technology",
+            "It protects data, systems, and transactions",
+            "It removes the need for staff",
+            "It replaces all software"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cybersecurity protects business information and keeps digital operations safe and reliable."
+        },
+        {
+          "question": "Why is government cybersecurity important?",
+          "options": [
+            "It prevents all public services",
+            "It protects citizen data and public systems",
+            "It removes legal rules",
+            "It replaces all paper records"
+          ],
+          "correctIndex": 1,
+          "explanation": "Government cybersecurity helps protect public services, records, and national systems."
+        },
+        {
+          "question": "Which is a major challenge in cybersecurity?",
+          "options": [
+            "Too much sunlight",
+            "Shortage of skilled professionals",
+            "Too many printers",
+            "No internet"
+          ],
+          "correctIndex": 1,
+          "explanation": "A shortage of trained cybersecurity professionals is a serious challenge for many organizations."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss the role of cybersecurity in privacy, business, and government applications.",
+          "modelAnswer": "Cybersecurity protects privacy by keeping personal and classified data safe. In business, it protects customer information, financial transactions, and company assets. In government, it protects public services, records, communication systems, and national infrastructure. It also helps address challenges such as evolving threats, insider risks, and resource shortages."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m5a",
+      "number": "5a",
+      "title": "Module 5a — Methods & Motives of Perpetrators",
+      "cards": [
+        {
+          "heading": "Cyber incidents are caused by people and motives",
+          "body": "Cybersecurity incidents are often caused by individuals or groups who exploit digital weaknesses for different reasons. These reasons may include financial gain, political goals, revenge, curiosity, espionage, or sabotage.\n\nBehind every attack is a person with a reason — sometimes money, sometimes ego, sometimes a grudge."
+        },
+        {
+          "heading": "Common types of cyber attacks",
+          "body": "Attackers use many tools and techniques such as malware, phishing, ransomware, denial of service, man-in-the-middle attacks, brute force, SQL injection, and insider attacks. Each method targets a different weakness in systems or people.\n\nSame toolbox, different job — each technique just suits a different kind of weak spot."
+        },
+        {
+          "heading": "Why attackers attack",
+          "body": "Attackers may act for financial gain, to disrupt business operations, to create fear, to spread political or religious beliefs, to blackmail someone, or to gain strategic advantage. The motive often shapes how the attack is carried out.\n\nSame as real-world crime — follow the motive and the method usually makes sense."
+        },
+        {
+          "heading": "Who the perpetrators are",
+          "body": "Perpetrators can include black hat hackers, white hat hackers, gray hat hackers, cybercriminals, nation-state actors, insider threats, hacktivists, and script kiddies. Not all of them are equally harmful, but each matters in understanding cyber risk.\n\nNot every \"hacker\" is the villain — some (white hats) are the ones defending you."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which of these is a common cyber attack method?",
+          "options": [
+            "Weather report",
+            "Phishing",
+            "Cooking",
+            "Traffic light"
+          ],
+          "correctIndex": 1,
+          "explanation": "Phishing is a common cyber attack that tricks users into revealing information."
+        },
+        {
+          "question": "A major motive for cyber attacks is:",
+          "options": [
+            "To create music",
+            "To gain money or disrupt systems",
+            "To improve the weather",
+            "To reduce internet use"
+          ],
+          "correctIndex": 1,
+          "explanation": "Many cyber attacks are carried out for financial gain, sabotage, or disruption."
+        },
+        {
+          "question": "Which group is known for ethical hacking?",
+          "options": [
+            "Black hat hackers",
+            "White hat hackers",
+            "Script kiddies",
+            "Ransomware"
+          ],
+          "correctIndex": 1,
+          "explanation": "White hat hackers use their skills ethically to help improve security."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the methods and motives of cybersecurity incident perpetrators.",
+          "modelAnswer": "Cybersecurity incident perpetrators use methods such as malware, phishing, ransomware, denial-of-service, insider attacks, and SQL injection to exploit weaknesses. Their motives may include financial gain, espionage, sabotage, revenge, hacktivism, or political goals. Understanding both the methods and the motives is important for prevention and defense."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m5b",
+      "number": "5b",
+      "title": "Module 5b — Countermeasures & Defensive Strategies",
+      "cards": [
+        {
+          "heading": "Defensive measures prevent attacks",
+          "body": "Defensive measures are designed to stop or reduce the risk of cyber attacks before they happen. They include firewalls, encryption, multi-factor authentication, antivirus, access control, patching, network segmentation, and security awareness training.\n\nThe gate, the dog, and the cameras — all working before anything even happens."
+        },
+        {
+          "heading": "Responsive measures manage incidents",
+          "body": "Responsive measures are used after an attack has been detected. These include incident response plans, real-time monitoring, forensic investigation, backup and disaster recovery, and communication with stakeholders.\n\nWhat kicks in the moment something's already gone wrong — the fire brigade, not the smoke detector."
+        },
+        {
+          "heading": "Why layered security matters",
+          "body": "No single defense tool is enough. A strong cybersecurity approach combines several controls so that if one fails, others still protect the organization.\n\nIf your only defense is one padlock, one bolt cutter ends it — layers are the whole point."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which of these is a defensive measure?",
+          "options": [
+            "Ransomware",
+            "Firewall",
+            "Data theft",
+            "Blackmail"
+          ],
+          "correctIndex": 1,
+          "explanation": "A firewall is a defensive control that filters traffic and blocks unauthorized access."
+        },
+        {
+          "question": "What is the main purpose of an incident response plan?",
+          "options": [
+            "To make attacks easier",
+            "To respond to incidents in an organized way",
+            "To delete all files",
+            "To replace passwords"
+          ],
+          "correctIndex": 1,
+          "explanation": "An incident response plan helps an organization manage and recover from cyber incidents efficiently."
+        },
+        {
+          "question": "Why is multi-factor authentication useful?",
+          "options": [
+            "It removes the need for any password",
+            "It adds another layer of identity verification",
+            "It prevents all malware",
+            "It replaces backups"
+          ],
+          "correctIndex": 1,
+          "explanation": "MFA adds extra verification steps so that stolen passwords alone are less useful to attackers."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss defensive and responsive countermeasures used against cyber attacks.",
+          "modelAnswer": "Defensive countermeasures such as firewalls, encryption, MFA, antivirus, patching, access control, and awareness training help prevent attacks. Responsive measures such as incident response, monitoring, forensic investigation, backup recovery, and communication help contain and recover from attacks when they happen."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m5c",
+      "number": "5c",
+      "title": "Module 5c — Prevention, Detection & Incident Handling",
+      "cards": [
+        {
+          "heading": "Prevention focuses on stopping attacks early",
+          "body": "Preventive measures include strong authentication, firewalls, encryption, network segmentation, secure configuration, patch management, access controls, awareness training, antivirus, and regular backups. These reduce vulnerability and make attacks harder to carry out.\n\nEvery one of these is a lock added before anyone's even tried the door."
+        },
+        {
+          "heading": "Detection helps teams respond quickly",
+          "body": "Detection involves identifying suspicious activity early so that attacks can be contained before serious damage occurs. This is often supported by IDS/IPS, monitoring systems, and security analytics.\n\nThe smoke detector, not the fire extinguisher — its whole job is noticing fast."
+        },
+        {
+          "heading": "Incident handling is about control and recovery",
+          "body": "Once an incident is detected, the organization must contain it, investigate it, recover systems, and review lessons learned. This helps minimize damage and improve future defenses.\n\nContain, investigate, recover, review — the same rhythm from Module 2, showing up again because it's the standard playbook."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the main aim of prevention in cybersecurity?",
+          "options": [
+            "To stop attacks before they happen",
+            "To ignore warnings",
+            "To create more viruses",
+            "To remove all monitoring"
+          ],
+          "correctIndex": 0,
+          "explanation": "Prevention aims to reduce risk and stop attacks before they occur."
+        },
+        {
+          "question": "Why is detection important?",
+          "options": [
+            "It helps identify threats early",
+            "It replaces backups",
+            "It removes the need for policies",
+            "It stops all attacks permanently"
+          ],
+          "correctIndex": 0,
+          "explanation": "Detection allows an organization to identify suspicious activity before it becomes a major incident."
+        },
+        {
+          "question": "What should happen after an incident is detected?",
+          "options": [
+            "Nothing",
+            "Contain, investigate, recover, and review",
+            "Delete all logs",
+            "Ignore the problem"
+          ],
+          "correctIndex": 1,
+          "explanation": "Good incident handling includes response, recovery, and learning from the event."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the importance of prevention, detection, and incident handling in cybersecurity.",
+          "modelAnswer": "Prevention reduces the chance of attack by removing weaknesses and enforcing controls. Detection helps organizations identify attacks early so that they can respond quickly. Incident handling then ensures the organization contains the threat, recovers systems, and learns from the event to improve future security."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m6a",
+      "number": "6a",
+      "title": "Module 6a — Security Policies & Governance",
+      "cards": [
+        {
+          "heading": "Security policy gives the rules",
+          "body": "A security policy is a formal set of rules that tells users and administrators how information systems should be protected. It defines acceptable use, access rules, password expectations, and responsibilities for maintaining security."
+        },
+        {
+          "heading": "Standards and procedures make policy practical",
+          "body": "Standards are the minimum technical or operational requirements used to meet policy goals. Procedures explain the step-by-step actions required to carry out those standards. This makes policy easier to follow and easier to enforce."
+        },
+        {
+          "heading": "Governance keeps security organized",
+          "body": "Security governance means that leadership, management, and technical teams coordinate their efforts to protect the organization. It ensures that security decisions are aligned with business goals, legal requirements, and risk tolerance."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the main purpose of a security policy?",
+          "options": [
+            "To replace all software",
+            "To define rules for protecting systems and information",
+            "To stop all users from logging in",
+            "To create extra paperwork only"
+          ],
+          "correctIndex": 1,
+          "explanation": "A security policy gives clear rules and expectations for protecting information and systems."
+        },
+        {
+          "question": "Which statement best describes a standard?",
+          "options": [
+            "A personal opinion",
+            "A minimum requirement for meeting policy goals",
+            "A random guideline",
+            "A backup file"
+          ],
+          "correctIndex": 1,
+          "explanation": "Standards provide measurable requirements that support policy implementation."
+        },
+        {
+          "question": "Why is security governance important?",
+          "options": [
+            "It removes all attacks",
+            "It aligns security with business goals and responsibilities",
+            "It removes the need for users",
+            "It replaces technology"
+          ],
+          "correctIndex": 1,
+          "explanation": "Security governance ensures that security efforts are organized, accountable, and aligned with the organization’s needs."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the importance of security policies, standards, procedures, and governance.",
+          "modelAnswer": "Security policies provide the rules for protecting information systems. Standards define the minimum expectations needed to meet those rules, while procedures explain how those expectations are carried out. Governance ensures that security work is coordinated, accountable, and aligned with organizational goals and legal requirements."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m6b",
+      "number": "6b",
+      "title": "Module 6b — Risk Assessment & Control Selection",
+      "cards": [
+        {
+          "heading": "Risk is the chance of harm from a threat",
+          "body": "Risk is the possibility that a vulnerability may be exploited and cause damage to an asset or operation. Risk is usually assessed by looking at the likelihood of an event and the impact it would have."
+        },
+        {
+          "heading": "Assets must be identified before controls are chosen",
+          "body": "An organization should first identify its important assets, such as data, systems, people, and equipment. Once the assets are known, the team can decide which threats are most serious and which controls are needed."
+        },
+        {
+          "heading": "Controls reduce risk in different ways",
+          "body": "Controls can be preventive, detective, corrective, or compensating. Preventive controls stop attacks before they happen, detective controls help reveal them, and corrective controls help restore systems after an event."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Risk is best described as:",
+          "options": [
+            "A backup system",
+            "The chance that harm may occur from a threat",
+            "A password manager",
+            "A type of malware"
+          ],
+          "correctIndex": 1,
+          "explanation": "Risk measures the possibility of damage or loss from a threat exploiting a vulnerability."
+        },
+        {
+          "question": "Why is asset identification important?",
+          "options": [
+            "It removes all risk",
+            "It helps determine which systems and data need the most protection",
+            "It makes policy unnecessary",
+            "It replaces backup systems"
+          ],
+          "correctIndex": 1,
+          "explanation": "Knowing what matters most helps an organization focus its security controls where they are needed most."
+        },
+        {
+          "question": "Which control helps detect a problem after it starts?",
+          "options": [
+            "Preventive control",
+            "Detective control",
+            "Corrective control",
+            "Compensating control"
+          ],
+          "correctIndex": 1,
+          "explanation": "Detective controls identify issues or suspicious activity so they can be addressed quickly."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Discuss how risk assessment helps in choosing security controls.",
+          "modelAnswer": "Risk assessment helps organizations understand which assets are valuable, what threats are likely, and how much damage could occur. This information allows the organization to choose the most appropriate controls to reduce or manage risk effectively."
+        }
+      ]
+    },
+    {
+      "id": "cyb202-m6c",
+      "number": "6c",
+      "title": "Module 6c — Physical Security & Continuity Planning",
+      "cards": [
+        {
+          "heading": "Physical security protects the environment around the system",
+          "body": "Physical security controls include locks, guards, security cameras, access cards, and restricted rooms. These controls prevent unauthorized people from reaching devices, servers, or office spaces."
+        },
+        {
+          "heading": "Backups help recover from failure",
+          "body": "Regular backups protect important data from loss caused by hardware failure, accidental deletion, ransomware, or disasters. A good backup strategy makes recovery faster and less damaging."
+        },
+        {
+          "heading": "Business continuity keeps operations alive",
+          "body": "Business continuity planning prepares an organization to keep working during disruption. It often includes disaster recovery plans, alternative communication methods, and procedures for restoring essential services."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the main goal of physical security?",
+          "options": [
+            "To replace software",
+            "To stop unauthorized physical access",
+            "To create more passwords",
+            "To block internet traffic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Physical security protects facilities and devices from unauthorized access and tampering."
+        },
+        {
+          "question": "Why are backups important?",
+          "options": [
+            "They prevent all attacks",
+            "They help recover data after loss or damage",
+            "They remove the need for monitoring",
+            "They increase network speed"
+          ],
+          "correctIndex": 1,
+          "explanation": "Backups provide a way to restore important information after failure, deletion, or attack."
+        },
+        {
+          "question": "What does business continuity planning focus on?",
+          "options": [
+            "Only making new software",
+            "Keeping operations going during disruption",
+            "Increasing internet bills",
+            "Replacing all staff"
+          ],
+          "correctIndex": 1,
+          "explanation": "Business continuity planning helps an organization continue essential operations during disruptions."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain why physical security and continuity planning are important in cybersecurity.",
+          "modelAnswer": "Physical security reduces the chance that attackers or unauthorized persons can access systems directly. Continuity planning ensures that the organization can recover and continue essential services during incidents, disasters, or major failures."
+        }
+      ]
     },
     {
       "id": "cyb202-m7",
