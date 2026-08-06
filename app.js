@@ -1,4 +1,5 @@
 const STATE_KEY = "studypath_state_v1";
+const SESSION_KEY = "studypath_session_v1";
 const XP_PER_QUESTION = 2;
 const XP_PER_THEORY = 3;
 const XP_CHAPTER_BONUS = 10;
@@ -91,9 +92,87 @@ function saveState() {
 
 function ensureCourseState(courseId) {
   if (!state.courses[courseId]) {
-    state.courses[courseId] = { completed: [], weakSpots: {} };
+    state.courses[courseId] = { completed: [], weakSpots: {}, earnedQuiz: [], earnedTheory: [] };
   }
-  return state.courses[courseId];
+  const cs = state.courses[courseId];
+  if (!cs.earnedQuiz) cs.earnedQuiz = [];
+  if (!cs.earnedTheory) cs.earnedTheory = [];
+  return cs;
+}
+
+// ---------------- session (survives a refresh mid-chapter) ----------------
+
+function saveSession() {
+  const session = {
+    courseId: nav.courseId,
+    chapterId: nav.chapterId,
+    phase: nav.view,
+    lessonIndex,
+    quizQueue,
+    quizAwarded: [...quizAwarded],
+    currentQuestion,
+    theoryQueue,
+    theoryAwarded: [...theoryAwarded],
+    currentTheory,
+  };
+  try {
+    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+  } catch (e) {
+    console.error("Could not save session progress:", e);
+  }
+}
+
+function clearSession() {
+  try {
+    localStorage.removeItem(SESSION_KEY);
+  } catch (e) {
+    console.error("Could not clear session progress:", e);
+  }
+}
+
+function loadSession() {
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {
+    console.error("Saved session was corrupted, ignoring:", e);
+  }
+  return null;
+}
+
+// Restores exactly where the user left off (which card/question, and how
+// far through the requeue any wrong answers had gotten) if the browser
+// reloaded mid-chapter. Returns false if there's nothing valid to resume,
+// so the caller can fall back to the home screen.
+function resumeSession(session) {
+  const course = getCourse(session.courseId);
+  const chapter = course && course.chapters.find(c => c.id === session.chapterId);
+  if (!chapter) { clearSession(); return false; }
+
+  nav = { view: session.phase, courseId: session.courseId, chapterId: session.chapterId };
+  history.replaceState({ view: "chapter", courseId: session.courseId, chapterId: session.chapterId }, "");
+
+  if (session.phase === "lesson" && chapter.cards && chapter.cards[session.lessonIndex]) {
+    lessonIndex = session.lessonIndex || 0;
+    renderLessonCard();
+    return true;
+  }
+  if (session.phase === "quiz" && chapter.quiz && chapter.quiz[session.currentQuestion]) {
+    quizQueue = Array.isArray(session.quizQueue) ? session.quizQueue : [];
+    quizAwarded = new Set(session.quizAwarded || []);
+    currentQuestion = session.currentQuestion;
+    renderQuizQuestion(currentQuestion);
+    return true;
+  }
+  if (session.phase === "theory" && chapter.theory && chapter.theory[session.currentTheory]) {
+    theoryQueue = Array.isArray(session.theoryQueue) ? session.theoryQueue : [];
+    theoryAwarded = new Set(session.theoryAwarded || []);
+    currentTheory = session.currentTheory;
+    renderTheoryQuestion(currentTheory, false);
+    return true;
+  }
+  clearSession();
+  return false;
 }
 
 function localDateString(d = new Date()) {
@@ -210,6 +289,7 @@ let homeFilter = "All";
 
 function renderHome() {
   nav = { view: "home", courseId: null, chapterId: null };
+  clearSession();
   app.innerHTML = "";
 
   const categories = ["All", ...new Set(COURSES.flatMap(c => c.category || []))];
@@ -265,6 +345,7 @@ function renderHome() {
 
 function renderPath(courseId) {
   nav = { view: "path", courseId, chapterId: null };
+  clearSession();
   const course = getCourse(courseId);
   const cs = ensureCourseState(courseId);
   const completedSet = new Set(cs.completed);
@@ -377,6 +458,7 @@ function renderLessonCard() {
   }));
   bar.appendChild(btn);
   app.appendChild(bar);
+  saveSession();
 }
 
 function nextPhaseLabel() {
@@ -450,6 +532,7 @@ function renderQuizQuestion(qIndex) {
     optsEl.appendChild(optBtn);
   });
   app.appendChild(optsEl);
+  saveSession();
 }
 
 function handleAnswer(qIndex, chosenIndex, optsEl) {
@@ -464,11 +547,14 @@ function handleAnswer(qIndex, chosenIndex, optsEl) {
   });
 
   if (correct) {
-    if (!quizAwarded.has(qIndex)) {
+    quizAwarded.add(qIndex);
+    const cs = ensureCourseState(nav.courseId);
+    const earnedKey = `${ch.id}:${qIndex}`;
+    if (!cs.earnedQuiz.includes(earnedKey)) {
+      cs.earnedQuiz.push(earnedKey);
       state.xp += XP_PER_QUESTION;
-      quizAwarded.add(qIndex);
-      saveState();
     }
+    saveState();
   } else {
     const cs = ensureCourseState(nav.courseId);
     const key = `${ch.id}:${qIndex}`;
@@ -515,6 +601,7 @@ function nextTheoryQuestion() {
 function renderTheoryQuestion(tIndex, revealed, draftAnswer = "") {
   const ch = currentChapter();
   const t = ch.theory[tIndex];
+  saveSession();
   app.innerHTML = "";
 
   const back = document.createElement("button");
@@ -593,14 +680,16 @@ function renderTheoryQuestion(tIndex, revealed, draftAnswer = "") {
 
 function handleTheoryRate(tIndex, gotIt) {
   const ch = currentChapter();
+  const cs = ensureCourseState(nav.courseId);
   if (gotIt) {
-    if (!theoryAwarded.has(tIndex)) {
+    theoryAwarded.add(tIndex);
+    const earnedKey = `${ch.id}:${tIndex}`;
+    if (!cs.earnedTheory.includes(earnedKey)) {
+      cs.earnedTheory.push(earnedKey);
       state.xp += XP_PER_THEORY;
-      theoryAwarded.add(tIndex);
-      saveState();
     }
+    saveState();
   } else {
-    const cs = ensureCourseState(nav.courseId);
     const key = `${ch.id}:theory:${tIndex}`;
     cs.weakSpots[key] = (cs.weakSpots[key] || 0) + 1;
     saveState();
@@ -627,6 +716,7 @@ function confettiHtml() {
 }
 
 function finishChapter() {
+  clearSession();
   const cs = ensureCourseState(nav.courseId);
   const ch = currentChapter();
   if (!cs.completed.includes(ch.id)) {
@@ -671,10 +761,13 @@ function escapeHtml(str) {
 
 (async function init() {
   renderStats();
-  history.replaceState({ view: "home" }, "");
   try {
     await loadCourses();
-    renderHome();
+    const session = loadSession();
+    if (!session || !resumeSession(session)) {
+      history.replaceState({ view: "home" }, "");
+      renderHome();
+    }
   } catch (e) {
     console.error("Failed to load course data:", e);
     renderLoadError();
