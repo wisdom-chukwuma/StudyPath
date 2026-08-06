@@ -2,9 +2,166 @@
   "id": "csc308",
   "code": "CSC 308",
   "title": "Operating Systems",
-  "category": [
-    "Comp Sci",
-    "Software Engineer"
-  ],
-  "chapters": []
+  "category": ["Computer Science", "Software Engineering"],
+  "chapters": [
+    {
+      "id": "csc308-ch1",
+      "number": 1,
+      "title": "Introduction to Operating Systems",
+      "cards": [
+        {
+          "heading": "What is an Operating System? — the ultimate resource manager",
+          "body": "An Operating System (OS) is the software that manages a computer's hardware resources (CPU, memory, storage, devices) and provides the services applications need, so no app has to know how to directly talk to the hardware itself.\n\nThink of a busy campus cafeteria at lunch rush: one kitchen (the CPU), a limited stack of plates (memory), one cashier (storage), a few serving staff (I/O devices) — and hundreds of hungry students (running programs) all wanting service RIGHT NOW. Someone has to decide who gets served first, how long each person gets at the counter, and make sure nobody gets forgotten in the queue forever.\n\nThat last part — being forgotten forever — actually has a real name in OS theory: starvation. We'll meet it properly when we get to scheduling. But the \"someone\" managing that whole queue and those limited resources, for every single program on your device, right now, is exactly what the OS does. That's the resource manager role."
+        },
+        {
+          "heading": "Batch systems",
+          "body": "Batch systems process jobs in groups (\"batches\") with zero user interaction while running — you submit the job, walk away, and collect the results later. Historically: punch cards handed to an operator, processed overnight, results ready by morning.\n\nRelatable version: dropping your document off at a photocopy shop and coming back the next day to collect it. You don't stand there watching the machine print — you drop it off, leave, and return later for the output. No back-and-forth, just job-in, output-out."
+        },
+        {
+          "heading": "Time-sharing systems",
+          "body": "Time-sharing systems create the illusion that multiple users are being served at the exact same moment, by rapidly switching the CPU between them in tiny time slices — so fast that nobody notices the wait.\n\nRelatable version: a lecturer replying to 30 different students in a class WhatsApp group within minutes. They're not literally typing 30 replies simultaneously — they're switching between conversations so fast it FEELS simultaneous to everyone waiting. That's exactly what time-sharing does with CPU time across multiple logged-in users."
+        },
+        {
+          "heading": "Distributed systems",
+          "body": "Distributed systems spread the work across multiple independent computers connected by a network, which cooperate and appear to the user as one single, coherent system.\n\nRelatable version: a group project where each member works on a different section from a different location, but the class only ever sees ONE combined submission. From the lecturer's point of view, it's one project — not five separate people scattered around campus. Real examples: Google Search, Netflix, WhatsApp's backend — all secretly dozens (or thousands) of machines pretending to be one."
+        },
+        {
+          "heading": "The four core jobs every OS is always doing",
+          "body": "Whatever the platform — phone, laptop, or server — an OS is constantly doing at least these four jobs:\n\n1. Process management — deciding which program runs when, tracking each one's state\n2. Memory management — allocating RAM to running programs, keeping them out of each other's way\n3. File management — organizing and controlling access to data stored on disk\n4. Device management — coordinating input/output devices: keyboard, screen, printer, and so on\n\nThink of a school principal: deciding which class uses which room and when (process management), making sure two classes never get double-booked into the same space (memory management), keeping school records organized and controlling who can access them (file management), and managing shared equipment like projectors and the PA system so nobody's usage clashes with another's (device management). Same four jobs, every time."
+        },
+        {
+          "heading": "Process scheduling — a real-life analogy",
+          "body": "Back to the cafeteria: the CPU is a single cashier who can only serve ONE request at any exact instant. Process scheduling is the OS's method for deciding WHO gets that cashier next, and for how long, out of everyone currently waiting in line.\n\nDifferent operating systems use different scheduling strategies to make that call fairly (Chapter 6 goes deep into the actual algorithms) — but the core idea never changes: there's one CPU, many programs wanting it, and the OS is the queue manager constantly deciding the order."
+        },
+        {
+          "heading": "OS types — a quick preview",
+          "body": "OS aren't one-size-fits-all — they get classified by what job they're optimized for. Three quick examples for now (Chapter 3 goes much deeper into all the types):\n\n• Real-time OS — must respond within a strict deadline, no excuses. Think airbag-deployment systems.\n• Embedded OS — built into a single-purpose device. Think a smart thermostat.\n• Mobile OS — built around touch, battery life, and keeping apps sandboxed from each other. Android/iOS.\n\nThis is just so the vocabulary isn't brand new when Chapter 3 arrives."
+        },
+        {
+          "heading": "Why this actually matters to you, today",
+          "body": "From room-sized 1950s machines running one job at a time, to the phone in your pocket juggling 40+ apps without you ever thinking about it — that entire evolution (Chapter 2 covers it properly) happened because OS design kept solving the same core problem, better: manage limited resources, fairly, for more users, faster.\n\nTwo ways this touches your actual day, right now: (1) when your phone shows \"app not responding\" but still lets you switch to a different app instead of freezing entirely, that's the OS protecting the rest of the system from one crashing process. (2) When your laptop can run a virus scan, download an update, AND let you type this sentence all at once without hanging, that's the OS's scheduler quietly doing its job in the background, the whole time."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the primary role of an OS in managing a computer's hardware resources?",
+          "options": ["Resource manager / allocator", "Web browser", "Antivirus software", "Compiler"],
+          "correctIndex": 0,
+          "explanation": "The OS's core job is managing and allocating hardware resources (CPU, memory, storage, devices) fairly among running programs — like the cafeteria queue manager deciding who gets the cashier next."
+        },
+        {
+          "question": "Jobs submitted in groups, processed without user interaction while running, with results collected later — this describes a:",
+          "options": ["Time-sharing system", "Batch system", "Distributed system", "Real-time OS"],
+          "correctIndex": 1,
+          "explanation": "That's a Batch system — same energy as dropping a document at a photocopy shop and returning the next day. No interaction during processing, just job-in, output-out."
+        },
+        {
+          "question": "Rapidly switching the CPU between multiple users so each one feels like they have full, immediate attention describes:",
+          "options": ["Batch processing", "Time-sharing", "Distributed computing", "Device management"],
+          "correctIndex": 1,
+          "explanation": "Time-sharing — like a lecturer replying to 30 students in a WhatsApp group so fast it feels simultaneous, when really it's just very fast switching."
+        },
+        {
+          "question": "Netflix's backend — spread across many independent computers, but appearing to the user as one single system — is an example of a:",
+          "options": ["Batch system", "Time-sharing system", "Distributed system", "Embedded system"],
+          "correctIndex": 2,
+          "explanation": "Distributed system — many machines cooperating behind the scenes, presented to the user as one coherent service."
+        },
+        {
+          "question": "Allocating RAM to running programs and keeping them from overwriting each other's data is the job of:",
+          "options": ["Process management", "Memory management", "File management", "Device management"],
+          "correctIndex": 1,
+          "explanation": "Memory management — one of the OS's four core jobs, same as making sure two classes never get double-booked into the same room."
+        },
+        {
+          "question": "Deciding which process gets the CPU next, and for how long, out of everyone waiting, is called:",
+          "options": ["File management", "Process scheduling", "Device driver management", "Batch processing"],
+          "correctIndex": 1,
+          "explanation": "Process scheduling — the cafeteria-cashier analogy: one CPU, many programs wanting it, and the OS deciding the order fairly."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Define an operating system in your own words and explain its role as a resource manager.",
+          "modelAnswer": "An operating system is the software layer that manages a computer's hardware resources — CPU, memory, storage, and I/O devices — and provides services so applications can run without directly controlling the hardware themselves. As a resource manager, its core job is deciding how those limited resources get shared fairly among all the programs that want them at once: which process gets the CPU next, how memory gets divided up, how disk access gets coordinated, so nothing crashes and nothing waits forever.",
+          "keyPoints": [
+            "OS = software managing hardware resources (CPU, memory, storage, I/O)",
+            "Provides services so apps don't need to control hardware directly",
+            "Resource manager role: fairly allocating limited resources among competing programs"
+          ]
+        },
+        {
+          "question": "Differentiate between batch systems, time-sharing systems, and distributed systems with real-world examples.",
+          "modelAnswer": "Batch systems process jobs in groups with no interaction during execution — submit, walk away, collect results later (e.g. old punch-card job processing, or a print shop). Time-sharing systems rapidly switch the CPU between multiple users so each feels they have immediate, continuous attention (e.g. multiple people logged into the same server at once). Distributed systems spread work across multiple independent networked computers that cooperate and appear as a single system to the user (e.g. Netflix, Google Search, WhatsApp's backend).",
+          "keyPoints": [
+            "Batch: grouped jobs, no interaction during run, results collected later",
+            "Time-sharing: rapid CPU switching creates illusion of simultaneous service",
+            "Distributed: many networked machines appearing as one system",
+            "A real-world example for each"
+          ]
+        },
+        {
+          "question": "Describe at least four main functions of an operating system and explain how they support modern computing.",
+          "modelAnswer": "Process management decides which program runs when and tracks each one's state, enabling multitasking. Memory management allocates RAM to running programs and keeps them isolated from each other, preventing crashes and data corruption. File management organizes data on disk and controls access to it, making storage usable and secure. Device management coordinates input/output devices like keyboards, screens, and printers, so multiple programs can share hardware without conflict. Together, these four functions are what let a modern device run dozens of apps at once without everything colliding.",
+          "keyPoints": [
+            "Process management — scheduling, tracking process state",
+            "Memory management — allocation, isolation between programs",
+            "File management — organizing and controlling access to stored data",
+            "Device management — coordinating shared I/O hardware",
+            "Explain how each supports real modern multitasking"
+          ]
+        },
+        {
+          "question": "Using a real-life analogy, explain process scheduling in an operating system.",
+          "modelAnswer": "Process scheduling is the OS deciding which process gets access to the CPU next, and for how long, out of everyone currently waiting. A real-life analogy: a cafeteria with one cashier (the CPU) and a long line of hungry students (processes). The cashier can only serve one person at a time, so someone has to decide the order — who goes next, how long each person gets at the counter — while making sure nobody waits so long they're effectively forgotten (starvation). Different scheduling algorithms are just different rules for making that queue-ordering decision.",
+          "keyPoints": [
+            "Scheduling = deciding which process gets the CPU next, and for how long",
+            "Analogy: one CPU = one cashier, many processes = many people in line",
+            "Must be fair — avoid a process waiting so long it's effectively starved",
+            "Different algorithms exist to make this decision differently (detailed in Ch.6)"
+          ]
+        },
+        {
+          "question": "Classify operating systems into at least three types and provide an example for each.",
+          "modelAnswer": "Real-time OS — must respond within a strict, guaranteed deadline; example: an airbag-deployment control system. Embedded OS — built into a single-purpose device with limited resources; example: a smart thermostat. Mobile OS — designed around touch input, battery efficiency, and sandboxing apps from each other; example: Android or iOS. (Other valid types: batch, time-sharing, distributed, network, hybrid — covered in depth in Chapter 3.)",
+          "keyPoints": [
+            "Real-time OS — strict deadlines (e.g. airbag systems)",
+            "Embedded OS — single-purpose, lightweight (e.g. smart thermostat)",
+            "Mobile OS — touch/battery/app-sandboxing focused (e.g. Android, iOS)",
+            "At least one concrete example per type"
+          ]
+        },
+        {
+          "question": "Discuss how operating systems have evolved from the 1950s to the present day.",
+          "modelAnswer": "1950s systems processed one job at a time with no interaction (batch processing on room-sized machines). Multiprogramming and time-sharing followed, letting multiple users share one machine efficiently. GUIs made computing accessible beyond specialists. Networking and distributed systems in the 1980s-90s connected machines together. Today's OS manage mobile devices and cloud infrastructure, juggling dozens of apps and services at once. Through every stage, the underlying problem stayed the same — manage limited resources fairly — the OS just kept getting better at solving it for more users, faster, on smaller hardware.",
+          "keyPoints": [
+            "1950s: batch processing, one job at a time, room-sized machines",
+            "Multiprogramming/time-sharing: multiple users sharing one machine",
+            "GUIs: made computing accessible to non-specialists",
+            "1980s-90s: networking and distributed systems",
+            "Present: mobile + cloud computing",
+            "Same core problem throughout — resource management — solved progressively better"
+          ]
+        },
+        {
+          "question": "Identify and describe two examples of how operating systems impact your daily life.",
+          "modelAnswer": "First: when a phone shows \"app not responding\" but still lets you switch to a different app instead of the whole device freezing, that's the OS isolating and protecting the rest of the system from one crashing process. Second: when a laptop can run a virus scan, download an update, and let you type a document all at the same time without hanging, that's the OS's scheduler managing the CPU across multiple tasks in the background, continuously.",
+          "keyPoints": [
+            "Example 1: one app crashing doesn't take down the whole device (process isolation)",
+            "Example 2: multiple background tasks running smoothly at once (scheduling)",
+            "Any other concrete, personal example is valid too"
+          ]
+        }
+      ]
+    },
+    { "id": "csc308-ch2", "number": 2, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch3", "number": 3, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch4", "number": 4, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch5", "number": 5, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch6", "number": 6, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch7", "number": 7, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch8", "number": 8, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch9", "number": 9, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] },
+    { "id": "csc308-ch10", "number": 10, "title": "Coming soon", "cards": [], "quiz": [], "theory": [] }
+  ]
 }
