@@ -116,10 +116,19 @@ body::before {
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filter-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-tab {
+  flex: 0 0 auto;
   padding: 8px 18px;
   border-radius: 20px;
   border: 2px solid var(--gray);
@@ -138,6 +147,14 @@ body::before {
   background: var(--green);
   border-color: var(--green-dark);
   color: #fff;
+}
+
+@media (min-width: 700px) {
+  .filter-tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
 }
 
 .course-list {
