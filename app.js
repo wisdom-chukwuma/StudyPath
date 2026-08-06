@@ -1,7 +1,7 @@
 const STATE_KEY = "studypath_state_v1";
 const SESSION_KEY = "studypath_session_v1";
-const XP_PER_QUESTION = 2;
-const XP_PER_THEORY = 3;
+const XP_PER_QUESTION = 1;
+const XP_PER_THEORY = 1;
 const XP_CHAPTER_BONUS = 10;
 
 const ICONS = {
