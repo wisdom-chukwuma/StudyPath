@@ -116,6 +116,27 @@
           "explanation": "IDS flags and alerts — it doesn't block on its own (that's closer to an Intrusion PREVENTION System). It's the security guard who radios for backup, not the one who tackles the intruder."
         }
       ],
+      "fitb": [
+        { "text": "___ is the practice of safeguarding systems, networks, and data from digital attacks.", "answers": [["Cybersecurity", "Cyber security"]] },
+        { "text": "___ refers to the digital environments where activities take place, including the internet, local networks, and cloud infrastructures.", "answers": ["Cyber"] },
+        { "text": "___ involves the measures and protocols implemented to safeguard systems, networks, and data from unauthorized access, tampering, or destruction.", "answers": ["Security"] },
+        { "text": "___ is any potential danger that could exploit vulnerabilities in a system to cause harm, such as malware, phishing, or insider risks.", "answers": ["Threat"] },
+        { "text": "___ is the deceptive technique used to steal sensitive information.", "answers": ["Phishing"] },
+        { "text": "A(n) ___ is a deliberate act aimed at breaching the security of a system.", "answers": ["Attack"] },
+        { "text": "___ attacks involve eavesdropping on or monitoring communications without altering data, such as network sniffing.", "answers": ["Passive"] },
+        { "text": "___ attacks involve disrupting or altering system functionality, such as injecting malware or launching denial-of-service attacks.", "answers": ["Active"] },
+        { "text": "___ includes the strategies and tools used to protect against threats and attacks, such as firewalls, antivirus software, and encryption.", "answers": [["Defence", "Defense"]] },
+        { "text": "___ in cybersecurity refers to ongoing activities such as threat monitoring, incident detection, forensic analysis, and system recovery after an attack.", "answers": ["Operations"] },
+        { "text": "A ___ is a weakness or flaw in a system, network, or application that can be exploited by threats.", "answers": ["Vulnerability"] },
+        { "text": "A(n) ___ is a specific method or tool used to take advantage of a vulnerability, often leading to unauthorized access or control over a system.", "answers": ["Exploit"] },
+        { "text": "A ___ is a security device or software that monitors and controls incoming and outgoing network traffic based on predetermined rules.", "answers": ["Firewall"] },
+        { "text": "___ is the process of converting plain text into coded text (ciphertext) to prevent unauthorized access.", "answers": ["Encryption"] },
+        { "text": "___ testing is the practice of simulating attacks on a system to identify vulnerabilities before real attackers can exploit them.", "answers": [["Penetration", "Pen"]] },
+        { "text": "A(n) ___ vulnerability targets a flaw that is unknown to the vendor and has no available patch.", "answers": [["Zero-day", "Zero day"]] },
+        { "text": "___ combines multiple verification methods, such as a password and a phone code, for enhanced security during authentication.", "answers": [["Multi-Factor Authentication", "MFA"]] },
+        { "text": "A ___ is an unauthorized access or exposure of sensitive, protected, or confidential data.", "answers": [["Data breach"]] },
+        { "text": "___ refers to information gathered and analyzed about existing or emerging threats to help organizations defend against attacks.", "answers": [["Threat intelligence"]] }
+      ],
       "theory": [
         {
           "question": "Discuss Cybercrime and give examples.",
@@ -240,6 +261,21 @@
           "explanation": "Non-Repudiation, enforced via digital signatures and audit trails — like a \"seen\" receipt that kills any \"I never got it\" excuse. Authentication is about proving WHO you are, not that you can't deny an action."
         }
       ],
+      "fitb": [
+        { "text": "The three goals of the CIA Triad are Confidentiality, ___, and Availability.", "answers": ["Integrity"] },
+        { "text": "___ measures aim to stop cyber-attacks before they occur, such as firewalls, access controls, and antivirus software.", "answers": ["Preventive"] },
+        { "text": "___ mechanisms, such as Intrusion Detection Systems (IDS) and log analysis, identify ongoing or potential threats.", "answers": ["Detection"] },
+        { "text": "In incident response, ___ refers to isolating affected systems to prevent further spread of a threat.", "answers": ["Containment"] },
+        { "text": "In incident response, ___ refers to removing the threat from the system, while ___ refers to restoring systems to normal operation.", "answers": ["Eradication", "Recovery"] },
+        { "text": "___ involves identifying potential risks, assessing their impact, and implementing strategies to mitigate them.", "answers": [["Risk management"]] },
+        { "text": "___ ensures that sensitive information is accessible only to authorized individuals, using techniques like encryption and access controls.", "answers": ["Confidentiality"] },
+        { "text": "___ protects data from unauthorized alteration, ensuring its accuracy and reliability, using methods such as hashing and digital signatures.", "answers": ["Integrity"] },
+        { "text": "___ creates a unique fingerprint for data to detect changes.", "answers": ["Hashing"] },
+        { "text": "___ ensures that systems and data are accessible when needed, using techniques such as redundancy and load balancing.", "answers": ["Availability"] },
+        { "text": "___ verifies the identity of users or systems, using methods such as passwords, biometrics, and multi-factor authentication.", "answers": ["Authentication"] },
+        { "text": "___ ensures that actions or communications cannot be denied by the involved parties, achieved through digital signatures and audit trails.", "answers": [["Non-repudiation"]] },
+        { "text": "___ ensures that actions within a system can be traced back to specific individuals, using techniques such as logging and monitoring.", "answers": ["Accountability"] }
+      ],
       "theory": [
         {
           "question": "What are the methods involved in Cyber Security?",
@@ -347,6 +383,11 @@
           "correctIndex": 0,
           "explanation": "Enhancing User Trust — strong visible security builds the confidence that drives adoption of a service in the first place."
         }
+      ],
+      "fitb": [
+        { "text": "Businesses use measures such as intrusion prevention systems, backup solutions, and disaster recovery plans to ensure ___, even in the face of cyber threats or system failures.", "answers": [["Business continuity"]] },
+        { "text": "Sectors such as healthcare, energy, and transportation are considered ___, and depend on secure digital systems to function effectively.", "answers": [["Critical infrastructure"]] },
+        { "text": "Cybersecurity supports the safe adoption of emerging technologies such as cloud computing, artificial intelligence, and the Internet of Things, thereby enabling ___ and growth.", "answers": ["Innovation"] }
       ],
       "theory": [
         {

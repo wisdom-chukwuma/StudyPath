@@ -467,6 +467,32 @@ body::before {
 }
 .theory-draft:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(28, 176, 246, 0.15); }
 
+.fitb-sentence {
+  font-size: 18px;
+  line-height: 2.1;
+  color: var(--text);
+  margin-bottom: 22px;
+}
+
+.fitb-input {
+  display: inline-block;
+  min-width: 140px;
+  margin: 0 2px;
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 2.5px solid var(--blue);
+  background: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+.fitb-input:focus { outline: none; border-bottom-color: var(--green); }
+.fitb-input:disabled { opacity: 1; }
+.fitb-input.correct { border-bottom-color: var(--green); color: var(--green-dark); background: #d7ffb822; }
+.fitb-input.incorrect { border-bottom-color: var(--red); color: #c0392b; background: #ffdfe022; text-decoration: line-through; }
+
 .key-points {
   margin: 10px 0 0;
   padding-left: 20px;

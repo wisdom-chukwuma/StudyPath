@@ -2,6 +2,7 @@ const STATE_KEY = "studypath_state_v1";
 const SESSION_KEY = "studypath_session_v1";
 const XP_PER_QUESTION = 1;
 const XP_PER_THEORY = 1;
+const XP_PER_FITB = 1;
 const XP_CHAPTER_BONUS = 10;
 
 const ICONS = {
@@ -65,6 +66,9 @@ let currentQuestion = null;
 let theoryQueue = [];       // array of theory question indices, "need review" pushed to back
 let theoryAwarded = new Set();
 let currentTheory = null;
+let fitbQueue = [];       // array of fill-in-the-blank question indices, wrong answers pushed to back
+let fitbAwarded = new Set();
+let currentFitb = null;
 
 // ---------------- state ----------------
 
@@ -92,11 +96,12 @@ function saveState() {
 
 function ensureCourseState(courseId) {
   if (!state.courses[courseId]) {
-    state.courses[courseId] = { completed: [], weakSpots: {}, earnedQuiz: [], earnedTheory: [] };
+    state.courses[courseId] = { completed: [], weakSpots: {}, earnedQuiz: [], earnedTheory: [], earnedFitb: [] };
   }
   const cs = state.courses[courseId];
   if (!cs.earnedQuiz) cs.earnedQuiz = [];
   if (!cs.earnedTheory) cs.earnedTheory = [];
+  if (!cs.earnedFitb) cs.earnedFitb = [];
   return cs;
 }
 
@@ -114,6 +119,9 @@ function saveSession() {
     theoryQueue,
     theoryAwarded: [...theoryAwarded],
     currentTheory,
+    fitbQueue,
+    fitbAwarded: [...fitbAwarded],
+    currentFitb,
   };
   try {
     localStorage.setItem(SESSION_KEY, JSON.stringify(session));
@@ -169,6 +177,13 @@ function resumeSession(session) {
     theoryAwarded = new Set(session.theoryAwarded || []);
     currentTheory = session.currentTheory;
     renderTheoryQuestion(currentTheory, false);
+    return true;
+  }
+  if (session.phase === "fitb" && chapter.fitb && chapter.fitb[session.currentFitb]) {
+    fitbQueue = Array.isArray(session.fitbQueue) ? session.fitbQueue : [];
+    fitbAwarded = new Set(session.fitbAwarded || []);
+    currentFitb = session.currentFitb;
+    renderFitbQuestion(currentFitb);
     return true;
   }
   clearSession();
@@ -464,6 +479,7 @@ function renderLessonCard() {
 function nextPhaseLabel() {
   const ch = currentChapter();
   if (ch.quiz && ch.quiz.length > 0) return "Start quiz";
+  if (ch.fitb && ch.fitb.length > 0) return "Start fill-in-the-blank";
   if (ch.theory && ch.theory.length > 0) return "Start practice";
   return "Finish";
 }
@@ -471,11 +487,19 @@ function nextPhaseLabel() {
 function afterLesson() {
   const ch = currentChapter();
   if (ch.quiz && ch.quiz.length > 0) startQuiz();
+  else if (ch.fitb && ch.fitb.length > 0) startFitb();
   else if (ch.theory && ch.theory.length > 0) startTheory();
   else finishChapter();
 }
 
 function afterQuiz() {
+  const ch = currentChapter();
+  if (ch.fitb && ch.fitb.length > 0) startFitb();
+  else if (ch.theory && ch.theory.length > 0) startTheory();
+  else finishChapter();
+}
+
+function afterFitb() {
   const ch = currentChapter();
   if (ch.theory && ch.theory.length > 0) startTheory();
   else finishChapter();
@@ -574,6 +598,141 @@ function handleAnswer(qIndex, chosenIndex, optsEl) {
   btn.className = "btn-primary";
   btn.textContent = "Continue";
   btn.addEventListener("click", () => withTransition(nextQuizQuestion));
+  bar.appendChild(btn);
+  app.appendChild(bar);
+}
+
+// ---------------- fill in the blank ----------------
+
+function normalizeFitbAnswer(s) {
+  return (s || "").trim().toLowerCase().replace(/[.,;:]+$/, "");
+}
+
+// `accepted` is either a single answer string or an array of acceptable
+// variants (e.g. "Trojan" / "Trojan horse") — matches if any variant equals
+// the given answer once both sides are trimmed, lowercased and stripped of
+// trailing punctuation.
+function fitbAnswerMatches(given, accepted) {
+  const list = Array.isArray(accepted) ? accepted : [accepted];
+  const norm = normalizeFitbAnswer(given);
+  return list.some(a => normalizeFitbAnswer(a) === norm);
+}
+
+function startFitb() {
+  nav.view = "fitb";
+  const ch = currentChapter();
+  fitbQueue = ch.fitb.map((_, i) => i);
+  fitbAwarded = new Set();
+  nextFitbQuestion();
+}
+
+function nextFitbQuestion() {
+  if (fitbQueue.length === 0) {
+    afterFitb();
+    return;
+  }
+  const fIndex = fitbQueue.shift();
+  currentFitb = fIndex;
+  renderFitbQuestion(fIndex);
+}
+
+function renderFitbQuestion(fIndex) {
+  const ch = currentChapter();
+  const item = ch.fitb[fIndex];
+  saveSession();
+  app.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back-btn";
+  back.innerHTML = icon("x") + "Exit lesson";
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
+  app.appendChild(back);
+
+  const progress = document.createElement("div");
+  progress.innerHTML = progressTrackHtml(fitbAwarded.size, ch.fitb.length);
+  app.appendChild(progress.firstChild);
+
+  const label = document.createElement("div");
+  label.className = "theory-label";
+  label.textContent = "Fill in the blank";
+  app.appendChild(label);
+
+  const sentence = document.createElement("div");
+  sentence.className = "fitb-sentence";
+  const parts = item.text.split("___");
+  const inputs = [];
+  parts.forEach((part, i) => {
+    sentence.appendChild(document.createTextNode(part));
+    if (i < parts.length - 1) {
+      const inp = document.createElement("input");
+      inp.type = "text";
+      inp.className = "fitb-input";
+      inp.autocomplete = "off";
+      inp.spellcheck = false;
+      inp.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") { e.preventDefault(); checkBtn.click(); }
+      });
+      inputs.push(inp);
+      sentence.appendChild(inp);
+    }
+  });
+  app.appendChild(sentence);
+
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "btn-primary";
+  checkBtn.textContent = "Check answer";
+  checkBtn.addEventListener("click", () => handleFitbSubmit(fIndex, inputs));
+  bar.appendChild(checkBtn);
+  app.appendChild(bar);
+
+  if (inputs[0]) inputs[0].focus();
+}
+
+function handleFitbSubmit(fIndex, inputs) {
+  const ch = currentChapter();
+  const item = ch.fitb[fIndex];
+  const given = inputs.map(i => i.value);
+  const results = item.answers.map((ans, i) => fitbAnswerMatches(given[i], ans));
+  const allCorrect = results.every(Boolean);
+
+  inputs.forEach((inp, i) => {
+    inp.disabled = true;
+    inp.classList.add(results[i] ? "correct" : "incorrect");
+  });
+
+  if (allCorrect) {
+    fitbAwarded.add(fIndex);
+    const cs = ensureCourseState(nav.courseId);
+    const earnedKey = `${ch.id}:${fIndex}`;
+    if (!cs.earnedFitb.includes(earnedKey)) {
+      cs.earnedFitb.push(earnedKey);
+      state.xp += XP_PER_FITB;
+    }
+    saveState();
+  } else {
+    const cs = ensureCourseState(nav.courseId);
+    const key = `${ch.id}:fitb:${fIndex}`;
+    cs.weakSpots[key] = (cs.weakSpots[key] || 0) + 1;
+    saveState();
+    fitbQueue.push(fIndex);
+  }
+
+  const correctAnswers = item.answers.map(a => Array.isArray(a) ? a[0] : a).join(", ");
+  const fb = document.createElement("div");
+  fb.className = "feedback-box " + (allCorrect ? "correct" : "incorrect");
+  fb.innerHTML = `<div class="fb-title">${allCorrect ? "Correct!" : "Not quite"}</div>` +
+    `Answer: ${escapeHtml(correctAnswers)}` +
+    (item.explanation ? `<br>${escapeHtml(item.explanation)}` : "");
+  app.appendChild(fb);
+
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+  const btn = document.createElement("button");
+  btn.className = "btn-primary";
+  btn.textContent = "Continue";
+  btn.addEventListener("click", () => withTransition(nextFitbQuestion));
   bar.appendChild(btn);
   app.appendChild(bar);
 }
