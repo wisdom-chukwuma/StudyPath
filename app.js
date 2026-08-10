@@ -1,5 +1,6 @@
 const STATE_KEY = "studypath_state_v1";
-const SESSION_KEY = "studypath_session_v1";
+const PROGRESS_KEY = "studypath_progress_v1";
+const LAST_ACTIVE_KEY = "studypath_last_active_v1";
 const XP_PER_QUESTION = 1;
 const XP_PER_THEORY = 1;
 const XP_PER_FITB = 1;
@@ -39,15 +40,16 @@ function goPath(courseId) {
 }
 function goChapter(courseId, chapterId) {
   history.pushState({ view: "chapter", courseId, chapterId }, "");
-  startLesson(courseId, chapterId);
+  if (!resumeChapterProgress(courseId, chapterId)) startLesson(courseId, chapterId);
 }
 
 window.addEventListener("popstate", (e) => {
   const s = e.state || { view: "home" };
   if (s.view === "path") withTransition(() => renderPath(s.courseId));
-  // going back from anywhere inside a chapter (lesson/quiz/theory) lands on
-  // the path view, same as clicking "Exit lesson" — we don't track enough
-  // state to resume mid-question, and re-entering resets that attempt anyway.
+  // Going back from anywhere inside a chapter (lesson/quiz/theory/fitb) lands
+  // on the path view, same as clicking "Exit lesson" — this no longer loses
+  // progress, since per-chapter progress is preserved (not cleared) on exit
+  // and will silently resume next time this chapter is entered.
   else if (s.view === "chapter") withTransition(() => renderPath(s.courseId));
   else withTransition(renderHome);
 });
@@ -105,12 +107,42 @@ function ensureCourseState(courseId) {
   return cs;
 }
 
-// ---------------- session (survives a refresh mid-chapter) ----------------
+// ---------------- per-chapter progress (Duolingo-style resume) ----------------
+//
+// Two separate things are tracked, on purpose:
+//  - PROGRESS_KEY: a map of chapterId -> saved position, one entry per
+//    chapter. Survives forever (until that chapter is completed), so
+//    clicking back into a chapter you left mid-way — even days later —
+//    silently resumes it instead of restarting from card 1.
+//  - LAST_ACTIVE_KEY: a single small pointer to whichever chapter the user
+//    was literally inside (lesson/quiz/theory/fitb) at the moment the page
+//    was last unloaded. Only used to handle an accidental refresh: on boot,
+//    if this is set, jump straight back into that chapter. It's cleared the
+//    moment the user deliberately leaves (Exit lesson / back / home), so a
+//    normal refresh on the home or path screen never gets redirected.
 
-function saveSession() {
-  const session = {
+function loadAllProgress() {
+  try {
+    const raw = localStorage.getItem(PROGRESS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object") return parsed;
+    }
+  } catch (e) {
+    console.error("Saved progress was corrupted, ignoring:", e);
+  }
+  return {};
+}
+
+function hasChapterProgress(chapterId) {
+  return !!loadAllProgress()[chapterId];
+}
+
+function saveChapterProgress() {
+  if (!nav.chapterId) return;
+  const all = loadAllProgress();
+  all[nav.chapterId] = {
     courseId: nav.courseId,
-    chapterId: nav.chapterId,
     phase: nav.view,
     lessonIndex,
     quizQueue,
@@ -124,69 +156,87 @@ function saveSession() {
     currentFitb,
   };
   try {
-    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(all));
+    localStorage.setItem(LAST_ACTIVE_KEY, JSON.stringify({ courseId: nav.courseId, chapterId: nav.chapterId }));
   } catch (e) {
-    console.error("Could not save session progress:", e);
+    console.error("Could not save chapter progress:", e);
   }
 }
 
-function clearSession() {
-  try {
-    localStorage.removeItem(SESSION_KEY);
-  } catch (e) {
-    console.error("Could not clear session progress:", e);
+function clearChapterProgress(chapterId) {
+  const all = loadAllProgress();
+  if (all[chapterId]) {
+    delete all[chapterId];
+    try {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(all));
+    } catch (e) {
+      console.error("Could not clear chapter progress:", e);
+    }
   }
 }
 
-function loadSession() {
+function clearLastActive() {
   try {
-    const raw = localStorage.getItem(SESSION_KEY);
+    localStorage.removeItem(LAST_ACTIVE_KEY);
+  } catch (e) {
+    console.error("Could not clear last-active pointer:", e);
+  }
+}
+
+function loadLastActive() {
+  try {
+    const raw = localStorage.getItem(LAST_ACTIVE_KEY);
     if (raw) return JSON.parse(raw);
   } catch (e) {
-    console.error("Saved session was corrupted, ignoring:", e);
+    console.error("Last-active pointer was corrupted, ignoring:", e);
   }
   return null;
 }
 
-// Restores exactly where the user left off (which card/question, and how
-// far through the requeue any wrong answers had gotten) if the browser
-// reloaded mid-chapter. Returns false if there's nothing valid to resume,
-// so the caller can fall back to the home screen.
-function resumeSession(session) {
-  const course = getCourse(session.courseId);
-  const chapter = course && course.chapters.find(c => c.id === session.chapterId);
-  if (!chapter) { clearSession(); return false; }
+// Restores exactly where the user left off in a specific chapter (which
+// card/question, and how far through the requeue any wrong answers had
+// gotten). Returns false if there's nothing valid to resume, so the caller
+// can fall back to starting that chapter fresh (or, from init, the home
+// screen).
+function resumeChapterProgress(courseId, chapterId) {
+  const all = loadAllProgress();
+  const p = all[chapterId];
+  if (!p) return false;
 
-  nav = { view: session.phase, courseId: session.courseId, chapterId: session.chapterId };
-  history.replaceState({ view: "chapter", courseId: session.courseId, chapterId: session.chapterId }, "");
+  const course = getCourse(courseId);
+  const chapter = course && course.chapters.find(c => c.id === chapterId);
+  if (!chapter) { clearChapterProgress(chapterId); return false; }
 
-  if (session.phase === "lesson" && chapter.cards && chapter.cards[session.lessonIndex]) {
-    lessonIndex = session.lessonIndex || 0;
+  nav = { view: p.phase, courseId, chapterId };
+  history.replaceState({ view: "chapter", courseId, chapterId }, "");
+
+  if (p.phase === "lesson" && chapter.cards && chapter.cards[p.lessonIndex]) {
+    lessonIndex = p.lessonIndex || 0;
     renderLessonCard();
     return true;
   }
-  if (session.phase === "quiz" && chapter.quiz && chapter.quiz[session.currentQuestion]) {
-    quizQueue = Array.isArray(session.quizQueue) ? session.quizQueue : [];
-    quizAwarded = new Set(session.quizAwarded || []);
-    currentQuestion = session.currentQuestion;
+  if (p.phase === "quiz" && chapter.quiz && chapter.quiz[p.currentQuestion]) {
+    quizQueue = Array.isArray(p.quizQueue) ? p.quizQueue : [];
+    quizAwarded = new Set(p.quizAwarded || []);
+    currentQuestion = p.currentQuestion;
     renderQuizQuestion(currentQuestion);
     return true;
   }
-  if (session.phase === "theory" && chapter.theory && chapter.theory[session.currentTheory]) {
-    theoryQueue = Array.isArray(session.theoryQueue) ? session.theoryQueue : [];
-    theoryAwarded = new Set(session.theoryAwarded || []);
-    currentTheory = session.currentTheory;
+  if (p.phase === "theory" && chapter.theory && chapter.theory[p.currentTheory]) {
+    theoryQueue = Array.isArray(p.theoryQueue) ? p.theoryQueue : [];
+    theoryAwarded = new Set(p.theoryAwarded || []);
+    currentTheory = p.currentTheory;
     renderTheoryQuestion(currentTheory, false);
     return true;
   }
-  if (session.phase === "fitb" && chapter.fitb && chapter.fitb[session.currentFitb]) {
-    fitbQueue = Array.isArray(session.fitbQueue) ? session.fitbQueue : [];
-    fitbAwarded = new Set(session.fitbAwarded || []);
-    currentFitb = session.currentFitb;
+  if (p.phase === "fitb" && chapter.fitb && chapter.fitb[p.currentFitb]) {
+    fitbQueue = Array.isArray(p.fitbQueue) ? p.fitbQueue : [];
+    fitbAwarded = new Set(p.fitbAwarded || []);
+    currentFitb = p.currentFitb;
     renderFitbQuestion(currentFitb);
     return true;
   }
-  clearSession();
+  clearChapterProgress(chapterId);
   return false;
 }
 
@@ -304,7 +354,7 @@ let homeFilter = "All";
 
 function renderHome() {
   nav = { view: "home", courseId: null, chapterId: null };
-  clearSession();
+  clearLastActive();
   app.innerHTML = "";
 
   const categories = ["All", ...new Set(COURSES.flatMap(c => c.category || []))];
@@ -360,7 +410,7 @@ function renderHome() {
 
 function renderPath(courseId) {
   nav = { view: "path", courseId, chapterId: null };
-  clearSession();
+  clearLastActive();
   const course = getCourse(courseId);
   const cs = ensureCourseState(courseId);
   const completedSet = new Set(cs.completed);
@@ -384,6 +434,7 @@ function renderPath(courseId) {
 
   course.chapters.forEach((ch, i) => {
     const status = getChapterStatus(course.chapters, i, completedSet);
+    const inProgress = status === "available" && hasChapterProgress(ch.id);
     const wrap = document.createElement("div");
     wrap.className = `node-wrap pos-${i % 4}`;
 
@@ -391,10 +442,11 @@ function renderPath(courseId) {
     const node = tpl.content.cloneNode(true);
     const btn = node.querySelector(".chapter-node");
     btn.classList.add(status);
+    if (inProgress) btn.classList.add("in-progress");
     node.querySelector(".node-num").innerHTML =
       status === "completed" ? icon("check") : ch.number;
     node.querySelector(".node-title").textContent =
-      status === "empty" ? `Ch.${ch.number} — coming soon` : ch.title;
+      status === "empty" ? `Ch.${ch.number} — coming soon` : inProgress ? `${ch.title} · In progress` : ch.title;
 
     if (status === "available" || status === "completed") {
       btn.addEventListener("click", () => withTransition(() => goChapter(courseId, ch.id)));
@@ -473,7 +525,7 @@ function renderLessonCard() {
   }));
   bar.appendChild(btn);
   app.appendChild(bar);
-  saveSession();
+  saveChapterProgress();
 }
 
 function nextPhaseLabel() {
@@ -556,7 +608,7 @@ function renderQuizQuestion(qIndex) {
     optsEl.appendChild(optBtn);
   });
   app.appendChild(optsEl);
-  saveSession();
+  saveChapterProgress();
 }
 
 function handleAnswer(qIndex, chosenIndex, optsEl) {
@@ -639,7 +691,7 @@ function nextFitbQuestion() {
 function renderFitbQuestion(fIndex) {
   const ch = currentChapter();
   const item = ch.fitb[fIndex];
-  saveSession();
+  saveChapterProgress();
   app.innerHTML = "";
 
   const back = document.createElement("button");
@@ -683,7 +735,10 @@ function renderFitbQuestion(fIndex) {
   const checkBtn = document.createElement("button");
   checkBtn.className = "btn-primary";
   checkBtn.textContent = "Check answer";
-  checkBtn.addEventListener("click", () => handleFitbSubmit(fIndex, inputs));
+  checkBtn.addEventListener("click", () => {
+    bar.remove(); // prevent re-clicking Check answer from duplicating the feedback below
+    handleFitbSubmit(fIndex, inputs);
+  });
   bar.appendChild(checkBtn);
   app.appendChild(bar);
 
@@ -760,7 +815,7 @@ function nextTheoryQuestion() {
 function renderTheoryQuestion(tIndex, revealed, draftAnswer = "") {
   const ch = currentChapter();
   const t = ch.theory[tIndex];
-  saveSession();
+  saveChapterProgress();
   app.innerHTML = "";
 
   const back = document.createElement("button");
@@ -875,7 +930,8 @@ function confettiHtml() {
 }
 
 function finishChapter() {
-  clearSession();
+  clearChapterProgress(nav.chapterId);
+  clearLastActive();
   const cs = ensureCourseState(nav.courseId);
   const ch = currentChapter();
   if (!cs.completed.includes(ch.id)) {
@@ -922,8 +978,8 @@ function escapeHtml(str) {
   renderStats();
   try {
     await loadCourses();
-    const session = loadSession();
-    if (!session || !resumeSession(session)) {
+    const lastActive = loadLastActive();
+    if (!lastActive || !resumeChapterProgress(lastActive.courseId, lastActive.chapterId)) {
       history.replaceState({ view: "home" }, "");
       renderHome();
     }

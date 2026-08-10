@@ -755,7 +755,7 @@
         },
         {
           "heading": "Endpoint protection — securing devices",
-          "body": "Endpoint protection protects devices such as laptops, desktops, servers, and mobile devices. This includes antivirus, anti-malware, EDR, encryption, and application control.\n\nLocking every single door in the house, not just the front gate — laptop, phone, all of it."
+          "body": "Endpoint protection protects devices such as laptops, desktops, servers, and mobile devices. This includes antivirus, anti-malware, Endpoint Detection and Response (EDR — tools that continuously monitor a device and can automatically respond the moment something looks malicious), encryption, and application control.\n\nLocking every single door in the house, not just the front gate — laptop, phone, all of it."
         },
         {
           "heading": "Access control mechanisms — controlling who gets in",

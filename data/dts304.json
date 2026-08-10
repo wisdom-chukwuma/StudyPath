@@ -138,9 +138,133 @@
       "id": "dts304-ch2",
       "number": 2,
       "title": "Information Capture and Representation",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "cards": [
+        {
+          "heading": "One letter, two students",
+          "body": "Registration week again, same Beacon University from Chapter 1 — except this time the mess isn't missing records, it's DUPLICATE ones. \"Adaeze Ọkafor\" exists TWICE in the admissions sheet:\n\n• ADAEZE OKAFOR — typed by clerk 1\n• Adaeze Okafor — typed by clerk 2\n• Adaeze ?kafor — the Ọ died in a legacy encoding\n\nAnd her JAMB number has a trailing space, so searches for it return nothing. No database was harmed in any of this — these are failures of CAPTURE and REPRESENTATION, and they happened before any database was ever reached. This chapter is about stopping them at the gate, before Chapter 1's whole resource-manager apparatus even gets involved."
+        },
+        {
+          "heading": "The four capture channels",
+          "body": "Information gets into a system through exactly four doors, each with its own failure mode:\n\n• Forms — registration portals, paper forms. Risk: typos, inconsistent formatting (the Adaeze problem).\n• Transactions — payments, till sales, bookings. Risk: duplicates, partial failures mid-transaction.\n• Devices — sensors, scanners, biometrics. Risk: miscalibration, hardware noise.\n• Documents — letters, reports, imports. Risk: unstructured mess that's hard to extract facts from.\n\nAll four funnel into the same next step — Validation — before anything touches Storage. Skip that step for ANY of the four doors, and garbage walks straight in."
+        },
+        {
+          "heading": "GIGO — catch it at the gate, or don't catch it at all",
+          "body": "Garbage In, Garbage Out: no later stage can fully repair bad capture. The cheapest place to catch an error is the exact moment it's typed — not during analysis, not during a report six months later. Four checks do almost all the work:\n\n• Type — \"score must be a number\"\n• Range — \"score between 0 and 100\"\n• Presence — \"matric number is required\"\n• Uniqueness — \"no two students share a matric no\" (the literal Adaeze bug)\n\nRule of thumb: capture SELECTIONS, not SPELLINGS — a dropdown physically cannot produce \"B.Sc Data Sceince\" as a typo, a free-text box can. Bank this idea: in Chapter 7 these exact four checks come back as actual database constraints — this is their first appearance, not their last."
+        },
+        {
+          "heading": "The three shapes of data",
+          "body": "Every piece of information has one of three shapes:\n\n• Structured — fixed schema, rows and columns, every record has the same fields in the same order. e.g. database tables, spreadsheets, CSV.\n• Semi-structured — flexible schema, tags and keys, records CAN differ (some have two phone numbers, some have none). e.g. JSON, XML.\n• Unstructured — no predefined schema at all, meaning is buried inside free text, images, audio, or video. e.g. letters, emails, photos, lecture recordings.\n\nMost organisations hold all three at once and have to manage all three. A WhatsApp voice note, a JSON payment receipt, the JAMB results table, and an NIN record are four different shapes sitting in the same phone."
+        },
+        {
+          "heading": "Shapes convert in real workflows",
+          "body": "Data doesn't stay one shape forever — it gets converted as it moves through a process. Classic example: an exam-appeal letter arrives as pure free text (Unstructured) → an officer reads it and extracts the key facts into a tagged summary (Semi-structured) → the final decision becomes one row in the appeals table (Structured).\n\nThis is genuinely most of what \"data processing\" even means: taking something messy and progressively shaping it until a database can hold it cleanly."
+        },
+        {
+          "heading": "One record, three formats: CSV vs JSON vs XML",
+          "body": "The exact same registration record, written three ways:\n\nCSV: matric,course,session,score\nMTR/25/0143,CSC201,2025/2026,74\n+ compact, universal, opens in any spreadsheet — but flat only (no nesting), and commas inside data cause chaos.\n\nJSON: { \"matric\": \"MTR/25/0143\", \"course\": \"CSC201\", \"session\": \"2025/2026\", \"score\": 74 }\n+ handles nesting, lists, real data types, the language of web APIs — but wordier than CSV, no comments allowed.\n\nXML: <registration><matric>MTR/25/0143</matric><course>CSC201</course><score>74</score></registration>\n+ self-describing and validatable, strong in documents/standards — but the most verbose of the three.\n\nAll three are plain text, readable by humans AND by every programming language. None of them is \"better\" — they're optimized for different jobs."
+        },
+        {
+          "heading": "Character encoding: why Ọkafor breaks",
+          "body": "ASCII (1963) has exactly 128 characters. Fine for plain English. Completely useless for Ọkafor, Ádéwálé, or ₦ — those characters simply don't exist in ASCII's universe, so a system built on it either crashes, drops the character, or silently corrupts it into a \"?\".\n\nUnicode + UTF-8 fixes this properly: every character in every language, one universal encoding. The professional rule is non-negotiable: UTF-8 everywhere, end to end — files, database, application. In MySQL specifically, that means utf8mb4, not the older, narrower utf8. \"Adaeze ?kafor\" is exactly what you get when data gets written in one encoding and read back in another — the Ọ literally died in translation. This is why the resource-manager mindset from Chapter 1 matters even for something as \"boring\" as encoding — the OS/DBMS mediates this too."
+        },
+        {
+          "heading": "Metadata: data about data",
+          "body": "Metadata is the difference between a library and a pile of books. Three kinds:\n\n• Descriptive — what it's about, for finding it. e.g. student name, session, keywords.\n• Structural — how it's organised inside. e.g. \"score is a number 0–100\".\n• Administrative — origin, history, permissions. e.g. captured by clerk #12, exams office access only.\n\nStructural metadata specifically is a schema in embryo — in Chapter 4 it becomes the DBMS's actual data dictionary, managed automatically instead of just being a note someone wrote down."
+        },
+        {
+          "heading": "From capture form to structured record",
+          "body": "Watch what happens between what a user types and what actually gets stored. A student fills in: Full name, Matric no, Programme, Phone, Email. The system stores: student_id, full_name, matric_no, programme_id, phone, email.\n\nThree quiet transformations happened:\n• A hidden key got added (student_id) — this is a preview of primary keys, Chapter 7.\n• A value became a code (programme becomes programme_id) — a preview of foreign keys, Chapters 7 & 10.\n• Formats got normalised (the phone number) — for predictable matching later.\n\nNone of this was visible to the student filling the form. That invisibility is the whole point — capture should feel simple even when representation underneath is doing real work."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A biometric fingerprint scanner used at exam entry belongs to which capture channel?",
+          "options": [
+            "Forms",
+            "Transactions",
+            "Devices",
+            "Documents"
+          ],
+          "correctIndex": 2,
+          "explanation": "Devices — sensors, scanners, biometrics. Forms are things users fill in, Transactions are payments/bookings, Documents are letters/reports being imported."
+        },
+        {
+          "question": "\"The score must be a number\" is an example of which type of validation rule?",
+          "options": [
+            "Type",
+            "Range",
+            "Presence",
+            "Uniqueness"
+          ],
+          "correctIndex": 0,
+          "explanation": "Type validation — checking the kind of data, not its value. Range would be \"between 0 and 100\", Presence would be \"this field can't be empty\", Uniqueness would be \"no duplicates allowed\"."
+        },
+        {
+          "question": "A WhatsApp voice note is an example of which shape of data?",
+          "options": [
+            "Structured",
+            "Semi-structured",
+            "Unstructured"
+          ],
+          "correctIndex": 2,
+          "explanation": "Unstructured — no predefined schema, the meaning is buried inside audio with no fields or tags at all."
+        },
+        {
+          "question": "Which format is best described as \"the language of web APIs\" and handles nesting naturally?",
+          "options": [
+            "CSV",
+            "JSON",
+            "XML"
+          ],
+          "correctIndex": 1,
+          "explanation": "JSON — compact, handles nested structures and lists naturally, and is what most web APIs speak. CSV is flat-only; XML is more verbose and document-oriented."
+        },
+        {
+          "question": "Why does \"Adaeze Ọkafor\" get corrupted into \"Adaeze ?kafor\" in some systems?",
+          "options": [
+            "The server was down when it was typed",
+            "ASCII can't represent the character Ọ, but UTF-8 can",
+            "The student misspelled her own name",
+            "The course code was entered wrong"
+          ],
+          "correctIndex": 1,
+          "explanation": "ASCII only has 128 characters and simply has no slot for Ọ. UTF-8 (specifically utf8mb4 in MySQL) covers every character in every language — the fix is encoding everywhere, end to end, not just in one layer."
+        },
+        {
+          "question": "In the capture-form-to-structured-record transformation, what typically gets ADDED that wasn't on the original form?",
+          "options": [
+            "A password field",
+            "A hidden primary key like student_id",
+            "A firewall rule",
+            "A backup copy"
+          ],
+          "correctIndex": 1,
+          "explanation": "A hidden key (like student_id) gets added — the student never sees or types it, but it's what lets the record be uniquely and reliably referenced later. This previews primary keys properly in Chapter 7."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain GIGO and describe the four types of validation rules used to catch bad data at the point of capture.",
+          "modelAnswer": "GIGO (Garbage In, Garbage Out) means that no later processing stage can fully repair data that was captured badly — the cheapest and most reliable place to catch an error is the exact moment it's typed. Four validation rules do most of the work: Type (is it the right kind of data, e.g. a number where a number is expected?), Range (does the value fall within acceptable limits, e.g. 0-100?), Presence (is a required field actually filled in?), and Uniqueness (is this value a duplicate where it shouldn't be, e.g. two students sharing a matric number?).",
+          "keyPoints": [
+            "GIGO: bad data can't be reliably fixed later, catch it at capture",
+            "Type — correct kind of data",
+            "Range — value within acceptable limits",
+            "Presence — required field isn't empty",
+            "Uniqueness — no duplicates where they shouldn't exist"
+          ]
+        },
+        {
+          "question": "Compare CSV, JSON and XML as ways to represent the same record, and explain when you'd choose each.",
+          "modelAnswer": "All three are plain-text formats representing the same data. CSV is compact and opens in any spreadsheet, ideal for flat tabular data, but can't handle nesting and breaks if the data itself contains commas — choose it for simple flat exports. JSON handles nesting, lists, and real data types naturally and is the standard language of web APIs — choose it when structure is more complex or when talking to a web service. XML is self-describing and strongly validatable, common in formal documents and industry standards, but the most verbose of the three — choose it when strict validation or document-style structure matters more than compactness.",
+          "keyPoints": [
+            "CSV — compact, flat-only, spreadsheet-friendly, breaks on embedded commas",
+            "JSON — handles nesting/lists/types, standard for web APIs",
+            "XML — self-describing, strongly validatable, most verbose",
+            "Choice depends on the job: flat data vs API communication vs formal document standards"
+          ]
+        }
+      ]
     },
     {
       "id": "dts304-ch3",
@@ -153,10 +277,136 @@
     {
       "id": "dts304-ch4",
       "number": 4,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Introduction to Database Systems",
+      "cards": [
+        {
+          "heading": "The night two clerks pressed Save",
+          "body": "Same Beacon University, registration week. Registry and Bursary are both editing the same shared file, students.xlsx.\n\n9:41 pm — Registry saves: +43 late registrations.\n9:44 pm — Bursary saves too, from an older copy she'd downloaded earlier that day.\n\nHer Save wins. Registry's 43 students are gone — not deleted on purpose, just quietly overwritten. Nobody notices for three weeks. There's no log of who did what, no fresh backup, and now three different files each claim to be \"the real student list.\"\n\nThis is what happens when \"the database\" is just a spreadsheet everybody keeps a personal copy of."
+        },
+        {
+          "heading": "One gatekeeper vs. everybody for themselves",
+          "body": "File-based approach: Registry writes students.xlsx, Bursary writes payments.xlsx AND her own students2.xlsx, Exams writes results.csv AND student_list.csv. Same student, three copies — which one is true? Nobody's app talks to any other app.\n\nDatabase approach: Registry, Bursary and Exams all go through ONE piece of software — the DBMS — which owns ONE database. The DBMS is the single gatekeeper for every read and write.\n\n\"One copy of the truth, shared by all.\" That's the entire pitch of a database system, and it's what would have stopped the 9:44 pm disaster before it started."
+        },
+        {
+          "heading": "Six ways a spreadsheet betrays you",
+          "body": "The classic file-system failures, each one visible in the Beacon scenario:\n\n• Redundancy — same fact stored in many places (students.xlsx AND student_list.csv)\n• Inconsistency — the copies disagree (Registry, Bursary and Exams all differ)\n• Lost updates — edits silently overwrite each other (the 9:44 pm save)\n• No atomicity — a change half-happens (a programme transfer updates one file, then crashes)\n• Data isolation — a combined question needs manual file-hunting (\"unpaid fees by programme\" means opening 3 files by hand)\n• Weak integrity, security & recovery — a score of 250 gets accepted, and nobody catches it for 3 weeks\n\nExam favourite: each of these six failures pairs with exactly one DBMS function — that's next."
+        },
+        {
+          "heading": "It's not just software",
+          "body": "A database system has five components, not one:\n\n• Hardware — the machine it runs on\n• Software — the DBMS itself\n• Data — the actual facts being stored\n• Procedures — the documented rules people are supposed to follow\n• People — everyone who touches the system\n\nBeacon's disaster wasn't a broken laptop or buggy software. It was a missing procedure — no rule for who saves last, no backup routine — carried out by people who had no way of knowing they'd just erased each other's work. Procedures fail as often as technology."
+        },
+        {
+          "heading": "What that gatekeeper actually does",
+          "body": "A DBMS is \"software that manages all access\" to the database. Its core functions:\n\n• Data storage — organises the files and pages on disk\n• Data dictionary — tracks metadata: tables, columns, types, rules, permissions\n• Query processing — parses and optimises SQL\n• Integrity — enforces the rules (no 250 out of 100, no duplicate matric numbers)\n• Security — controls who's even allowed to log in and see what\n• Concurrency — lets many users work at once without chaos\n• Backup & recovery — survives crashes instead of just losing data\n• Transactions — all-or-nothing changes, no half-done updates\n\nEvery one of these replaces code that file-based apps would otherwise have had to write badly, themselves, from scratch."
+        },
+        {
+          "heading": "Beacon's disaster, function by function",
+          "body": "Match every failure from the scenario to the exact DBMS function built to stop it:\n\n• Lost updates → Concurrency control\n• Half-done changes → Transactions (all-or-nothing)\n• Score of 250 / duplicate matric number → Integrity enforcement\n• Anyone reads everything → Security management\n• Three weeks, unrecoverable → Backup & recovery\n• \"Which file is true?\" → One database + a data dictionary\n\nNothing about the DBMS is decorative — every single function on the list exists because some real spreadsheet, somewhere, failed exactly that way first."
+        },
+        {
+          "heading": "From using the database to owning it",
+          "body": "Database people split into classes, from lightest touch to heaviest responsibility:\n\n• End users — use apps, never see SQL (e.g. a student on the registration portal)\n• Analysts — query and report with SQL / BI tools (e.g. enrolment dashboards)\n• Developers — build the applications (e.g. write the portal's code)\n• Designers — model the schemas: tables and keys (Chapter 6)\n• DBA — owns the running system: security, backups, tuning\n\nIn a small Nigerian firm, one person often wears several of these hats at once — the \"developer\" and the \"DBA\" might be the same overworked person."
+        },
+        {
+          "heading": "Best for what, not best",
+          "body": "The DBMS landscape you'll actually meet:\n\n• MySQL — relational, open source, everywhere on the web (this course's labs)\n• PostgreSQL — relational, open source, rigorous and extensible (startups, analytics)\n• Oracle — relational, commercial, enterprise muscle (banks, telcos, government)\n• SQL Server — relational, commercial, Microsoft ecosystem (corporate Windows shops)\n• SQLite — relational, zero-server, a single file (phones, embedded apps)\n• MongoDB — document-based (NoSQL), flexible JSON-style schema (APIs, changing data)\n\nThe exam trap is asking \"which is best?\" There's no such answer — only \"best for what?\""
+        },
+        {
+          "heading": "An untested backup is a hope, not a backup",
+          "body": "If Bursary's 9:44 pm overwrite had hit a real DBMS instead of a shared spreadsheet, backup & recovery would have made the 43 students recoverable in minutes.\n\nBut a backup file sitting untouched on a drive isn't proof of anything. You don't actually know it works until you've restored it somewhere else and checked the data comes back intact — which is exactly what Lab 3A has you do: dump beacon_uni, restore it into a copy database, and prove it. \"An untested backup is a hope, not a backup.\""
+        }
+      ],
+      "quiz": [
+        {
+          "question": "In the Beacon University scenario, Bursary's 9:44 pm save silently erased Registry's 43 new registrations. Which classic file-system failure is this?",
+          "options": [
+            "Redundancy",
+            "Inconsistency",
+            "Lost update",
+            "Data isolation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Lost update — two people editing overlapping data, and the last write silently discards the other's changes. Redundancy is having many copies of the same fact; inconsistency is when those copies disagree; data isolation is when a combined question needs manual cross-referencing across files."
+        },
+        {
+          "question": "Which of the five components of a database system is most easily overlooked, yet \"fails as often as technology\"?",
+          "options": [
+            "Hardware",
+            "Data",
+            "Procedures",
+            "Software"
+          ],
+          "correctIndex": 2,
+          "explanation": "Procedures — the documented rules for who saves last, when backups run, how conflicts get resolved. Beacon's disaster wasn't a broken laptop or bad software; it was a missing procedure."
+        },
+        {
+          "question": "Which DBMS function guarantees that a programme-transfer update either fully completes or doesn't happen at all, never leaving a student half-transferred?",
+          "options": [
+            "Concurrency control",
+            "Transactions (all-or-nothing)",
+            "Security management",
+            "Query processing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Transactions — all-or-nothing changes. This is exactly what prevents \"no atomicity\" failures, like a crash mid-update leaving data in a broken in-between state."
+        },
+        {
+          "question": "Which class of database user interacts only through an app's interface and never writes SQL directly?",
+          "options": [
+            "DBA",
+            "Analyst",
+            "Developer",
+            "End user"
+          ],
+          "correctIndex": 3,
+          "explanation": "End users — they use the registration portal and never see a query. Analysts query and report, developers build the applications, and the DBA owns the running system."
+        },
+        {
+          "question": "Which DBMS in the landscape is known for a flexible, JSON-style document model rather than the traditional row-and-column table?",
+          "options": [
+            "SQLite",
+            "PostgreSQL",
+            "MongoDB",
+            "Oracle"
+          ],
+          "correctIndex": 2,
+          "explanation": "MongoDB — a document (NoSQL) database built around flexible JSON-style records, common for APIs and data whose shape keeps changing."
+        },
+        {
+          "question": "What's wrong with a backup that was taken but never restored anywhere to check it actually works?",
+          "options": [
+            "Nothing — a backup is a backup",
+            "It isn't a real backup yet, it's just a hope",
+            "It only matters for hardware failures",
+            "It should be encrypted instead"
+          ],
+          "correctIndex": 1,
+          "explanation": "\"An untested backup is a hope, not a backup.\" You don't actually know it works until you've restored it somewhere else and proven the data comes back intact."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Using the Beacon University 9:44 pm scenario, name at least three of the classic file-system failures it demonstrates, and explain how a DBMS's functions would have prevented each one.",
+          "modelAnswer": "The scenario shows several failures at once. The 9:44 pm overwrite is a lost update — Bursary's save silently discarded Registry's 43 new registrations; a DBMS's concurrency control would have detected the conflict instead of letting one save blindly clobber the other. The three disagreeing files (students.xlsx, student_list.csv, and Bursary's own copy) are redundancy and inconsistency — a DBMS replaces all of them with one shared database, so there's only ever one copy to disagree with itself. And the fact that nobody noticed for three weeks with no way to recover the lost data is a backup & recovery failure — a DBMS with proper, tested backups could have restored the 43 students in minutes instead of losing them for good.",
+          "keyPoints": [
+            "Lost update — concurrency control",
+            "Redundancy/Inconsistency — one shared database",
+            "No atomicity — transactions",
+            "Weak recovery — backup & recovery"
+          ]
+        },
+        {
+          "question": "Describe the five components of a database system, and explain — using the Beacon scenario — why 'procedures' and 'people' matter just as much as hardware and software.",
+          "modelAnswer": "The five components are hardware (the machine it runs on), software (the DBMS itself), data (the actual facts stored), procedures (the documented rules people are supposed to follow), and people (everyone who touches the system). Beacon's disaster is a clean example of why the last two matter: the hardware worked fine and the spreadsheet software worked exactly as designed — the failure was that there was no procedure telling Bursary to check for a newer version before saving, and no person had been made responsible for coordinating who saves when. A database system with perfect hardware and software still fails if its procedures and people aren't accounted for.",
+          "keyPoints": [
+            "Hardware",
+            "Software (the DBMS)",
+            "Data",
+            "Procedures",
+            "People"
+          ]
+        }
+      ]
     },
     {
       "id": "dts304-ch6",

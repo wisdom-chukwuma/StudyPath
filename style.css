@@ -99,10 +99,11 @@ body::before {
   height: 14px;
   background: var(--gray);
 }
-.stat b { font-weight: 700; color: var(--text); font-size: 15px; }
+.stat b { font-weight: 700; color: var(--text); font-size: 15px; line-height: 1; }
 .stat.bump { animation: bump 0.35s ease; }
-.stat-xp .icon { color: #b8860b; font-size: 14px; }
-.stat-streak .icon { color: #c9622f; font-size: 14px; }
+.stat-xp .icon, .stat-streak .icon { line-height: 1; }
+.stat-xp .icon { color: #b8860b; font-size: 15px; }
+.stat-streak .icon { color: #c9622f; font-size: 15px; }
 
 #app {
   max-width: 640px;
@@ -306,6 +307,7 @@ body::before {
 }
 
 .node-circle {
+  position: relative;
   width: 68px;
   height: 68px;
   border-radius: 50%;
@@ -318,6 +320,18 @@ body::before {
   background: var(--gray);
   border-bottom: 5px solid #cfcfcf;
   transition: transform 0.15s cubic-bezier(.34,1.56,.64,1);
+}
+
+.chapter-node.in-progress .node-circle::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2.5px solid var(--bg);
 }
 .node-circle .icon svg { width: 26px; height: 26px; }
 

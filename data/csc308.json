@@ -583,7 +583,7 @@
         },
         {
           "heading": "The PCB is the process memory card",
-          "body": "The Process Control Block stores the details the OS needs to manage the process properly.\n\nThe OS's version of a file with your name on it — everything it needs to know about you, the process, in one card."
+          "body": "The Process Control Block (PCB) is a data structure the OS keeps for every single process, storing everything needed to pause it and resume it later without losing track of anything. It holds:\n\n• Process state — which of the five states it's currently in (new, ready, running, waiting, terminated)\n• Program counter — the address of the NEXT instruction this process needs to execute\n• CPU registers — the exact values sitting in the CPU's registers at the moment it got paused, so they can be restored perfectly\n• Memory information — which memory this process owns\n• Scheduling information — priority and other data the scheduler needs to decide when this process runs next\n\nThe OS's version of a file with your name on it — everything it needs to know about you, the process, in one card. That's also exactly why context switching works at all: save the PCB before pausing, reload it before resuming, and the process picks up exactly where it left off, down to the last instruction."
         }
       ],
       "quiz": [
