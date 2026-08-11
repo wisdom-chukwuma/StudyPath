@@ -2,15 +2,1072 @@
   "id": "seng322",
   "code": "SENG 322",
   "title": "Software Engineering Innovation and New Technology",
-  "category": ["Software Engineering"],
+  "category": [
+    "Software Engineering"
+  ],
   "chapters": [
     {
-      "id": "seng322-w1",
-      "number": 1,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "seng322-w1a",
+      "number": "1a",
+      "title": "Software Entrepreneurship Fundamentals",
+      "cards": [
+        {
+          "heading": "What is (software) entrepreneurship?",
+          "body": "Entrepreneurship is the process of identifying an opportunity, organising resources, and accepting risk to create and capture value through a new venture. An entrepreneur is simply someone who spots an unmet need, gathers what's needed to act on it, and carries the risk that it might not work.\n\nSoftware entrepreneurship applies that exact same process specifically to software-based products and services. A software entrepreneur builds a venture whose core value — and usually its core asset — IS the software: an app, a platform, an API, a SaaS tool, rather than a physical product or a purely service-based offering.\n\nPaystack, Flutterwave, and Moniepoint all started exactly this way — someone noticed a problem (moving money in Nigeria was slow and painful) and built software to solve it."
+        },
+        {
+          "heading": "What actually makes something a business",
+          "body": "A business is an organised economic activity — producing, buying, selling, or providing goods and services — aimed at satisfying human needs while generating profit or achieving a specific objective. It can be run by one person, a group, a private company, or even government, and ranges from your neighbourhood provisions store to a multinational.\n\nEvery real business shares certain characteristics: it involves economic activity, it produces or provides something, it involves an exchange or sale, it aims to satisfy a customer need, it seeks profit or some other clear objective, it carries risk, and it has to keep running continuously — not just happen once.\n\nAnd it exists for more than just profit: customer satisfaction, wealth creation for everyone involved (not just the owner), job creation, contributing to the wider economy, and — increasingly expected today — social responsibility."
+        },
+        {
+          "heading": "Why software is a different kind of business",
+          "body": "A restaurant or a delivery company has to physically produce and move something for every single sale — more customers means more ingredients, more vehicles, more staff. Software doesn't work that way.\n\nOnce a software product is built, serving one more customer costs almost nothing — no extra inventory, no extra shipping, no factory floor. A ride-hailing app or a FinTech platform can add its 10,000th user for roughly the same cost as its 10th. That's why software ventures can scale globally almost overnight in a way a chain of physical shops never could — and why software businesses tend to obsess over recurring revenue and network effects instead of per-unit margins.\n\nThis is the whole reason a software entrepreneur's playbook — MVPs, rapid iteration, SaaS pricing — looks so different from a traditional business plan."
+        },
+        {
+          "heading": "The six-stage software entrepreneurial process",
+          "body": "Software ventures generally move through a recognisable sequence — rarely perfectly linear in practice, since founders loop back as they learn, but the sequence still gives shape to what would otherwise feel like chaos. This process is also literally the backbone of your term paper: each stage maps onto a section of the Software Business Plan you'll build across the course.\n\n1. Opportunity identification — spot a problem worth solving\n2. Concept validation — test if the problem is real and people will actually pay\n3. Resource acquisition — gather capital, tools, infrastructure\n4. Team formation — find co-founders with complementary skills\n5. Build & launch — create an MVP and release it to real users\n6. Scale — grow customers, team, and operations once product-market fit is proven"
+        },
+        {
+          "heading": "The process in practice",
+          "body": "A final-year student notices small retailers near campus struggle to track inventory using paper notebooks — that's Opportunity identification, and it just produces a problem statement, not yet a solution.\n\nShe interviews 12 shop owners and finds 9 would pay a small monthly fee for a simple phone-based tool — Concept validation, before she's built anything. She uses her savings plus a small campus innovation-challenge grant to cover three months of hosting — Resource acquisition. She partners with a course-mate who's stronger at design and customer conversations than she is — Team formation, pairing a technical builder with someone customer-focused.\n\nTogether they build a deliberately small MVP — just stock-counting and low-stock alerts, nothing else yet — and onboard 15 shop owners: Build & launch. After three months of steady use and word-of-mouth, they start marketing wider and consider a local accelerator: Scale."
+        },
+        {
+          "heading": "Where software opportunities actually come from",
+          "body": "Five recurring sources: Workflow inefficiency (slow, manual, error-prone processes — paper records, manual scheduling), New enabling technology (cloud, mobile, AI, improved payments making previously impossible solutions possible), Regulatory/policy change (new laws creating compliance needs or opening whole markets), Underserved market or geography (a solution exists elsewhere but hasn't been adapted locally), and Changing customer behaviour (new work patterns like remote work creating demand for new tools).\n\nAcross sectors this looks like: Fintech (digital payments, savings/lending apps — Nigeria's own backyard), Healthtech (telemedicine, health records), Edtech (e-learning, exam prep, school management), Agritech (market access for farmers, supply-chain tracking), and Logistics/Commerce (delivery, e-commerce enablement for small businesses).\n\nThe key question is never \"is this a good idea in general?\" — it's \"which sector needs a solution in YOUR context?\""
+        },
+        {
+          "heading": "Innovative entrepreneurs",
+          "body": "Innovative entrepreneurs introduce genuinely new products, services, technologies, or business models into the market — creative, strong problem-solvers, willing to take risks, future-oriented, always looking to improve. They create solutions that didn't exist before, or improve existing ones so significantly it amounts to the same thing.\n\nSteve Jobs introduced the smartphone revolution with the iPhone at Apple. Elon Musk transformed electric vehicles and private space travel through Tesla and SpaceX. Olugbenga \"GB\" Agboola simplified digital payments across Africa by co-founding Flutterwave — proof this category isn't just Silicon Valley, it's happening in Lagos too."
+        },
+        {
+          "heading": "Social entrepreneurs",
+          "body": "Social entrepreneurs build businesses primarily to solve social, environmental, or community problems — while still staying financially sustainable. Community-focused, compassionate, mission-driven, thinking long-term, strong leaders. Their main objective is impact, not profit maximisation, though the business still has to survive.\n\nMuhammad Yunus pioneered microfinance for low-income communities through Grameen Bank. Temie Giwa-Tubosun founded LifeBank, a tech-driven medical distribution company delivering blood, oxygen, and critical supplies to Nigerian hospitals in minutes instead of hours. Shola Akinlade, Paystack's co-founder, has backed community and sports initiatives (including Sporting Lagos FC) alongside the fintech work. Tosin Eniolorunda, who co-founded Moniepoint, built financial infrastructure that brought millions of small Nigerian businesses into digital banking for the first time."
+        },
+        {
+          "heading": "Imitative entrepreneurs",
+          "body": "Imitative entrepreneurs don't invent something new — they adopt an idea, product, or business model that's already working elsewhere and adapt it to a local market. Good observers of trends, adaptable, customer-focused, lower risk tolerance, strong at execution rather than invention. Success in entrepreneurship doesn't require a brand-new idea — adapting a proven one well can build an equally real business.\n\nThis is exactly the local food-delivery service inspired by an international platform, the regional e-commerce marketplace modelled after a global one, or a ride-hailing app adapted specifically for a market Uber never quite got right locally. Nothing wrong with being second — being second and better-fitted to your actual market often wins."
+        },
+        {
+          "heading": "Technopreneurs",
+          "body": "Technopreneurship is entrepreneurship where technology itself is the primary tool for creating the product, the service, and the business opportunity. Strong technical skills, an innovative mindset, comfortable with constantly emerging technology, always learning.\n\nTosin Eniolorunda (Moniepoint) and Shola Akinlade (Paystack) both fit this category as much as the previous ones — the categories genuinely overlap in practice. Common areas of technopreneurship: mobile apps (education, finance, health, transport), AI-driven prediction and automation, cybersecurity platforms, cloud computing services, and Software-as-a-Service products sold on subscription.\n\nOne person can absolutely be innovative, social, AND a technopreneur all at once — these four categories describe angles on a founder's approach, not rigid, mutually exclusive boxes."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What specifically distinguishes software entrepreneurship from entrepreneurship in general?",
+          "options": [
+            "It always involves less risk than other businesses",
+            "The venture's core value and core asset is the software itself, not a physical product or pure service",
+            "It doesn't require identifying a real problem first",
+            "It can only be done by trained computer scientists"
+          ],
+          "correctIndex": 1,
+          "explanation": "Software entrepreneurship applies the same core process (spot an opportunity, organise resources, accept risk) specifically to ventures where the core value AND core asset is software — an app, platform, API, or SaaS tool."
+        },
+        {
+          "question": "Why can a software venture scale to its 10,000th customer for roughly the same cost as its 10th, in a way a restaurant chain can't?",
+          "options": [
+            "Software companies don't need to make a profit",
+            "Serving one more customer costs almost nothing once the product is built — no extra inventory, shipping, or physical production",
+            "Software companies always have more investors than restaurants",
+            "Restaurants can't use the internet to reach customers"
+          ],
+          "correctIndex": 1,
+          "explanation": "Software has near-zero marginal cost per additional customer, since there's nothing physical to produce or ship for each new user — a fundamentally different economics from a business where every sale requires more physical goods or labour."
+        },
+        {
+          "question": "In the six-stage software entrepreneurial process, what specifically happens at the Concept Validation stage?",
+          "options": [
+            "The team builds the final, polished product",
+            "The entrepreneur tests whether the problem is real and whether people would actually pay for a solution, before building it",
+            "The venture starts scaling and hiring aggressively",
+            "Co-founders are recruited"
+          ],
+          "correctIndex": 1,
+          "explanation": "Concept Validation comes right after identifying a problem, and is specifically about testing the problem's reality and willingness-to-pay — via interviews, surveys, or a smoke test — before committing real resources to building anything."
+        },
+        {
+          "question": "Which source of software opportunity best describes a new law suddenly requiring businesses to digitise their tax records?",
+          "options": [
+            "Workflow inefficiency",
+            "New enabling technology",
+            "Regulatory/policy change",
+            "Changing customer behaviour"
+          ],
+          "correctIndex": 2,
+          "explanation": "Regulatory/policy change — new laws creating compliance requirements (or opening up entirely new markets) is a distinct source of opportunity from a slow manual process or a new piece of technology becoming available."
+        },
+        {
+          "question": "An entrepreneur who adapts a global e-commerce marketplace model to fit a specific local market, rather than inventing something new, is best described as which type?",
+          "options": [
+            "Innovative entrepreneur",
+            "Social entrepreneur",
+            "Imitative entrepreneur",
+            "Technopreneur"
+          ],
+          "correctIndex": 2,
+          "explanation": "Imitative entrepreneur — adopting and adapting an already-successful idea or model to local needs, rather than inventing something new, with lower risk and strong execution as the core skill."
+        },
+        {
+          "question": "What is the primary objective that distinguishes a social entrepreneur from other entrepreneur types?",
+          "options": [
+            "Maximising shareholder profit above all else",
+            "Solving a social, environmental, or community problem while remaining financially sustainable",
+            "Being first to market with a new technology",
+            "Copying a successful model from a different country"
+          ],
+          "correctIndex": 1,
+          "explanation": "Social entrepreneurs use business as a tool to create social impact — their major objective is impact, not profit maximisation, though the venture still has to be financially sustainable to survive."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain, in your own words, why software businesses scale differently from traditional physical businesses, and connect this to why software entrepreneurs focus so heavily on recurring revenue and rapid iteration (MVPs).",
+          "modelAnswer": "A traditional business — a restaurant, a delivery company — has to physically produce or move something for every additional sale, so growth directly increases costs: more ingredients, more vehicles, more staff. A software business is different because once the product is built, serving one additional customer costs almost nothing — there's no physical inventory, shipping, or manufacturing involved. This means a software venture can add its 10,000th customer for roughly the cost of its 10th, letting it scale globally far faster than a physical business ever could. Because growth is nearly free but building the right product still takes real investment, software entrepreneurs build a Minimum Viable Product first — the smallest version that tests the core value proposition — release it to real users, and iterate quickly based on feedback, rather than spending years perfecting something before anyone has confirmed it's wanted. And because there's no physical unit being sold, recurring revenue (a subscription, a repeat usage fee) fits software's economics far better than a single one-time sale would.",
+          "keyPoints": [
+            "Software has near-zero marginal cost per additional customer",
+            "Physical businesses scale costs linearly with growth; software doesn't",
+            "MVP + rapid iteration lets founders test value before over-investing",
+            "Recurring revenue fits software's cost structure better than one-time sales"
+          ]
+        },
+        {
+          "question": "Using the retail-inventory-app example, walk through all six stages of the software entrepreneurial process and explain what specifically happens — and what is deliberately NOT done yet — at each stage.",
+          "modelAnswer": "Stage 1, Opportunity identification: the student notices small retailers near campus struggling with paper-based inventory tracking — this only produces a problem statement, no solution is designed yet. Stage 2, Concept validation: she interviews 12 shop owners and finds 9 would pay a monthly fee, confirming the problem is real and people will pay, before any product exists. Stage 3, Resource acquisition: she uses personal savings plus a small campus innovation grant to cover three months of hosting costs — gathering just enough to get started, not raising a large round. Stage 4, Team formation: she partners with a course-mate whose strengths (design, customer conversations) complement her own technical skills. Stage 5, Build & launch: they deliberately build a small MVP covering only stock-counting and low-stock alerts — explicitly leaving out invoicing and reporting for now — and onboard 15 shop owners. Stage 6, Scale: only after three months of steady use and positive word-of-mouth do they begin marketing more widely and consider an accelerator — growth comes after the product is proven, not before.",
+          "keyPoints": [
+            "Opportunity identification — problem statement only, no solution yet",
+            "Concept validation — confirms willingness to pay before building",
+            "Resource acquisition — gathers just enough to start (savings + small grant)",
+            "Team formation — complementary skills, not just any co-founder",
+            "Build & launch — deliberately small MVP, features intentionally left out",
+            "Scale — only after product-market fit is demonstrated"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w1b",
+      "number": "1b",
+      "title": "Business Models for Software Ventures",
+      "cards": [
+        {
+          "heading": "What is a business model, really?",
+          "body": "A business model is simply a description of how an organisation creates, delivers, and captures value. It comes down to three linked questions: What value are we creating for the customer? How do we deliver that value to them? And how do we capture a portion of that value as revenue?\n\nThe critical insight: a venture can build a genuinely brilliant product and still fail commercially if the business model doesn't match how customers actually want to pay. A great app that nobody's willing to subscribe to, in a market that only trusts one-time payments, is still a failed business — the product was never the problem."
+        },
+        {
+          "heading": "The Business Model Canvas",
+          "body": "Osterwalder and Pigneur's Business Model Canvas breaks a venture into nine building blocks, forcing founders to think about the whole business, not just the product:\n\n• Customer Segments — who are we creating value for?\n• Value Propositions — what value do we deliver, which problems get solved?\n• Channels — how do customers want to be reached?\n• Customer Relationships — self-service, personal support, or community?\n• Revenue Streams — what will customers pay for, and how do they prefer to pay?\n• Key Resources — technology, people, data, brand\n• Key Activities — what must we do really well?\n• Key Partnerships — who are our suppliers/partners, and what do we get from them?\n• Cost Structure — what are the most important costs?\n\nYou'll fill in a simplified version of this canvas as Section 1 of your own term paper."
+        },
+        {
+          "heading": "SaaS: the recurring-fee model",
+          "body": "Software-as-a-Service: customers pay a recurring fee — monthly or annually — to access cloud-hosted software. The provider hosts, maintains, and updates centrally, so customers always use the latest version, and revenue becomes predictable instead of one lump sum.\n\nCommon pricing: per-seat (per user per month) or per-tier (feature-based packages). Example: project management software at ₦5,000/user/month — a team of 10 pays ₦50,000 monthly, and the provider's actual cost barely changes as the team grows, since it's the same shared infrastructure serving everyone."
+        },
+        {
+          "heading": "Freemium: give away the door, sell the room",
+          "body": "A basic version is free forever; a premium version costs money. The free tier works as a marketing and acquisition tool — it removes the barrier to trying the product — and only a small percentage of users, typically 2-5%, ever convert to paid.\n\nIt works best where strong viral or network effects exist — free users genuinely help attract more users, not just sit there costing the company money. Example: a note-taking app, free up to 100 notes, paid for unlimited notes plus offline sync and team-sharing. Key risk: give away too much in the free tier, and there's no reason left for anyone to ever pay."
+        },
+        {
+          "heading": "Software licensing: paying for the right to use it",
+          "body": "Customers pay for the right to use the software, through one of two structures. Perpetual licensing: a one-time payment buys indefinite use of a specific version — common in older enterprise software. Subscription licensing: recurring payments, blending with SaaS — more common in modern enterprise deals.\n\nThis model is common where organisations want to own their own infrastructure, or face strict data-residency and security requirements — government agencies, hospitals, banks. Example: a hospital buying an Electronic Health Records system with a perpetual license for on-premise installation, rather than trusting patient data to someone else's cloud."
+        },
+        {
+          "heading": "Marketplace / platform: connecting two sides",
+          "body": "The business builds a platform connecting two or more distinct user groups — buyers and sellers, riders and drivers, clients and freelancers — and takes a commission or fee on transactions between them, rather than creating the core product or service itself.\n\nNetwork effects are everything here: the platform gets more valuable to everyone as both sides grow. The hard early problem is the \"chicken-and-egg\" trap — you need sellers to attract buyers, but you need buyers to attract sellers. Example: a freelance-hiring platform charging 10% commission on every payment — freelancers get access to clients, clients get access to talent, and the platform just matches supply to demand and handles the payment."
+        },
+        {
+          "heading": "Usage-based / API pricing",
+          "body": "Customers pay in proportion to how much they actually consume — cost is directly aligned with value received, so small users pay little and heavy users pay more. This requires genuinely accurate metering and billing infrastructure behind the scenes.\n\nCommon in cloud infrastructure, developer tools, payment-processing APIs, and messaging APIs. Example: a messaging API charging ₦2 per SMS sent — a startup sending 10,000 messages a month pays ₦20,000, scaling exactly with how much they actually use, not a flat fee regardless of usage."
+        },
+        {
+          "heading": "Open-source-plus-services and advertising",
+          "body": "Open-source plus services: the core software AND its source code are given away free, and revenue comes instead from support, hosting, training, or premium add-on features. Red Hat and MongoDB both built real businesses this way — it builds trust and large community adoption fast, since anyone can inspect and even fork the code.\n\nAdvertising-supported: the software is free to use, and revenue comes from selling ad space instead of charging users directly — social media platforms and free mobile games are the classic case. This needs a genuinely huge user base, since ad revenue per user is typically tiny, and it raises real ethical and privacy questions about what's being tracked to sell those ads in the first place."
+        },
+        {
+          "heading": "Choosing the right business model",
+          "body": "There's no universal \"best\" model — the right choice depends on how your specific customers actually want to pay:\n\n• Customers prefer continuous payments for ongoing value? → SaaS/Subscription\n• Customers prefer a one-time payment for a tool they own? → Licensing\n• Value delivered is proportional to usage? → Usage-based pricing\n• Network effects mean more users create more value? → Marketplace or Freemium\n• A free tier can convert a meaningful share to paid? → Freemium\n• Would a free tier actually undermine the business? → Avoid Freemium entirely\n\nMany real ventures combine elements — a SaaS tool with usage-based add-ons, or a Freemium product with marketplace commissions layered on top. Spotify, GitHub, Jumia, WhatsApp, Canva, and Paystack each land on a different point on this map — worth working out exactly where, and why, for each one."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A venture builds a genuinely excellent app, but it fails commercially because customers in that market only trust one-time payments and the app is subscription-only. What does this illustrate?",
+          "options": [
+            "The product must have been badly built",
+            "A great product can still fail if the business model doesn't match how customers actually want to pay",
+            "Subscription models never work anywhere",
+            "The venture skipped concept validation entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is the critical insight behind business models: value creation (a good product) and value capture (how you charge for it) are separate problems, and getting the second one wrong can sink an otherwise excellent product."
+        },
+        {
+          "question": "In the Business Model Canvas, which block specifically answers \"how do customers want to be reached?\"",
+          "options": [
+            "Customer Segments",
+            "Value Propositions",
+            "Channels",
+            "Key Resources"
+          ],
+          "correctIndex": 2,
+          "explanation": "Channels — Customer Segments asks WHO you're creating value for, Value Propositions asks WHAT value you deliver, and Channels asks HOW customers want to be reached and receive that value."
+        },
+        {
+          "question": "A project management tool charges ₦5,000 per user per month, hosts everything centrally, and pushes updates to all customers automatically. Which business model is this?",
+          "options": [
+            "Software licensing (perpetual)",
+            "SaaS",
+            "Usage-based/API",
+            "Open-source plus services"
+          ],
+          "correctIndex": 1,
+          "explanation": "SaaS — a recurring per-user fee for centrally-hosted, always-up-to-date cloud software is the defining pattern, versus a one-time license payment or pay-per-use metering."
+        },
+        {
+          "question": "What is the \"chicken-and-egg\" problem specific to the marketplace/platform business model?",
+          "options": [
+            "Customers can't decide which payment method to use",
+            "The platform needs sellers to attract buyers, but needs buyers to attract sellers, making the early stage hard to kick-start",
+            "The software takes too long to build",
+            "Advertising revenue is unpredictable"
+          ],
+          "correctIndex": 1,
+          "explanation": "A marketplace's whole value comes from connecting two sides, but neither side wants to join an empty platform — you need both simultaneously, which is exactly why the earliest stage of a marketplace business is usually its hardest."
+        },
+        {
+          "question": "A messaging API charges a startup ₦2 for every SMS sent, so their bill scales exactly with how many messages they actually send. Which business model is this?",
+          "options": [
+            "Freemium",
+            "Marketplace/platform",
+            "Usage-based/API model",
+            "Advertising-supported"
+          ],
+          "correctIndex": 2,
+          "explanation": "Usage-based/API pricing — cost is directly proportional to consumption, requiring accurate metering, which is exactly what a per-SMS charge is doing."
+        },
+        {
+          "question": "According to the guiding questions for choosing a business model, when should Freemium specifically be AVOIDED?",
+          "options": [
+            "When the product has strong network effects",
+            "When a meaningful share of free users would convert to paid",
+            "When giving away a free tier would undermine the business itself",
+            "When customers prefer continuous payments"
+          ],
+          "correctIndex": 2,
+          "explanation": "If a free tier would genuinely undermine the business (give away too much of the value for free, with no real reason left to pay), Freemium is the wrong model — this is exactly the key risk flagged for Freemium ventures."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Using at least three named business models from this chapter, explain the difference between how they capture revenue, and describe a scenario where each one would be the clearly correct choice.",
+          "modelAnswer": "SaaS captures revenue through a recurring fee (monthly or annual) for access to centrally hosted software — it's the correct choice when customers want ongoing value and are comfortable with continuous payments, like a project management tool used daily by a team. Usage-based/API pricing captures revenue in direct proportion to consumption, metered precisely — it's correct when the value delivered genuinely scales with usage, like a messaging API where a company sending more messages should pay more. Marketplace/platform captures revenue as a commission on transactions between two user groups it connects, rather than charging either side directly for a product — it's correct when the core value is matching supply to demand, like a freelance-hiring platform taking a cut of every payment between client and freelancer. Each model fits a different shape of how customers actually receive and want to pay for value, not just a different pricing preference.",
+          "keyPoints": [
+            "SaaS: recurring fee for ongoing access — fits continuous-value use cases",
+            "Usage-based: cost scales with consumption — fits variable/metered value",
+            "Marketplace: commission on transactions — fits two-sided matching businesses",
+            "Choice depends on how value is delivered, not just preference"
+          ]
+        },
+        {
+          "question": "Explain the Freemium model's core logic, including why the free tier isn't just a cost the company absorbs, and describe the specific risk that can undermine this model if it's designed badly.",
+          "modelAnswer": "Freemium offers a basic version of the product for free, with a paid premium tier layered on top. The free tier isn't simply a cost being absorbed — it functions as a marketing and customer-acquisition tool, removing the natural barrier to trying a new product, and works best where strong viral or network effects exist, since free users themselves help attract more users into the ecosystem. Typically only a small share of users, around 2-5%, ever convert to the paid tier, so the whole model depends on that conversion rate being enough to sustain the business, plus the free tier's acquisition value being real. The key risk is giving away too much for free: if the free tier already satisfies most of what customers actually need, there's no compelling reason left for anyone to upgrade, and the business model collapses even though usage numbers might look impressive.",
+          "keyPoints": [
+            "Free tier = acquisition/marketing tool, not just a cost",
+            "Works best with strong viral/network effects",
+            "Typical conversion rate to paid is small (2-5%)",
+            "Risk: giving away too much removes any reason to pay"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w1c",
+      "number": "1c",
+      "title": "Innovation: Concepts and Types",
+      "cards": [
+        {
+          "heading": "What innovation actually is",
+          "body": "Innovation is the process of creating new or significantly improved products, services, processes, or business models that provide real value to users. Peter Drucker called it \"the specific instrument of entrepreneurship through which entrepreneurs exploit change as an opportunity\"; the OECD defines it as the implementation of a new or significantly improved product, process, marketing method, or organisational method.\n\nThe key word in both is IMPLEMENTATION. Innovation isn't merely having ideas — it's successfully applying those ideas to create value. Five elements define it: novelty, creativity, value creation, problem solving, and commercial application. Drop any one of those five and it's just a nice idea sitting in a notebook, not innovation."
+        },
+        {
+          "heading": "Innovation vs. invention — not the same thing",
+          "body": "Invention is the creation of something entirely new, focused on discovery — it may well remain in the laboratory, and involves scientific breakthroughs. The first telephone was an invention.\n\nInnovation is the improvement or commercialisation of an idea, focused on value creation — it reaches the actual market and customers, and involves the practical application of something. A modern smartphone integrating calls, internet, and mobile payments into one device is innovation, built on top of inventions that came decades before it.\n\nAn inventor can hand the world a breakthrough that changes nothing for anyone. An innovator takes something — invented or not — and gets it into people's actual hands, actually changing how they live or work."
+        },
+        {
+          "heading": "Why innovation actually matters",
+          "body": "Innovation isn't just a buzzword founders throw around — it does real, specific work: it solves societal and business problems, improves productivity and efficiency, creates real competitive advantage, drives economic growth, creates employment, enhances customer satisfaction, encourages further technological advancement, and lets organisations adapt as the environment around them keeps shifting.\n\nA venture that stops innovating doesn't stay still — it falls behind competitors who don't. This is exactly why 'innovation' shows up as its own line item in almost every serious business strategy, not because it sounds impressive, but because standing still is, in practice, the same as moving backward."
+        },
+        {
+          "heading": "Where innovation actually comes from",
+          "body": "Innovation opportunities arise from ten recurring sources: R&D, employee creativity and suggestions, organisational challenges, operational inefficiencies, customer feedback, market trends, competitor activities, technological advancements, government policy, and social/environmental change. Innovation begins exactly where problems exist and get noticed.\n\nIn practice: customer complaints led to food-delivery tracking systems; changing technology enabled mobile banking apps; a market gap led to hostel-booking platforms (every Nigerian student who's fought over hostel allocation knows exactly why this needed solving); social problems drove telemedicine apps; environmental concerns produced smart energy-monitoring systems. None of these started as \"let's innovate\" — they started as someone actually noticing a specific, annoying problem."
+        },
+        {
+          "heading": "Types of innovation: product and process",
+          "body": "Product innovation introduces a new product, or a significant improvement to an existing product's features, functionality, quality, or performance — delivering greater value to customers through the product itself. Example: a smart attendance system using QR codes or facial recognition, replacing manual sheets, cutting impersonation, and saving real time in every single lecture.\n\nProcess innovation introduces new or improved methods of producing goods or delivering services — not a new product, but a better way of doing the same thing. It aims squarely at efficiency, lower cost, higher productivity. Example: a university's online course registration portal — students no longer physically queue to register; the process itself got faster, the outcome stayed the same."
+        },
+        {
+          "heading": "Types of innovation: service and business model",
+          "body": "Service innovation introduces new or significantly improved services that give customers more value and convenience — improving the actual customer experience. Example: a food delivery app for restaurants around campus, letting students order from their phones instead of walking there.\n\nBusiness model innovation changes HOW an organisation creates, delivers, and captures value — new ways of making money and serving customers, not a new product or service at all. Example: a subscription-based learning platform charging ₦2,000 monthly for unlimited tutorials, instead of selling individual courses one at a time — same educational content, completely different revenue logic."
+        },
+        {
+          "heading": "Types of innovation: marketing and digital",
+          "body": "Marketing innovation implements new marketing strategies, promotion methods, pricing models, or customer-engagement techniques — aimed at attracting customers and growing market share, not at the product itself.\n\nDigital innovation uses digital technologies to create new products, services, business processes, or business models — one of the biggest drivers of modern entrepreneurship and economic growth. Example: a QR-code cashless payment system in a school cafeteria or bookstore — eliminates cash handling, speeds up every transaction, and leaves a full digital record of every sale where paper and coins used to leave none."
+        },
+        {
+          "heading": "Incremental innovation",
+          "body": "Incremental innovation makes small, steady improvements to an existing product, service, or process — a smartphone maker improving camera quality and battery life (say, 3000mAh to 5000mAh) in each year's new model is the textbook case.\n\nCharacteristics: small improvements, continuous development, builds on what already exists, low risk, lower development cost, customer-driven, quick to implement, keeps a company competitive without betting the business.\n\nThe downside: limited breakthroughs (small updates rarely create a genuinely new market), vulnerability to a competitor's radical innovation making the incremental improvements feel irrelevant overnight, slow growth, innovation fatigue if updates feel too minor or too frequent, and a short-term focus that can crowd out real strategic thinking."
+        },
+        {
+          "heading": "Radical innovation",
+          "body": "Radical innovation creates a completely new product, service, or process from a breakthrough idea or technology — significantly changing how people live, work, or do business. The original smartphone, combining a phone, camera, GPS, and computer into one device, is the classic example; cloud computing, AI, blockchain, and autonomous vehicles all fit the same category.\n\nCharacteristics: introduces genuinely new technology, creates real market disruption, needs substantial investment and research, carries high uncertainty and risk, often creates entirely new industries, and can deliver a significant, durable competitive advantage.\n\nThe cost of that upside: heavy investment, a high probability of failure, long development timelines, real market resistance, and often requiring the whole organisation to change around it."
+        },
+        {
+          "heading": "Incremental vs. radical, side by side",
+          "body": "Degree of change: small improvements vs. major breakthroughs. Risk level: low vs. high. Development cost: low-to-moderate vs. high. Time required: short vs. long. Market impact: limited vs. transformational. Technology used: existing vs. genuinely new. Customer adoption: easier vs. slower initially. Competitive advantage: temporary vs. significant and long-term.\n\nNeither one is simply \"better\" — improving a smartphone's camera every year (incremental) keeps a company competitive with low risk; inventing the smartphone in the first place (radical) created an entirely new industry, at far higher risk and cost. Most real companies run both tracks at once: incremental improvements paying the bills while a much smaller, riskier radical bet plays out in the background."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "According to the definitions discussed, what is the single word that separates a good idea from actual innovation?",
+          "options": [
+            "Novelty",
+            "Implementation",
+            "Funding",
+            "Popularity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Implementation — innovation isn't merely having ideas, it's successfully applying those ideas to create value. An unimplemented idea, however novel, isn't innovation yet."
+        },
+        {
+          "question": "The first telephone is best classified as an invention rather than an innovation. Why?",
+          "options": [
+            "It was never actually built",
+            "It focused on scientific discovery and may not have immediately reached a wide market, unlike later practical, commercialised applications",
+            "It didn't involve any new technology",
+            "Inventions and innovations are exactly the same thing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Invention focuses on discovery and may remain in the laboratory; innovation focuses on value creation and reaches the market. A modern smartphone integrating calls, internet, and payments is the innovation built on top of that original invention."
+        },
+        {
+          "question": "A university's course registration moving from physical queuing to an online portal — same outcome, faster method — is an example of which type of innovation?",
+          "options": [
+            "Product innovation",
+            "Process innovation",
+            "Marketing innovation",
+            "Business model innovation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Process innovation — the product/outcome (registering for courses) stayed the same, but the method of delivering it became faster and more efficient, which is exactly what process innovation targets."
+        },
+        {
+          "question": "A learning platform switches from selling individual courses to a ₦2,000/month unlimited-tutorials subscription. What type of innovation is this?",
+          "options": [
+            "Product innovation",
+            "Service innovation",
+            "Business model innovation",
+            "Digital innovation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Business model innovation — the actual educational content didn't change, but HOW the organisation captures revenue and delivers value did, which is the defining feature of business model innovation."
+        },
+        {
+          "question": "Which characteristic correctly distinguishes radical innovation from incremental innovation?",
+          "options": [
+            "Radical innovation always costs less to develop",
+            "Radical innovation carries higher risk and uncertainty but can create entirely new industries",
+            "Incremental innovation always creates a bigger competitive advantage",
+            "Incremental innovation requires more research and investment"
+          ],
+          "correctIndex": 1,
+          "explanation": "Radical innovation requires substantial investment, carries high risk and uncertainty, and can create entirely new industries — the trade-off for that scale of impact versus incremental innovation's low-risk, low-cost, smaller-scale improvements."
+        },
+        {
+          "question": "A smartphone company improving its camera quality and battery life in each new yearly model is best classified as which model of innovation?",
+          "options": [
+            "Radical innovation",
+            "Incremental innovation",
+            "Business model innovation",
+            "Social innovation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Incremental innovation — small, continuous, low-risk improvements building on an existing product, exactly matching the yearly camera/battery upgrade pattern."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the difference between invention and innovation using specific examples from this chapter, and describe why a company full of brilliant inventions could still fail as a business.",
+          "modelAnswer": "Invention is the creation of something entirely new, focused on scientific discovery — it may remain in a laboratory and never reach ordinary users, like the earliest version of the telephone. Innovation is the improvement or commercialisation of an idea, focused on creating actual value for customers — it reaches the market and gets practically applied, like a modern smartphone that integrates calls, internet access, and mobile payments into one device people actually carry and use daily. A company could be full of brilliant inventions and still fail as a business because invention alone doesn't create commercial value — if none of those breakthroughs are ever turned into a product that reaches real customers and solves a real problem for them, the company has research output but no revenue. Innovation is specifically the step that takes an invention (or an existing idea) and successfully implements it in a way that creates value people will actually pay for.",
+          "keyPoints": [
+            "Invention: discovery-focused, may stay in the lab, doesn't guarantee market reach",
+            "Innovation: value-creation-focused, reaches the market, gets practically applied",
+            "Example: telephone (invention) vs. modern integrated smartphone (innovation)",
+            "Invention without implementation/commercialisation doesn't generate business value"
+          ]
+        },
+        {
+          "question": "Compare incremental and radical innovation across risk, cost, and market impact, and explain why a real company would deliberately pursue both types at the same time rather than choosing only one.",
+          "modelAnswer": "Incremental innovation makes small, low-risk improvements to an existing product or process — low development cost, short time required, and limited but reliable market impact, like a smartphone maker improving camera quality each year. Radical innovation creates something entirely new from a breakthrough idea — high risk and uncertainty, high development cost, long timelines, but potentially transformational market impact, like the original invention of the smartphone itself, which created a whole new industry. A real company deliberately pursues both because incremental innovation keeps current products competitive and generates reliable, low-risk revenue that funds the business day to day, while radical innovation is a much riskier, longer-term bet that could open an entirely new market or make the company's current products obsolete if a competitor gets there first. Relying only on incremental innovation risks being blindsided by a competitor's radical breakthrough; relying only on radical innovation risks running out of money before any breakthrough succeeds.",
+          "keyPoints": [
+            "Incremental: low risk/cost, short timeline, limited market impact",
+            "Radical: high risk/cost, long timeline, transformational market impact",
+            "Incremental funds the business day-to-day while staying competitive",
+            "Radical protects against being disrupted by a competitor's breakthrough",
+            "Real companies run both tracks simultaneously, not one or the other"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w2",
+      "number": 2,
+      "title": "Identifying Software Market Opportunities",
+      "cards": [
+        {
+          "heading": "An idea is not yet an opportunity",
+          "body": "An idea is a guess about what might work. A market opportunity is a guess that's been tested against evidence and actually held up: a problem confirmed to be real, significant, and shared by a reachable group of people who are both willing AND able to pay for a solution.\n\nThree ways an idea quietly fails this test: Real but trivial (people won't pay to fix a minor inconvenience), Significant but rare (too few people experience it to build a business on), and Real & common but unreachable (the people who have it can't be reached, or can't pay — no payment infrastructure, no distribution channel).\n\nWithout at least one piece of real evidence — an interview quote, a statistic, observed behaviour — for each of these, what you have is still an idea, not a validated opportunity."
+        },
+        {
+          "heading": "Where opportunities come from, and 'why now'",
+          "body": "Five recurring sources: Personal frustration/observed inefficiency (the founder personally experiences a slow process or bad workaround), New enabling technology (a new capability makes a previously impractical solution suddenly viable), Regulatory/policy change (new laws create entirely new categories of demand), Underserved market/geography (a proven solution elsewhere hasn't been localised), and Changing customer behaviour (shifts in how people work, shop, or learn create new demand).\n\nWorked example: a team notices students struggle to find verified, affordable off-campus housing (personal observation). Smartphone and mobile-data penetration among students has risen sharply (new enabling technology). The university has just mandated that off-campus listings be verified through a digital portal (regulatory change). The 'why now' answer: the problem has existed for years, but it's only solvable NOW because two of those five sources converged at once."
+        },
+        {
+          "heading": "Problem-solution fit vs. product-market fit",
+          "body": "Two sequential milestones, easy to confuse. Problem-solution fit confirms a real problem exists and your proposed solution concept addresses it — typical evidence is customer interviews, surveys, expressed willingness to pay, and it happens early, before or during MVP development.\n\nProduct-market fit confirms an actual, BUILT product satisfies strong, sustained market demand — evidence is usage data, retention rates, organic growth, renewing paying customers — and it only comes later, after launch, once real usage data exists.\n\nSkip problem-solution fit and you risk building something nobody actually wants. Skip straight to scaling without product-market fit and you risk scaling a product customers try once and abandon. This week's work is specifically about establishing problem-solution fit — not launching a finished product."
+        },
+        {
+          "heading": "Market segmentation: 'everyone' isn't a customer",
+          "body": "Segmentation divides a broad market into smaller groups sharing similar characteristics, so a venture can focus its limited early resources on whichever group is most likely to adopt first. Five common ways to segment:\n\n• Industry vertical — healthcare vs. retail vs. education\n• Company size (B2B) — freelancers vs. SMBs vs. enterprises\n• Geography — urban vs. rural, a specific city or region\n• Technical sophistication — early adopters vs. mainstream users\n• Job-to-be-done — grouped by the task or outcome, not demographics\n\n\"Everyone with this problem\" is never a viable first target — it just means the real target hasn't been chosen yet."
+        },
+        {
+          "heading": "The beachhead market, and who actually decides",
+          "body": "A beachhead market is the single, narrowly defined segment a venture deliberately chooses to win FIRST, before expanding into adjacent segments — borrowed straight from military strategy: concentrate everything on capturing one defensible position completely, which then provides reference customers, revenue, learning, and credibility to expand from. Building for 'everyone who has this problem' from day one just spreads scarce resources too thin.\n\nWithin that beachhead, two roles matter separately: the Primary User (who uses the product day to day, like an employee using a scheduling tool) and the Economic Buyer (who decides to pay, like a department manager approving the purchase). In B2C these are usually the same person; in B2B they're often different — the product has to satisfy the user, but the marketing and pricing have to persuade the buyer."
+        },
+        {
+          "heading": "TAM, SAM, SOM: three concentric circles",
+          "body": "Market sizing has three nested figures. TAM (Total Addressable Market) — total possible revenue if every potential customer in the world who could ever use a product like yours actually bought it. The broadest, most theoretical number.\n\nSAM (Serviceable Addressable Market) — the portion of TAM your specific product can realistically serve, given geography, language, regulatory access, or your chosen segment.\n\nSOM (Serviceable Obtainable Market) — the portion of SAM you can realistically capture in the next 1-3 years, given resources, competition, and go-to-market capacity. This is the number that actually matters for planning.\n\nThink of it as three concentric circles: TAM is the whole ocean, SAM is the part your boat could actually sail in, SOM is the part you can fish this year with the crew you actually have."
+        },
+        {
+          "heading": "Sizing it for real: the retail-inventory venture, revisited",
+          "body": "Remember Week 1's final-year student and her retail-inventory app? Call her Amaka. This week she runs the actual numbers, bottom-up (preferred over top-down: slower, but every figure can be explained and defended, instead of resting on a big published industry number and a guessed percentage).\n\nBottom-up formula: SAM = number of potential customers in the reachable segment × average annual revenue per customer.\n\nAmaka's numbers: ~4,000 small retail shops city-wide (from local trade association data). About 60% have a smartphone and fit her planned channels → SAM = 2,400 shops. At ₦1,500/month (₦18,000/year) per shop → SAM revenue = 2,400 × ₦18,000 = ₦43,200,000/year. Given limited launch resources, she realistically expects to capture 5% of that SAM in year one → SOM = 120 shops, about ₦2,160,000 in year-one revenue. Every one of those numbers can be defended in front of an examiner — that's the whole point of bottom-up."
+        },
+        {
+          "heading": "Knowing your real competition",
+          "body": "Competition comes in three categories, and student teams consistently underestimate the last two. Direct competitors offer the same type of solution to the same problem (another inventory-tracking app). Indirect competitors solve the same underlying problem with a different type of solution (a plain spreadsheet used to track inventory). Substitutes let the customer avoid the problem entirely, a different way (a shop owner doing a manual weekly stock count by hand).\n\nIndirect competitors and substitutes — especially 'doing nothing' or 'using a spreadsheet' — are often the hardest to beat, precisely because they require no behaviour change and cost nothing extra. A competitive matrix plots competitors on two dimensions customers actually care about (price vs. ease of use, say), revealing 'white space' — an underserved position where a new entrant has the best real chance of gaining traction."
+        },
+        {
+          "heading": "Five ways to actually win a position",
+          "body": "Once white space is identified, differentiation has to come from somewhere specific:\n\n• Cost leadership — a meaningfully lower price, usually via a leaner cost structure\n• Feature differentiation — specific capabilities competitors genuinely lack\n• Niche focus — serving one segment exceptionally well, rather than everyone adequately\n• Superior user experience — winning on ease and pleasantness of use, not feature count\n• Local advantage — deeper understanding of local language, payments, regulation, or behaviour than an outside competitor could realistically match\n\nA venture doesn't need all five — it needs to be genuinely honest about which ONE it's actually competing on, instead of vaguely claiming all of them at once."
+        },
+        {
+          "heading": "The opportunity scorecard",
+          "body": "Before committing further resources, score the opportunity across six dimensions: Market size (is the SOM large enough to justify building and launching?), Growth rate (is this segment growing, stable, or shrinking?), Competition intensity (how crowded is the space — is there clear white space?), Time to revenue (how long from launch to the first paying customer?), Capital required (can the team realistically fund development and early operations?), and Founder-market fit (does the team actually have relevant insight, network, or credibility here?).\n\nNo single weak dimension is automatically a dealbreaker — but a pattern of weak scores across SEVERAL of them at once is exactly the signal that it's time to reconsider or pivot, before sinking more time into a venture that was never going to work."
+        },
+        {
+          "heading": "Customer discovery: ask about the past, not the future",
+          "body": "The single most valuable activity for testing any opportunity is a structured but open conversation with a real potential customer, focused on understanding their current behaviour and pain — not on pitching your idea.\n\nAsk about specific PAST behaviour: \"Tell me about the last time you dealt with this problem.\" Avoid hypothetical FUTURE behaviour: \"Would you use an app that did X?\" People are genuinely unreliable at predicting their own future actions, but fairly reliable describing what they've actually already done — which is exactly why the second question produces flattering, useless answers and the first produces real evidence.\n\nThe rule of thumb: 10+ real conversations before treating an opportunity as validated — two quick chats with classmates is a start, not proof."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A problem is real and significant, but only three people in the entire country experience it. Why does this fail the market-opportunity test?",
+          "options": [
+            "It's real but trivial",
+            "It's significant but too rare to build a business on",
+            "It's real and common, but unreachable",
+            "It automatically qualifies as a strong opportunity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Significant but rare — even a genuinely serious problem can't support a business if too few people actually experience it to form a reachable, sizeable market."
+        },
+        {
+          "question": "What specifically distinguishes problem-solution fit from product-market fit?",
+          "options": [
+            "They mean exactly the same thing",
+            "Problem-solution fit confirms a real problem and a solution concept address it, early and before a full product exists; product-market fit confirms sustained demand for an actual built product, later, using real usage data",
+            "Product-market fit always comes before problem-solution fit",
+            "Problem-solution fit requires paying customers, product-market fit doesn't"
+          ],
+          "correctIndex": 1,
+          "explanation": "Problem-solution fit is the earlier milestone (evidence: interviews, willingness to pay), product-market fit is the later one (evidence: usage data, retention, organic growth) — skipping the first risks building something nobody wants; skipping to scale without the second risks scaling something nobody keeps using."
+        },
+        {
+          "question": "In the TAM/SAM/SOM framework, which figure is the one that actually matters most for near-term planning?",
+          "options": [
+            "TAM",
+            "SAM",
+            "SOM",
+            "They're all equally useful for planning"
+          ],
+          "correctIndex": 2,
+          "explanation": "SOM (Serviceable Obtainable Market) — the portion realistically capturable in the next 1-3 years given actual resources and competition. TAM and SAM are useful context, but SOM is the number a real business plan should be built around."
+        },
+        {
+          "question": "In Amaka's bottom-up market sizing (4,000 shops city-wide, 60% reachable, ₦18,000/year each, capturing 5% in year one), what is her SOM in shops?",
+          "options": [
+            "4,000 shops",
+            "2,400 shops",
+            "120 shops",
+            "43.2 million shops"
+          ],
+          "correctIndex": 2,
+          "explanation": "120 shops — SAM is 60% of 4,000 = 2,400 shops; SOM is the realistic year-one capture of 5% of that SAM, which is 120 shops (worth about ₦2,160,000/year)."
+        },
+        {
+          "question": "A shop owner who simply does a manual weekly stock count instead of buying any software is an example of which category of competition?",
+          "options": [
+            "Direct competitor",
+            "Indirect competitor",
+            "Substitute",
+            "Not a competitor at all"
+          ],
+          "correctIndex": 2,
+          "explanation": "A substitute — it lets the customer avoid the problem entirely in a different way, requiring no behaviour change and no cost, which is exactly why substitutes are often the hardest competition to beat."
+        },
+        {
+          "question": "Why does a good customer discovery interview ask \"tell me about the last time you dealt with this problem\" instead of \"would you use an app that did X?\"",
+          "options": [
+            "The second question is illegal to ask in interviews",
+            "People are unreliable predicting their own future behaviour, but fairly reliable describing what they've actually already done",
+            "The first question takes less time to answer",
+            "There's no real difference between the two questions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Asking about specific past behaviour produces real evidence, while hypothetical future questions tend to produce polite, flattering, unreliable answers — people are just bad at accurately predicting what they'd actually do."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Using the 'why now' framework and its worked off-campus-housing example, explain how a credible answer to 'why hasn't this been solved already?' is built from the five sources of software market opportunity.",
+          "modelAnswer": "A credible 'why now' answer points to one or more of the five recurring sources as the specific trigger that makes a long-standing problem newly solvable. In the off-campus housing example, students struggling to find verified, affordable housing is not a new problem — it has existed for years. What makes it solvable NOW is that two sources converged at once: new enabling technology (smartphone and mobile-data penetration among students has risen sharply in recent years, making a mobile solution actually reachable) and regulatory change (the university has just mandated that off-campus listings be verified through a digital portal, creating an official channel that didn't exist before). Without being able to point to a specific source like this, 'why now' has no real answer, and the idea looks like it could have been (and probably was) tried and failed before, for reasons that haven't actually changed.",
+          "keyPoints": [
+            "'Why now' explains why a long-standing problem is only solvable at this specific moment",
+            "A credible answer points to a specific one of the five sources as the trigger",
+            "Off-campus housing example: rising smartphone penetration (new tech) + new verification mandate (regulatory change)",
+            "Without a specific source identified, there's no real answer to why it wasn't solved before"
+          ]
+        },
+        {
+          "question": "Explain why bottom-up market sizing is generally preferred over top-down, using Amaka's retail-inventory venture as your worked example, and show how each number in her calculation was derived.",
+          "modelAnswer": "Top-down sizing starts from a large published industry figure and applies assumed percentages to narrow it down — it's fast, but relies on external data and broad assumptions that are hard to defend or verify. Bottom-up sizing instead counts actual potential customers in the target segment and multiplies by a realistic price — slower to produce, but every number in it can be explained and defended, which is exactly why it's preferred. In Amaka's case: she starts from an actual count, roughly 4,000 small retail shops city-wide, sourced from local trade association data (not a guess). She narrows that to her SAM by applying a specific, justifiable reachability figure — about 60% have a smartphone and fit her planned channels — giving 2,400 shops. She multiplies that by her actual planned price, ₦18,000 per year, giving a SAM revenue figure of ₦43,200,000 per year. Finally, she applies a realistic, resource-constrained capture rate for year one, 5%, giving a SOM of 120 shops and roughly ₦2,160,000 in year-one revenue. Every step traces back to a real number or a stated, justifiable assumption, rather than an unexplained industry percentage.",
+          "keyPoints": [
+            "Top-down: fast but relies on broad, hard-to-defend external assumptions",
+            "Bottom-up: slower but every number is traceable and defensible",
+            "SAM = potential customers in reachable segment × average annual revenue per customer",
+            "Amaka's numbers: 4,000 shops → 60% reachable = 2,400 SAM → ×₦18,000 = ₦43.2M SAM revenue → 5% capture = 120 shops / ₦2.16M SOM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w3",
+      "number": 3,
+      "title": "Principles of Software Business Ownership",
+      "cards": [
+        {
+          "heading": "Why ownership matters from day one",
+          "body": "By this stage every team has a validated opportunity (Week 2's job). Now the focus shifts from the market to the venture itself: who owns it, how it's organised, and how that gets built and protected.\n\nBusiness ownership is the legal and practical arrangement that determines who has a financial stake in a venture, who controls its decisions, and who is personally liable for its obligations. Two questions have to be answered explicitly, in writing, from day one: who owns what share of this venture, and on what basis? And who owns the code, designs, and other IP being created?\n\nDisputes over ownership, equity, and IP are among the most common reasons promising founding teams break apart — and they're far easier to resolve fairly BEFORE money or success is on the table than after."
+        },
+        {
+          "heading": "Legal business structures compared",
+          "body": "Sole Proprietorship — simplest and cheapest; owner and business are legally the same entity; unlimited personal liability. Best for a solo founder testing an idea with minimal risk and no near-term plan to raise investment.\n\nPartnership — two or more owners share control, profit, and liability, which stays personal unless formalised as a limited partnership. Best for co-founders working informally in the very earliest idea-testing stage.\n\nLimited Liability Company (Ltd) — a separate legal entity; owners' liability is limited to what they've invested; more credible to investors, banks, and clients. This is the standard structure for most funded, fundraising-bound software startups.\n\nNigeria context: registration runs through the Corporate Affairs Commission (CAC) — know the difference between registering a business name and incorporating a full private limited company, and always confirm current fees and requirements via CAC's official channels."
+        },
+        {
+          "heading": "The core trade-off: simplicity vs. protection",
+          "body": "Sole Proprietorship: fast and cheap to start, minimal setup and reporting burden — but there is NO separation between personal and business assets. If the business gets sued or owes money, the founder's own personal property is directly at risk.\n\nLimited Company: costs more time and money — registration fees, annual filings — but creates a real legal 'shield' around founders' personal assets, and signals seriousness to investors, partners, and large customers who'd otherwise hesitate to sign a contract with an individual instead of a company.\n\nNeither is universally \"better\" — a student testing an idea with zero capital at risk gains little from an Ltd's cost and paperwork; a team about to take real customer money and chase investment gains a lot from the protection."
+        },
+        {
+          "heading": "Five stages of startup formation",
+          "body": "A more detailed view of Week 1's resource-acquisition and team-formation stages: 1. Pre-incorporation — validate the idea, form the team, protect early IP informally. 2. Incorporation — register the entity, issue founder shares, open a business bank account. 3. Build — develop the MVP, set up infrastructure, make early hires. 4. Launch — go to market, acquire first customers, iterate. 5. Scale — raise capital, expand the team, enter new markets.\n\nExample: two coursemates agree a 60/40 equity split (Stage 1) BEFORE incorporating with the CAC and opening a business account (Stage 2) — only then does serious MVP development begin (Stage 3). Getting the order right matters: building first and arguing about ownership later is exactly how founding teams end up in disputes.\n\nThis is exactly the conversation Nigerian founding teams keep learning the hard way to have early — ask any group project that fell apart over who did the actual work, then imagine that same argument happening again, except this time with real revenue and a CAC certificate on the line."
+        },
+        {
+          "heading": "Equity: what a fair split actually considers",
+          "body": "Equity is an ownership stake in a company — typically a percentage or number of shares — entitling the holder to a proportional share of the company's value and, usually, a say in major decisions.\n\nA fair split accounts for several factors, NOT a lazy default 50/50: original idea and validation work done before others joined, capital contributed (personal savings actually invested), technical skill and the real work of building the product, business development (sales, partnerships, relationships), and time commitment — full-time founders typically earn more equity than part-time ones.\n\nThe costly mistake: splitting equally just to avoid an uncomfortable conversation early on. It feels diplomatic in month one, and breeds real resentment later once contributions turn out to be genuinely unequal."
+        },
+        {
+          "heading": "Vesting: protecting the team over time",
+          "body": "Vesting is an arrangement under which a founder's equity is earned gradually over a set period, rather than being fully owned the instant shares are issued. A common structure: Year 0 — joins, 0% vested. Year 1 — the \"cliff\": 25% vests all at once. Years 2-4 — the remaining 75% vests monthly, reaching 100% at year 4.\n\nWithout vesting, a co-founder who leaves after one month would walk away owning a permanent, full share of the company forever — despite contributing almost nothing to whatever the venture eventually becomes. Vesting exists specifically to prevent that outcome, and to give every remaining founder confidence that equity roughly tracks actual, ongoing contribution.\n\nVesting is the direct answer to the classic story every Nigerian tech Twitter thread eventually tells: a co-founder disappears three months in, resurfaces two years later once the startup is actually worth something, and still expects their full original share."
+        },
+        {
+          "heading": "The founders' agreement, and the IP default trap",
+          "body": "A founders' agreement should cover: the agreed equity split and vesting schedule, each founder's role and decision authority, how major decisions get made, assignment of IP to the company, and exit provisions and buy-back terms.\n\nThe IP default trap: copyright in software code is automatically held by the individual author the moment it's written — NOT by \"the team\" or \"the startup\" as some informal, assumed concept. Unless ownership is formally transferred, the company a team believes it's building may not actually own the code its own founders have written.\n\nIP assignment closes that gap: a formal transfer of ownership from the individual creator to the company. Every founder, employee, and contractor who creates IP for the venture should sign one — or a departing contributor could later claim personal ownership of code the company still relies on to run."
+        },
+        {
+          "heading": "Other IP protections worth knowing",
+          "body": "Trade secrets — confidential algorithms, data models, or processes kept secret as a competitive advantage; protected by restricting access and NDAs, not by registering anything.\n\nNDA (Non-Disclosure Agreement) — a contract legally obliging another party (a partner, investor, or contractor) not to disclose confidential information shared with them.\n\nTrademarks — protect a brand name, logo, or slogan.\n\nPatents — protect novel inventions; software patents are restricted in many jurisdictions and are generally a later-stage consideration, not a Week 3 priority.\n\nIP assignment (from the previous card) is the day-one essential; trade secrets and NDAs matter early too — trademarks and patents can usually wait until there's an actual business worth protecting that way."
+        },
+        {
+          "heading": "Roles in an early-stage startup team",
+          "body": "CEO (Chief Executive Officer) — overall vision and strategy, fundraising, relationships with investors, partners, and key stakeholders.\n\nCTO (Chief Technology Officer) — technical architecture decisions, leadership of the engineering effort, product quality and reliability.\n\nCPO (Product Manager) — user research, defining the product roadmap, prioritising which features actually get built and when.\n\nCFO — a later-stage hire: financial planning, regulatory and tax compliance, reporting to investors as the venture grows.\n\nThe early-stage reality: in a two- or three-person founding team, everyone wears multiple hats simultaneously — the CTO might also be doing product research, the CEO might also be writing code. What actually matters is that the team has EXPLICITLY agreed who has final say in each area, so a disagreement doesn't turn into decision paralysis at the worst moment."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why are ownership and IP disputes described as easier to resolve BEFORE money or success is on the table than after?",
+          "options": [
+            "Lawyers are cheaper in the early stage",
+            "Once real money or success is involved, everyone has more at stake, making disagreements harder and more emotionally charged to resolve fairly",
+            "It's illegal to discuss ownership after a venture starts making money",
+            "Ownership can't legally change once a business is registered"
+          ],
+          "correctIndex": 1,
+          "explanation": "Once real value exists, every party has much more at stake in the outcome of a disagreement, which is exactly why founding teams are pushed to settle ownership, equity, and IP questions explicitly and early, before that pressure exists."
+        },
+        {
+          "question": "A solo founder testing an early idea with minimal risk and no near-term investment plans would typically choose which legal structure?",
+          "options": [
+            "Limited Liability Company",
+            "Sole Proprietorship",
+            "Partnership",
+            "Public Limited Company"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sole Proprietorship — the simplest and cheapest structure, appropriate when risk is low and there's no near-term need for the credibility or liability protection a Limited Company provides."
+        },
+        {
+          "question": "What specifically is the danger of splitting founder equity equally just to avoid an uncomfortable conversation?",
+          "options": [
+            "It's illegal in most jurisdictions",
+            "It ignores real differences in contribution (idea origin, capital, skill, time) and tends to breed resentment later once those differences become obvious",
+            "Equal splits always fail to attract investors",
+            "It means the company can never issue more shares"
+          ],
+          "correctIndex": 1,
+          "explanation": "A fair split should weigh factors like original idea/validation work, capital contributed, technical skill, business development, and time commitment — defaulting to equal just to dodge the conversation ignores real contribution differences that tend to surface (and cause resentment) later."
+        },
+        {
+          "question": "Without a vesting schedule, what happens if a co-founder leaves the venture after just one month?",
+          "options": [
+            "They automatically lose all their equity",
+            "They would walk away owning a permanent, full share of the company forever, despite minimal contribution",
+            "The company is legally required to buy back their shares immediately",
+            "Nothing changes, since equity is irrelevant without a working product"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is exactly the problem vesting exists to prevent — without it, equity is fully owned the instant shares are issued, so a co-founder who leaves almost immediately would still permanently hold their full stake despite contributing almost nothing."
+        },
+        {
+          "question": "A startup's founders write code for their product but never sign any IP assignment. Who legally owns that code by default?",
+          "options": [
+            "The startup automatically owns anything its founders create",
+            "The individual author who wrote it — copyright defaults to the person, not 'the team' or 'the startup' as a concept",
+            "Ownership is shared equally among all team members regardless of who wrote it",
+            "No one owns it until the company is formally registered"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is the IP default trap: copyright in software code is automatically held by the individual author the moment it's written, not by the team or company informally — a formal IP assignment is required to actually transfer that ownership to the company."
+        },
+        {
+          "question": "In a two-person founding team where both people wear multiple hats, what matters most according to this chapter?",
+          "options": [
+            "Hiring a CFO immediately",
+            "The team has explicitly agreed who has final say in each specific decision area, to avoid decision paralysis",
+            "Both founders must have identical job titles",
+            "Roles should never overlap under any circumstances"
+          ],
+          "correctIndex": 1,
+          "explanation": "The early-stage reality is that founders wear multiple hats — what actually prevents dysfunction is having explicitly agreed who holds final decision authority in each area (technical, product, business), not rigidly separating every role."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the trade-off between a Sole Proprietorship and a Limited Liability Company, and describe a specific scenario for a software venture where each would be the correct choice.",
+          "modelAnswer": "A Sole Proprietorship is the simplest and cheapest structure to start, with minimal setup and reporting burden, but it creates no legal separation between personal and business assets — if the business is sued or owes money, the founder's own personal property is directly at risk. A Limited Liability Company costs more time and money to set up and maintain, requiring registration fees and annual filings, but it creates a legal shield around founders' personal assets and signals seriousness to investors, partners, and large clients. A solo student testing an early idea with no paying customers yet and no near-term plan to raise investment would correctly choose a Sole Proprietorship — the cost and liability risk at that stage are both low, so the extra protection and credibility of an Ltd isn't worth the time and money yet. A team that has validated real demand, is about to take customer payments, and plans to pursue investors would correctly choose a Limited Company instead — the personal liability exposure and the credibility gap with investors both become real risks worth paying to avoid at that stage.",
+          "keyPoints": [
+            "Sole Proprietorship: cheap/fast, no personal-asset protection",
+            "Ltd: costs more, but shields personal assets and signals credibility",
+            "Sole Proprietorship fits early, low-risk idea testing",
+            "Ltd fits a venture taking real money or pursuing investors"
+          ]
+        },
+        {
+          "question": "Explain the IP default trap and why every founder, employee, and contractor on a software venture should sign an IP assignment, using a concrete example of what could go wrong without one.",
+          "modelAnswer": "The IP default trap is the mistaken assumption that a startup automatically owns the code its founders and team members write. In reality, copyright in software code is automatically held by the individual author the moment it's written — not by 'the team' or 'the startup' as an informal concept — unless that ownership is formally transferred. IP assignment is the legal document that closes this gap: it formally transfers ownership of created IP from the individual creator to the company. Without it, a concrete risk plays out like this: a technical co-founder writes the core product's codebase, then later leaves the venture after a dispute. Without a signed IP assignment, that departing co-founder could legitimately claim personal ownership of the code they wrote — code the remaining company still depends on to operate — creating a legal mess that could cripple or even end the business, purely because ownership was never formalised while everyone was still getting along.",
+          "keyPoints": [
+            "Copyright defaults to the individual author, not the team/company",
+            "IP assignment formally transfers ownership from creator to company",
+            "Every founder, employee, and contractor should sign one",
+            "Without it, a departing contributor could claim ownership of code the company relies on"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w4",
+      "number": 4,
+      "title": "Business Feasibility Analysis",
+      "cards": [
+        {
+          "heading": "Feasibility analysis vs. the business plan",
+          "body": "Feasibility analysis is a structured assessment of whether a business idea can realistically be built, sold, financed, and operated by the team pursuing it, given the resources and constraints they actually have. It asks \"Can we?\" A business plan asks a completely different question — \"How will we?\" — and only makes sense to write AFTER feasibility confirms the venture is actually viable.\n\nFeasibility analysis is concise: a structured assessment across four dimensions, producing a go/no-go/pivot decision. A business plan is the full document — strategy, marketing, operations, financials — a roadmap for execution.\n\nWhy the order matters: writing the full business plan before feasibility analysis risks investing days or weeks of detailed planning into a venture that turns out to be fundamentally unviable."
+        },
+        {
+          "heading": "The four dimensions of feasibility",
+          "body": "Every venture gets tested across exactly four dimensions:\n\n1. Technical — can the product actually be built?\n2. Market — will people actually want it and pay for it?\n3. Financial — can the venture actually sustain itself?\n4. Organisational — can THIS SPECIFIC team actually execute it?\n\nNotice the last one: feasibility isn't just \"is this a good idea in general\" — it's whether this particular team, with its particular skills, resources, and constraints, can pull it off. A brilliant idea can still be infeasible for a specific team, right now, even if it would be perfectly feasible for a different team with different resources."
+        },
+        {
+          "heading": "Technical feasibility: can it be built?",
+          "body": "Five questions: is the tech stack suitable and within the team's actual skill set? Should components be built in-house or bought/integrated? How complex are the required third-party integrations? Will the architecture scale if users grow quickly? What data security and privacy requirements apply?\n\nBuild vs. buy: integrating proven infrastructure (payments, authentication, messaging) frees scarce engineering time for what's actually unique — the core value proposition. Example: a B2B invoicing tool integrates an existing payment API (buy) and directs all its own engineering effort toward its unique invoice-generation and approval-workflow features (build).\n\nRisk classification: HIGH (cutting-edge or unproven tech, or skills the team lacks), MEDIUM (proven tech combined in a new or complex way), LOW (well-understood tech in a domain the team already knows well)."
+        },
+        {
+          "heading": "The MVP as a feasibility tool, not just a launch plan",
+          "body": "An MVP (Minimum Viable Product) is the smallest version of a product that still tests its core value proposition with real users — not a prototype, not a demo, but a real, if limited, product real users can actually use.\n\nThe MVP question: what is the single most important assumption about our product that we need to test, and what is the smallest thing we could build to test it? Include the core value proposition. Exclude every secondary and tertiary feature, no matter how tempting.\n\nA tight MVP scope does three things at once: reduces technical risk, shortens the time to real-user feedback, and avoids months spent building features nobody actually asked for."
+        },
+        {
+          "heading": "Market feasibility: four indicators, a stricter lens",
+          "body": "This re-examines Week 2's opportunity-validation work with a stricter, go/no-go lens:\n\n• Problem confirmed real — multiple independent sources (interviews, observed behaviour, data) point to the same pain point, unprompted, not just one enthusiastic conversation\n• Market is reachable — the team has a specific, plausible plan to actually find and communicate with target customers, not just a hope that they'll show up\n• Customers will switch — dissatisfaction with current alternatives is strong enough to actually motivate real behaviour change, not just mild annoyance\n• Timing is right — a credible \"why now\": something specific has genuinely changed (technology, regulation, behaviour)\n\nPassing Week 2's validation doesn't automatically mean passing this stricter re-check — this is where a team honestly re-examines its own optimism."
+        },
+        {
+          "heading": "Financial feasibility: costs and break-even",
+          "body": "Cost categories: development (MVP build, design, licences), hosting and infrastructure (cloud, APIs, storage), marketing and acquisition (ads, content), salaries and contractor payments, legal and administrative (registration, compliance).\n\nBasic revenue: price per customer per month × number of paying customers.\n\nBreak-even point: fixed costs ÷ (revenue per customer − variable cost per customer). This tells you exactly how many paying customers you need before the venture stops losing money on operations.\n\nRunway: the length of time a venture can keep operating before running out of money — current cash ÷ monthly net spend (burn rate). Sound long-term economics can still fail if the runway runs out before break-even is actually reached — being right eventually doesn't help if the money is gone first."
+        },
+        {
+          "heading": "Break-even in practice: Amaka's numbers, tested harder",
+          "body": "Remember Amaka's inventory-tracking SaaS from Week 2? Fixed monthly costs ₦300,000, price ₦1,500 per shop, variable cost ₦200 per shop. Break-even = ₦300,000 ÷ (₦1,500 − ₦200) = ₦300,000 ÷ ₦1,300 ≈ 231 paying shops needed.\n\nBut Week 2's own SOM estimate for year one was only 120 shops. 120 is less than 231 — a clear financial feasibility WARNING. Her venture wasn't a bad idea; it just doesn't yet balance at the numbers she started with.\n\nResponses worth testing: raise the price to ₦2,000/shop (new break-even ≈ 167 shops — much closer), reduce fixed costs, or set a more aggressive, evidence-justified customer-acquisition target. This is exactly why feasibility analysis happens BEFORE the business plan — catching this now costs an afternoon of recalculating; catching it after launch costs real money already spent."
+        },
+        {
+          "heading": "Organisational feasibility: can THIS team execute?",
+          "body": "Four questions: does the team have the technical skills to build the MVP, or a credible plan to acquire them? Does the team have relevant experience or founder-market fit in this specific problem space? What physical and digital resources are required, and are they realistically accessible? Is the team's current time and energy capacity realistic given other commitments (a full course load, a job, family responsibilities)?\n\nClosing a skill or resource gap has three honest paths: Learning (a founder invests time acquiring the skill — works when the gap is narrow), Recruiting (add a co-founder or hire with the missing skill — for large or urgent gaps), Advising (a mentor or advisor fills the gap without taking equity or salary).\n\nThe rule that matters most: name every gap honestly, early. A gap that's named can be planned around; a gap that's quietly ignored eventually becomes the reason the venture stalls."
+        },
+        {
+          "heading": "The feasibility matrix, and the go/pivot/no-go call",
+          "body": "Score all four dimensions — technical, market, financial, organisational — from 1 (very weak evidence) to 5 (strong, well-evidenced), each with a written one- or two-sentence justification, not a gut-feeling number.\n\nGO — all four dimensions show credible, evidence-backed feasibility: proceed to the full business plan.\nPIVOT — a serious weakness exists in one dimension, but the underlying problem and team remain promising: adjust the specific weak point and re-test, don't abandon the whole venture.\nNO-GO — fundamental, unresolvable weaknesses show up across MULTIPLE dimensions at once: abandon this particular idea and look elsewhere.\n\nAmaka's venture, with its break-even gap, is a textbook PIVOT case: one real financial weakness, everything else intact — worth adjusting price or acquisition targets and re-testing, not worth abandoning outright.\n\nIt's not that the idea is bad — Amaka's numbers just need adjusting, and that's exactly what a PIVOT verdict means: no wahala, tweak the price, no need to scrap the whole hustle."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the key difference in the question each of these asks: feasibility analysis vs. a full business plan?",
+          "options": [
+            "They ask exactly the same question in different formats",
+            "Feasibility analysis asks 'Can we?'; a business plan asks 'How will we?' — and the plan should only be written after feasibility confirms viability",
+            "A business plan always comes first, feasibility analysis comes after",
+            "Feasibility analysis is only used by investors, never by the founding team"
+          ],
+          "correctIndex": 1,
+          "explanation": "Feasibility analysis is the concise, earlier 'can this actually work?' check; the business plan is the fuller execution roadmap that only makes sense to write once feasibility has confirmed the venture is viable — writing the plan first risks wasted effort on an unviable idea."
+        },
+        {
+          "question": "Why does organisational feasibility specifically ask whether THIS team can execute, rather than just whether the idea is good?",
+          "options": [
+            "Because a good idea can still be infeasible for a specific team's actual skills, resources, and constraints, even if it would be feasible for a different team",
+            "Because organisational feasibility is really about the idea's originality",
+            "Because only investors care about the founding team",
+            "Because team composition never actually affects whether a venture succeeds"
+          ],
+          "correctIndex": 0,
+          "explanation": "Feasibility isn't a generic judgement of the idea — it's specifically about whether THIS team, with its particular skills and resources right now, can realistically pull it off, which is exactly why organisational feasibility is its own separate dimension."
+        },
+        {
+          "question": "In the build-vs-buy decision for technical feasibility, why would a B2B invoicing tool integrate an existing payment API rather than build its own payment processing?",
+          "options": [
+            "Building payment processing in-house is always illegal",
+            "It frees scarce engineering capacity for what's actually unique to the product — its invoice-generation and approval-workflow features",
+            "Payment APIs are always free to use",
+            "Customers refuse to trust integrated payment APIs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Integrating proven infrastructure like payments lets the team focus limited engineering time on their actual unique value proposition, rather than reinventing a solved problem — that's the core logic of build vs. buy."
+        },
+        {
+          "question": "Using Amaka's numbers (fixed costs ₦300,000/month, price ₦1,500/shop, variable cost ₦200/shop), approximately how many paying shops does she need to break even?",
+          "options": [
+            "120 shops",
+            "167 shops",
+            "231 shops",
+            "300 shops"
+          ],
+          "correctIndex": 2,
+          "explanation": "₦300,000 ÷ (₦1,500 − ₦200) = ₦300,000 ÷ ₦1,300 ≈ 231 shops — well above her Week 2 SOM estimate of 120 shops, which is exactly the financial feasibility warning this chapter highlights."
+        },
+        {
+          "question": "Amaka's break-even is 231 shops but her realistic Year 1 SOM is only 120 shops. According to the go/pivot/no-go framework, what does this situation call for?",
+          "options": [
+            "An automatic NO-GO, since the numbers don't currently work",
+            "A PIVOT — one real financial weakness with everything else intact, worth adjusting (price, costs, or acquisition target) and re-testing",
+            "A GO, since the idea itself is still good",
+            "Ignoring the gap and proceeding to the full business plan anyway"
+          ],
+          "correctIndex": 1,
+          "explanation": "PIVOT — a serious weakness in one dimension (financial) with the underlying problem and team still promising calls for adjusting the specific weak point (e.g. raising price to ₦2,000, cutting fixed costs) and re-testing, not abandoning the whole venture."
+        },
+        {
+          "question": "According to the organisational feasibility framework, what is the correct response to a founding team having a large, urgent skill gap (e.g. no one who can build the required tech)?",
+          "options": [
+            "Ignore it and hope it resolves itself",
+            "Recruiting — add a co-founder or hire with the missing skill, since learning is realistically too slow for a large or urgent gap",
+            "Abandon the venture immediately",
+            "Wait until after launch to address it"
+          ],
+          "correctIndex": 1,
+          "explanation": "Of the three gap-closing paths (Learning, Recruiting, Advising), Recruiting is specifically for large or urgent gaps — Learning works when the gap is narrow enough for a founder to close it themselves in reasonable time."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain why feasibility analysis is deliberately done BEFORE writing a full business plan, and use Amaka's break-even gap (120 SOM vs. ~231 break-even) to illustrate what could go wrong if the order were reversed.",
+          "modelAnswer": "Feasibility analysis asks the concise question 'can this venture realistically be built, sold, financed, and operated by this team?' across four dimensions, producing a fast go, pivot, or no-go decision. A full business plan asks a much bigger question, 'how will we execute this?', requiring days or weeks of detailed work across strategy, marketing, operations, and financials. Doing feasibility first means catching fundamental problems cheaply, before investing that larger effort. In Amaka's case, her Week 2 opportunity looked promising with a SOM of 120 shops in year one, but Week 4's financial feasibility check reveals she actually needs about 231 paying shops just to break even at her original pricing — nearly double her realistic year-one customer count. Catching this now costs an afternoon of recalculating numbers and considering a price increase or cost reduction. If she had skipped feasibility analysis and gone straight to writing a full business plan and building the product, she could have spent weeks or months of real effort and money before discovering the same fundamental gap — at which point it's far more costly and disruptive to fix.",
+          "keyPoints": [
+            "Feasibility analysis: fast, structured 'can we?' check across 4 dimensions",
+            "Business plan: much larger 'how will we?' effort, only worth doing after feasibility passes",
+            "Amaka's break-even (~231 shops) exceeds her Week 2 SOM (120 shops) — a real financial gap",
+            "Catching this in feasibility analysis is cheap; catching it after building/planning would be far costlier"
+          ]
+        },
+        {
+          "question": "Describe the four dimensions of feasibility analysis, and explain using Amaka's situation why a venture can pass three dimensions strongly while still requiring a PIVOT rather than a GO.",
+          "modelAnswer": "The four dimensions are technical (can the product actually be built?), market (will people want it and pay for it?), financial (can the venture sustain itself?), and organisational (can this specific team execute it?). A GO decision requires all four dimensions to show credible, evidence-backed feasibility together — it isn't enough for most of them to look strong. In Amaka's case, her venture likely scores well on technical feasibility (inventory-tracking software isn't cutting-edge technology), market feasibility (Week 2's validation work confirmed a real, reachable problem), and possibly organisational feasibility (assuming she has or can acquire the needed skills). But her financial feasibility reveals a real weakness: her break-even point of roughly 231 shops exceeds her realistic year-one customer target of 120 shops. Because this is one serious weakness in an otherwise promising venture, rather than fundamental problems across multiple dimensions, the correct call is PIVOT — adjust the specific weak point (price, costs, or acquisition pace) and re-test — not NO-GO, which is reserved for unresolvable weaknesses spread across several dimensions at once.",
+          "keyPoints": [
+            "Technical, Market, Financial, Organisational — all four required for a GO",
+            "Amaka likely scores well on technical/market/organisational feasibility",
+            "Financial feasibility is the one real weakness (break-even exceeds SOM)",
+            "One serious weakness + otherwise promising venture = PIVOT, not NO-GO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w5",
+      "number": 5,
+      "title": "Competitive Strategy and Value Proposition",
+      "cards": [
+        {
+          "heading": "Strategy is the answer to 'how will we win?'",
+          "body": "Business strategy is a deliberate set of choices about where a company will compete, how it'll serve customers better than the alternatives, and how it'll sustain that advantage over time. Porter's three generic strategies — pursuing all three at once without a deliberate choice just leaves a venture \"stuck in the middle,\" good at nothing in particular:\n\n• Cost leadership — the lowest cost structure in the market, enabling the lowest price at an acceptable margin. Example: a payroll app at ₦1,200/month against competitors charging ₦5,000-10,000, achieved through automation and self-serve onboarding.\n• Differentiation — offer something customers genuinely value that competitors don't, and charge a premium for it. Example: a legal-document tool preloaded with actual Nigerian legal templates, built by practising lawyers.\n• Focus/niche — concentrate all resources on one narrow segment and serve it exceptionally well. Example: payroll and compliance software built specifically for West African NGOs, nothing else."
+        },
+        {
+          "heading": "Software-specific sources of sustainable advantage",
+          "body": "Five ways a software venture keeps winning even after competitors notice it's working — and they often compound: a product with network effects that also creates switching costs becomes very hard to displace.\n\n• Network effects — the product becomes more valuable to each user as more users join\n• Platform lock-in/switching costs — time, data, and integrations invested make switching genuinely costly over time\n• Data advantage — proprietary data improves personalisation and defaults new entrants simply can't match\n• Ecosystem & integrations — deep ties to a customer's other tools create mutual dependency\n• Embedded domain expertise — real insider industry knowledge built directly into workflows and templates\n\nA good feature can be copied in weeks. A genuine network effect or years of accumulated customer data usually can't be."
+        },
+        {
+          "heading": "Crafting a testable value proposition",
+          "body": "A value proposition is a clear, specific statement of the benefit a product delivers to a defined customer segment, in a way that makes it preferable to the available alternatives. The formula: \"For [target customer] who [specific problem], [product name] is a [category] that [key benefit], unlike [main alternative] which [specific shortfall].\"\n\nApplied to Amaka's venture — now officially named StockPilot: \"For small retail shops in Nigerian cities who lose sales because they cannot track stock levels accurately, StockPilot is an inventory management app that sends automatic low-stock alerts and reorder reminders — unlike paper stock books and spreadsheets, which require manual counting and are frequently left unupdated.\"\n\nFour common mistakes: a target customer that's too broad, a feature list instead of an actual benefit statement, no named alternative to compare against, and writing it in future tense (\"will help\" instead of \"helps\")."
+        },
+        {
+          "heading": "The Value Proposition Canvas",
+          "body": "Splits into two matched halves. Customer Profile: Jobs (the tasks and goals customers are actually trying to accomplish), Pains (frustrations, risks, and obstacles they run into), Gains (positive outcomes and aspirations they have).\n\nValue Map: Products & Services (what the venture actually offers), Pain Relievers (exactly how the product reduces each specific pain), Gain Creators (exactly how the product produces each specific gain).\n\n\"Fit\" happens when the Value Map's strongest pain relievers and gain creators address the Customer Profile's MOST significant pains and gains — not every single one of them. StockPilot's job is \"know what stock I have without counting it myself\"; its pain reliever is the automatic low-stock alert; its gain creator is never losing a sale to an item that quietly ran out."
+        },
+        {
+          "heading": "The ten sections of a software business plan",
+          "body": "1. Executive Summary\n2. Company Description\n3. Market Analysis\n4. Product/Service Description\n5. Competitive Strategy & Value Proposition\n6. Marketing & Sales Strategy\n7. Operations Plan\n8. Financial Plan\n9. Risk Analysis\n10. Appendices\n\nSection 5 — the chosen strategy, primary advantage, and value proposition statement — is exactly what this week's work feeds directly into. Every section built across this course so far (opportunity, ownership, feasibility) has been quietly assembling the earlier sections of this exact document."
+        },
+        {
+          "heading": "How different audiences read the same plan",
+          "body": "The same ten-section document gets read completely differently depending on who's reading it — know your audience before you pitch:\n\n• Investors (angels, VCs) — read the executive summary and team first; want to see a large market, real differentiation, a credible team, grounded projections\n• Bank lenders — read cash-flow projections and collateral first; want stable revenue, documented assets, a clear repayment timeline\n• Business partners — read the product description and traction first; want existing customers, a working product, an obvious value proposition\n• Grant funders — read social/developmental impact first; want a clear need, a realistic budget, measurable outcomes\n• The founding team itself — reads the operational and financial sections first; needs defined milestones, realistic assumptions, clear ownership\n\nThe same plan, five completely different first impressions — pitching a bank lender like an investor (or vice versa) wastes the exact page that would have convinced them."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A venture tries to be simultaneously the cheapest option, the most differentiated option, and the most niche-focused option, without committing to any one of Porter's strategies. What happens?",
+          "options": [
+            "It automatically wins on all three fronts at once",
+            "It ends up 'stuck in the middle' — not clearly winning on any single dimension",
+            "This is actually the recommended approach for all software ventures",
+            "It becomes a monopoly by default"
+          ],
+          "correctIndex": 1,
+          "explanation": "Porter's framework specifically warns that pursuing all three generic strategies at once, without a deliberate choice, leaves a venture 'stuck in the middle' — not genuinely competitive on cost, differentiation, or focus."
+        },
+        {
+          "question": "Why do network effects and data advantage count as particularly durable sources of competitive advantage, compared to a single new feature?",
+          "options": [
+            "They're legally protected by patents automatically",
+            "A feature can typically be copied by a competitor in weeks; accumulated network effects or years of proprietary data are much harder to replicate quickly",
+            "They cost nothing to build",
+            "They only matter for hardware companies, not software"
+          ],
+          "correctIndex": 1,
+          "explanation": "A feature is often copyable relatively quickly, but a genuine network effect (value that compounds with more users) or years of accumulated proprietary data takes real time to build and can't simply be copied overnight."
+        },
+        {
+          "question": "Which of these is one of the four common mistakes to avoid when writing a value proposition?",
+          "options": [
+            "Naming a specific competing alternative",
+            "Writing it in present tense",
+            "Writing it as a feature list instead of an actual benefit statement",
+            "Defining a narrow target customer"
+          ],
+          "correctIndex": 2,
+          "explanation": "A feature list instead of a benefit statement is one of the four common mistakes (alongside a target customer that's too broad, no named alternative, and writing in future tense) — a value proposition needs to state the BENEFIT, not just list features."
+        },
+        {
+          "question": "In the Value Proposition Canvas, StockPilot's automatic low-stock alert is best classified as which element?",
+          "options": [
+            "A Job",
+            "A Pain",
+            "A Pain Reliever",
+            "A Gain"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Pain Reliever — it's part of the Value Map, describing exactly how the product reduces a specific pain (losing sales because stock levels aren't tracked), as distinct from the Customer Profile's Jobs/Pains/Gains."
+        },
+        {
+          "question": "A bank lender evaluating a software business plan will typically look FIRST at which section?",
+          "options": [
+            "Executive summary and team",
+            "Cash-flow projections and collateral",
+            "Social/developmental impact",
+            "Product description and traction"
+          ],
+          "correctIndex": 1,
+          "explanation": "Bank lenders read cash-flow projections and collateral first, wanting to see stable revenue, documented assets, and a clear repayment timeline — a different starting point than an investor (executive summary/team) or a grant funder (social impact)."
+        },
+        {
+          "question": "Which strategy does 'payroll and compliance software built only for West African NGOs' best represent?",
+          "options": [
+            "Cost leadership",
+            "Differentiation",
+            "Focus/niche",
+            "Product-led growth"
+          ],
+          "correctIndex": 2,
+          "explanation": "Focus/niche — concentrating all resources on one narrow segment (West African NGOs specifically) and serving it exceptionally well, rather than trying to serve every organisation type or compete purely on price."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain Porter's three generic strategies using the specific examples given in this chapter, and describe what 'stuck in the middle' means and why it's a dangerous position for a venture.",
+          "modelAnswer": "Porter's three generic strategies are cost leadership (the lowest cost structure enabling the lowest price at acceptable margin, like a payroll app at ₦1,200/month against competitors charging ₦5,000-10,000 through automation and self-serve onboarding), differentiation (offering something customers genuinely value that competitors don't, and charging a premium, like a legal-document tool preloaded with real Nigerian legal templates built by practising lawyers), and focus/niche (concentrating all resources on one narrow segment and serving it exceptionally well, like payroll software built only for West African NGOs). 'Stuck in the middle' describes a venture that tries to pursue all three at once without committing to any single one — it's not the cheapest option, not clearly differentiated, and not focused on any specific segment. This is dangerous because customers have no clear reason to choose it over a competitor that has made a deliberate strategic choice: a price-sensitive customer will pick the genuinely cheapest option, a customer wanting something unique will pick the genuinely differentiated option, and a venture 'stuck in the middle' loses both kinds of customer.",
+          "keyPoints": [
+            "Cost leadership — lowest price via lowest cost structure",
+            "Differentiation — unique value, charged at a premium",
+            "Focus/niche — one narrow segment, served exceptionally well",
+            "'Stuck in the middle' = no deliberate choice = no clear reason for any customer to choose it"
+          ]
+        },
+        {
+          "question": "Using StockPilot's value proposition as your example, explain the value proposition formula and describe two of the four common mistakes it deliberately avoids.",
+          "modelAnswer": "The value proposition formula is: 'For [target customer] who [specific problem], [product name] is a [category] that [key benefit], unlike [main alternative] which [specific shortfall].' StockPilot's version fills this in specifically: for small retail shops in Nigerian cities who lose sales because they cannot track stock levels accurately, StockPilot is an inventory management app that sends automatic low-stock alerts and reorder reminders, unlike paper stock books and spreadsheets, which require manual counting and are frequently left unupdated. This avoids the 'target customer too broad' mistake by naming a specific segment (small retail shops in Nigerian cities) rather than 'anyone who sells things.' It also avoids the 'feature list, not a benefit statement' mistake by stating the actual outcome (not losing sales, not having to manually count stock) rather than just listing features like 'has alerts and reminders' without explaining why that matters to the customer. It also names a specific alternative (paper stock books and spreadsheets) with its specific shortfall (requires manual counting, frequently left unupdated), avoiding the 'no named alternative' mistake, and is written in present tense ('sends,' not 'will send'), avoiding the future-tense mistake.",
+          "keyPoints": [
+            "Formula: For [target customer] who [problem], [product] is a [category] that [benefit], unlike [alternative] which [shortfall]",
+            "Avoids 'too broad' by naming small retail shops specifically",
+            "Avoids 'feature list' by stating the benefit (not losing sales), not just features",
+            "Names a specific alternative and its shortfall; written in present tense"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seng322-w6",
+      "number": 6,
+      "title": "Pricing, Acquisition, Retention and Go-to-Market",
+      "cards": [
+        {
+          "heading": "Marketing is the full customer lifecycle, not just ads",
+          "body": "Advertising is one small tactic inside a much broader marketing function: identifying, reaching, converting, and retaining customers. The classic 4 Ps, applied specifically to software:\n\n• Product — frequent updates, multiple versions, features that evolve with real user feedback\n• Price — recurring subscription, tiered, usage-based, or freemium: a strategic choice, not an afterthought\n• Place — digital distribution through app stores, the web, APIs, SaaS: global reach from day one, unlike a physical shop\n• Promotion — content marketing, SEO, community, developer relations, product-led growth\n\nProduct-led growth (PLG) is when the product itself drives acquisition, conversion, and expansion — no separate sales team required to close every deal. Slack, Dropbox, Figma, and Notion all built their early growth this way: try the free version, get hooked, invite colleagues, someone upgrades."
+        },
+        {
+          "heading": "Five pricing models for software",
+          "body": "• Freemium — a free core tier, premium features paid; needs a large base since typical conversion is only 2-5%\n• Tiered — Good/Better/Best; anchoring and decoy pricing nudge customers toward the higher tier\n• Usage-based — pay per API call, message, or GB; aligns cost with value delivered, but needs accurate metering\n• Per-seat — scales with active users; simple to explain, but can cap usage within an organisation\n• Enterprise/custom — negotiated pricing with SLAs and compliance terms; longer sales cycle, but much larger deals\n\nCostly mistake: underpricing out of fear. A price set too low doesn't just cost revenue — it signals low value and tends to attract the least loyal customers, the ones most likely to churn at the first better deal. Price relative to the value actually delivered, not to whatever feels comfortable to charge."
+        },
+        {
+          "heading": "The acquisition funnel, and B2B vs. B2C",
+          "body": "Every customer moves through the same five stages: Awareness → Interest → Consideration → Conversion → Retention. But HOW they move through it differs sharply by market:\n\n• Decision-maker — a single individual user (B2C) vs. multiple stakeholders who all need convincing (B2B)\n• Sales cycle — hours to days (B2C) vs. weeks to months (B2B)\n• Deal size — small, scales through volume (B2C) vs. large per customer (B2B)\n• Primary channels — app stores, social, SEO (B2C) vs. direct sales, LinkedIn, events (B2B)\n\nTrying to sell StockPilot the way a B2C mobile game sells itself — pure app-store discovery, no direct outreach — would badly mismatch a market of small shop owners who need someone to actually explain and demonstrate the product first."
+        },
+        {
+          "heading": "Churn: the leak nobody notices until it's huge",
+          "body": "Churn rate is the percentage of customers who cancel or stop paying during a given period. Even a churn rate that sounds small compounds brutally over time: at 5% monthly churn, 200 customers in January shrink to only about 106 remaining by December (200 × 0.95¹²) — the venture has to acquire roughly 94 new customers over the year just to STAND STILL, before counting any actual growth.\n\nThis is exactly why retention gets called \"the other half of marketing\" — acquiring customers through a leaking bucket means running the acquisition machine flat-out just to stay in place, let alone grow."
+        },
+        {
+          "heading": "Onboarding and customer success: the actual retention levers",
+          "body": "Onboarding is the highest-leverage retention investment available. The goal: minimise \"time to value\" — the gap between sign-up and the customer's first genuinely meaningful success. It needs to be an active, guided process — not a welcome email, not a docs page nobody reads. Common failures: too much setup before any value appears, feature overload dumped on day one, and no context for what the customer was actually trying to accomplish in the first place.\n\nCustomer success means proactively monitoring usage for early warning signs of churn — declining activity, unused features, repeated support requests — and intervening BEFORE the customer actually leaves, not after. In an early-stage venture, this job usually falls directly on the founders themselves, since there's no dedicated team for it yet."
+        },
+        {
+          "heading": "Unit economics: CAC, LTV, and the 3:1 benchmark",
+          "body": "CAC (Customer Acquisition Cost) = total marketing & sales spend ÷ new customers acquired. LTV (Lifetime Value) = average monthly revenue per customer ÷ monthly churn rate. Payback period = CAC ÷ (monthly revenue − monthly variable cost); healthy target is 12 months or less.\n\nStockPilot's own numbers: CAC = ₦800,000 ÷ 40 new customers = ₦20,000 per customer. LTV = ₦1,500 (her established monthly price) ÷ 0.05 churn rate = ₦30,000. LTV:CAC = 1.5:1.\n\nThe healthy benchmark is 3:1 or higher — spending ₦1 to earn back ₦3 or more over a customer's lifetime. At 1.5:1, StockPilot returns only 1.5× what it spends acquiring each customer — below benchmark, on top of the break-even gap already flagged in Week 4. Fixes: raise the price (which Week 4's pivot already pointed toward), reduce churn through better onboarding, or find a cheaper acquisition channel."
+        },
+        {
+          "heading": "The 90-day go-to-market plan",
+          "body": "Six components, no more: Target segment (the specific beachhead from Week 2 — not a broad market), Key message (the one thing the customer must understand, straight from this week's value proposition), Primary channels (one or two channels used exclusively for the first 90 days, not a scattered attempt at everything), First-customer target (a specific, realistic number of paying customers or active users), Specific actions (a week-by-week or month-by-month list of concrete activities), and Success metrics (2-3 numbers that actually indicate whether the plan is working).\n\nKey metrics worth tracking: MRR, new customers per period, trial-to-paid conversion, CAC, LTV, monthly churn, NPS. StockPilot's own plan: target segment = small retail shops in her city (the exact Week 2 beachhead), key message = the low-stock-alert value proposition, primary channel = direct outreach to shop owners (matching B2B, not B2C, acquisition). The whole term paper now reads as one coherent argument, not six disconnected sections."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "According to product-led growth (PLG), how do companies like Slack, Dropbox, Figma, and Notion primarily drive their early acquisition and growth?",
+          "options": [
+            "Exclusively through paid television advertising",
+            "The product itself drives acquisition, conversion, and expansion, without a separate sales team closing every deal",
+            "By giving the product away completely free forever, with no paid tier at all",
+            "Through door-to-door sales visits to every customer"
+          ],
+          "correctIndex": 1,
+          "explanation": "Product-led growth means the product's own usage experience (try free, get hooked, invite colleagues, someone upgrades) drives growth, rather than a traditional sales-led approach where a sales team closes every individual deal."
+        },
+        {
+          "question": "What is the specific danger of underpricing a software product out of fear that customers won't pay?",
+          "options": [
+            "It's illegal in most markets",
+            "It signals low value and tends to attract the least loyal customers, who are the most likely to churn for a better deal",
+            "It has no real downside, since some revenue beats none",
+            "It automatically improves customer retention"
+          ],
+          "correctIndex": 1,
+          "explanation": "Underpricing doesn't just leave revenue on the table — it signals low value and tends to attract price-sensitive customers with the least loyalty, exactly the customers most likely to leave the moment a cheaper alternative appears."
+        },
+        {
+          "question": "Why would selling StockPilot the way a B2C mobile game markets itself (pure app-store discovery, no direct outreach) likely fail?",
+          "options": [
+            "B2C and B2B acquisition work identically, so there'd be no problem",
+            "Small shop owners are a B2B-flavoured market needing direct outreach and explanation, unlike B2C's self-service app-store discovery model",
+            "App stores don't allow B2B software of any kind",
+            "StockPilot has no target customer at all"
+          ],
+          "correctIndex": 1,
+          "explanation": "B2B buyers typically need direct sales, demonstration, and relationship-building (longer sales cycle, fewer but larger deals) — very different from B2C's self-service, app-store-driven discovery, so mismatching the channel to the market type tends to fail."
+        },
+        {
+          "question": "At 5% monthly churn, starting with 200 customers in January, roughly how many customers remain by December without any new acquisition?",
+          "options": [
+            "About 190",
+            "About 150",
+            "About 106",
+            "About 50"
+          ],
+          "correctIndex": 2,
+          "explanation": "200 × 0.95¹² ≈ 106 — even a churn rate that sounds small compounds significantly over a full year, which is exactly why retention is called 'the other half of marketing.'"
+        },
+        {
+          "question": "StockPilot's CAC is ₦20,000 and its LTV is ₦30,000, giving an LTV:CAC ratio of 1.5:1. What does this tell us?",
+          "options": [
+            "The venture is comfortably above the healthy 3:1 benchmark",
+            "The venture is below the healthy 3:1 benchmark, meaning it isn't yet earning enough back per customer relative to acquisition cost",
+            "LTV:CAC ratios don't matter for early-stage ventures",
+            "The venture should immediately stop acquiring any new customers"
+          ],
+          "correctIndex": 1,
+          "explanation": "The healthy benchmark is 3:1 or higher; at 1.5:1, StockPilot is acquiring customers for more than it's efficiently earning back from them over their lifetime — fixable through a higher price, lower churn, or cheaper acquisition, but a real weakness right now."
+        },
+        {
+          "question": "In a 90-day go-to-market plan, what should the 'target segment' specifically be?",
+          "options": [
+            "The broadest possible market, to maximise reach",
+            "The specific beachhead market already defined back in Week 2, not a broad market",
+            "Whichever segment competitors are currently ignoring, regardless of fit",
+            "A segment chosen at random to test multiple markets at once"
+          ],
+          "correctIndex": 1,
+          "explanation": "The go-to-market plan deliberately reuses the specific beachhead market already validated in Week 2 — concentrating 90 days of limited resources on a broad, undefined market would repeat the exact mistake segmentation exists to avoid."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the CAC and LTV formulas using StockPilot's actual numbers, and describe what the resulting 1.5:1 LTV:CAC ratio means for the venture's viability, including what could be done to fix it.",
+          "modelAnswer": "CAC (Customer Acquisition Cost) is total marketing and sales spend divided by new customers acquired; for StockPilot this is ₦800,000 spent to acquire 40 new customers, giving a CAC of ₦20,000 per customer. LTV (Lifetime Value) is average monthly revenue per customer divided by the monthly churn rate; for StockPilot this is ₦1,500 monthly revenue divided by a 5% (0.05) monthly churn rate, giving an LTV of ₦30,000. Dividing LTV by CAC gives the ratio: ₦30,000 ÷ ₦20,000 = 1.5:1. The healthy benchmark for this ratio is 3:1 or higher, meaning a venture should earn back at least three times what it spends acquiring each customer over that customer's lifetime. At only 1.5:1, StockPilot is currently earning back just 1.5 times its acquisition cost, well below a sustainable level — combined with Week 4's break-even gap, this signals real unit-economics weakness, not a fundamentally broken idea. The available fixes are to raise the price (increasing both LTV and helping the earlier break-even problem at once), reduce churn through better onboarding (which increases LTV directly, since LTV is inversely related to churn rate), or find a cheaper acquisition channel (reducing CAC directly).",
+          "keyPoints": [
+            "CAC = total spend ÷ new customers = ₦800,000 ÷ 40 = ₦20,000",
+            "LTV = monthly revenue ÷ churn rate = ₦1,500 ÷ 0.05 = ₦30,000",
+            "LTV:CAC = 1.5:1, below the healthy 3:1 benchmark",
+            "Fixes: raise price, reduce churn via onboarding, or find cheaper acquisition"
+          ]
+        },
+        {
+          "question": "Explain why churn is called 'the other half of marketing,' using the worked churn example, and describe the two specific retention levers (onboarding and customer success) that address it.",
+          "modelAnswer": "Churn is called 'the other half of marketing' because acquiring new customers means little if existing customers are leaving just as fast — a venture spending heavily on acquisition while ignoring retention is effectively pouring water into a leaking bucket. This is made concrete in the worked example: at just 5% monthly churn, a venture starting with 200 customers in January would have only about 106 remaining by December if it acquired no new customers at all, meaning it would need to acquire roughly 94 new customers over the year purely to stand still, before any real growth. Two specific levers address this. Onboarding is the highest-leverage retention investment: it aims to minimise 'time to value,' the gap between a customer signing up and experiencing their first genuinely meaningful success, through an active, guided process rather than a passive welcome email or documentation page. Customer success is the second lever: proactively monitoring usage for early warning signs of churn, like declining activity or unused features, and intervening before the customer actually leaves rather than after — in an early-stage venture, this responsibility usually falls directly on the founders themselves.",
+          "keyPoints": [
+            "Retention matters as much as acquisition — a 'leaking bucket' problem",
+            "Worked example: 5% monthly churn shrinks 200 customers to ~106 in a year",
+            "Onboarding: minimise 'time to value' through an active, guided process",
+            "Customer success: proactively watch for churn warning signs and intervene early"
+          ]
+        }
+      ]
     }
   ]
 }

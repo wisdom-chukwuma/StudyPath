@@ -269,10 +269,138 @@
     {
       "id": "dts304-ch3",
       "number": 3,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Analysis and Indexing: Search, Retrieval and Privacy",
+      "cards": [
+        {
+          "heading": "The search box that lied",
+          "body": "Beacon University puts 8,000 past exam papers online with a search box. Students try it immediately.\n\nSearch \"DATABASES\" — zero results, even though dozens of papers have \"Databases\" right in the title. Every query takes a painful 11 seconds, because all 8,000 documents get scanned fresh every single time. And if a paper contains a student's personal appeal letter, anyone who guesses the right URL can read it — no login required.\n\nThree completely different failures, three completely different fixes: no analysis, no indexing, no privacy controls. This chapter is all three.\n\nFeels exactly like searching a WAEC result-checker portal for your own name in ALL CAPS and getting told \"no record found.\""
+        },
+        {
+          "heading": "Analysis: making text searchable",
+          "body": "\"DATABASES\" found nothing because the search box did pure exact-string matching — no analysis step at all. Real search engines run every piece of text through a pipeline first:\n\nRaw text → Tokenise (split into words: \"Students PROTESTED the new Hostel fees!\" becomes students | protested | the | new | hostel | fees) → Normalise (lowercase, drop stop-words like \"the\", stem protested → protest) → clean Index terms (student, protest, new, hostel, fee).\n\nSkip this pipeline and a search for \"DATABASES\" will never match a title that says \"Databases\" — the computer sees them as two unrelated strings."
+        },
+        {
+          "heading": "The inverted index — search's real engine",
+          "body": "Once text is analysed into clean terms, they get flipped into an inverted index: instead of \"document → words it contains\", it's \"word → which documents contain it\" (a postings list).\n\nThree mini-documents — D1: \"hostel fees increased\", D2: \"students protest fees\", D3: \"new hostel opened\" — produce an index like fee → D1,D2 and hostel → D1,D3.\n\nQuery \"hostel fees\"? Look up both terms, intersect their postings lists, get D1. No document was scanned. This is exactly the step Beacon's search box skipped, which is why it was slow AND wrong."
+        },
+        {
+          "heading": "The B+-tree — the database's shortcut",
+          "body": "Text search uses inverted indexes; structured lookups (like finding one student by matric number) use a different structure: the B+-tree.\n\nWithout one, finding MTR/25/0145 means a full table scan — checking row 1, row 2, row 3... every row, in order, until it's found. With a B+-tree index, the database follows a few signposts instead: is it ≤M or >M? A-F/G-M or N-S/T-Z? A handful of branches later, it's sitting right at the row.\n\nThe payoff is dramatic: 1,000,000 rows ≈ 20 checks with an index, not 1,000,000. The index itself is smaller than the data and lives beside it — a bit of storage traded for a lot of speed."
+        },
+        {
+          "heading": "Two ways to answer a query",
+          "body": "Not every search works the same way:\n\n• Exact-match (Boolean) — returns everything that satisfies a condition, no more, no less, unranked. Natural for structured data: WHERE matric_no = '...' either matches or it doesn't.\n\n• Ranked retrieval — scores every document by relevance and returns the best answers first. Natural for text: a search engine, or MATCH...AGAINST in SQL.\n\nBeacon's exam-paper search needed ranked retrieval (\"which papers best match this topic?\") but was built like exact-match — another reason it felt broken."
+        },
+        {
+          "heading": "Measuring effectiveness: precision and recall",
+          "body": "\"Good search results\" isn't a feeling — it's measured. Picture two overlapping circles: everything Retrieved (what the system returned) and everything Relevant (what the user actually wanted). Where they overlap: True hits.\n\n• Precision = hits ÷ retrieved — \"how clean are my results?\" (no noise)\n• Recall = hits ÷ relevant — \"how much did I find?\" (miss nothing)\n\nThey pull against each other. A plagiarism checker chases recall — missing one copied paragraph is a disaster, a little noise is fine. A top-3 answer box chases precision — three wrong answers ruins it, so nothing loose gets shown.\n\nSame tension as searching a trending topic on X (Twitter): too much noise mixed in with the real gist is a precision problem, missing the actual gist entirely is a recall problem."
+        },
+        {
+          "heading": "Privacy is law: the NDPA 2023",
+          "body": "Beacon's leaky exam-appeal URLs weren't just embarrassing — they were illegal. The Nigeria Data Protection Act (2023) binds every organisation processing personal data, universities included, and mirrors the EU's GDPR. Seven principles:\n\n• Lawfulness & transparency — tell people what you do with their data\n• Purpose limitation — use it only for what it was collected for\n• Data minimisation — collect only what you need\n• Accuracy — keep it correct; let people fix it\n• Storage limitation — don't keep it forever without reason\n• Integrity & confidentiality — secure it, no guessable URLs\n• Accountability — be able to prove all of the above"
+        },
+        {
+          "heading": "Privacy for designers: two habits and one trap",
+          "body": "Turning the NDPA's principles into actual design habits:\n\n• Minimise — every column you don't collect is a column you can't leak\n• Control access — decide who may see what (the security machinery of Chapter 12)\n\nAnd the trap: removing names is NOT anonymisation. Beacon could strip every student's name from a leaked table and it would still be identifiable — matric number + birth date + programme, combined, can point to exactly one person even with the name gone. Real anonymisation has to think about combinations of fields, not just the obviously personal ones.\n\nThis is exactly why Nigerians got nervous when BVN details started turning up linked across different apps — a name alone doesn't feel dangerous, but name plus account number plus date of birth suddenly identifies one specific person, no guessing required."
+        },
+        {
+          "heading": "Efficiency, effectiveness, scalability — three dials in tension",
+          "body": "Three separate questions, easy to confuse:\n\n• Efficiency — the cost of one operation (time, memory, money). Indexing means the same answer for fewer resources.\n• Effectiveness — are the answers actually right? Measured by precision and recall. Scanning everything is effective, but it's inefficient.\n• Scalability — what happens to efficiency as volume grows. Fast at 5,000 students but unusable at 50,000 students is NOT scalable.\n\nGrowth has two paths: scale up (a bigger machine — has a ceiling) or scale out (more machines — coordination gets hard, covered in Chapters 8 and 12). Beacon's search box failed all three dials at once."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Beacon's search box returned zero results for \"DATABASES\" even though papers titled \"Databases\" existed. What pipeline step was missing?",
+          "options": [
+            "Indexing",
+            "Analysis (tokenise/normalise)",
+            "Access control",
+            "Ranked retrieval"
+          ],
+          "correctIndex": 1,
+          "explanation": "Analysis — without tokenising and normalising (e.g. lowercasing), the system treats \"DATABASES\" and \"Databases\" as two completely unrelated strings instead of the same search term."
+        },
+        {
+          "question": "What does an inverted index actually store?",
+          "options": [
+            "Each document mapped to the words it contains",
+            "Each word mapped to the list of documents that contain it",
+            "A backup copy of every document",
+            "A ranked list of the most popular searches"
+          ],
+          "correctIndex": 1,
+          "explanation": "An inverted index flips the natural direction: word → postings list of documents. A query becomes a fast lookup-and-intersect instead of scanning every document."
+        },
+        {
+          "question": "Roughly how many checks does a B+-tree index need to find one row among 1,000,000, compared to a full table scan?",
+          "options": [
+            "About 20",
+            "About 1,000",
+            "About 500,000",
+            "The same as a full scan"
+          ],
+          "correctIndex": 0,
+          "explanation": "About 20 — following the tree's signposts (branch by branch) needs only a handful of hops, versus checking all 1,000,000 rows one by one in a full table scan."
+        },
+        {
+          "question": "A query like `WHERE matric_no = 'MTR/25/0145'` is a natural fit for which retrieval style?",
+          "options": [
+            "Ranked retrieval",
+            "Exact-match (Boolean)",
+            "Full-text search",
+            "Recall-optimised search"
+          ],
+          "correctIndex": 1,
+          "explanation": "Exact-match — the condition is either satisfied or it isn't, no ranking involved. Ranked retrieval is for text search, where results are scored by relevance."
+        },
+        {
+          "question": "A plagiarism checker cares most about not missing a single copied passage, even if it flags some innocent ones too. Which measure is it optimising for?",
+          "options": [
+            "Precision",
+            "Recall",
+            "Scalability",
+            "Efficiency"
+          ],
+          "correctIndex": 1,
+          "explanation": "Recall (hits ÷ relevant) — \"how much did I find?\" A little noise (lower precision) is an acceptable trade-off for not missing real matches."
+        },
+        {
+          "question": "Beacon strips student names from a leaked table but leaves matric number, birth date, and programme intact. Is this data properly anonymised under the NDPA?",
+          "options": [
+            "Yes, removing names is the standard for anonymisation",
+            "No, that combination of fields can still identify someone",
+            "Yes, as long as the URL isn't shared publicly",
+            "No, but only because the NDPA requires encryption too"
+          ],
+          "correctIndex": 1,
+          "explanation": "No — this is the anonymisation trap. Matric number, birth date, and programme combined can still point to exactly one person even with the name gone; real anonymisation has to consider combinations of fields, not just names."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Using Beacon's \"Search Box That Lied\" scenario, identify the three separate failures it demonstrates (analysis, indexing, privacy) and explain what each one should have done differently.",
+          "modelAnswer": "The scenario shows three unrelated failures happening at once. First, an analysis failure: searching \"DATABASES\" found nothing because the system did pure exact-string matching instead of tokenising and normalising text, so it never recognised \"DATABASES\" and \"Databases\" as the same term. Second, an indexing failure: every query took 11 seconds because all 8,000 documents were scanned from scratch each time, instead of using an inverted index to look up matching documents directly. Third, a privacy failure: any exam result slip was readable just by guessing its URL, because there was no access control on personal data — a direct violation of the NDPA's integrity & confidentiality principle. Each failure needed its own fix; none of them would have solved the other two.",
+          "keyPoints": [
+            "Analysis failure — no tokenise/normalise, exact-string matching only",
+            "Indexing failure — full scan every query, no inverted index",
+            "Privacy failure — no access control, guessable URLs"
+          ]
+        },
+        {
+          "question": "State the NDPA 2023's core privacy principles and explain the 'anonymisation trap' that designers need to watch for.",
+          "modelAnswer": "The Nigeria Data Protection Act (2023) sets seven principles for any organisation processing personal data: lawfulness & transparency (tell people what you do with their data), purpose limitation (use data only for what it was collected for), data minimisation (collect only what's needed), accuracy (keep it correct, allow corrections), storage limitation (don't keep it forever without reason), integrity & confidentiality (secure it, no guessable URLs), and accountability (be able to prove all of the above). The anonymisation trap is the mistaken belief that removing names alone makes data anonymous — in reality, a combination of other fields (like matric number, birth date, and programme) can still uniquely identify a person even without their name attached, so real anonymisation has to consider how fields combine, not just which ones are obviously personal.",
+          "keyPoints": [
+            "Lawfulness & transparency",
+            "Purpose limitation",
+            "Data minimisation",
+            "Accuracy",
+            "Storage limitation",
+            "Integrity & confidentiality",
+            "Accountability",
+            "Anonymisation trap — names-off isn't enough, combinations can still identify someone"
+          ]
+        }
+      ]
     },
     {
       "id": "dts304-ch4",
@@ -305,15 +433,15 @@
         },
         {
           "heading": "From using the database to owning it",
-          "body": "Database people split into classes, from lightest touch to heaviest responsibility:\n\n• End users — use apps, never see SQL (e.g. a student on the registration portal)\n• Analysts — query and report with SQL / BI tools (e.g. enrolment dashboards)\n• Developers — build the applications (e.g. write the portal's code)\n• Designers — model the schemas: tables and keys (Chapter 6)\n• DBA — owns the running system: security, backups, tuning\n\nIn a small Nigerian firm, one person often wears several of these hats at once — the \"developer\" and the \"DBA\" might be the same overworked person."
+          "body": "Database people split into classes, from lightest touch to heaviest responsibility:\n\n• End users — use apps, never see SQL (e.g. a student on the registration portal)\n• Analysts — query and report with SQL / BI tools (e.g. enrolment dashboards)\n• Developers — build the applications (e.g. write the portal's code)\n• Designers — model the schemas: tables and keys (Chapter 6)\n• DBA — owns the running system: security, backups, tuning\n\nIn a small Nigerian firm, one person often wears several of these hats at once — the \"developer\" and the \"DBA\" might be the same overworked person.\n\nThis is exactly how small Nigerian fintech teams run in real life — the same person building the Paystack integration today might be the one restoring the database backup at 2 a.m. next week."
         },
         {
           "heading": "Best for what, not best",
-          "body": "The DBMS landscape you'll actually meet:\n\n• MySQL — relational, open source, everywhere on the web (this course's labs)\n• PostgreSQL — relational, open source, rigorous and extensible (startups, analytics)\n• Oracle — relational, commercial, enterprise muscle (banks, telcos, government)\n• SQL Server — relational, commercial, Microsoft ecosystem (corporate Windows shops)\n• SQLite — relational, zero-server, a single file (phones, embedded apps)\n• MongoDB — document-based (NoSQL), flexible JSON-style schema (APIs, changing data)\n\nThe exam trap is asking \"which is best?\" There's no such answer — only \"best for what?\""
+          "body": "The DBMS landscape you'll actually meet:\n\n• MySQL — relational, open source, everywhere on the web (this course's labs)\n• PostgreSQL — relational, open source, rigorous and extensible (startups, analytics)\n• Oracle — relational, commercial, enterprise muscle (banks, telcos, government)\n• SQL Server — relational, commercial, Microsoft ecosystem (corporate Windows shops)\n• SQLite — relational, zero-server, a single file (phones, embedded apps)\n• MongoDB — document-based (NoSQL), flexible JSON-style schema (APIs, changing data)\n\nThe exam trap is asking \"which is best?\" There's no such answer — only \"best for what?\"\n\nSame energy as the Opay-vs-PalmPay-vs-Moniepoint arguments on Naija Twitter — everyone insists theirs is \"the best,\" but the honest answer is always \"best for what you're actually doing with it.\""
         },
         {
           "heading": "An untested backup is a hope, not a backup",
-          "body": "If Bursary's 9:44 pm overwrite had hit a real DBMS instead of a shared spreadsheet, backup & recovery would have made the 43 students recoverable in minutes.\n\nBut a backup file sitting untouched on a drive isn't proof of anything. You don't actually know it works until you've restored it somewhere else and checked the data comes back intact — which is exactly what Lab 3A has you do: dump beacon_uni, restore it into a copy database, and prove it. \"An untested backup is a hope, not a backup.\""
+          "body": "If Bursary's 9:44 pm overwrite had hit a real DBMS instead of a shared spreadsheet, backup & recovery would have made the 43 students recoverable in minutes.\n\nBut a backup file sitting untouched on a drive isn't proof of anything. You don't actually know it works until you've restored it somewhere else and checked the data comes back intact — which is exactly what Lab 3A has you do: dump beacon_uni, restore it into a copy database, and prove it. \"An untested backup is a hope, not a backup.\"\n\nLike keeping a generator you've never actually test-started — you only find out it's faulty the moment NEPA takes light and you actually needed it to work."
         }
       ],
       "quiz": [
@@ -411,26 +539,403 @@
     {
       "id": "dts304-ch6",
       "number": 6,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Conceptual Data Modelling: The ER Model",
+      "cards": [
+        {
+          "heading": "The hostel system nobody modelled",
+          "body": "A developer skips design entirely and goes straight to CREATE TABLE: one table, hostel_name and room_number stored right on each student's row.\n\nTwo weeks later: Room B12 somehow holds nine students. One student is registered in two hostels at once. Renaming a hall means editing 400 rows by hand. By mid-semester, it needs a full month-long rebuild.\n\nTen minutes on a whiteboard — before a single table existed — would have exposed every one of those defects. Drawing that whiteboard precisely, the right way, is this chapter's craft.\n\nEvery Nigerian undergraduate who's opened their hostel room to find an extra mattress on the floor and a total stranger's box under their bed already understands this failure in their bones."
+        },
+        {
+          "heading": "Why model first: the design process",
+          "body": "Building a database properly follows a pipeline, not a jump straight to SQL:\n\nMini-world (the office, the business, the need) → Requirements (interviews, forms, rules written down) → Conceptual design (an ER diagram — THIS chapter) → Logical design (relational schema — mapping it, Chapter 7) → Physical design (indexes, storage engines — Chapters 5 and 11).\n\nChange is cheap on a diagram and expensive in a live database — erasing a wrong box costs nothing, but an ALTER TABLE on a live system with data in it is a real headache. And the Dean can't read SQL, but she can absolutely read a diagram and tell you if it's wrong."
+        },
+        {
+          "heading": "The notation cheat sheet",
+          "body": "ER diagrams (Chen notation) use a small, consistent shape language:\n\n• Rectangle = Entity (STUDENT); double rectangle = weak entity (SCRIPT — depends on something else to exist)\n• Diamond = Relationship (REGISTERS)\n• Oval = Attribute (full_name); underlined oval = key attribute (matric_no); double oval = multivalued (phone — a student can have several); dashed oval = derived (age, computed from dob, usually not stored)\n• Double line between an entity and a relationship = total participation — every instance MUST take part\n\nCardinality gets written on the connecting lines: 1:1 (DEPT–HEADS–LECTURER, one head per department), 1:N (PROGRAMME–ENROLS–STUDENT, one programme, many students), or M:N (STUDENT–REGISTERS–COURSE, many-to-many)."
+        },
+        {
+          "heading": "Entity or attribute? The working tests",
+          "body": "Five quick questions settle almost every case:\n\n• Does it have facts of its own we must store? → Entity (HOSTEL: warden, capacity)\n• Do many things point at one of it? → Entity, stored once and referenced (400 students → one PROGRAMME)\n• Is it a single fact about one thing? → Attribute (dob belongs to one STUDENT)\n• Can one thing have several of it? → Multivalued attribute (a student's phone numbers)\n• Is it computable from stored facts? → Derived — usually don't store it (age ← dob)\n\nThe hostel disaster in one line: HOSTEL was stored as an attribute (just a text field on the student) when it plainly has facts of its own — a warden, a capacity — and should have been its own entity."
+        },
+        {
+          "heading": "Two questions that discipline every relationship",
+          "body": "Every relationship needs two questions answered, precisely:\n\n• Cardinality — how many, each way? 1:1 (a department has one head), 1:N (a programme has many students), M:N (students × courses).\n• Participation — must everyone take part? Total (double line): every STUDENT must have a PROGRAMME. Partial: not every LECTURER teaches this session.\n\nAnd relationships can own attributes: a course score doesn't belong to the student, and it doesn't belong to the course — it belongs to that specific student-course pairing, so it hangs off the REGISTERS relationship itself. Spotting these is the mark of a real designer. Answering cardinality/participation wrongly is exactly how Room B12 got nine occupants — nothing was enforcing a capacity limit anywhere.\n\nThink of seating an Owambe: the couple's table is 1:1, the family table holding one whole gele squad is 1:N, and the small chops trays that circulate to EVERY table at once — that's M:N."
+        },
+        {
+          "heading": "Building a model: the four moves",
+          "body": "Any ER model gets built the same four-step way:\n\n1. Hunt the entities — nouns with facts of their own; run the entity-or-attribute tests on each candidate.\n2. Settle relationships and cardinalities — the M:N cases (like REGISTERS) are the ones that can't hide inside either entity.\n3. Attach attributes, including the relationship's own — keys get underlined, phone is multivalued, store dob and derive age, score belongs to REGISTERS.\n4. Walk every rule against the finished diagram — it's done when every rule is visibly enforced, or consciously deferred with a reason."
+        },
+        {
+          "heading": "The complete Beacon model",
+          "body": "Assembled from every rule above, Beacon University's full conceptual model:\n\nDEPARTMENT (dept_id, dept_name) —1:N EMPLOYS→ LECTURER (staff_id, staff_name) —1:N TEACHES→ COURSE (course_id, course_code, title, units)\nDEPARTMENT —1:N OFFERS→ PROGRAMME (programme_id, programme_name) —1:N ENROLS→ STUDENT (student_id, matric_no, full_name, dob, phone [multivalued])\nSTUDENT —M:N REGISTERS→ COURSE, with session, score and grade hanging off REGISTERS itself, not off either entity\nSTUDENT —1:N MAKES→ PAYMENT (payment_id, amount, paid_on)\n\nEvery box, diamond and oval on this diagram exists because one of the earlier tests demanded it."
+        },
+        {
+          "heading": "Five rules: diagram to tables",
+          "body": "Once the ER diagram is right, mapping it to real tables is mechanical — five rules, always in this order:\n\n1. A strong entity becomes a table; its key attribute becomes the primary key.\n2. A 1:N relationship becomes a foreign key on the N side (students carries programme_id).\n3. A 1:1 relationship gets a foreign key on either side — prefer the total-participation side, and make it UNIQUE.\n4. An M:N relationship becomes a brand-new table: foreign keys to both sides, plus the relationship's own attributes.\n5. A multivalued attribute gets its own small table (student_phones(student_id, phone)).\n\nRule 4 does the heavy lifting — it's the one designers get wrong most often."
+        },
+        {
+          "heading": "The M:N rule in action",
+          "body": "STUDENT —M:N REGISTERS→ COURSE, carrying session and score. An M:N relationship simply cannot live inside either entity's table — cramming it into students or courses would mean repeating rows for every course a student takes, or vice versa.\n\nSo it becomes its own new table: registrations(student_id, course_id, session, score, grade) — one row per (student, course, session), carrying the relationship's own attributes, with student_id as a foreign key back to students and course_id as a foreign key back to courses.\n\nThis one move — turning an M:N relationship into its own table — is the heart of the entire mapping algorithm. Master this and the other four rules are easy by comparison."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "In the hostel scenario, Room B12 ended up holding nine students with no way to catch it. What was the core modelling mistake?",
+          "options": [
+            "HOSTEL was stored as an attribute instead of being modelled as its own entity",
+            "The database used the wrong storage engine",
+            "The developer forgot to add an index",
+            "STUDENT should have been a weak entity"
+          ],
+          "correctIndex": 0,
+          "explanation": "HOSTEL clearly has facts of its own (a warden, a capacity) — it should have been modelled as its own entity, not just a text field bolted onto each student row. Without that, nothing could ever enforce a room's capacity."
+        },
+        {
+          "question": "A student can have several phone numbers on file. How is this represented in an ER diagram?",
+          "options": [
+            "A derived attribute",
+            "A weak entity",
+            "A multivalued attribute",
+            "A total-participation relationship"
+          ],
+          "correctIndex": 2,
+          "explanation": "Multivalued attribute (drawn as a double oval) — the entity-or-attribute test for \"can one thing have several?\" points straight to this, same as a student's phone numbers."
+        },
+        {
+          "question": "A double line connecting STUDENT to the ENROLS relationship means what?",
+          "options": [
+            "The relationship is many-to-many",
+            "Total participation — every student must take part in this relationship",
+            "The attribute is derived, not stored",
+            "STUDENT is a weak entity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Total participation — a double line means every instance of that entity (every STUDENT) must take part; a single line (partial participation) means it's optional, like not every lecturer teaching this particular session."
+        },
+        {
+          "question": "A student's score in a specific course doesn't belong to STUDENT or to COURSE alone. Where does it belong?",
+          "options": [
+            "It belongs to STUDENT only",
+            "It belongs to COURSE only",
+            "It belongs to the REGISTERS relationship itself",
+            "It should be split evenly between both entities"
+          ],
+          "correctIndex": 2,
+          "explanation": "The REGISTERS relationship itself — score describes the specific student-course pairing, not either entity alone, which is exactly the kind of relationship-owned attribute a good designer learns to spot."
+        },
+        {
+          "question": "Under the five mapping rules, how does an M:N relationship (like STUDENT–REGISTERS–COURSE) become tables?",
+          "options": [
+            "It's added as extra columns on the STUDENT table",
+            "It's added as extra columns on the COURSE table",
+            "It becomes a brand-new table with foreign keys to both sides plus its own attributes",
+            "It's ignored — M:N relationships can't be mapped to relational tables"
+          ],
+          "correctIndex": 2,
+          "explanation": "A new table — an M:N relationship can't live inside either entity's table without repeating rows, so it becomes its own table (like registrations) carrying foreign keys to both parents plus any attributes the relationship itself owns."
+        },
+        {
+          "question": "In a 1:N relationship where a PROGRAMME has many STUDENTs, which table gets the foreign key?",
+          "options": [
+            "The programme table",
+            "The student table (the N side)",
+            "Neither — a new table is needed",
+            "Both tables get a foreign key"
+          ],
+          "correctIndex": 1,
+          "explanation": "The N side — students carries programme_id as a foreign key. This is rule 2 of the five mapping rules: a 1:N relationship becomes a foreign key on the many side."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Describe the four moves used to build any ER model, and use Beacon's STUDENT–REGISTERS–COURSE relationship to illustrate the second and third moves.",
+          "modelAnswer": "The four moves are: (1) hunt the entities — find nouns with facts of their own, using the entity-or-attribute tests; (2) settle relationships and cardinalities — decide how entities connect and in what numbers; (3) attach attributes, including any the relationship itself owns; (4) walk every rule against the finished diagram to confirm nothing was missed. For move two, STUDENT and COURSE connect through REGISTERS with an M:N cardinality — many students register for many courses, so this relationship can't be hidden inside either entity. For move three, attributes like session, score and grade don't describe a student alone or a course alone, they describe one specific student-course pairing — so they get attached directly to the REGISTERS relationship rather than to STUDENT or COURSE.",
+          "keyPoints": [
+            "Hunt the entities (apply the tests)",
+            "Settle relationships & cardinalities (M:N for REGISTERS)",
+            "Attach attributes, including the relationship's own (session/score/grade on REGISTERS)",
+            "Walk every rule against the diagram"
+          ]
+        },
+        {
+          "question": "State the five rules for mapping an ER diagram to relational tables, and explain in detail how the M:N rule applies to Beacon's STUDENT–REGISTERS–COURSE relationship.",
+          "modelAnswer": "The five rules are: (1) a strong entity becomes a table, with its key attribute as the primary key; (2) a 1:N relationship becomes a foreign key on the N side; (3) a 1:1 relationship gets a foreign key on either side, preferring the total-participation side, made UNIQUE; (4) an M:N relationship becomes a brand-new table with foreign keys to both sides plus the relationship's own attributes; (5) a multivalued attribute gets its own small table. Applying rule 4 to REGISTERS: since STUDENT and COURSE have an M:N relationship, it cannot be represented as extra columns on either table without repeating data. Instead it becomes a new registrations table with student_id and course_id as foreign keys pointing back to students and courses respectively, plus columns for session, score and grade — the attributes that belong to the relationship itself. This turns one many-to-many relationship into one clean new table, one row per actual registration.",
+          "keyPoints": [
+            "Strong entity → table, key → primary key",
+            "1:N → FK on the N side",
+            "1:1 → FK on either side, prefer total side, UNIQUE",
+            "M:N → new table, FKs to both sides + relationship attributes",
+            "Multivalued → its own small table"
+          ]
+        }
+      ]
     },
     {
       "id": "dts304-ch9",
       "number": 9,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Relational Theory and Languages: SQL in Earnest",
+      "cards": [
+        {
+          "heading": "The question the Registrar couldn't answer",
+          "body": "The Vice-Chancellor asks a simple question: \"Which programmes average below 50 this session — and how many students in each?\"\n\nThe Registrar's office: 4 spreadsheets, 2 days, matric numbers matched by eye, and a final figure nobody actually trusts.\n\nA 300-level intern: 11 lines of SQL. 90 seconds. Plus the three-session trend, unprompted, because it was easy to add.\n\nThe difference isn't talent — it's a language. That's what this chapter teaches you to speak.\n\nSame energy as needing three separate portals and a cyber café queue just to check one WAEC or JAMB result — except here, eleven lines of SQL replace all three portals at once."
+        },
+        {
+          "heading": "Relational algebra: the grammar beneath SQL",
+          "body": "Every SQL query, no matter how complex, is built from five underlying moves:\n\n• SELECT (σ) — picks ROWS that pass a condition (σ score ≥ 70)\n• PROJECT (π) — picks COLUMNS, drops the rest (π name, score)\n• JOIN — pairs rows across tables on a match (students JOIN registrations)\n• UNION / DIFFERENCE — combines or subtracts row sets (2024 students − 2025 students)\n\nThe database's query optimiser (Chapter 11) literally rearranges these five moves behind the scenes to run your query faster — it's rewriting your SQL into a more efficient version of the exact same algebra."
+        },
+        {
+          "heading": "Written order vs. thinking order",
+          "body": "You WRITE a query as SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT. But SQL doesn't THINK in that order — it actually executes: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT.\n\nThis gap explains two classic beginner errors: WHERE runs before GROUP BY even exists, so it can't see an aggregate like AVG(score) — that's exactly why HAVING exists, to filter groups after they've formed. And a column alias defined in SELECT doesn't exist yet when WHERE runs, so you can't filter on it there.\n\nDebug any broken query by mentally walking the THINKING order, not the order it's written in."
+        },
+        {
+          "heading": "Joins: choosing which rows may disappear",
+          "body": "students: Amina, Chidi, Tunde, Ngozi. registrations: only Amina (×2) and Tunde have any. Chidi and Ngozi have registered for nothing yet.\n\nINNER JOIN (matches only) — students JOIN registrations returns just Amina and Tunde's rows. Chidi and Ngozi silently vanish. Fine for a transcript. Wrong if the question is \"who hasn't registered?\"\n\nLEFT JOIN (keep every left row) — every student appears at least once; where there's no match, the right side fills with NULLs. Those NULL rows ARE the answer: add `WHERE r.student_id IS NULL` after a LEFT JOIN and you get exactly the students who haven't registered. Choosing the join type is choosing which rows are allowed to disappear."
+        },
+        {
+          "heading": "The GROUP BY machine",
+          "body": "Individual rows arrive: Amina/Data Sci/74, Chidi/Data Sci/68, Tunde/Comp Sci/81, Ngozi/Data Sci/55, Efe/Comp Sci/63.\n\nGROUP BY programme sorts them into buckets — Data Sci gets Amina, Chidi, Ngozi; Comp Sci gets Tunde, Efe. Aggregate functions (COUNT, AVG) then collapse each bucket into exactly one summary row: Data Sci → 3 students, 65.7 average; Comp Sci → 2 students, 72.0 average.\n\nThe iron rule of GROUP BY: every SELECTed column must be either grouped or aggregated — nothing else survives the collapse. This is the single most common GROUP BY error to debug."
+        },
+        {
+          "heading": "The VC's question, answered",
+          "body": "The exact 11-line query, using the very same students/registrations/programmes tables designed back in Chapter 6's ER model:\n\nSELECT p.programme_name, COUNT(DISTINCT r.student_id) AS students, ROUND(AVG(r.score), 1) AS avg_score\nFROM registrations r\nJOIN students s ON s.student_id = r.student_id\nJOIN programmes p ON p.programme_id = s.programme_id\nWHERE r.session = '2025/2026'\nGROUP BY p.programme_name\nHAVING AVG(r.score) < 50\nORDER BY avg_score;\n\nWHERE filters ROWS (this session only). GROUP BY makes one bucket per programme. HAVING filters the GROUPS (only the low averages survive). Eleven lines versus two days of manual spreadsheet work — same answer, guaranteed correct."
+        },
+        {
+          "heading": "Subqueries: a query inside a query",
+          "body": "Some questions need an aggregate BEFORE you can filter individual rows — that's what a subquery is for. \"Which registrations scored above the overall average?\" needs the average computed first: `WHERE score > (SELECT AVG(score) FROM registrations)` — the inner query runs once, produces one number, and the outer query compares every row against it.\n\nSubqueries can even nest an aggregate of an aggregate (e.g. the average of each programme's average). And `NOT EXISTS` is a second way to ask \"who hasn't...?\" — the same question a LEFT JOIN + WHERE...IS NULL answers, just written from the opposite direction. Both are worth recognising, since an exam question might use either phrasing."
+        },
+        {
+          "heading": "Writing data with a seatbelt",
+          "body": "The disaster: `UPDATE payments SET amount = 0;` — no WHERE clause. Every single payment in the table, zeroed, instantly, with no undo button.\n\nAn UPDATE or DELETE without a WHERE clause applies to EVERY row in the table. The seatbelt: always SELECT first, count what you're about to touch, THEN modify.\n\nSELECT COUNT(*) FROM registrations WHERE session='2025/2026' AND grade IS NULL;\nUPDATE registrations SET grade='F' WHERE session='2025/2026' AND grade IS NULL AND score < 40;\n\nSame WHERE clause, run as a SELECT first. If that count surprises you — too big, too small — you just saved the table before doing anything irreversible.\n\nThe database version of the bank-app horror story everyone's heard at least once — a wrongly aimed transfer with no undo button, except this time it's an UPDATE with no WHERE clause instead of a fat-fingered account number."
+        },
+        {
+          "heading": "Views + GROUP BY = business intelligence",
+          "body": "`CREATE VIEW v_results AS SELECT matric_no, full_name, programme_name, course_code, session, score, grade FROM ...` — the messy 3-way join, written once and saved as a view.\n\nAfter that, every report becomes short: average score per programme per session (the trend over time), a pass-rate league table per course — each just one GROUP BY away from v_results, no re-joining required.\n\nEvery dashboard you'll ever see, underneath, is just dimensions you GROUP BY crossed with measures you aggregate. Build the tested join once as a view — the analyst's real craft is the query; the BI tool just draws the picture on top of it."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "SQL is written SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY, but which clause does it actually evaluate FIRST when running the query?",
+          "options": [
+            "SELECT",
+            "WHERE",
+            "FROM",
+            "HAVING"
+          ],
+          "correctIndex": 2,
+          "explanation": "FROM — SQL's real \"thinking order\" is FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT, which is why WHERE can't see an aggregate (HAVING's job) and SELECT's aliases don't exist yet inside WHERE."
+        },
+        {
+          "question": "In `students LEFT JOIN registrations`, what do the NULL-filled rows in the result actually represent?",
+          "options": [
+            "A database error that needs fixing",
+            "Students who HAVE registered, shown twice",
+            "Students who have NOT registered for anything",
+            "Duplicate rows that should be removed"
+          ],
+          "correctIndex": 2,
+          "explanation": "Students with no matching registration — LEFT JOIN keeps every row from the left table (students) and fills in NULLs where there's no match on the right. Those NULL rows are exactly the answer to \"who hasn't registered?\""
+        },
+        {
+          "question": "In the VC's query — `WHERE r.session = '2025/2026' ... HAVING AVG(r.score) < 50` — what does each clause filter?",
+          "options": [
+            "WHERE filters groups, HAVING filters rows",
+            "WHERE filters rows, HAVING filters groups",
+            "Both filter the same thing, in a different order",
+            "WHERE filters columns, HAVING filters rows"
+          ],
+          "correctIndex": 1,
+          "explanation": "WHERE filters individual rows (before grouping), HAVING filters the groups that GROUP BY produced (after aggregation) — that's the whole reason both clauses exist separately."
+        },
+        {
+          "question": "What's the specific danger of running `UPDATE payments SET amount = 0;` exactly as written?",
+          "options": [
+            "It only updates the first row",
+            "It fails because amount can't be zero",
+            "With no WHERE clause, it zeroes EVERY row in the table instantly, with no undo",
+            "It only works inside a transaction"
+          ],
+          "correctIndex": 2,
+          "explanation": "No WHERE clause means the UPDATE applies to every single row in the table — and there's no undo button. This is exactly why the SELECT-first seatbelt pattern exists."
+        },
+        {
+          "question": "What is the \"iron rule\" of GROUP BY?",
+          "options": [
+            "Every table must have a GROUP BY clause",
+            "Every SELECTed column must be either grouped or aggregated",
+            "GROUP BY must always come before WHERE",
+            "You can only GROUP BY one column at a time"
+          ],
+          "correctIndex": 1,
+          "explanation": "Every column in SELECT must be either part of the GROUP BY list or wrapped in an aggregate function (COUNT, AVG, etc.) — nothing else survives the collapse from many rows into one summary row per group."
+        },
+        {
+          "question": "Which relational algebra operation \"picks ROWS that pass a condition\" — the algebra equivalent of a SQL WHERE clause?",
+          "options": [
+            "PROJECT (π)",
+            "JOIN",
+            "SELECT (σ)",
+            "UNION"
+          ],
+          "correctIndex": 2,
+          "explanation": "SELECT (σ) — it filters rows by a condition, like σ score ≥ 70. PROJECT (π) picks columns instead of rows, JOIN pairs rows across tables, and UNION/DIFFERENCE combine or subtract row sets."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the difference between SQL's written order and its thinking/execution order, and use that difference to explain why filtering on an aggregate (like an average score) has to go in HAVING instead of WHERE.",
+          "modelAnswer": "SQL is written in the order SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, but it doesn't execute in that order — it actually thinks FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY. WHERE runs early, right after FROM, filtering individual rows before any grouping has happened — at that point, aggregate values like AVG(score) don't exist yet, because no groups have been formed. HAVING runs later, specifically after GROUP BY has already collapsed the rows into groups and computed their aggregates, so it's the only clause that can filter based on an aggregate condition like AVG(score) < 50. Trying to put that condition in WHERE fails because WHERE simply doesn't have access to a value that doesn't exist until grouping is complete.",
+          "keyPoints": [
+            "Written order: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+            "Thinking/execution order: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+            "WHERE filters rows, before grouping — no aggregates exist yet",
+            "HAVING filters groups, after GROUP BY has computed aggregates"
+          ]
+        },
+        {
+          "question": "Using the payments disaster (`UPDATE payments SET amount = 0;` with no WHERE) as your example, explain the SELECT-first \"seatbelt\" pattern for writing safe UPDATE and DELETE statements.",
+          "modelAnswer": "An UPDATE or DELETE statement with no WHERE clause applies to every single row in the table, and there's no undo button — running `UPDATE payments SET amount = 0;` without a WHERE zeroes every payment in the entire table instantly. The seatbelt pattern prevents this: before running any UPDATE or DELETE, first run a SELECT COUNT(*) using the exact same WHERE clause you're about to use, e.g. `SELECT COUNT(*) FROM registrations WHERE session='2025/2026' AND grade IS NULL;`. If that count matches what you expect, it's safe to run the real statement with the identical WHERE clause. If the count is surprisingly large (or the whole table), that's the warning sign that the WHERE clause is missing or wrong — caught before any data was actually changed, not after.",
+          "keyPoints": [
+            "No WHERE clause = every row affected, no undo",
+            "Seatbelt: run SELECT COUNT(*) with the same WHERE clause first",
+            "Compare the count against expectations before running the real UPDATE/DELETE",
+            "Catches mistakes before data is changed, not after"
+          ]
+        }
+      ]
     },
     {
       "id": "dts304-ch12",
       "number": 12,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Security, Integrity, Concurrency and Recovery",
+      "cards": [
+        {
+          "heading": "One weekend, three near-disasters",
+          "body": "Four failures hit Beacon on one bad Friday — each belongs to a different field of this final chapter.\n\n12 noon: a leaver still has full admin rights and downloads the students table to sell. (Authorisation.)\n\n3 p.m.: an attacker types a few characters into the search box and dumps every password. (Injection defence.)\n\n5 p.m.: two clerks confirm the same award at once — one silently overwrites the other. This is Chapter 4's very first scenario, unfixed for eleven chapters. Today it finally dies. (Concurrency.)\n\n9 p.m.: a power cut kills the server mid-transaction. (Recovery.)\n\n9 p.m. is peak \"NEPA has taken light\" hour in half of Nigeria — no warning, no UPS, just straight darkness mid-save, which is exactly why this scenario needed its own chapter."
+        },
+        {
+          "heading": "Security: defence in depth",
+          "body": "No single wall is trusted — the data sits behind concentric rings, and an attacker must defeat every one:\n\n• Authentication — WHO are you? Strong passwords, least-privilege accounts.\n• Authorisation (DCL) — WHAT may you do? GRANT / REVOKE, roles, views used as windows onto only what a role needs.\n• Input validation — is this input SAFE? Parameterised queries stop SQL injection.\n• Encryption — unreadable if stolen? TLS in transit, encryption at rest.\n\nBeacon's noon disaster was a failure of the second ring: a leaver's account should have been REVOKEd the moment they left, not discovered weeks later still holding full admin rights."
+        },
+        {
+          "heading": "SQL injection — the one rule that stops it",
+          "body": "The world's most famous database vulnerability has a single cause. Vulnerable code glues user input straight into SQL text: `query = \"SELECT * FROM users WHERE name = '\" + input + \"';\"`. Type `' OR '1'='1` into the name box, and the database actually receives `SELECT * FROM users WHERE name = '' OR '1'='1';` — always true, every row returned. The attacker's text became CODE, not data.\n\nThe fix: a parameterised query (prepared statement) — `query = \"SELECT * FROM users WHERE name = ?\"; execute(query, [input])`. The same malicious input arrives as one harmless string value, never parsed as SQL. Code and data stay in separate lanes. The one rule: never build SQL by string concatenation — always parameterise.\n\nIt's the database equivalent of a classic scam-format trick — a few extra characters slipped into an ordinary-looking sentence quietly change what it actually means, except here the \"sentence\" is your SQL query and the \"scam\" hands over the whole users table."
+        },
+        {
+          "heading": "Transactions and ACID",
+          "body": "A transaction is all-or-nothing work, wrapped in `START TRANSACTION; ... COMMIT;` (or `ROLLBACK` to abandon it entirely) — the second seatbelt, after Chapter 9's SELECT-first pattern for safe writes. Four guarantees make it trustworthy:\n\n• Atomicity — all steps happen, or none do (a transfer never debits without crediting)\n• Consistency — the database moves between valid states (constraints hold before and after)\n• Isolation — concurrent transactions don't corrupt each other (as if they ran one at a time)\n• Durability — committed means it survives a crash (the write is on disk, permanently)\n\nCOMMIT means durable and permanent. ROLLBACK means it never happened at all."
+        },
+        {
+          "heading": "The lost update: Chapter 4's ghost, named",
+          "body": "Two clerks both update a hall's seat count at once. Clerk A adds 40 units, Clerk B adds 3. Both READ seats → 100 before either writes.\n\nClerk A computes 100+40=140, writes seats=140. Clerk B — still working from the 100 it read earlier, before A's write — computes 100+3=103, writes seats=103, overwriting A's change completely.\n\nClerk A's +40 vanished. The final answer should be 143; it's 103. This is the exact unnamed bug from Chapter 4's opening night at Beacon, finally given its technical name: the lost update. It happens whenever two transactions' reads and writes interleave destructively."
+        },
+        {
+          "heading": "The cure: locking and isolation levels",
+          "body": "Two-phase locking (2PL) serialises the clash: Clerk A locks seats, reads 100, writes 140, commits, releasing the lock. Clerk B was forced to WAIT for that lock — so B only reads 140 (the up-to-date value) after A finishes, computes 140+3=143, and writes seats=143. Correct, this time.\n\nIsolation levels let you dial how much clashing to prevent, against how much speed: READ UNCOMMITTED (fastest, least safe) → READ COMMITTED → REPEATABLE READ (MySQL/InnoDB's default) → SERIALIZABLE (safest, slowest). Higher isolation means fewer anomalies but more locking and less concurrency — pick the LOWEST level that's still correct for your workload."
+        },
+        {
+          "heading": "Recovery: surviving the crash",
+          "body": "Durability's actual machinery: the write-ahead log records every change FIRST, before it's applied to the real data — so a crash is always recoverable.\n\nPicture a timeline: a checkpoint (the last known-good snapshot on disk), then T1 commits, T2 commits, T3 is still running... then CRASH. Recovery does two things: REDO the committed work (replay T1 and T2 from the log, so nothing committed is ever lost) and UNDO the unfinished work (roll back T3, so nothing half-done survives).\n\nThis is exactly what would have saved Beacon's 9 p.m. power cut — the transaction in flight gets cleanly undone, not left in a broken half-state.\n\nThis is the actual logic behind every Nigerian household's inverter setup: the point was never to stop NEPA from ever failing — it's to make sure nothing important gets lost the exact second the light goes."
+        },
+        {
+          "heading": "Why logs and backups defend against different disasters",
+          "body": "The course's closing question: why do the log and the backup defend against different disasters, if they're both about \"not losing data\"?\n\nThe write-ahead log defends against a crash on the SAME disk — the data is still physically there, just interrupted mid-write, and replaying the log (REDO/UNDO) puts it back in a correct state.\n\nA backup defends against something the log can't fix at all — the disk itself being destroyed, corrupted, or stolen. If there's no separate copy elsewhere, no amount of log replay can recover data that no longer physically exists. Real durability needs both: a log for interrupted work, a backup for catastrophic loss."
+        },
+        {
+          "heading": "The whole course, in one database",
+          "body": "Everything built across this course converges on one professional artefact:\n\nChapters 1-3: foundations — information, capture, indexing, privacy.\nChapters 4-5: database systems and architecture.\nChapters 6-8: design — the ER model, relational rules, semi-structured data.\nChapters 9-11: working with data — SQL, normalisation, optimisation.\nChapter 12: defending it — security, transactions, recovery.\n\nBeacon University began this course drowning in spreadsheets, losing 43 registrations to a silent overwrite. By the end, you're the one who can build the system that saves it — conceived, built, queried, tuned, and defended, one database at a time."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "The 5 p.m. clash in this chapter's opening scenario (two clerks overwriting each other's update) is the same bug first seen at the very start of the course. What is it called?",
+          "options": [
+            "SQL injection",
+            "The lost update",
+            "Referential integrity violation",
+            "Denormalisation"
+          ],
+          "correctIndex": 1,
+          "explanation": "The lost update — first seen unnamed as Chapter 4's opening scenario, now formally named and finally cured with locking, eleven chapters later."
+        },
+        {
+          "question": "In the defence-in-depth model, which layer specifically answers the question \"WHAT may you do?\"",
+          "options": [
+            "Authentication",
+            "Authorisation (DCL)",
+            "Input validation",
+            "Encryption"
+          ],
+          "correctIndex": 1,
+          "explanation": "Authorisation (DCL) — implemented with GRANT/REVOKE, roles, and views. Authentication answers \"who are you?\", validation asks \"is this input safe?\", and encryption asks \"is it unreadable if stolen?\""
+        },
+        {
+          "question": "What is the single rule that prevents SQL injection?",
+          "options": [
+            "Always use a stronger admin password",
+            "Never build SQL by string concatenation — always parameterise",
+            "Encrypt the database at rest",
+            "Disable the search box entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "Never build SQL by gluing in user input as text — always use a parameterised query, so input is bound as DATA and can never be parsed as CODE, no matter what the attacker types."
+        },
+        {
+          "question": "Which ACID property specifically guarantees that once a transaction commits, it survives a crash?",
+          "options": [
+            "Atomicity",
+            "Consistency",
+            "Isolation",
+            "Durability"
+          ],
+          "correctIndex": 3,
+          "explanation": "Durability — committed means the write is on disk, permanently. Atomicity is all-or-nothing steps, Consistency keeps the database in valid states, and Isolation stops concurrent transactions from corrupting each other."
+        },
+        {
+          "question": "In the two-phase locking cure, why does Clerk B end up writing the CORRECT seats=143 instead of repeating the lost update?",
+          "options": [
+            "B skips reading the value entirely",
+            "B has to wait for A's lock to release, so B reads the up-to-date value (140), not the stale one",
+            "The database automatically adds both clerks' numbers together",
+            "B's transaction runs before A's"
+          ],
+          "correctIndex": 1,
+          "explanation": "B is forced to wait for A's lock to release before it can even read seats — so by the time B reads, it sees A's committed value (140), computes 140+3=143 correctly, instead of working from a stale value like before."
+        },
+        {
+          "question": "Why does a database need BOTH a write-ahead log AND separate backups, if both exist to prevent data loss?",
+          "options": [
+            "They're redundant — either one alone is sufficient",
+            "The log recovers interrupted work on the same disk after a crash; a backup protects against the disk itself being lost or destroyed, which no log can fix",
+            "Backups are only needed for very old database systems",
+            "The log is for security, backups are for performance"
+          ],
+          "correctIndex": 1,
+          "explanation": "They defend against different disaster classes — the log lets you REDO/UNDO work after a crash because the data is still physically on the same disk, while a backup is the only defence if that disk itself is destroyed or corrupted entirely."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Using the Clerk A / Clerk B seat-count example, explain exactly what a lost update is and why 'read first, write second' causes it — then explain how two-phase locking prevents it from happening again.",
+          "modelAnswer": "A lost update happens when two transactions both read the same value before either one writes, then both compute a new value based on that same stale read. In the example, both Clerk A and Clerk B read seats=100. Clerk A computes 140 and writes it. Clerk B, still working from the 100 it read earlier (not A's new 140), computes 103 and writes that — silently overwriting A's change. The final value should be 143 (100+40+3) but ends up being 103, because A's +40 update was completely lost. Two-phase locking prevents this by making Clerk B wait until Clerk A's transaction fully commits and releases its lock before Clerk B is even allowed to read the value. This means B reads the up-to-date value of 140, not the stale 100, so its calculation correctly produces 143 instead of repeating the same mistake.",
+          "keyPoints": [
+            "Both transactions read the same stale value before either writes",
+            "The second write silently overwrites the first transaction's change",
+            "Lost update: final value is wrong because one update never took effect",
+            "Two-phase locking forces the second transaction to wait, so it reads the updated value"
+          ]
+        },
+        {
+          "question": "Explain the four ACID guarantees, and describe specifically how the write-ahead log's REDO mechanism is what actually delivers on the Durability guarantee.",
+          "modelAnswer": "ACID's four guarantees are: Atomicity (all the steps in a transaction happen, or none do — a transfer never debits one account without crediting the other), Consistency (the database only ever moves between valid states, with all constraints holding before and after), Isolation (concurrent transactions don't corrupt each other, behaving as if they ran one at a time), and Durability (once a transaction commits, it survives a crash). Durability is delivered in practice by the write-ahead log: every change is written to the log FIRST, before it's applied to the actual data. If the server crashes after a transaction has committed but before all its changes were fully written to the main data files, recovery replays (REDOes) that committed work from the log, so nothing that was committed is ever actually lost — the log is the mechanism that makes the Durability promise literally true.",
+          "keyPoints": [
+            "Atomicity — all steps or none",
+            "Consistency — valid states before and after",
+            "Isolation — concurrent transactions don't corrupt each other",
+            "Durability — committed survives a crash",
+            "Write-ahead log records changes first; REDO replays committed work after a crash, delivering Durability"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -9,34 +9,673 @@
     {
       "id": "csc322-l1",
       "number": 1,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Innovation and Entrepreneurial Opportunities in IT",
+      "cards": [
+        {
+          "heading": "What innovation actually means",
+          "body": "Innovation is the process of translating an idea or invention into a good or service that creates value — by improving or applying an idea in a way that genuinely benefits customers.\n\nMaking smartphones more affordable and user-friendly. Using AI to improve healthcare diagnosis. M-Pesa turning a basic phone into a functioning bank account for millions of unbanked Kenyans who'd never had one before.\n\nKey idea: an idea alone is not innovation — value only gets created once it actually reaches and benefits real users. Innovation can be a brand-new product, or simply a smarter way of doing something already familiar."
+        },
+        {
+          "heading": "Incremental innovation: the safest, most common kind",
+          "body": "Gradual improvement rather than dramatic change — the most common, least risky form of innovation. It focuses on refining an existing offering, driven by user feedback and minor tech upgrades, and its cumulative impact can be significant over time even though no single step feels dramatic.\n\nSoftware version updates and bug-fix patches. Faster processors in each new phone generation. A small feature addition like dark mode. WhatsApp adding voice notes, then video calls, then channels — none of these reinvented the app, each just made it a bit better."
+        },
+        {
+          "heading": "Architectural innovation: same parts, new arrangement",
+          "body": "No entirely new technology — the novelty is purely in recombining existing components in a new way. It requires a deep understanding of system design and real user needs, and it's genuinely challenging for established firms, since it disrupts their existing routines even though nothing technically new was invented.\n\nPortable photocopiers. Laptops with detachable keyboards (2-in-1 devices). Smart homes — linking existing devices into one connected system. Super-apps like Opay combining a wallet, transfers, and bill payment into a single place, when every one of those pieces already existed separately before."
+        },
+        {
+          "heading": "Radical innovation: high risk, market-reshaping reward",
+          "body": "Groundbreaking technology that introduces entirely new products, services, or processes — creating new markets or significantly transforming existing ones. It requires large investment, long development timelines, and carries high failure risk, but the reward is a dominant market position and long-term advantage for whoever gets there first.\n\nThe Internet. Personal computers. Artificial Intelligence. mRNA vaccine technology. Each one didn't just improve something that already existed — it reshaped what was even possible."
+        },
+        {
+          "heading": "Disruptive innovation: simple, cheap, and overlooked — until it isn't",
+          "body": "Targets an overlooked or underserved segment first, with something simpler and cheaper than what dominant firms offer. It initially looks inferior, so established players tend to ignore it — right up until it improves over time and moves upmarket to compete directly, lowering barriers to entry and enabling entirely new, digitally-driven business models.\n\nNetflix streaming versus Blockbuster's video-rental stores. Cloud computing versus owning physical servers. Smartphones versus desktop computers. Digital-only banks like Kuda and Opay versus traditional banking halls — each one looked like a toy at first, right up until it wasn't."
+        },
+        {
+          "heading": "Market gaps: where opportunity actually hides",
+          "body": "A market gap is an unmet need — where existing products don't adequately solve customer problems or fully satisfy demand. It shows up as customers frustrated with current solutions, existing products that are too expensive, slow, or hard to use, or new technology creating needs that didn't exist before.\n\nBefore ride-hailing apps, finding a taxi was stressful and unreliable, with no fare transparency and long unpredictable waits — that gap created the opportunity for Uber and Bolt. The same pattern played out in Nigeria: Paystack and Flutterwave closed the gap in unreliable, complicated online payments that had been frustrating merchants for years."
+        },
+        {
+          "heading": "How entrepreneurs actually find these gaps",
+          "body": "Most successful startups solve real problems, not just build cool technology — identifying genuine customer pain points and delivering value more efficiently than existing options. Market gaps come from technological changes, shifting customer behaviour, government regulations, and broader economic or social trends.\n\nTwo families of method: Qualitative (user interviews, customer feedback, direct observation of real behaviour) and Quantitative (market research, industry reports, trend analysis, sales and usage data). The goal either way: validate that the problem is REAL and worth solving before spending time or money building a solution.\n\nApplied example: the sudden rise of remote work created urgent demand for video conferencing, cloud collaboration, and secure remote access — Zoom and Slack became essential almost overnight. In Nigeria, platforms like uLesson and Google Classroom filled the equivalent gap for remote learning during COVID-19 school closures."
+        },
+        {
+          "heading": "Emerging technologies: a toolbox, not a business plan on its own",
+          "body": "Each emerging technology is a toolbox — the actual entrepreneurial opportunity is in HOW you apply it to a real problem, not in the technology itself: AI & Machine Learning (systems that learn from data and make decisions), Blockchain (secure, transparent, tamper-resistant digital ledgers), Internet of Things (connected devices that sense and act on data), Cybersecurity (protecting digital systems, data, and users), Cloud Computing (on-demand computing power and storage), No-code/Low-code (building apps with little traditional programming), and Green Technology (innovation that reduces environmental impact).\n\nNone of these is a business by itself — \"I want to use AI\" isn't an opportunity, \"AI that catches fraudulent transactions before they clear\" is."
+        },
+        {
+          "heading": "AI, blockchain, and IoT: three toolboxes, real applications",
+          "body": "AI & Machine Learning: chatbots and virtual assistants, fraud detection systems, medical diagnosis support, recommendation systems. Netflix recommends movies with it; ChatGPT-style assistants now handle first-line customer support for many businesses; predictive analytics helps retailers forecast demand and cut waste.\n\nBlockchain: secure payments, supply-chain tracking, digital identity, smart contracts, decentralised finance. Tracking food from farm to supermarket shelf; land registries using blockchain to cut title fraud; cross-border remittance apps offering cheaper transfers than banks.\n\nInternet of Things: smart homes, smart cities, remote healthcare, industrial automation — built on devices like smart watches, connected vehicles, and industrial sensors feeding real-time data back for better decisions."
+        },
+        {
+          "heading": "Cybersecurity, cloud, no-code, and green tech",
+          "body": "Cybersecurity: as organisations lean harder on cloud systems and online services, cyber risk grows with it. A bank using AI to catch a suspicious transaction instantly, before the fraud completes, is exactly the kind of gap a cybersecurity startup can fill.\n\nCloud Computing: startups can launch products fast without buying expensive servers, paying as they grow instead of needing large upfront capital — the reason Google Drive stores files online instead of on a personal computer's hard drive.\n\nNo-code/Low-code: a small business owner builds an inventory app with drag-and-drop tools like Glide or Bubble; a lecturer builds a registration form with Google Forms instead of custom software — faster, cheaper, and accessible to non-programmers.\n\nGreen Technology: energy-efficient systems, smart grids, sustainable data centres — an area genuinely ripe for Nigerian solar-tech startups given the country's power realities."
+        },
+        {
+          "heading": "Real case studies: solving a problem beats building 'cool tech'",
+          "body": "Stripe solved a real problem: online payment systems were painful to integrate, complicated for developers, slow and fragmented across providers. Its answer was simple, developer-friendly APIs for secure global payments.\n\nZoom solved the pain of unreliable, clunky video conferencing and became the default for remote meetings worldwide. Paystack simplified online payments for Nigerian businesses with easy-to-integrate APIs — and was acquired by Stripe in 2020. PalmPay brought free, mobile-first banking and bill payments to underserved users across Nigeria. Opay combined wallet, transport, and commerce into one super-app for everyday transactions.\n\nThe pattern repeats: every one of these started by solving a specific, real frustration — the technology was just the tool that made the solution possible."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "WhatsApp gradually adding voice notes, then video calls, then channels — each a small addition to an already-working app — is an example of which type of innovation?",
+          "options": [
+            "Incremental innovation",
+            "Architectural innovation",
+            "Radical innovation",
+            "Disruptive innovation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Incremental innovation — gradual improvements to an existing product, driven by user feedback, with no single change being dramatic but the cumulative impact being significant over time."
+        },
+        {
+          "question": "Opay combining a wallet, transfers, and bill payment into one super-app — where every individual piece already existed elsewhere — best represents which type of innovation?",
+          "options": [
+            "Incremental innovation",
+            "Architectural innovation",
+            "Radical innovation",
+            "Disruptive innovation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Architectural innovation — no entirely new technology was invented, but recombining existing components (wallet, transfers, bills) into a new arrangement created new value."
+        },
+        {
+          "question": "Digital-only banks like Kuda and Opay, which started simpler and cheaper than traditional banks and were initially dismissed by established players, are a classic example of which innovation type?",
+          "options": [
+            "Incremental innovation",
+            "Architectural innovation",
+            "Radical innovation",
+            "Disruptive innovation"
+          ],
+          "correctIndex": 3,
+          "explanation": "Disruptive innovation — targeting an overlooked segment with something simpler and cheaper, initially dismissed by incumbents, then improving over time to move upmarket and compete directly."
+        },
+        {
+          "question": "Before ride-hailing apps existed, finding a taxi was stressful, unreliable, and had no fare transparency. What does this describe?",
+          "options": [
+            "A radical innovation",
+            "A market gap",
+            "A disruptive innovation",
+            "An unfair advantage"
+          ],
+          "correctIndex": 1,
+          "explanation": "A market gap — an unmet need where existing options don't adequately solve the customer's problem, which is exactly what created the opportunity for Uber and Bolt to fill."
+        },
+        {
+          "question": "Talking directly to potential users about their pain points, or directly observing their real behaviour, are examples of which method of identifying opportunities?",
+          "options": [
+            "Quantitative methods",
+            "Qualitative methods",
+            "A/B testing",
+            "Series A fundraising"
+          ],
+          "correctIndex": 1,
+          "explanation": "Qualitative methods — user interviews, customer feedback, and direct observation. Quantitative methods instead rely on market research, industry reports, trend analysis, and usage data."
+        },
+        {
+          "question": "A bank using AI to catch a suspicious transaction instantly, before the fraud even completes, is a real-world application of which emerging technology?",
+          "options": [
+            "Blockchain",
+            "Internet of Things",
+            "Cybersecurity (AI-based security monitoring)",
+            "No-code/Low-code development"
+          ],
+          "correctIndex": 2,
+          "explanation": "Cybersecurity — specifically AI-based security monitoring, catching threats in real time. This is exactly the kind of growing demand a cybersecurity startup exists to fill."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the four types of innovation (incremental, architectural, radical, disruptive) using the specific examples given in this chapter, and describe why disruptive innovation is often ignored by dominant firms at first.",
+          "modelAnswer": "Incremental innovation makes gradual improvements to an existing product without dramatic change, like WhatsApp adding voice notes, then video calls, then channels over time. Architectural innovation recombines existing components in a new way without inventing new technology, like Opay combining an existing wallet, transfer system, and bill-payment feature into one super-app. Radical innovation introduces entirely new technology that creates or transforms markets, like the invention of the Internet or Artificial Intelligence itself. Disruptive innovation targets an overlooked or underserved segment with something simpler and cheaper than what's currently available, like digital-only banks such as Kuda and Opay compared to traditional banking halls. Disruptive innovation is often ignored by dominant firms at first specifically because it initially looks inferior on the metrics those firms already care about — a simpler, cheaper product doesn't look like a threat to a premium incumbent — but it improves over time and moves upmarket, eventually competing directly and taking real market share before the incumbent recognises the danger.",
+          "keyPoints": [
+            "Incremental — small ongoing improvements (WhatsApp features)",
+            "Architectural — new arrangement of existing parts, no new tech (Opay super-app)",
+            "Radical — entirely new technology, creates/transforms markets (the Internet, AI)",
+            "Disruptive — simpler/cheaper for an overlooked segment, initially dismissed, later moves upmarket"
+          ]
+        },
+        {
+          "question": "Explain what a market gap is, using the ride-hailing and Nigerian fintech examples from this chapter, and describe the two families of methods entrepreneurs use to identify and validate these gaps.",
+          "modelAnswer": "A market gap is an unmet need in the market — a situation where existing products don't adequately solve customer problems or fully satisfy demand, often because customers are frustrated with current solutions, existing products are too expensive, slow, or difficult to use, or new technology has created a need that didn't previously exist. Before ride-hailing apps, finding a taxi was stressful and unreliable with no fare transparency and long unpredictable waits — this gap created the opportunity Uber and Bolt eventually filled. The same pattern happened in Nigerian fintech: Paystack and Flutterwave closed a real gap in unreliable, complicated online payments that had frustrated merchants for years. Entrepreneurs identify and validate these gaps using two families of methods: qualitative methods (user interviews, customer feedback, and direct observation of real behaviour) and quantitative methods (market research, industry reports, trend analysis, and sales/usage data). Both approaches share the same goal — getting real evidence, not just opinions, that the problem is genuine and worth solving before investing time or money into building a solution.",
+          "keyPoints": [
+            "Market gap: unmet need where existing solutions fail customers",
+            "Ride-hailing example: unreliable taxis, no fare transparency, before Uber/Bolt",
+            "Nigerian fintech example: unreliable online payments, before Paystack/Flutterwave",
+            "Qualitative methods: interviews, feedback, observation",
+            "Quantitative methods: market research, industry reports, trend/usage data"
+          ]
+        }
+      ]
     },
     {
-      "id": "csc322-l2",
-      "number": 2,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "id": "csc322-l2a",
+      "number": "2a",
+      "title": "Ideation Techniques",
+      "cards": [
+        {
+          "heading": "What ideation is, and why it comes first",
+          "body": "Ideation is the creative process of generating, developing, and refining ideas to solve problems or create new opportunities. It's the starting point of every product, startup, and innovation — before code, before funding, before a pitch deck.\n\nIt matters because it encourages creativity, helps generate multiple possible solutions instead of jumping at the first one, reduces bias in decision-making, and directly supports innovation and entrepreneurship.\n\nIn practice: a student team frustrated by \"too many WhatsApp groups for classes\" brainstorms a wide range of ideas before settling on a single unified app — the ideas that got rejected along the way were just as necessary as the one that got picked."
+        },
+        {
+          "heading": "Brainstorming: quantity first, judgement later",
+          "body": "A creative group technique where many ideas get generated quickly, without immediate criticism or filtering. Ground rules: defer judgement (no idea is criticised during the session), aim for quantity over quality at first, build on others' ideas rather than compete with them, and stay focused on the actual problem statement.\n\nExample — a new attendance app: facial-recognition login, QR-code check-in, Bluetooth proximity check-in, geofenced auto sign-in when entering the lecture hall. None of these get dismissed in the room — they all get written down first, evaluated later."
+        },
+        {
+          "heading": "Mind mapping: seeing the whole shape of an idea",
+          "body": "A visual technique that organises ideas around a central topic using connected branches — helping you see relationships between parts of an idea at a glance, rather than as a flat list. Start with one central idea in the middle, draw branches for each related theme, add sub-branches for supporting details.\n\nExample: planning a mobile banking app by branching out into security, transfers, notifications, budgeting tools, and customer support — five separate themes that would be easy to lose track of in a linear list, but stay clearly connected once mapped visually."
+        },
+        {
+          "heading": "SCAMPER: seven prompts to push an idea further",
+          "body": "A structured method that improves an EXISTING idea by working through seven prompts, each forcing a different kind of change:\n\n• Substitute — replace part of it: password-only login replaced with fingerprint or facial authentication\n• Combine — merge features: a note-taking app combined with AI summarisation, so meeting notes generate automatically\n• Adapt — repurpose for a new context: chatbot technology from customer service adapted for online learning platforms\n• Modify — change size, speed, or functionality: simplifying a complex dashboard into a minimal mobile-friendly interface\n• Put to another use — repurpose existing tech: smartphone cameras used for QR-code payments and document scanning, not just photos\n• Eliminate — remove unnecessary steps: mobile-only banking removing the need for physical branch visits entirely\n• Reverse — flip the usual order: instead of customers going to a store, delivery riders bring the store to the customer (Jumia Food, Chowdeck)"
+        },
+        {
+          "heading": "Design thinking: five stages, always in order",
+          "body": "A human-centred approach to innovation that puts real user needs at the centre of problem-solving, moving from genuine empathy to a tested solution — used by IDEO, Google, IBM, and most modern product teams to build user-centred digital products.\n\n1. Empathize — understand users through interviews and observation\n2. Define — frame the real problem clearly, not just a vague symptom of it\n3. Ideate — generate a wide range of possible solutions\n4. Prototype — build a quick, low-cost version\n5. Test — get real feedback and refine\n\nIt matters because it keeps solutions grounded in real user needs instead of founder assumptions, and encourages rapid, cheap experimentation before any heavy investment."
+        },
+        {
+          "heading": "Design thinking, applied: the campus food-delivery example",
+          "body": "Walking all five stages against one real problem:\n\n1. Empathize — interview students who complain food delivery takes too long during lecture breaks\n2. Define — the real problem: students have a short 45-minute break and can't reliably eat before their next class\n3. Ideate — brainstorm pre-ordering, campus-only riders, canteen pickup lockers\n4. Prototype — mock up a simple pre-order screen showing pickup time slots\n5. Test — trial the prototype with 10 real students and gather feedback before building anything further\n\nNotice what didn't happen: nobody built the full app first and hoped it worked. Every step existed to catch a wrong assumption as cheaply as possible."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "In a brainstorming session, what is the correct ground rule when someone proposes an idea that sounds impractical?",
+          "options": [
+            "Immediately point out why it won't work",
+            "Defer judgement — write it down without criticism, evaluate later",
+            "Ignore the person and move to the next idea",
+            "Only accept ideas from the most experienced team member"
+          ],
+          "correctIndex": 1,
+          "explanation": "Defer judgement — brainstorming's core ground rule is quantity over quality at first, with criticism deliberately held back so ideas keep flowing without people self-censoring."
+        },
+        {
+          "question": "A team takes password-only login in a banking app and replaces it with fingerprint authentication. Which SCAMPER prompt does this represent?",
+          "options": [
+            "Combine",
+            "Substitute",
+            "Eliminate",
+            "Reverse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Substitute — replacing part of a product or process with something different, exactly like swapping one authentication method for another."
+        },
+        {
+          "question": "Instead of customers travelling to a store, delivery riders bring the store's products to the customer (like Jumia Food or Chowdeck). Which SCAMPER prompt is this?",
+          "options": [
+            "Adapt",
+            "Modify",
+            "Reverse",
+            "Put to another use"
+          ],
+          "correctIndex": 2,
+          "explanation": "Reverse — changing the order of steps or flipping the usual approach to a problem, in this case reversing who does the travelling."
+        },
+        {
+          "question": "In the design thinking process, what specifically happens during the 'Define' stage?",
+          "options": [
+            "Building a low-cost prototype",
+            "Interviewing users to understand their experience",
+            "Framing the real underlying problem clearly, based on what was learned from users",
+            "Testing the finished solution with real users"
+          ],
+          "correctIndex": 2,
+          "explanation": "Define comes after Empathize and turns what was learned from users into a clearly framed problem statement — the food-delivery example's Define stage was 'students have a short 45-minute break and can't reliably eat before their next class.'"
+        },
+        {
+          "question": "In the campus food-delivery design thinking example, why did the team mock up a simple pre-order screen instead of building the full app right away?",
+          "options": [
+            "Building the full app would have been illegal",
+            "A cheap, low-cost prototype lets the team test the idea with real students before investing in building the complete solution",
+            "The team didn't have any ideas to test",
+            "Prototyping and testing aren't actually part of design thinking"
+          ],
+          "correctIndex": 1,
+          "explanation": "Design thinking deliberately builds the smallest, cheapest testable version first (Prototype), then gathers real feedback (Test), so a wrong assumption gets caught before serious time or money is spent on a full build."
+        },
+        {
+          "question": "What is the main visual advantage of mind mapping over a plain linear list of ideas?",
+          "options": [
+            "It removes the need for any central topic",
+            "It shows how ideas relate to each other and to a central theme, at a glance",
+            "It only works for software ideas, not other topics",
+            "It replaces the need for brainstorming entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "Mind mapping organises ideas around a central topic with connected branches, making relationships between different parts of an idea visible at a glance — something a flat list doesn't show as clearly."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain all seven SCAMPER prompts using the specific examples given in this chapter, and describe what distinguishes SCAMPER from brainstorming as an ideation technique.",
+          "modelAnswer": "SCAMPER's seven prompts each push an existing idea in a different direction: Substitute (replacing password-only login with fingerprint authentication), Combine (merging a note-taking app with AI summarisation), Adapt (repurposing customer-service chatbot technology for online learning), Modify (simplifying a complex dashboard into a minimal mobile interface), Put to another use (using smartphone cameras for QR-code payments, not just photos), Eliminate (removing the need for physical bank branch visits through mobile-only banking), and Reverse (having delivery riders bring the store to the customer, instead of the customer travelling to the store, like Jumia Food). What distinguishes SCAMPER from brainstorming is that brainstorming generates NEW ideas freely from a blank slate with no structure, while SCAMPER deliberately starts from an EXISTING idea or product and applies a specific, structured prompt to push it in a defined direction — it's a tool for improving something that already exists, not for generating something from nothing.",
+          "keyPoints": [
+            "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse",
+            "Each example given ties to a real product change",
+            "SCAMPER improves an EXISTING idea via structured prompts",
+            "Brainstorming generates NEW ideas freely, without that structure"
+          ]
+        },
+        {
+          "question": "Walk through all five stages of design thinking using the campus food-delivery app example, and explain why the process is described as human-centred rather than solution-centred.",
+          "modelAnswer": "The five stages, applied to the food-delivery example: Empathize — interview students who complain that food delivery takes too long during their lecture breaks, to understand their actual experience. Define — frame the real problem clearly: students have a short 45-minute break and can't reliably eat before their next class. Ideate — brainstorm a range of possible solutions: pre-ordering, campus-only riders, canteen pickup lockers. Prototype — build a quick, low-cost version: a simple mock-up of a pre-order screen showing pickup time slots. Test — trial that prototype with 10 real students and gather feedback before building anything further. The process is called human-centred rather than solution-centred because it deliberately starts with genuine user understanding (Empathize) BEFORE any solution is proposed, and keeps returning to real user feedback (Test) rather than assuming the team's first idea is correct — a solution-centred approach would start by proposing a product idea and only check whether users like it afterward, whereas design thinking makes the user's actual experience and needs the starting point of the entire process.",
+          "keyPoints": [
+            "Empathize — interview students about the real experience",
+            "Define — clearly frame the actual problem (short break, unreliable eating time)",
+            "Ideate — brainstorm multiple possible solutions",
+            "Prototype — build the smallest cheap testable version",
+            "Test — get real feedback before building further",
+            "Human-centred = starts with real user understanding, not an assumed solution"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "csc322-l2b",
+      "number": "2b",
+      "title": "Problem-Solution Fit and Business Models",
+      "cards": [
+        {
+          "heading": "Problem-solution fit: prove the problem before the product",
+          "body": "Problem-solution fit exists when a proposed solution genuinely addresses a problem that customers actually experience and care about. It comes BEFORE product-market fit — first prove the problem is real, then prove your specific solution actually fits it.\n\nGoogle Drive and Dropbox solved the real problem of losing files or emailing attachments too large to send, with reliable cloud storage. Paystack and Flutterwave solved the problem of complex, unreliable online payments for African merchants, with simple APIs. Grammarly solved the problem of writing errors going unnoticed, with real-time in-browser correction. Each one is a solution built directly against a problem people already had — not a clever technology looking for a use case."
+        },
+        {
+          "heading": "Why problem-solution fit actually matters",
+          "body": "Most startups don't fail from bad execution — they fail by building something nobody actually needed in the first place. Genuine fit reduces wasted development time and money, increases the chance customers will actually pay, adopt, and stay, and gives a clear direction for every early product decision instead of guessing.\n\nCautionary example: several early food-delivery apps failed not because the technology was bad, but because they focused on flashy extras — loyalty points, social sharing — while ignoring the actual core problem their customers cared about: slow, unreliable delivery times. Polish on top of the wrong foundation doesn't fix the foundation."
+        },
+        {
+          "heading": "Validating an idea before building it",
+          "body": "Validation means testing an idea with real evidence before investing heavily in building it. The goal: get real evidence — not opinions — that customers actually have the problem and would use, or pay for, a solution.\n\nExample: before building a full campus food-ordering platform, a founder first tests demand by taking pre-orders through a simple WhatsApp catalogue for two weeks. If enough students actually place and pay for real orders, the idea is validated — only then does building the full app become worth the investment. If barely anyone orders, the founder just saved months of wasted development."
+        },
+        {
+          "heading": "Four ways to actually validate an idea",
+          "body": "• Customer interviews — talk directly to potential users about their pain points, listening more than pitching\n• Surveys — collect structured feedback from a larger group, to spot real patterns and demand at scale\n• Minimum Viable Product (MVP) — build the smallest working version to test genuine real usage and demand, not just stated interest\n• A/B testing — compare two versions of a feature or message to see which one actually performs better\n\nThe right method depends on how cheap and fast you need the answer: interviews are cheapest and fastest for early-stage doubt; an MVP is more expensive but tests real behaviour instead of just what people say they'd do."
+        },
+        {
+          "heading": "The Business Model Canvas: who you serve and how",
+          "body": "A one-page strategic tool mapping the nine building blocks of any business model. The first four answer \"who and how\":\n\n1. Customer Segments — who are you creating value for? (e.g. university students, SMEs, informal traders)\n2. Value Proposition — what problem do you solve, and why choose you? (e.g. \"faster, cheaper transfers\")\n3. Channels — how do you actually reach customers? (e.g. app store, social media, campus reps)\n4. Customer Relationships — how do you interact with users? (e.g. self-service app, live chat support)\n\nGet these four wrong, and the remaining five blocks — however well designed — are built on a shaky foundation."
+        },
+        {
+          "heading": "The Business Model Canvas: how you sustain the business",
+          "body": "The remaining five blocks answer \"how does this actually survive\":\n\n5. Revenue Streams — how does the business earn money? (e.g. subscriptions, transaction fees)\n6. Key Resources — what assets are essential? (e.g. engineering team, servers, brand, data)\n7. Key Activities — what must you do really well? (e.g. product development, customer support)\n8. Key Partnerships — who helps you deliver value? (e.g. payment processors, cloud providers)\n9. Cost Structure — what are the major costs? (e.g. hosting, salaries, marketing, compliance)\n\nA canvas with a brilliant value proposition but no honest answer to Revenue Streams isn't a business model yet — it's still just a product idea."
+        },
+        {
+          "heading": "SaaS and Freemium: recurring access, different price gates",
+          "body": "Software as a Service (SaaS): customers pay a recurring fee to access software hosted and maintained in the cloud — predictable revenue, automatic updates for every user, easy scaling, low upfront cost for customers. Microsoft 365's monthly subscription, Canva Pro's tiered plans, a campus attendance-tracking SaaS sold to universities.\n\nFreemium: a free basic version attracts a large user base, with advanced features locked behind a paid upgrade — a low barrier to first-time adoption, where free users can become paying customers over time, but it depends on a strong free tier and a large potential user base to work at all. Spotify (free with ads, or paid ad-free), LinkedIn (free profile, paid Premium), Duolingo (free lessons, paid Super tier)."
+        },
+        {
+          "heading": "Marketplace and advertising-supported models",
+          "body": "Marketplace: a platform connecting buyers and sellers (or riders and passengers), earning a commission per transaction. Revenue scales with transaction volume, and the platform's value grows as more of both sides join — but it needs real trust-and-safety systems, and has to solve both sides of the market at once, not just one. Jumia connects merchants and shoppers; Bolt and Uber connect drivers and riders; Fiverr connects freelancers and clients.\n\nAdvertising-supported: the core product is free for users; revenue comes from showing advertising to a large, engaged audience — removing cost as a barrier to adoption, but requiring large user numbers to actually be profitable, and demanding a careful balance between ad load and user experience. YouTube, Facebook and Instagram, free-to-read news sites supported by banner ads."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "According to the food-delivery cautionary example, why did several early food-delivery apps fail despite having working technology?",
+          "options": [
+            "They charged too much for delivery",
+            "They focused on flashy features like loyalty points and social sharing while ignoring the core problem of slow, unreliable delivery times",
+            "They didn't use a Business Model Canvas",
+            "They launched in the wrong country"
+          ],
+          "correctIndex": 1,
+          "explanation": "They lacked problem-solution fit — polishing secondary features couldn't compensate for failing to solve the actual core problem customers cared about (slow, unreliable delivery)."
+        },
+        {
+          "question": "A founder takes pre-orders through a WhatsApp catalogue for two weeks before building a full food-ordering app. What is this an example of?",
+          "options": [
+            "A/B testing",
+            "Validating demand cheaply before investing in a full build",
+            "The Business Model Canvas",
+            "Architectural innovation"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is validation — testing an idea with real evidence (actual orders and payment) before investing heavily in building the full product, exactly the goal validation methods exist to achieve."
+        },
+        {
+          "question": "Which validation method tests real usage and behaviour rather than just stated opinions or interest?",
+          "options": [
+            "Customer interviews",
+            "Surveys",
+            "Minimum Viable Product (MVP)",
+            "Brainstorming"
+          ],
+          "correctIndex": 2,
+          "explanation": "An MVP — building the smallest working version lets you observe what people actually DO (real usage, real payment) rather than relying on what they SAY they'd do, which is a meaningfully stronger form of evidence."
+        },
+        {
+          "question": "In the Business Model Canvas, which block specifically asks 'what must you do really well'?",
+          "options": [
+            "Key Resources",
+            "Key Activities",
+            "Key Partnerships",
+            "Cost Structure"
+          ],
+          "correctIndex": 1,
+          "explanation": "Key Activities — distinct from Key Resources (the assets you need, like a team or servers) and Key Partnerships (who helps deliver value, like a payment processor)."
+        },
+        {
+          "question": "A campus attendance-tracking tool sold to universities for a recurring monthly fee, hosted and maintained in the cloud, is an example of which business model?",
+          "options": [
+            "Freemium",
+            "SaaS",
+            "Marketplace",
+            "Advertising-supported"
+          ],
+          "correctIndex": 1,
+          "explanation": "SaaS (Software as a Service) — customers pay a recurring fee for cloud-hosted, centrally maintained software, with predictable revenue and automatic updates for everyone."
+        },
+        {
+          "question": "What makes the marketplace business model (like Jumia or Bolt) fundamentally different from a SaaS or Freemium model?",
+          "options": [
+            "It never earns any revenue",
+            "It has to solve both sides of a two-sided market (e.g. buyers AND sellers) at once, earning a commission on transactions between them",
+            "It only works for physical products, never for services",
+            "It doesn't require any trust or safety systems"
+          ],
+          "correctIndex": 1,
+          "explanation": "A marketplace connects two distinct user groups and earns a commission on transactions between them — it has to succeed at attracting and satisfying BOTH sides simultaneously, unlike SaaS or Freemium, which serve one type of customer directly."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the difference between problem-solution fit and product-market fit, and describe why validating a problem BEFORE building a full solution can save a founder significant time and money — using the WhatsApp-catalogue pre-order example.",
+          "modelAnswer": "Problem-solution fit exists when a proposed solution genuinely addresses a problem that customers actually experience and care about — it comes before product-market fit, which instead confirms that a fully built product satisfies strong, sustained market demand over time. Problem-solution fit is about proving the RIGHT problem was chosen and that a solution concept plausibly fits it; product-market fit is about proving a specific built product actually delivers on that promise at scale. Validating the problem before building a full solution saves real time and money because building software is expensive and slow compared to testing demand directly. In the WhatsApp-catalogue example, a founder wanting to build a full campus food-ordering platform instead first takes pre-orders through a simple WhatsApp catalogue for two weeks. If students actually place and pay for orders, the founder has real evidence the problem and willingness-to-pay are genuine, and building the full app becomes a justified investment. If almost nobody orders, the founder has just avoided months of wasted development on an app nobody actually wanted, discovering this in two weeks instead of after a costly full build.",
+          "keyPoints": [
+            "Problem-solution fit: solution genuinely addresses a real, validated problem",
+            "Product-market fit: a BUILT product satisfies sustained real demand, comes later",
+            "Validating cheaply (WhatsApp catalogue) tests real demand before expensive building",
+            "Catches a bad idea in weeks instead of after months of wasted development"
+          ]
+        },
+        {
+          "question": "Describe all nine blocks of the Business Model Canvas, grouped by which four answer 'who you serve and how' and which five answer 'how you sustain the business,' and explain why a strong value proposition alone isn't enough to make a working business model.",
+          "modelAnswer": "The first four blocks answer 'who you serve and how': Customer Segments (who you're creating value for), Value Proposition (what problem you solve and why customers should choose you), Channels (how you reach customers), and Customer Relationships (how you interact with users, e.g. self-service versus live support). The remaining five blocks answer 'how you sustain the business': Revenue Streams (how the business actually earns money), Key Resources (the essential assets required, like an engineering team or servers), Key Activities (what the business must do really well), Key Partnerships (who helps deliver value, like payment processors or cloud providers), and Cost Structure (the major costs involved, like hosting, salaries, and marketing). A strong value proposition alone isn't enough because it only answers what problem gets solved and why a customer might choose this solution — it says nothing about whether the business can actually sustain itself financially. Without a clear Revenue Streams answer, a genuinely brilliant value proposition is still just a product idea, not yet a business model, since there's no plan for how the value being created actually gets captured as money the venture can survive on.",
+          "keyPoints": [
+            "Who/how: Customer Segments, Value Proposition, Channels, Customer Relationships",
+            "Sustain: Revenue Streams, Key Resources, Key Activities, Key Partnerships, Cost Structure",
+            "A value proposition explains WHAT gets solved, not HOW the business survives",
+            "Without Revenue Streams defined, it's a product idea, not yet a business model"
+          ]
+        }
+      ]
     },
     {
       "id": "csc322-l3",
       "number": 3,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "New Venture Creation",
+      "cards": [
+        {
+          "heading": "What new venture creation actually means",
+          "body": "New Venture Creation is the process of turning an idea into a real and sustainable business. Airbnb began as its founders simply renting air mattresses in their own apartment to earn a bit of rent money — it only became a real company once they started treating it as a repeatable business, not a one-off hustle.\n\nThree core elements every successful venture needs: Opportunity (the business idea or problem being solved), Resources (money, tools, technology, and people), and Team (skilled people who actually execute the idea). Missing any one of the three, and the venture stalls no matter how strong the other two are."
+        },
+        {
+          "heading": "Technology markets play by different rules",
+          "body": "Technology markets tend to be fast-changing environments with strong competition and rapid innovation cycles — Nigerian fintech is a good example, where the space shifts fast as new payment rails and regulations appear almost every year.\n\nThree practices matter more here than in slower industries: Agility (the ability to adapt quickly as the market shifts underneath you), Iterative development (building and improving the product in stages, not all at once), and Technical feasibility (making sure the technology can actually work at real scale, not just in a demo). A venture that moves at a traditional business's pace in a fast-changing tech market is already behind."
+        },
+        {
+          "heading": "Build, measure, learn: the modern startup loop",
+          "body": "Instead of spending years building a \"perfect\" product, startups move through a fast, repeating loop: Build a basic version — a Minimum Viable Product (MVP), the simplest version of a product that can be released to test customer interest. Measure — collect real user feedback and usage data. Learn — improve the product using that evidence, then loop back to Build again.\n\nDropbox's earliest MVP was simply a demo video showing how the product would work — it validated real demand before a single line of the actual product was written. Zappos' founder tested online shoe demand by manually buying and shipping shoes himself, before building any inventory system at all — proving people would actually buy shoes online before investing in the infrastructure to do it at scale."
+        },
+        {
+          "heading": "The five phases of venture creation",
+          "body": "Every sustainable startup moves through the same broad journey, whether it happens fast or slowly:\n\n1. Opportunity Identification & Evaluation — discover and validate a problem worth solving\n2. Resource Assembly — gather the people, money, technology, and IP needed\n3. Business Planning & Venture Design — turn the idea into a clear operational strategy\n4. Launch & Early Operations — deploy the MVP and begin acquiring real customers\n5. Growth & Scaling — expand the product, team, and funding sustainably\n\nSkipping ahead — designing a detailed strategy before validating the opportunity, or trying to scale before launch even works — is one of the most common ways ventures waste their early resources."
+        },
+        {
+          "heading": "Phase 1: is this opportunity actually worth pursuing?",
+          "body": "Sources of opportunity: emerging technologies (AI, IoT, blockchain), problems in existing systems, unmet customer needs, data insights, and regulatory changes.\n\nFour evaluation criteria, applied honestly before committing further:\n\n• Attractiveness — is the market large and actually growing?\n• Feasibility — can the product realistically be built, technically?\n• Viability — can it make sustainable profit, not just revenue?\n• Defensibility — can competitors easily copy it once it works?\n\nAn idea that scores well on attractiveness but poorly on defensibility (easily copied, no real moat) is still a risky bet, even if the market genuinely wants it."
+        },
+        {
+          "heading": "Phase 2: mobilising human and financial capital",
+          "body": "Human capital — the people and skills needed for success: CEO (sets vision, strategy, leads the company), CTO (owns the technical architecture and product build), Engineers (design, build, and maintain the actual product), Marketing specialists (drive awareness, acquisition, and brand growth).\n\nFinancial capital — the money used to fund operations: Bootstrapping (funding from personal savings, income, or the business's own revenue, no outside investors), Grants (non-repayable support from governments or institutions, often for innovation), Angel investors (wealthy individuals investing personal money for equity, often adding mentorship too), Venture Capital (investment firms funding high-growth startups for significant equity and influence).\n\nThis is exactly the shape of Nigeria's own startup funding scene — most founders bootstrap off personal savings and side hustles long before any angel or VC conversation even starts, because that early traction is what makes the later conversation possible at all."
+        },
+        {
+          "heading": "Phase 2 continued: technology and IP as real assets",
+          "body": "Technological assets: cloud infrastructure (storage, servers, databases for hosting), development tools (software to design, build, test, and maintain systems), and hardware (computers, servers, networking equipment).\n\nIntellectual property: patents (exclusive rights over an invention), algorithms (proprietary computational methods), and copyrights plus proprietary datasets.\n\nA Nigerian AI health-tech startup runs its models on AWS cloud infrastructure rather than buying physical servers it can't afford. A fintech app patents its unique fraud-detection algorithm to stop competitors copying it outright. A startup's proprietary transaction dataset — built up over years of real usage — can end up more valuable than its code, precisely because a competitor can copy the code overnight but can't replicate years of accumulated data."
+        },
+        {
+          "heading": "Phases 3 to 5: design, launch, and scale",
+          "body": "Phase 3, Strategic Design & Planning, turns the idea into a clear operational strategy: value proposition (what problem are we solving?), target market (who are the customers?), business model (how does the company create value?), revenue model (how does it make money?), competitive strategy (how will it outperform rivals?), and financial projections.\n\nPhase 4, Launch & Early Execution, involves MVP deployment (crucial for rapid validation of real user behaviour), agile operations (fast updates, continuous improvement), and tracking critical metrics (active users, retention, revenue growth).\n\nPhase 5, Expansion & Systemic Scaling, only begins after real product-market fit is achieved: technical scaling (cloud computing, distributed systems for growing traffic), organisational growth (hiring, management structures), and funding (Series A/B/C to finance accelerated expansion)."
+        },
+        {
+          "heading": "The funding journey: Series A, B, and beyond",
+          "body": "Series A is money raised to grow the business AFTER proving people actually want the product — at this stage, the company should already show customers using it regularly, a growing user base, real (or clearly forming) revenue, and a credible plan for future profitability. Investors specifically check customer acquisition cost (CAC), customer retention rate, and overall growth trend. Typical raise: hundreds of thousands to millions of dollars.\n\nSeries B accelerates growth — expanding into new markets, growing the workforce, improving infrastructure — with investors now expecting structured management systems and predictable performance, not just promise. Series C and beyond funds international expansion, strategic acquisitions, and pre-IPO positioning — companies here may be approaching profitability, or preparing for acquisition or an IPO altogether."
+        },
+        {
+          "heading": "Why some great ideas still fail",
+          "body": "Five critical success factors: Market Validation (confirming demand before scaling), Team Quality (skilled, adaptable, collaborative people), Adequate Capitalization (enough funding to actually support growth), Execution Excellence (turning plans into consistent delivery), and Market Timing (launching when conditions are genuinely favourable).\n\nCautionary example: Quibi raised over $1.75 billion for short-form mobile video, and shut down within a year anyway. Strong capitalization alone couldn't fix weak market validation and poor timing — money doesn't buy any of the other four factors, and a venture that's weak on the rest will fail expensively instead of cheaply.\n\nThe Nigerian tech scene has its own version of this lesson — a well-funded app launching into a market that isn't actually ready (patchy internet access, low card penetration, the wrong payment rails) fails for the same reason Quibi did: money bought speed, not readiness."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Airbnb only became a real venture once its founders started treating apartment-renting as a repeatable business rather than a one-off hustle. Which core element does this best illustrate?",
+          "options": [
+            "Opportunity",
+            "Resources",
+            "Team",
+            "Funding"
+          ],
+          "correctIndex": 0,
+          "explanation": "This is fundamentally about recognising and committing to the Opportunity — the business idea itself only becomes a real venture once it's treated as a repeatable, ongoing business, not a one-off action."
+        },
+        {
+          "question": "Dropbox's earliest 'MVP' was simply a demo video showing how the product would work, before any real product existed. What did this validate?",
+          "options": [
+            "The technical architecture of the final product",
+            "Real customer demand for the idea, before investing in actually building it",
+            "The company's Series A funding round",
+            "The founding team's engineering skills"
+          ],
+          "correctIndex": 1,
+          "explanation": "It validated demand cheaply — showing that people were genuinely interested in the concept before any engineering time was spent building the real product, exactly the point of the Build-Measure-Learn loop's earliest, cheapest form."
+        },
+        {
+          "question": "An idea has a large, growing target market, but a competitor could easily copy the exact same product within a month of launch. Which evaluation criterion does this idea score poorly on?",
+          "options": [
+            "Attractiveness",
+            "Feasibility",
+            "Viability",
+            "Defensibility"
+          ],
+          "correctIndex": 3,
+          "explanation": "Defensibility — whether competitors can easily copy it. A large, attractive market is still a risky bet if there's no real moat protecting the business once it proves the idea works."
+        },
+        {
+          "question": "According to this chapter, what should a company already be showing BEFORE raising a Series A round?",
+          "options": [
+            "Nothing — Series A comes before any product exists",
+            "Customers using the product regularly, a growing user base, and a credible plan for future profitability",
+            "A fully profitable business with no further funding needs",
+            "An IPO filing already in progress"
+          ],
+          "correctIndex": 1,
+          "explanation": "Series A specifically comes AFTER proving people want the product — investors check customer acquisition cost, retention rate, and growth trend, which requires the company to already show real usage and a credible path to profitability."
+        },
+        {
+          "question": "Quibi raised over $1.75 billion but shut down within a year. What does this illustrate about the five critical success factors?",
+          "options": [
+            "Adequate capitalization alone guarantees startup success",
+            "Strong capitalization can't compensate for weak market validation and poor market timing",
+            "Series C funding is always a mistake",
+            "Short-form video is never a viable business model"
+          ],
+          "correctIndex": 1,
+          "explanation": "Quibi is the cautionary example specifically because it had more than enough capital, but still failed — proving that adequate capitalization is only one of five success factors, and heavy funding can't fix weak validation or bad timing."
+        },
+        {
+          "question": "A fintech app patents its unique fraud-detection algorithm specifically to stop competitors from copying it. This is an example of mobilising which type of resource?",
+          "options": [
+            "Human capital",
+            "Financial capital",
+            "Intellectual property",
+            "Market validation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Intellectual property — patents specifically protect exclusive rights over an invention, which is exactly why a fintech app would patent its fraud-detection algorithm rather than just keeping it secret informally."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the Build-Measure-Learn loop using the Dropbox and Zappos examples, and describe why this approach is considered better for tech ventures than spending years building a 'perfect' product first.",
+          "modelAnswer": "The Build-Measure-Learn loop has startups move through a fast, repeating cycle instead of a long single build: Build a basic version (an MVP, the simplest version that can be released to test customer interest), Measure real user feedback and usage data, and Learn from that evidence to improve the product before looping back to Build again. Dropbox's earliest MVP was simply a demo video showing how the product would work, which validated real customer demand before a single line of the actual product had been written. Zappos' founder tested online shoe demand by manually buying and shipping shoes himself, proving people would actually buy shoes online before investing in building any real inventory or logistics system. This approach is considered better for tech ventures because building a 'perfect' product first risks spending years and significant money on something nobody actually wants — by testing cheaply and quickly first, a founder discovers whether the core idea has real demand before committing serious resources, catching a wrong assumption in weeks rather than after years of development.",
+          "keyPoints": [
+            "Build: create a basic MVP",
+            "Measure: collect real user feedback and usage data",
+            "Learn: improve based on evidence, then loop back",
+            "Dropbox: validated demand with just a demo video",
+            "Zappos: validated demand by manually fulfilling orders before building infrastructure",
+            "Catches wrong assumptions cheaply and early, instead of after years of building"
+          ]
+        },
+        {
+          "question": "Describe the five phases of venture creation in order, and explain using the funding-journey information why a startup that tries to skip straight to Phase 5 (Growth & Scaling) without validating its opportunity first is taking on serious risk.",
+          "modelAnswer": "The five phases are: Opportunity Identification & Evaluation (discover and validate a problem worth solving), Resource Assembly (gather the people, money, technology, and IP needed), Business Planning & Venture Design (turn the idea into a clear operational strategy), Launch & Early Operations (deploy the MVP and begin acquiring real customers), and Growth & Scaling (expand the product, team, and funding sustainably, typically through Series A/B/C funding). A startup that skips straight to Phase 5 without properly validating its opportunity in Phase 1 is taking on serious risk because Series A funding specifically requires the company to already show customers using the product regularly, a growing user base, and real revenue signals — evidence that only exists if the earlier phases were done properly. Attempting to scale (hiring aggressively, expanding into new markets, raising large funding rounds) before confirming the opportunity is genuinely attractive, feasible, viable, and defensible means scaling something that might not actually work, which is exactly the kind of expensive failure the Quibi example illustrates — heavy investment and growth activity cannot substitute for skipped validation.",
+          "keyPoints": [
+            "Phase 1: Opportunity Identification & Evaluation",
+            "Phase 2: Resource Assembly",
+            "Phase 3: Business Planning & Venture Design",
+            "Phase 4: Launch & Early Operations",
+            "Phase 5: Growth & Scaling (Series A/B/C funding)",
+            "Series A specifically requires evidence only earlier phases can produce",
+            "Skipping validation risks scaling something unproven, an expensive failure mode"
+          ]
+        }
+      ]
     },
     {
       "id": "csc322-l4",
       "number": 4,
-      "title": "Coming soon",
-      "cards": [],
-      "quiz": [],
-      "theory": []
+      "title": "Business Plan for IT Ventures",
+      "cards": [
+        {
+          "heading": "What a business plan is actually for",
+          "body": "A business plan is a structured document explaining a business's goals, strategy, operations, market opportunities, and financial plans. It serves two audiences at once: Internal (helps the owner stay organised, make decisions, and set clear goals) and External (shows investors, lenders, and partners that the business is credible and well-planned).\n\nThe main components: Executive Summary (brief overview of the whole plan), Company Description (what the business does, its mission, its goals), Organization & Management (structure and the people running it), Service/Product Line (what's actually being offered), Market Analysis (target market, customers, competitors, industry trends), and Funding & Financial Projections (funding needed, plus expected sales and profit forecasts).\n\nA founder uses the plan internally to decide which feature to build next quarter — and the exact same document, polished, is what she sends to an angel investor to raise her first round."
+        },
+        {
+          "heading": "What's genuinely different about an IT business plan",
+          "body": "An IT business plan has to explain how a technology business will grow, protect its innovations, manage data securely, and attract customers — all while remaining scalable and sustainable. Four extra considerations a traditional business plan doesn't usually need:\n\n• Technology Roadmap — future system development, feature updates, and risk management\n• Scalability — handling growth via cloud infrastructure, microservices, distributed databases\n• IP Strategy — protecting software via copyrights, patents, trade secrets, and licensing\n• Data Security & Compliance — protecting user data and meeting laws such as GDPR\n\nCustomer acquisition strategy also gets measured differently here — using CAC (Customer Acquisition Cost) and LTV (Lifetime Value), and B2B ventures specifically have to plan for longer sales cycles and ongoing relationship management, not just a single purchase."
+        },
+        {
+          "heading": "The Lean Canvas: a full plan, compressed to one page",
+          "body": "A one-page tool built specifically for startups — faster to fill out than a full business plan, and deliberately focused on risk rather than polish. Nine building blocks:\n\n1. Problem — key problems your target users face\n2. Customer Segments — specific groups you're building the product for\n3. Unique Value Proposition — why customers should choose you over alternatives\n4. Solution — the product/service that solves it\n5. Channels — how you reach customers\n6. Revenue Streams — how the business makes money\n7. Cost Structure — major costs: development, hosting, marketing, salaries\n8. Key Metrics — numbers that show you're succeeding\n9. Unfair Advantage — what can't be easily copied\n\nNotice the numbering: Problem comes first, deliberately, because a business only matters if it solves something real."
+        },
+        {
+          "heading": "Lean Canvas: start with the problem",
+          "body": "Startups begin here because a business only matters if it solves a real problem:\n\n1. Problem — the key problems your target users actually face\n2. Customer Segments — the specific groups you're building the product for, e.g. university students, convenience stores\n3. Unique Value Proposition — why customers should choose you over alternatives, stated clearly as your main benefit\n\nUVP example: \"Fast, affordable food delivery from trusted local restaurants in under 30 minutes.\" It's clear, specific, and immediately tells the customer why to choose you — a weak UVP like \"the best food delivery app\" says nothing a customer can actually evaluate."
+        },
+        {
+          "heading": "Lean Canvas: solution, channels, and revenue",
+          "body": "4. Solution — the actual product or service offered to solve the problems already identified\n5. Channels — how you'll reach customers: social media, websites, app stores, email marketing, ads\n6. Revenue Streams — how the business makes money: subscriptions, ads, sales, commissions\n\nExample: a campus food-delivery app's Solution is a mobile ordering system; its Channel is a WhatsApp catalogue plus campus posters; its Revenue Stream is a small commission per order. None of these blocks needs to be complicated or expensive to start with — the WhatsApp catalogue IS the channel until there's evidence to justify building more."
+        },
+        {
+          "heading": "Lean Canvas: costs, metrics, and the unfair advantage",
+          "body": "7. Cost Structure — major costs: development, hosting, marketing, salaries\n8. Key Metrics — numbers that show whether the business is actually succeeding: users, engagement, revenue growth, retention\n9. Unfair Advantage — something competitors genuinely can't easily copy: a strong dataset, patents, brand, network effects, exclusive access\n\nA ride-hailing startup's unfair advantage might be years of accumulated route and demand data that a brand-new entrant simply doesn't have yet — a competitor could copy the app's features in weeks, but not the years of real usage data behind it."
+        },
+        {
+          "heading": "Legal structures: how registration shapes everything else",
+          "body": "How a technology business is registered and organised determines ownership, management, taxation, and legal responsibility for debts or risks. Four main options:\n\n• Sole Proprietorship — simplest structure; business and owner are legally the same person\n• Partnership — two or more people run the business together, sharing ownership and risk\n• LLC (Limited Liability Company) — business is legally separate from its owners; popular for startups\n• Corporation — a formal, separate legal entity owned by shareholders\n\nThis choice isn't just paperwork — it directly shapes how much personal financial risk a founder is carrying if things go wrong."
+        },
+        {
+          "heading": "Sole Proprietorship and Partnership: simple, but personal risk",
+          "body": "Sole Proprietorship — the simplest structure. The business and the owner are legally the same person, so if the business has debt or legal issues, the owner is PERSONALLY responsible. Example: a freelance web developer building websites for clients alone in Lagos, without registering a separate company.\n\nPartnership — two or more people running a business together, with ownership and responsibility shared. A General Partnership has all partners sharing full responsibility and risk; a Limited Partnership lets some partners invest money without taking on full responsibility. Example: two friends building a mobile app together — one handles the coding, the other handles business and marketing — sharing both the work and the risk."
+        },
+        {
+          "heading": "LLC and Corporation: protection, at a cost",
+          "body": "Limited Liability Company (LLC) — a very popular structure for startups, where the business is legally separate from its owners. The core benefit: owners are protected from personal financial risk, with easier taxes and management than a full corporation. Example: a fintech startup registers as an LLC so that if the company loses money or gets sued, the founders' personal savings stay protected.\n\nCorporation — a more formal, fully separate legal entity owned by shareholders. Strong legal protection and easier to attract serious investors, at the cost of more paperwork, regulations, and taxes. Example: a global technology company raising money from venture capital firms — Google and Apple are both corporations.\n\nRule of thumb: as personal financial risk grows alongside the venture, most successful tech founders move from informal structures toward an LLC or corporation before taking on serious outside investment."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the key difference between a business plan's internal and external purpose?",
+          "options": [
+            "There's no real difference — they're always used identically",
+            "Internally it helps the owner stay organised and make decisions; externally the same document (polished) shows investors and lenders the business is credible",
+            "The internal version is always longer than the external version",
+            "External plans never include financial projections"
+          ],
+          "correctIndex": 1,
+          "explanation": "The same core document serves two purposes: internally it's a decision-making and organisation tool for the founder, and externally (often polished) it demonstrates credibility to investors, lenders, and partners."
+        },
+        {
+          "question": "Which of these is specifically an EXTRA consideration for an IT business plan that a traditional business plan usually doesn't need?",
+          "options": [
+            "Executive Summary",
+            "Company Description",
+            "IP Strategy (patents, copyrights, trade secrets, licensing)",
+            "Market Analysis"
+          ],
+          "correctIndex": 2,
+          "explanation": "IP Strategy is one of four IT-specific additions (alongside Technology Roadmap, Scalability, and Data Security & Compliance) — traditional business plans include an Executive Summary, Company Description, and Market Analysis too, but these four are extra for tech ventures specifically."
+        },
+        {
+          "question": "In the Lean Canvas, why does the framework start with 'Problem' as block 1, rather than starting with the Solution?",
+          "options": [
+            "It's just an arbitrary numbering choice with no real logic",
+            "A business only matters if it solves a real problem — starting anywhere else risks designing a solution before confirming the problem is genuine",
+            "Solutions are always easier to define than problems",
+            "Investors only ever read the first block of any canvas"
+          ],
+          "correctIndex": 1,
+          "explanation": "Starting with Problem forces founders to confirm a real, validated problem exists before designing a Solution around it — the same 'problem before solution' discipline seen throughout this course's problem-solution-fit material."
+        },
+        {
+          "question": "A ride-hailing startup's 'unfair advantage' is years of accumulated route and demand data that a new entrant doesn't have. Why does this qualify as an unfair advantage rather than just a feature?",
+          "options": [
+            "Because it's the cheapest part of the business to build",
+            "Because a competitor could copy the app's features quickly, but can't replicate years of accumulated real usage data",
+            "Because all startups automatically have this advantage",
+            "Because unfair advantages must always involve a patent"
+          ],
+          "correctIndex": 1,
+          "explanation": "An unfair advantage is specifically something competitors CAN'T easily copy — app features can often be rebuilt in weeks, but years of real accumulated data simply can't be replicated on the same timeline."
+        },
+        {
+          "question": "A freelance web developer in Lagos builds websites for clients alone, without registering a separate company. If a client sues over unpaid work, what happens under this legal structure?",
+          "options": [
+            "The developer's personal assets are completely protected",
+            "The developer is personally responsible, since a Sole Proprietorship means the business and owner are legally the same person",
+            "The lawsuit is automatically dismissed",
+            "Only the client's assets are at risk"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sole Proprietorship means the business and the owner are legally the same entity, so the owner carries full personal liability for any business debts or legal issues — exactly why the rule of thumb pushes founders toward an LLC as risk grows."
+        },
+        {
+          "question": "According to the rule of thumb in this chapter, what typically happens to a tech founder's choice of legal structure as personal financial risk grows with the venture?",
+          "options": [
+            "They stay with a Sole Proprietorship no matter how large the company grows",
+            "They typically move from informal structures toward an LLC or corporation before taking on serious outside investment",
+            "They abandon the venture rather than change structure",
+            "Legal structure never needs to change once chosen"
+          ],
+          "correctIndex": 1,
+          "explanation": "The rule of thumb states that as personal financial risk increases with growth, most successful tech founders move toward an LLC or corporation, specifically before taking on serious outside investment."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the four extra considerations an IT business plan needs beyond a standard business plan, and describe why CAC and LTV specifically matter for measuring an IT venture's customer acquisition strategy.",
+          "modelAnswer": "An IT business plan needs four considerations beyond the standard format: a Technology Roadmap (future system development, feature updates, and risk management), Scalability (handling growth through cloud infrastructure, microservices, and distributed databases), IP Strategy (protecting the software itself through copyrights, patents, trade secrets, and licensing), and Data Security & Compliance (protecting user data and meeting relevant laws such as GDPR). CAC (Customer Acquisition Cost) and LTV (Lifetime Value) matter specifically for IT ventures because software businesses typically have very different cost structures from traditional businesses — acquiring a customer often costs real marketing and sales spend upfront, while the revenue from that customer arrives gradually over their entire relationship with the product (subscriptions, repeat usage). Measuring CAC against LTV tells a founder whether the business model is actually sustainable: if it costs more to acquire a customer than that customer will ever generate in revenue, the venture is losing money on every new signup no matter how fast it's growing, which is exactly the kind of problem a traditional business plan's simpler financial projections might not surface as clearly.",
+          "keyPoints": [
+            "Technology Roadmap — future development and risk management",
+            "Scalability — cloud/microservices/distributed databases for growth",
+            "IP Strategy — copyrights, patents, trade secrets, licensing",
+            "Data Security & Compliance — protecting user data, meeting laws like GDPR",
+            "CAC vs LTV reveals whether the customer-acquisition economics are actually sustainable"
+          ]
+        },
+        {
+          "question": "Compare all four legal structures (Sole Proprietorship, Partnership, LLC, Corporation) on personal risk and complexity, and explain which structure would best fit a fintech startup about to handle real customer money and raise angel investment within a year — and why.",
+          "modelAnswer": "Sole Proprietorship carries high, fully personal risk with very low complexity — the business and owner are legally the same entity. Partnership also carries high, shared personal risk with low complexity — two or more people share both ownership and responsibility. LLC carries low, protected risk with medium complexity — the business is legally separate from its owners, shielding their personal assets. Corporation carries low, protected risk with high complexity — a fully separate legal entity owned by shareholders, offering the strongest legal protection but requiring the most paperwork, regulation, and tax compliance. A fintech startup about to handle real customer money and raise angel investment within a year should choose an LLC. Handling real customer money creates significant legal and financial exposure, so a Sole Proprietorship or informal Partnership would leave the founders' personal savings directly at risk if anything went wrong — unacceptable given the stakes involved with real money. A full Corporation is likely more structure and cost than necessary at this early stage, before Series A-level funding. An LLC strikes the right balance: it protects founders' personal assets from the venture's financial risk while remaining simpler and cheaper to manage than a full corporation, matching what the chapter describes as the standard structure most funded startups use.",
+          "keyPoints": [
+            "Sole Proprietorship: high personal risk, very low complexity",
+            "Partnership: high shared risk, low complexity",
+            "LLC: low/protected risk, medium complexity",
+            "Corporation: low/protected risk, high complexity",
+            "Fintech handling real money + seeking investment → LLC balances protection and manageable complexity"
+          ]
+        }
+      ]
     }
   ]
 }

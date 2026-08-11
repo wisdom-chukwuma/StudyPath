@@ -38,11 +38,11 @@
         },
         {
           "heading": "Scheduling is about fairness and speed",
-          "body": "The OS decides which program gets the CPU next. That choice affects how fast, fair, and smooth the whole system feels.\n\nBack to the cafeteria: the CPU is a single cashier who can only serve one person at a time. Scheduling is deciding who's next in that line, and for how long."
+          "body": "The OS decides which program gets the CPU next. That choice affects how fast, fair, and smooth the whole system feels.\n\nBack to the cafeteria: the CPU is a single cashier who can only serve one person at a time. Scheduling is deciding who's next in that line, and for how long.\n\nThink NYSC camp mami-market at lunchtime, or a fuel station queue during scarcity — everyone wants to be served now, and how fairly the line moves decides whether people riot or relax."
         },
         {
           "heading": "This topic matters in real life",
-          "body": "When your phone or laptop keeps running smoothly even with many apps open, that is the OS doing its job behind the scenes.\n\nEvery time your phone runs a virus scan, downloads an update, AND lets you type all at once without hanging — that's this chapter, quietly working."
+          "body": "When your phone or laptop keeps running smoothly even with many apps open, that is the OS doing its job behind the scenes.\n\nEvery time your phone runs a virus scan, downloads an update, AND lets you type all at once without hanging — that's this chapter, quietly working.\n\nIt's exactly why your phone starts lagging the moment WhatsApp, Instagram, and an incoming call all fight for attention at once — that's the OS scheduler under real pressure, live, in your hand."
         }
       ],
       "quiz": [
@@ -216,7 +216,7 @@
         },
         {
           "heading": "Time-sharing made computers feel live",
-          "body": "Many users could share one machine because the CPU switched quickly between them. It made computers feel much more responsive.\n\nSame WhatsApp-group-reply trick from Chapter 1 — so fast between users that everyone feels like they have the lecturer's full attention."
+          "body": "Many users could share one machine because the CPU switched quickly between them. It made computers feel much more responsive.\n\nSame WhatsApp-group-reply trick from Chapter 1 — so fast between users that everyone feels like they have the lecturer's full attention.\n\nThis is the entire business model behind the old neighbourhood cybercafé/browsing centre — one server, several computers, each customer paying to feel like they had the machine to themselves."
         },
         {
           "heading": "GUIs made computers easier to use",
@@ -224,7 +224,7 @@
         },
         {
           "heading": "Networking changed how computers work together",
-          "body": "Operating systems had to support shared files, printers, and connected machines. That pushed OS design into the network age.\n\nThe moment computers stopped being lonely islands and started needing to talk to each other, like the group project from Chapter 1."
+          "body": "Operating systems had to support shared files, printers, and connected machines. That pushed OS design into the network age.\n\nThe moment computers stopped being lonely islands and started needing to talk to each other, like the group project from Chapter 1.\n\nSame principle as your phone silently switching between MTN, Glo, and Airtel towers as you move — the network changes underneath you, but the call or data session isn't supposed to notice."
         },
         {
           "heading": "Special-purpose systems solve special jobs",
@@ -395,11 +395,11 @@
         },
         {
           "heading": "Real-time OS must respond fast",
-          "body": "These systems work under strict deadlines. If they are late, the whole system may fail.\n\nAirbags again — miss the deadline here and \"late\" isn't just annoying, it's dangerous."
+          "body": "These systems work under strict deadlines. If they are late, the whole system may fail.\n\nAirbags again — miss the deadline here and \"late\" isn't just annoying, it's dangerous.\n\nA market woman's POS terminal has to approve a transfer in seconds — if it hangs even briefly, she's not thinking 'processing delay,' she's thinking the machine has failed her customer."
         },
         {
           "heading": "Embedded OS live inside devices",
-          "body": "You find them in smart devices, appliances, and machines that do one main job really well.\n\nYour smart TV's remote-control brain isn't trying to also run Chrome — it's built for one job only."
+          "body": "You find them in smart devices, appliances, and machines that do one main job really well.\n\nYour smart TV's remote-control brain isn't trying to also run Chrome — it's built for one job only.\n\nThe chip quietly running a Lagos traffic light or a bank's ATM is doing exactly this job — nobody clocks it as 'a computer,' but it's running an OS as real as the one on your laptop."
         },
         {
           "heading": "Distributed OS use many machines together",
@@ -571,7 +571,7 @@
         },
         {
           "heading": "Ready means waiting for CPU time",
-          "body": "The process is prepared to run, but it has to wait until the scheduler gives it a turn.\n\nLike being next in line at the cashier — you're prepared, you just haven't been called yet."
+          "body": "The process is prepared to run, but it has to wait until the scheduler gives it a turn.\n\nLike being next in line at the cashier — you're prepared, you just haven't been called yet.\n\nIt's a danfo at the park with a full load, engine on, waiting for the conductor's signal to actually pull out — ready to go, just not moving yet."
         },
         {
           "heading": "Running means it is currently using the CPU",
@@ -583,7 +583,7 @@
         },
         {
           "heading": "The PCB is the process memory card",
-          "body": "The Process Control Block (PCB) is a data structure the OS keeps for every single process, storing everything needed to pause it and resume it later without losing track of anything. It holds:\n\n• Process state — which of the five states it's currently in (new, ready, running, waiting, terminated)\n• Program counter — the address of the NEXT instruction this process needs to execute\n• CPU registers — the exact values sitting in the CPU's registers at the moment it got paused, so they can be restored perfectly\n• Memory information — which memory this process owns\n• Scheduling information — priority and other data the scheduler needs to decide when this process runs next\n\nThe OS's version of a file with your name on it — everything it needs to know about you, the process, in one card. That's also exactly why context switching works at all: save the PCB before pausing, reload it before resuming, and the process picks up exactly where it left off, down to the last instruction."
+          "body": "The Process Control Block (PCB) is a data structure the OS keeps for every single process, storing everything needed to pause it and resume it later without losing track of anything. It holds:\n\n• Process state — which of the five states it's currently in (new, ready, running, waiting, terminated)\n• Program counter — the address of the NEXT instruction this process needs to execute\n• CPU registers — the exact values sitting in the CPU's registers at the moment it got paused, so they can be restored perfectly\n• Memory information — which memory this process owns\n• Scheduling information — priority and other data the scheduler needs to decide when this process runs next\n\nThe OS's version of a file with your name on it — everything it needs to know about you, the process, in one card. That's also exactly why context switching works at all: save the PCB before pausing, reload it before resuming, and the process picks up exactly where it left off, down to the last instruction.\n\nThink of your JAMB or WAEC candidate slip — one document tracking your exact registration number, current stage, and status, so the system always knows precisely where you stand."
         }
       ],
       "quiz": [
@@ -735,11 +735,11 @@
       "cards": [
         {
           "heading": "Scheduling decides who gets the CPU next",
-          "body": "The scheduler chooses which ready process runs first. That decision affects speed, fairness, and responsiveness.\n\nSame cashier-queue idea from Chapter 1, now with the actual mechanics behind the decision."
+          "body": "The scheduler chooses which ready process runs first. That decision affects speed, fairness, and responsiveness.\n\nSame cashier-queue idea from Chapter 1, now with the actual mechanics behind the decision.\n\nSame tension as the immigration queue at the airport, or NYSC camp registration day — everyone's in line, and the order they get called changes everything about how their day goes."
         },
         {
           "heading": "Long-term scheduling controls entry into the system",
-          "body": "It decides which processes are allowed to join the system and compete for resources.\n\nThe bouncer at the door deciding who's even allowed into the club tonight."
+          "body": "It decides which processes are allowed to join the system and compete for resources.\n\nThe bouncer at the door deciding who's even allowed into the club tonight.\n\nThis is JAMB's cut-off mark, structurally — deciding who's even allowed to compete for a spot at all, long before anyone starts worrying about classroom timetables."
         },
         {
           "heading": "Medium-term scheduling handles swapping",
@@ -912,7 +912,7 @@
         },
         {
           "heading": "First-Come, First-Served is the simplest rule",
-          "body": "In FCFS, the process that arrives first gets served first. It is easy to understand, but it can be unfair if a long process blocks many shorter ones behind it. This is called the convoy effect.\n\nStrict \"first in line\" rule — fair-sounding, until the one person buying rice in bulk holds up everyone behind them with just one item."
+          "body": "In FCFS, the process that arrives first gets served first. It is easy to understand, but it can be unfair if a long process blocks many shorter ones behind it. This is called the convoy effect.\n\nStrict \"first in line\" rule — fair-sounding, until the one person buying rice in bulk holds up everyone behind them with just one item.\n\nThe exact logic of a fuel queue during scarcity — no negotiating, no favourites, whoever joined the line first gets served first, full stop."
         },
         {
           "heading": "Shortest Job First prefers small tasks",
@@ -920,7 +920,7 @@
         },
         {
           "heading": "Round Robin gives each process a turn",
-          "body": "Round Robin gives each process a fixed time slice, called a quantum. If a process does not finish in that time, it goes to the back of the queue and waits for another turn. This method is fair and works well for interactive systems.\n\nEveryone gets a fixed few seconds at the counter, then back of the line if not done — nobody waits forever, nobody hogs it either."
+          "body": "Round Robin gives each process a fixed time slice, called a quantum. If a process does not finish in that time, it goes to the back of the queue and waits for another turn. This method is fair and works well for interactive systems.\n\nEveryone gets a fixed few seconds at the counter, then back of the line if not done — nobody waits forever, nobody hogs it either.\n\nSame fairness instinct as \"come and eat\" at a family table where everyone gets a fixed turn with the serving spoon before it goes round again, instead of one person hogging the pot."
         },
         {
           "heading": "Priority scheduling gives urgent jobs more attention",
@@ -1094,7 +1094,7 @@
         },
         {
           "heading": "Partitioning divides memory into sections",
-          "body": "In partitioning, memory is divided into fixed or variable-sized sections. Each process is assigned a section, depending on its size and the available space.\n\nCutting one big room into smaller rented spaces, some fixed-size, some flexible depending on the tenant."
+          "body": "In partitioning, memory is divided into fixed or variable-sized sections. Each process is assigned a section, depending on its size and the available space.\n\nCutting one big room into smaller rented spaces, some fixed-size, some flexible depending on the tenant.\n\nSame as three roommates in one hostel room, each with their own corner, box, and reading table — one shared space, clearly divided so nobody's things spill into someone else's."
         },
         {
           "heading": "Paging breaks memory into small pages",
@@ -1106,7 +1106,7 @@
         },
         {
           "heading": "Virtual memory gives the illusion of more RAM",
-          "body": "Virtual memory allows the system to use disk space as extra memory. This helps when the computer has too many processes running at once.\n\nBorrowing extra \"storage space\" from disk when RAM runs out — like storing off-season clothes in a box under the bed instead of the wardrobe."
+          "body": "Virtual memory allows the system to use disk space as extra memory. This helps when the computer has too many processes running at once.\n\nBorrowing extra \"storage space\" from disk when RAM runs out — like storing off-season clothes in a box under the bed instead of the wardrobe.\n\nIt's the exact trick behind \"borrow me credit\" — you don't actually have the airtime yet, but the network lets you use it now and settles the real balance later."
         }
       ],
       "quiz": [
@@ -1259,7 +1259,7 @@
         },
         {
           "heading": "Directories help keep files organized",
-          "body": "A directory is like a folder. It helps the user and the OS group related files together so finding them becomes easier.\n\nFolders are just labeled boxes — nobody wants one giant pile of everything on the floor."
+          "body": "A directory is like a folder. It helps the user and the OS group related files together so finding them becomes easier.\n\nFolders are just labeled boxes — nobody wants one giant pile of everything on the floor.\n\nSame logic as Computer Village or Balogun market being organised into sections by what's sold there — you don't hunt randomly, you already know which row to walk down."
         },
         {
           "heading": "The OS performs file operations",
@@ -1275,7 +1275,7 @@
         },
         {
           "heading": "Access permissions protect files",
-          "body": "The OS can give users or programs different permissions such as read, write, and execute. This helps prevent unauthorized access and accidental changes.\n\nRead-only vs edit access — the same distinction as a Google Doc shared as \"viewer\" vs \"editor\"."
+          "body": "The OS can give users or programs different permissions such as read, write, and execute. This helps prevent unauthorized access and accidental changes.\n\nRead-only vs edit access — the same distinction as a Google Doc shared as \"viewer\" vs \"editor\".\n\nA landlord doesn't hand every tenant a master key to the whole building — each person gets access to exactly their own flat, nothing more, which is precisely how file permissions work."
         },
         {
           "heading": "File management is part of everyday computing",
@@ -1436,7 +1436,7 @@
         },
         {
           "heading": "Device drivers help the OS talk to hardware",
-          "body": "A device driver is software that lets the OS communicate with a specific device. It acts as a translator between the hardware and the operating system.\n\nThe translator between your printer's \"language\" and the OS's — without it, they're just two people who don't speak the same tongue."
+          "body": "A device driver is software that lets the OS communicate with a specific device. It acts as a translator between the hardware and the operating system.\n\nThe translator between your printer's \"language\" and the OS's — without it, they're just two people who don't speak the same tongue.\n\nLike the agent at a market who translates between a buyer speaking English and a seller who only speaks Yoruba or Hausa — neither side understands the other directly, so something in the middle has to bridge it."
         },
         {
           "heading": "The OS controls access to devices",
@@ -1448,7 +1448,7 @@
         },
         {
           "heading": "Spooling helps manage shared devices",
-          "body": "Spooling stores jobs in a queue so that devices such as printers can handle them one by one. This is especially useful when many users share one printer.\n\nPrint jobs lining up politely instead of fighting over the printer at the same time."
+          "body": "Spooling stores jobs in a queue so that devices such as printers can handle them one by one. This is especially useful when many users share one printer.\n\nPrint jobs lining up politely instead of fighting over the printer at the same time.\n\nThe single printer at a cybercafé handling five different customers' print jobs one after another — everyone's request gets queued and handled in order, instead of documents printing on top of each other."
         },
         {
           "heading": "Good I/O management makes systems feel smooth",
@@ -1609,7 +1609,7 @@
         },
         {
           "heading": "Authentication checks who you are",
-          "body": "Authentication confirms a user's identity through methods like passwords, PINs, biometrics, or two-factor authentication. Without it, the system cannot know who is trying to access it.\n\nChecking ID at the door — are you actually who you say you are?"
+          "body": "Authentication confirms a user's identity through methods like passwords, PINs, biometrics, or two-factor authentication. Without it, the system cannot know who is trying to access it.\n\nChecking ID at the door — are you actually who you say you are?\n\nThe exact reason your bank asks for BVN verification before doing anything sensitive — first prove you are who you claim to be, before any question of what you're allowed to do even comes up."
         },
         {
           "heading": "Authorization decides what you can do",
@@ -1621,7 +1621,7 @@
         },
         {
           "heading": "Firewalls and antivirus help defend the system",
-          "body": "These tools help block threats and detect harmful software. They work together with the OS to improve overall system safety.\n\nThe OS's bouncer and health inspector, working together."
+          "body": "These tools help block threats and detect harmful software. They work together with the OS to improve overall system safety.\n\nThe OS's bouncer and health inspector, working together.\n\nSame job as the gate security at a private estate — checking everyone who tries to come in, turning away anything that looks wrong, before it ever reaches the houses inside."
         },
         {
           "heading": "Good security makes systems trustworthy",
