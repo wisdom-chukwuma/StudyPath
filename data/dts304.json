@@ -269,7 +269,7 @@
     {
       "id": "dts304-ch3",
       "number": 3,
-      "title": "Analysis and Indexing: Search, Retrieval and Privacy",
+      "title": "Analysis and Indexing: Search, Retrieval and Privacy — Topic 1",
       "cards": [
         {
           "heading": "The search box that lied",
@@ -286,6 +286,14 @@
         {
           "heading": "The B+-tree — the database's shortcut",
           "body": "Text search uses inverted indexes; structured lookups (like finding one student by matric number) use a different structure: the B+-tree.\n\nWithout one, finding MTR/25/0145 means a full table scan — checking row 1, row 2, row 3... every row, in order, until it's found. With a B+-tree index, the database follows a few signposts instead: is it ≤M or >M? A-F/G-M or N-S/T-Z? A handful of branches later, it's sitting right at the row.\n\nThe payoff is dramatic: 1,000,000 rows ≈ 20 checks with an index, not 1,000,000. The index itself is smaller than the data and lives beside it — a bit of storage traded for a lot of speed."
+        },
+        {
+          "heading": "EXPLAIN doesn't lie: watching a query before and after an index",
+          "body": "Talk is cheap. MySQL's EXPLAIN command is the receipt that proves whether an index actually did anything, and it's the single most exam-tested habit in this whole chapter.\n\nBefore indexing, run EXPLAIN on a search across Beacon's 100,000+ row student table and the type column reads ALL — MySQL's polite way of admitting \"I checked every single row, one by one,\" with a rows estimate matching the table's full size. That's the full-scan disaster from earlier in this chapter, now with a timestamp attached.\n\nRun CREATE INDEX on the searched column, then EXPLAIN the exact same query again: type changes to something far cheaper (ref or range, not ALL), the rows estimate collapses from six figures to a tiny handful, and the actual timing drops to match. Divide the old time by the new time and you have a real, defensible speed-up factor — not a guess, a measurement."
+        },
+        {
+          "heading": "LIKE vs. MATCH…AGAINST: two very different kinds of 'search'",
+          "body": "`LIKE '%hostel%'` against a free-text column forces MySQL back into a full scan every single time — there's no index that can help a wildcard sitting on BOTH sides of the search term, so it's reading every row's text character by character, checking for a match, no shortcuts available.\n\n`MATCH(body) AGAINST('hostel')` against a FULLTEXT index is a completely different animal — it's the inverted index from earlier in this chapter, actually being used, and it doesn't just return a yes/no, it returns a relevance score ranking how well each document matches, best answers first. This is exact-match's evil twin from the \"two ways to answer a query\" card, made concrete: LIKE forces exact-string full-scanning, MATCH…AGAINST gives you real ranked retrieval, and the two can return meaningfully different result sets for the exact same search term on the exact same data."
         },
         {
           "heading": "Two ways to answer a query",
@@ -374,6 +382,28 @@
           ],
           "correctIndex": 1,
           "explanation": "No — this is the anonymisation trap. Matric number, birth date, and programme combined can still point to exactly one person even with the name gone; real anonymisation has to consider combinations of fields, not just names."
+        },
+        {
+          "question": "Before creating an index, EXPLAIN on a search query shows `type: ALL` with a rows estimate matching the whole table. What does this tell you?",
+          "options": [
+            "The query is already using an index efficiently",
+            "MySQL is doing a full table scan, checking every row one by one",
+            "The table is empty",
+            "The query contains a syntax error"
+          ],
+          "correctIndex": 1,
+          "explanation": "`type: ALL` is MySQL's way of reporting a full table scan — every row gets checked, which is exactly the full-scan disaster indexing exists to fix."
+        },
+        {
+          "question": "Why can't `LIKE '%hostel%'` use a normal index, even if one exists on that column?",
+          "options": [
+            "LIKE queries are not valid SQL",
+            "A wildcard on both sides of the search term means MySQL can't jump to a starting point in the index — it still has to check every row",
+            "Indexes only work on numeric columns",
+            "LIKE always returns zero results on text columns"
+          ],
+          "correctIndex": 1,
+          "explanation": "A leading wildcard (`%hostel%`) means there's no fixed prefix to look up in an index's sorted order, forcing MySQL back into a full scan — this is exactly why FULLTEXT + MATCH...AGAINST exists as the real alternative."
         }
       ],
       "theory": [
@@ -537,9 +567,134 @@
       ]
     },
     {
+      "id": "dts304-ch5",
+      "number": 5,
+      "title": "Database Architecture and Data Independence",
+      "cards": [
+        {
+          "heading": "The upgrade nobody noticed",
+          "body": "One weekend, Beacon's ICT team quietly moved the entire database to a new server, changed how three of the biggest tables are physically stored, and added a fresh set of indexes. Monday morning: 4,000 students logged in, Bursary pulled their reports, Exams ran their summaries — and not one line of application code had to change.\n\nThat's not luck. Compare it to what would have happened in Chapter 4's file-based world, where moving students.xlsx to a new folder used to break every single macro pointing at it. This chapter is about the actual engineering trick that makes \"we changed everything underneath and nobody felt it\" a completely normal Monday instead of a minor miracle: a 1970s architectural idea that's still quietly running the show."
+        },
+        {
+          "heading": "The three-schema architecture: you've already touched all three",
+          "body": "The ANSI/SPARC three-schema architecture splits a database into three honest layers, and you've been living in all of them without necessarily naming them:\n\nExternal — \"what does THIS user group see?\" Bursary's view shows students + payments, no grades. Exams' view shows students + results, no payment data. A student logging into the portal sees only their own records. Many views, each cropped to what that audience actually needs.\n\nConceptual — \"what exists, and how does it relate?\" One single logical schema underneath all those views: every table, every column, every rule, the whole design a database designer draws in Chapter 6 and 7.\n\nInternal — \"how is it physically stored?\" The messy, unglamorous reality: .ibd files, B+-tree indexes, InnoDB pages, buffer pools — the DBMS and the DBA's actual job.\n\nThree separate questions, three separate layers, and the entire trick of this chapter is that changing one almost never disturbs the other two."
+        },
+        {
+          "heading": "Data independence: the actual payoff",
+          "body": "This is the entire point of splitting into three layers, not just a tidy diagram for its own sake. Physical independence means the DBA can change HOW data is stored — new server, new file layout, a fresh index — and every application built on top keeps working, completely unaware anything moved. That's exactly what happened in the weekend upgrade.\n\nLogical independence means the conceptual schema can grow — a new column, a new table — without breaking the views and applications sitting on top of it, as long as the change is additive rather than destructive.\n\nWithout this separation, every storage tweak would ripple straight up into broken code, the way renaming a folder used to break Beacon's old spreadsheet macros. With it, an entire category of Monday-morning disasters simply stops being possible."
+        },
+        {
+          "heading": "The designer's moral: extend, don't rewrite",
+          "body": "Not every change is equally safe, and the three-schema architecture won't save you from a reckless one. Additive change is cheap: ADD COLUMN email and every existing view survives untouched; a brand new table means nothing else even notices; a new index gives the same answers, just faster.\n\nDestructive change ripples straight through the layers: DROP a column a view still depends on, and that view breaks. Rename a table an application points at, and that application breaks. Split a table other queries JOIN to, and every one of those queries breaks.\n\nThe professional habit this teaches: design conservatively. Extend the schema outward rather than rewriting what's already load-bearing — the three-schema architecture only protects you from the storage layer changing underneath you, not from you personally taking a wrecking ball to the conceptual layer everyone else depends on."
+        },
+        {
+          "heading": "Where the software actually runs: 1, 2, 3 tiers",
+          "body": "1-tier (desktop) — the app, the DBMS, and the data all live on one single machine, talking to nobody. SQLite on a phone, Access on one PC. No architecture drama, because there's nobody else to protect from your changes.\n\n2-tier (client-server) — a client app (Workbench, a POS terminal) talks directly to a separate database server over the network. This is exactly the lab setup used throughout this course, and how a lot of real office systems run.\n\n3-tier (web) — a browser or mobile app talks to an application server (the actual portal), which is the only thing that talks to the database server. Users never touch the database directly in this model — the middle tier holds the business rules AND the credentials, which is exactly how the Beacon portal itself, and most web apps you've ever used, are actually built."
+        },
+        {
+          "heading": "Cloud databases: renting the internal level",
+          "body": "A cloud database provider owns the hardware, the disks, the backups, the replication, the patching — everything sitting below the physical-independence firewall this chapter just spent three cards explaining. In three-schema terms: they've taken over the ENTIRE internal level and rented it back to you.\n\nWhat you still own, and what this whole course has actually been teaching: the conceptual design, the views, the SQL, the integrity rules. The provider changing which physical disk your data sits on, or migrating you to new hardware overnight, is precisely the kind of invisible internal-level change the three-schema architecture was built to absorb — which is the entire reason \"renting a cloud database\" is even a coherent business model in the first place, and not just a recipe for constant breakage.\n\nThis is exactly the pitch behind every Nigerian startup now building on AWS or Google Cloud instead of buying their own server rack — the founders never touch a physical disk, and the three-schema architecture is precisely why that's a safe bet, not a leap of faith."
+        },
+        {
+          "heading": "Four language families, one SQL",
+          "body": "Every SQL statement you'll ever type belongs to exactly one of four families, and knowing which tells you both what it does and who's normally allowed to run it:\n\nDDL (Data Definition Language) — defines structure: CREATE TABLE, ALTER TABLE, CREATE INDEX. Touches the conceptual and internal levels, usually a designer or DBA's job.\n\nDML (Data Manipulation Language) — works with the actual data: SELECT, INSERT, UPDATE, DELETE. The everyday tool for anyone querying or updating rows.\n\nDCL (Data Control Language) — controls access: GRANT, REVOKE. Squarely a DBA's territory — deciding who's allowed to do any of the above.\n\nTCL (Transaction Control Language) — manages transactions: COMMIT, ROLLBACK. The seatbelt language, covered properly in Chapter 12.\n\n`REVOKE INSERT ON payments FROM 'clerk';` is DCL. `ALTER TABLE students DROP COLUMN email;` is DDL. `ROLLBACK;` is TCL. `UPDATE results SET score = 74 WHERE reg_id = 55;` is DML. Four families, one language, and naming the family on sight is exactly the kind of question this chapter loves to ask."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Beacon's ICT team moved the database to a new server and added new indexes over a weekend, and zero application code broke on Monday. Which concept explains this?",
+          "options": [
+            "Referential integrity",
+            "Physical data independence",
+            "Normalisation",
+            "The internal schema alone, with no other layers involved"
+          ],
+          "correctIndex": 1,
+          "explanation": "Physical data independence — the ability to change HOW data is physically stored without affecting the applications built on top, exactly what let the weekend upgrade go unnoticed."
+        },
+        {
+          "question": "Bursary's view shows students + payments with no grades visible, while Exams' view shows students + results with no payment data. Which schema level do these views belong to?",
+          "options": [
+            "Internal",
+            "Conceptual",
+            "External",
+            "Physical"
+          ],
+          "correctIndex": 2,
+          "explanation": "External — the level that answers 'what does this specific user group see?' Multiple different views, each cropped to what that audience needs, all built on top of the same single conceptual schema."
+        },
+        {
+          "question": "Which of these is an example of a DESTRUCTIVE change that would ripple through the three-schema architecture, rather than an additive one?",
+          "options": [
+            "Adding a new email column to the students table",
+            "Creating a new index on an existing column",
+            "Dropping a column that an existing view depends on",
+            "Adding a brand-new table"
+          ],
+          "correctIndex": 2,
+          "explanation": "Dropping a column a view depends on is destructive — it breaks anything built on top of that column. Adding columns, tables, or indexes are all additive changes that existing views and applications survive untouched."
+        },
+        {
+          "question": "In a 3-tier web architecture, why does the user's browser never talk to the database server directly?",
+          "options": [
+            "Browsers are technically incapable of running SQL",
+            "The application server (the middle tier) holds the business rules and the credentials, and is the only thing that talks to the database",
+            "3-tier architecture doesn't actually use a database at all",
+            "It would make the database run faster"
+          ],
+          "correctIndex": 1,
+          "explanation": "The application server sits in the middle specifically to hold business logic and database credentials, so users never get direct database access — exactly how the Beacon portal itself, and most web apps, are actually built."
+        },
+        {
+          "question": "A cloud database provider handles hardware, disks, backups, and patching. Which schema level have they effectively taken over?",
+          "options": [
+            "The external level only",
+            "The conceptual level entirely",
+            "The internal level",
+            "None — cloud providers don't map onto the three-schema architecture"
+          ],
+          "correctIndex": 2,
+          "explanation": "The internal level — everything about physical storage and hardware. You still own the conceptual design, views, SQL, and integrity rules, which is exactly the skill set this course teaches."
+        },
+        {
+          "question": "`GRANT SELECT ON students TO 'analyst';` belongs to which SQL language family?",
+          "options": [
+            "DDL",
+            "DML",
+            "DCL",
+            "TCL"
+          ],
+          "correctIndex": 2,
+          "explanation": "DCL (Data Control Language) — statements that control access, like GRANT and REVOKE, squarely a DBA's territory for deciding who's allowed to do what."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the three-schema architecture (external, conceptual, internal), and use Beacon's weekend server upgrade to illustrate exactly which layer changed and why nothing above it broke.",
+          "modelAnswer": "The three-schema architecture splits a database into three layers answering three separate questions. The external level answers 'what does this specific user group see?' — Beacon has multiple views here, like Bursary's students+payments view and Exams' students+results view, each cropped to what that audience needs. The conceptual level answers 'what exists, and how does it relate?' — one single logical schema (tables, columns, relationships, rules) underneath all those different views. The internal level answers 'how is it physically stored?' — the actual files, indexes, and storage engine details the DBMS and DBA manage. In the weekend upgrade, ICT changed things ONLY at the internal level: which server the data lives on, how three big tables are physically stored, and which indexes exist. None of that touched the conceptual schema (the tables, columns, and relationships stayed logically identical) or the external views built on top of it, which is precisely why every application — the portal, Bursary's reports, Exams' summaries — kept working without a single line of code changing. This is physical data independence in action: a change confined entirely to the internal level, invisible to everything above it.",
+          "keyPoints": [
+            "External — what a specific user group sees (many views)",
+            "Conceptual — what exists and how it relates (one logical schema)",
+            "Internal — how it's physically stored (one physical layout)",
+            "The weekend upgrade changed only the internal level, so nothing above it broke"
+          ]
+        },
+        {
+          "question": "Explain the difference between additive and destructive schema change, using specific examples, and describe why a 3-tier architecture's middle tier is described as holding 'the rules and the credentials.'",
+          "modelAnswer": "Additive change extends a schema without removing or altering anything existing applications already depend on — adding a new column like email, creating a brand-new table, or adding a new index are all additive, and every existing view or application keeps working exactly as before. Destructive change removes or fundamentally alters something already in use — dropping a column a view depends on, renaming a table an application points at, or splitting a table that other queries JOIN against — and each of these breaks whatever was built on top of the thing that changed. The professional discipline this teaches is to design conservatively: extend outward rather than rewriting what's load-bearing, since the three-schema architecture only protects against storage-layer changes, not against a designer destructively altering the conceptual schema itself. In a 3-tier architecture, the middle tier (the application server) is described as holding 'the rules and the credentials' because users interact only with the browser or mobile app, which talks only to the application server — the application server is the sole layer that actually connects to the database, meaning it's the only place that needs the database credentials, and it's also where business logic (the rules about what a user is allowed to do) actually lives, rather than being scattered across every client device.",
+          "keyPoints": [
+            "Additive: ADD COLUMN, new table, new index — nothing existing breaks",
+            "Destructive: DROP a used column, rename a table apps point at, split a joined table",
+            "Design conservatively: extend rather than rewrite",
+            "3-tier middle tier: sole database connection point, holds both business rules and credentials"
+          ]
+        }
+      ]
+    },
+    {
       "id": "dts304-ch6",
       "number": 6,
-      "title": "Conceptual Data Modelling: The ER Model",
+      "title": "Conceptual Data Modelling: The ER Model — Topic 2",
       "cards": [
         {
           "heading": "The hostel system nobody modelled",
@@ -567,7 +722,228 @@
         },
         {
           "heading": "The complete Beacon model",
-          "body": "Assembled from every rule above, Beacon University's full conceptual model:\n\nDEPARTMENT (dept_id, dept_name) —1:N EMPLOYS→ LECTURER (staff_id, staff_name) —1:N TEACHES→ COURSE (course_id, course_code, title, units)\nDEPARTMENT —1:N OFFERS→ PROGRAMME (programme_id, programme_name) —1:N ENROLS→ STUDENT (student_id, matric_no, full_name, dob, phone [multivalued])\nSTUDENT —M:N REGISTERS→ COURSE, with session, score and grade hanging off REGISTERS itself, not off either entity\nSTUDENT —1:N MAKES→ PAYMENT (payment_id, amount, paid_on)\n\nEvery box, diamond and oval on this diagram exists because one of the earlier tests demanded it."
+          "body": "Assembled from every rule above, Beacon University's full conceptual model:\n\nDEPARTMENT (dept_id, dept_name) —1:N EMPLOYS→ LECTURER (staff_id, staff_name) —1:N TEACHES→ COURSE (course_id, course_code, title, units)\nDEPARTMENT —1:N OFFERS→ PROGRAMME (programme_id, programme_name) —1:N ENROLS→ STUDENT (student_id, matric_no, full_name, dob, phone [multivalued])\nSTUDENT —M:N REGISTERS→ COURSE, with session, score and grade hanging off REGISTERS itself, not off either entity\nSTUDENT —1:N MAKES→ PAYMENT (payment_id, amount, paid_on)\n\nEvery box, diamond and oval on this diagram exists because one of the earlier tests demanded it.",
+          "visual": {
+            "type": "diagram",
+            "width": 760,
+            "height": 420,
+            "caption": "The complete Beacon model — every box, diamond, and oval justified by one of the tests from this chapter.",
+            "shapes": [
+              {
+                "id": "dept",
+                "type": "entity",
+                "x": 20,
+                "y": 20,
+                "w": 130,
+                "h": 55,
+                "label": "DEPARTMENT"
+              },
+              {
+                "id": "offers",
+                "type": "relationship",
+                "x": 175,
+                "y": 25,
+                "w": 90,
+                "h": 45,
+                "label": "OFFERS"
+              },
+              {
+                "id": "programme",
+                "type": "entity",
+                "x": 290,
+                "y": 20,
+                "w": 130,
+                "h": 55,
+                "label": "PROGRAMME"
+              },
+              {
+                "id": "enrols",
+                "type": "relationship",
+                "x": 445,
+                "y": 25,
+                "w": 90,
+                "h": 45,
+                "label": "ENROLS"
+              },
+              {
+                "id": "student",
+                "type": "entity",
+                "x": 580,
+                "y": 20,
+                "w": 130,
+                "h": 55,
+                "label": "STUDENT"
+              },
+              {
+                "id": "employs",
+                "type": "relationship",
+                "x": 40,
+                "y": 145,
+                "w": 90,
+                "h": 45,
+                "label": "EMPLOYS"
+              },
+              {
+                "id": "registers",
+                "type": "relationship",
+                "x": 445,
+                "y": 150,
+                "w": 90,
+                "h": 45,
+                "label": "REGISTERS"
+              },
+              {
+                "id": "lecturer",
+                "type": "entity",
+                "x": 20,
+                "y": 260,
+                "w": 130,
+                "h": 55,
+                "label": "LECTURER"
+              },
+              {
+                "id": "teaches",
+                "type": "relationship",
+                "x": 175,
+                "y": 265,
+                "w": 90,
+                "h": 45,
+                "label": "TEACHES"
+              },
+              {
+                "id": "course",
+                "type": "entity",
+                "x": 290,
+                "y": 260,
+                "w": 130,
+                "h": 55,
+                "label": "COURSE"
+              },
+              {
+                "id": "makes",
+                "type": "relationship",
+                "x": 610,
+                "y": 145,
+                "w": 90,
+                "h": 45,
+                "label": "MAKES"
+              },
+              {
+                "id": "payment",
+                "type": "entity",
+                "x": 580,
+                "y": 260,
+                "w": 130,
+                "h": 55,
+                "label": "PAYMENT"
+              },
+              {
+                "id": "session_attr",
+                "type": "attribute",
+                "x": 350,
+                "y": 350,
+                "w": 80,
+                "h": 38,
+                "label": "session"
+              },
+              {
+                "id": "score_attr",
+                "type": "attribute",
+                "x": 445,
+                "y": 350,
+                "w": 80,
+                "h": 38,
+                "label": "score"
+              },
+              {
+                "id": "grade_attr",
+                "type": "attribute",
+                "x": 540,
+                "y": 350,
+                "w": 80,
+                "h": 38,
+                "label": "grade"
+              }
+            ],
+            "connectors": [
+              {
+                "from": "dept",
+                "to": "offers",
+                "label": "1"
+              },
+              {
+                "from": "offers",
+                "to": "programme",
+                "label": "N"
+              },
+              {
+                "from": "programme",
+                "to": "enrols",
+                "label": "1"
+              },
+              {
+                "from": "enrols",
+                "to": "student",
+                "label": "N"
+              },
+              {
+                "from": "dept",
+                "to": "employs",
+                "label": "1"
+              },
+              {
+                "from": "employs",
+                "to": "lecturer",
+                "label": "N"
+              },
+              {
+                "from": "lecturer",
+                "to": "teaches",
+                "label": "1"
+              },
+              {
+                "from": "teaches",
+                "to": "course",
+                "label": "N"
+              },
+              {
+                "from": "student",
+                "to": "registers",
+                "label": "M"
+              },
+              {
+                "from": "registers",
+                "to": "course",
+                "label": "N"
+              },
+              {
+                "from": "registers",
+                "to": "session_attr"
+              },
+              {
+                "from": "registers",
+                "to": "score_attr"
+              },
+              {
+                "from": "registers",
+                "to": "grade_attr"
+              },
+              {
+                "from": "student",
+                "to": "makes",
+                "label": "1"
+              },
+              {
+                "from": "makes",
+                "to": "payment",
+                "label": "N"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "The recursive relationship: when an entity relates to its own kind",
+          "body": "Every relationship so far has connected two DIFFERENT entities — STUDENT to COURSE, DEPARTMENT to LECTURER. But sometimes an entity needs to relate to another instance of ITSELF, and that's a recursive relationship — genuinely one of the trickier ideas to spot in this whole chapter.\n\nBeacon's course catalogue needs exactly this: CSC308 requires CSC201 as a prerequisite, which itself might require an even earlier course. That's COURSE connecting to COURSE, through a PREREQUISITE_OF relationship, and it's genuinely M:N — one course can have several prerequisites, and one course can BE a prerequisite for several other courses at once.\n\nOther real examples: an EMPLOYEE who reports to another EMPLOYEE (their manager), a STUDENT who referred another STUDENT to Beacon, a PART made up of smaller PARTs. Same entity, drawn twice with a relationship diamond between the two copies, same M:N mapping rule from before applies: it becomes its own new table — course_prerequisites(course_id, prerequisite_id) — just with both foreign keys pointing back at the SAME table instead of two different ones."
         },
         {
           "heading": "Five rules: diagram to tables",
@@ -575,7 +951,226 @@
         },
         {
           "heading": "The M:N rule in action",
-          "body": "STUDENT —M:N REGISTERS→ COURSE, carrying session and score. An M:N relationship simply cannot live inside either entity's table — cramming it into students or courses would mean repeating rows for every course a student takes, or vice versa.\n\nSo it becomes its own new table: registrations(student_id, course_id, session, score, grade) — one row per (student, course, session), carrying the relationship's own attributes, with student_id as a foreign key back to students and course_id as a foreign key back to courses.\n\nThis one move — turning an M:N relationship into its own table — is the heart of the entire mapping algorithm. Master this and the other four rules are easy by comparison."
+          "body": "STUDENT —M:N REGISTERS→ COURSE, carrying session and score. An M:N relationship simply cannot live inside either entity's table — cramming it into students or courses would mean repeating rows for every course a student takes, or vice versa.\n\nSo it becomes its own new table: registrations(student_id, course_id, session, score, grade) — one row per (student, course, session), carrying the relationship's own attributes, with student_id as a foreign key back to students and course_id as a foreign key back to courses.\n\nThis one move — turning an M:N relationship into its own table — is the heart of the entire mapping algorithm. Master this and the other four rules are easy by comparison.",
+          "visual": {
+            "type": "animation",
+            "width": 680,
+            "height": 340,
+            "steps": [
+              {
+                "caption": "Step 1 — The M:N relationship, with its own attributes.",
+                "shapes": [
+                  {
+                    "id": "student",
+                    "type": "entity",
+                    "x": 30,
+                    "y": 30,
+                    "w": 130,
+                    "h": 55,
+                    "label": "STUDENT"
+                  },
+                  {
+                    "id": "registers",
+                    "type": "relationship",
+                    "x": 275,
+                    "y": 25,
+                    "w": 100,
+                    "h": 50,
+                    "label": "REGISTERS"
+                  },
+                  {
+                    "id": "course",
+                    "type": "entity",
+                    "x": 500,
+                    "y": 30,
+                    "w": 130,
+                    "h": 55,
+                    "label": "COURSE"
+                  },
+                  {
+                    "id": "session_attr",
+                    "type": "attribute",
+                    "x": 200,
+                    "y": 150,
+                    "w": 90,
+                    "h": 40,
+                    "label": "session"
+                  },
+                  {
+                    "id": "score_attr",
+                    "type": "attribute",
+                    "x": 300,
+                    "y": 150,
+                    "w": 90,
+                    "h": 40,
+                    "label": "score"
+                  },
+                  {
+                    "id": "grade_attr",
+                    "type": "attribute",
+                    "x": 400,
+                    "y": 150,
+                    "w": 90,
+                    "h": 40,
+                    "label": "grade"
+                  },
+                  {
+                    "id": "note1",
+                    "type": "note",
+                    "x": 60,
+                    "y": 260,
+                    "w": 560,
+                    "h": 30,
+                    "label": "This relationship can't live inside STUDENT's table or COURSE's table."
+                  }
+                ],
+                "connectors": [
+                  {
+                    "from": "student",
+                    "to": "registers",
+                    "label": "M"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "course",
+                    "label": "N"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "session_attr"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "score_attr"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "grade_attr"
+                  }
+                ]
+              },
+              {
+                "caption": "Step 2 — Rule 4: an M:N relationship becomes a brand-new table.",
+                "shapes": [
+                  {
+                    "id": "student",
+                    "type": "entity",
+                    "x": 30,
+                    "y": 30,
+                    "w": 130,
+                    "h": 55,
+                    "label": "STUDENT"
+                  },
+                  {
+                    "id": "registers",
+                    "type": "relationship",
+                    "x": 275,
+                    "y": 25,
+                    "w": 100,
+                    "h": 50,
+                    "label": "REGISTERS"
+                  },
+                  {
+                    "id": "course",
+                    "type": "entity",
+                    "x": 500,
+                    "y": 30,
+                    "w": 130,
+                    "h": 55,
+                    "label": "COURSE"
+                  },
+                  {
+                    "id": "newtable",
+                    "type": "table",
+                    "x": 220,
+                    "y": 170,
+                    "w": 220,
+                    "h": 110,
+                    "label": "registrations",
+                    "rows": [
+                      "student_id  (FK)",
+                      "course_id  (FK)",
+                      "session, score, grade"
+                    ]
+                  },
+                  {
+                    "id": "arrow_note",
+                    "type": "note",
+                    "x": 60,
+                    "y": 300,
+                    "w": 560,
+                    "h": 30,
+                    "label": "Foreign keys to both sides, plus the relationship's own attributes."
+                  }
+                ],
+                "connectors": [
+                  {
+                    "from": "student",
+                    "to": "registers",
+                    "label": "M"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "course",
+                    "label": "N"
+                  },
+                  {
+                    "from": "registers",
+                    "to": "newtable",
+                    "style": "dashed"
+                  }
+                ]
+              },
+              {
+                "caption": "Step 3 — The result: one row per registration, keyed back to both parents.",
+                "shapes": [
+                  {
+                    "id": "student",
+                    "type": "entity",
+                    "x": 30,
+                    "y": 90,
+                    "w": 120,
+                    "h": 55,
+                    "label": "students"
+                  },
+                  {
+                    "id": "course",
+                    "type": "entity",
+                    "x": 530,
+                    "y": 90,
+                    "w": 120,
+                    "h": 55,
+                    "label": "courses"
+                  },
+                  {
+                    "id": "newtable",
+                    "type": "table",
+                    "x": 220,
+                    "y": 60,
+                    "w": 240,
+                    "h": 130,
+                    "label": "registrations",
+                    "rows": [
+                      "student_id  (FK)",
+                      "course_id  (FK)",
+                      "session",
+                      "score, grade"
+                    ]
+                  }
+                ],
+                "connectors": [
+                  {
+                    "from": "student",
+                    "to": "newtable"
+                  },
+                  {
+                    "from": "course",
+                    "to": "newtable"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ],
       "quiz": [
@@ -644,6 +1239,17 @@
           ],
           "correctIndex": 1,
           "explanation": "The N side — students carries programme_id as a foreign key. This is rule 2 of the five mapping rules: a 1:N relationship becomes a foreign key on the many side."
+        },
+        {
+          "question": "CSC308 requires CSC201 as a prerequisite, and CSC201 itself requires an even earlier course. How is this 'prerequisite' relationship best modelled?",
+          "options": [
+            "A relationship between COURSE and a brand-new PREREQUISITE entity",
+            "A recursive M:N relationship, where COURSE relates to another instance of COURSE",
+            "It can't be modelled in a relational database at all",
+            "A 1:1 relationship between two separate course tables"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is a recursive relationship — COURSE relates to itself, since one course can have several prerequisites and one course can be a prerequisite for several others. It maps the same way any M:N relationship does, just with both foreign keys pointing back at the same table."
         }
       ],
       "theory": [
@@ -671,9 +1277,279 @@
       ]
     },
     {
-      "id": "dts304-ch9",
-      "number": 9,
-      "title": "Relational Theory and Languages: SQL in Earnest",
+      "id": "dts304-ch7",
+      "number": 7,
+      "title": "The Relational Data Model — Topic 3",
+      "cards": [
+        {
+          "heading": "The ghost registrations",
+          "body": "Results week at Beacon. A routine count turns up something nobody wants to find: 61 registrations pointing at students who don't exist. Some are just mistyped student numbers — a finger slipped, a digit flipped. Others are applicants who got deleted after clearance, leaving their registrations orphaned behind them like a coat left on a chair after everyone went home.\n\n61 grades. Completely unawardable — there's nobody real to award them to.\n\nThe table has columns. The table has rows. What it doesn't have is rules — its \"foreign keys\" were just ordinary numbers that nothing on earth was ever checking. Today's whole chapter is the iron rulebook that makes this exact disaster structurally impossible, with MySQL itself standing guard and enforcing every single one."
+        },
+        {
+          "heading": "The anatomy of a relation",
+          "body": "A relation (the formal name for a table) has four properties worth knowing precisely, because exam questions love asking for them by name. Every cell holds exactly one atomic value — no cramming three phone numbers into one box. Column order doesn't matter — programme_id before or after full_name changes nothing about what the table means. Row order doesn't matter either — a table isn't a queue, there's no \"first\" student. And every row must be unique — if two rows are 100% identical in every column, one of them is pointless.\n\nThe vocabulary: an attribute is a column (student_id, matric_no). A tuple is a row — one actual student, Amina Yusuf, sitting in the students table. Degree is how many attributes a relation has (4 columns = degree 4). Cardinality is how many tuples it currently holds (3 students = cardinality 3, and it changes every time someone registers or withdraws). And domain is the set of legal values for a column — matric_no's domain is \"valid matric strings only,\" which is exactly why a phone number could never legally sit in that column."
+        },
+        {
+          "heading": "Keys: every row's actual name",
+          "body": "A superkey is ANY set of columns that's guaranteed unique — {student_id, full_name} counts, so does {matric_no, dob}, and honestly most superkeys are bloated and nobody actually wants to use them as-is.\n\nA candidate key is a MINIMAL superkey — strip away any single column and it stops being unique. {student_id} alone is a candidate key. {matric_no} alone is too. But {student_id, full_name} is NOT a candidate key, because student_id alone was already doing the job — the full_name was just dead weight riding along for nothing.\n\nOne candidate key gets promoted to primary key (the row's official, chosen name). Every other candidate key that didn't get picked becomes an alternate key, enforced with UNIQUE instead of PRIMARY KEY. Beacon's students table has two real candidates — student_id and matric_no — and only one of them gets to wear the crown."
+        },
+        {
+          "heading": "Choosing the primary key: stable, compact, meaningless",
+          "body": "Not every candidate key deserves to be primary key, and getting this choice wrong haunts a design for years. A good primary key is Stable — it's never edited. Matric numbers occasionally need correcting (a typo at admission, a records-office fix); an auto-incrementing number never does, because nobody has an opinion about what a database's internal counter should say.\n\nCompact — a primary key gets physically copied into every table that references it, and into every index built on it. A short integer copies cheap. A long composite string copies expensive, over and over, everywhere it's referenced.\n\nMeaningless — values that encode real-world meaning invite real-world change, and change is exactly what a primary key can't tolerate.\n\nThe professional pattern, used everywhere in serious schema design: a surrogate primary key (student_id AUTO_INCREMENT — meaningless, stable, compact) PLUS the natural key kept as UNIQUE (matric_no — meaningful, human-readable, still enforced as unique, just not doing the heavy lifting as PK). And where identity genuinely IS a combination of things — a specific student in a specific course in a specific session — the key itself gets composite: registrations(student_id, course_id, session)."
+        },
+        {
+          "heading": "The two integrity rules",
+          "body": "Entity integrity: the primary key is NEVER NULL and NEVER duplicated. Every single row must be addressable by its own unique, present key — a row with a NULL primary key is a row that can never be found again, and a duplicate primary key means two rows are both claiming to be the same specific thing.\n\nReferential integrity: every foreign key points at a row that actually exists. This is the exact rule Beacon's 61 ghost registrations violated — student_id 9999 in the registrations table pointed at a student row that had already been deleted, and nothing was checking.\n\nTogether, these two rules guarantee something the file-based world of Chapter 4 could never promise: every row can be found again, AND every reference genuinely leads somewhere real. No ghosts, in either direction."
+        },
+        {
+          "heading": "Watching the rules fight back",
+          "body": "This is the actual database refusing to let the ghost-registration disaster happen again, live, with real MySQL error codes:\n\n`INSERT ... VALUES (NULL, ...)` → ERROR 1048: Column 'student_id' cannot be null — entity integrity, refused.\n\n`INSERT ... VALUES (1043, ...)` on an already-used ID → ERROR 1062: Duplicate entry '1043' for key 'PRIMARY' — entity integrity, refused again.\n\nRegistering a student who doesn't exist → ERROR 1452: a foreign key constraint fails — referential integrity, refused. This is the exact ghost-registration bug from the opening scenario, except this time the database actually catches it.\n\nDeleting a programme that still has enrolled students → ERROR 1451: Cannot delete or update a parent row — referential integrity, refused.\n\nRead those error numbers with genuine affection. Every single one is a disaster that did NOT happen. Beacon's 61 ghosts were 61 silent ERROR-1452s that nobody's old system ever bothered to raise."
+        },
+        {
+          "heading": "When the parent dies: choosing a delete policy",
+          "body": "Every foreign key needs a deliberate answer to one question: when the row it points to gets deleted, what happens to the row pointing at it? Three real options, declared per foreign key with `ON DELETE <action>`.\n\nRESTRICT (the safe default) — refuse the delete outright while children still exist. Nobody gets to delete a programme that still has active students in it.\n\nCASCADE — delete the children too, automatically. Correct for genuine owner-part data: delete a student, and their phone-number rows (which only exist to describe that one student) should vanish with them. Dangerous everywhere else — a carelessly cascading programmes foreign key could silently erase 400 students the instant someone deletes one programme row.\n\nSET NULL — keep the children, just blank the broken reference. Right for genuinely optional links: a lecturer leaves the university, and a course's staff_id quietly becomes NULL rather than the course itself getting destroyed.\n\nChoosing wrong isn't a small mistake — CASCADE where RESTRICT belonged is exactly how a single DELETE statement turns into a very bad afternoon."
+        },
+        {
+          "heading": "The rest of the rulebook",
+          "body": "Beyond the two integrity rules, five more constraints round out the full toolkit — and the professional habit worth internalising here: validation in a portal's frontend protects ONE door; a constraint locks the entire vault, no matter which door someone tries.\n\nNOT NULL — a value must be supplied (`full_name VARCHAR(100) NOT NULL`).\nUNIQUE — no duplicates allowed; this is exactly how alternate keys get enforced (`matric_no VARCHAR(20) UNIQUE`).\nCHECK — values must satisfy a stated condition (`CHECK (score BETWEEN 0 AND 100)` — this is precisely what would have caught DTS304's earlier \"score of 250\" disaster before it ever got saved).\nDEFAULT — a fallback value when none is given (`paid_on DATE DEFAULT (CURRENT_DATE)`).\nPRIMARY KEY and FOREIGN KEY — the entity and referential integrity rules from earlier, written directly into the schema.\n\nThe rule of thumb: if a data rule CAN be expressed as a constraint, make it one — an application's validation code can be forgotten, bypassed, or simply not run in some code path nobody tested. A constraint can't."
+        },
+        {
+          "heading": "Rebutting \"our app already validates everything\"",
+          "body": "Every semester, someone argues that database constraints are unnecessary overhead because the application already checks its inputs before saving. This argument has a fatal blind spot: an application is not the only thing that will ever touch this database.\n\nA future script, a data import, a well-meaning admin running a manual UPDATE in Workbench at 11pm, a second application built by a completely different team two years from now, a developer who copy-pasted a query and forgot the WHERE clause — none of these go through the original app's validation code, because they never call it in the first place. Application-level validation protects exactly one door into the building.\n\nConstraints live IN the data itself, enforced by the database no matter which door someone walks through. Beacon's 61 ghost registrations happened precisely because \"the app probably checks this somewhere\" turned out to be false the one time it actually mattered — and by the time anyone noticed, the damage was already sitting in the table.\n\nIt's the database equivalent of a landlord trusting that every tenant will \"definitely\" pay rent on time with no written agreement — works fine right up until the one time it doesn't, and by then there's no enforceable rule left to point to."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A table's degree is 5 and its cardinality is 200. What do these two numbers mean?",
+          "options": [
+            "5 rows and 200 columns",
+            "5 columns (attributes) and 200 rows (tuples)",
+            "5 primary keys and 200 foreign keys",
+            "The table has been queried 200 times"
+          ],
+          "correctIndex": 1,
+          "explanation": "Degree is the number of attributes (columns); cardinality is the number of tuples (rows) currently in the relation — cardinality changes constantly as rows are added or removed, degree normally doesn't."
+        },
+        {
+          "question": "{student_id, full_name} is a superkey but NOT a candidate key for the students table. Why not?",
+          "options": [
+            "It contains a column of the wrong data type",
+            "student_id alone is already unique, so full_name is unnecessary extra weight — the set isn't minimal",
+            "Superkeys and candidate keys are actually the same thing",
+            "It's too short to be a valid key"
+          ],
+          "correctIndex": 1,
+          "explanation": "A candidate key must be a MINIMAL superkey — since student_id alone already guarantees uniqueness, adding full_name makes the set non-minimal, disqualifying it as a candidate key even though it's still technically a superkey."
+        },
+        {
+          "question": "Why is an AUTO_INCREMENT surrogate key generally preferred over a 'meaningful' natural key like matric_no as the primary key?",
+          "options": [
+            "Meaningful keys are always shorter",
+            "A meaningless surrogate key is stable and never needs correcting, unlike a value that encodes real-world meaning and can change",
+            "Natural keys can't be declared UNIQUE",
+            "MySQL doesn't support natural keys as primary keys at all"
+          ],
+          "correctIndex": 1,
+          "explanation": "The professional pattern is a meaningless, stable surrogate PK (like student_id AUTO_INCREMENT) plus the natural key kept as UNIQUE — values that encode real-world meaning (like matric numbers) occasionally need correcting, which a primary key should never have to tolerate."
+        },
+        {
+          "question": "A registration row is inserted pointing at student_id 9999, which doesn't exist in the students table. Which integrity rule does this violate, and what MySQL error results?",
+          "options": [
+            "Entity integrity, ERROR 1048",
+            "Entity integrity, ERROR 1062",
+            "Referential integrity, ERROR 1452",
+            "No integrity rule is violated"
+          ],
+          "correctIndex": 2,
+          "explanation": "Referential integrity — every foreign key must point at a row that actually exists. MySQL refuses this with ERROR 1452 ('a foreign key constraint fails'), which is exactly the check that would have prevented Beacon's 61 ghost registrations."
+        },
+        {
+          "question": "A student is deleted, and their phone-number records (which only exist to describe that one student) should be deleted automatically along with them. Which delete policy fits?",
+          "options": [
+            "RESTRICT",
+            "CASCADE",
+            "SET NULL",
+            "No policy is needed"
+          ],
+          "correctIndex": 1,
+          "explanation": "CASCADE is correct for true owner-part data — the phone records have no independent meaning without the student they belong to, so deleting the parent should delete the dependent children automatically."
+        },
+        {
+          "question": "A lecturer leaves the university, and a course they used to teach should remain in the system with its staff_id simply blanked out, rather than the course being deleted. Which delete policy fits?",
+          "options": [
+            "RESTRICT",
+            "CASCADE",
+            "SET NULL",
+            "PRIMARY KEY"
+          ],
+          "correctIndex": 2,
+          "explanation": "SET NULL fits optional links — the course has independent meaning and should survive, just with the now-invalid reference to the departed lecturer cleared rather than triggering a cascading delete."
+        },
+        {
+          "question": "Why is a CHECK constraint considered more reliable than application-level input validation for enforcing a rule like 'score must be between 0 and 100'?",
+          "options": [
+            "CHECK constraints run faster than application code",
+            "A constraint is enforced by the database no matter which door data comes through — a script, a manual edit, or a different application — while app validation only protects that one app's own input path",
+            "Application validation cannot check numeric ranges",
+            "CHECK constraints and application validation are functionally identical"
+          ],
+          "correctIndex": 1,
+          "explanation": "Application-level validation protects exactly one entry point; a database constraint is enforced regardless of how the data arrives — a manual UPDATE, a script, or a completely different application — which is exactly the gap that let Beacon's ghost registrations slip through undetected."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain entity integrity and referential integrity precisely, and use Beacon's 61 ghost registrations to name the specific disaster each rule is designed to prevent.",
+          "modelAnswer": "Entity integrity states that a table's primary key must never be NULL and must never be duplicated — every row must be uniquely and permanently addressable by its key. Referential integrity states that every foreign key value must point at a row that actually exists in the table it references — no foreign key may point at nothing. Beacon's 61 ghost registrations were specifically a referential integrity failure: registration rows held a student_id value pointing at student records that either were never valid (a mistyped number) or had since been deleted (an applicant removed after clearance), and nothing in the old file-based system checked that those foreign key values actually corresponded to real, existing students. Entity integrity would have prevented a different disaster — if two registration rows had somehow ended up sharing the same primary key, or if a registration's own key had been left NULL, that row would become permanently unaddressable, unable to be reliably updated or deleted by reference to its own identity. In Beacon's case specifically, it was the missing referential integrity check that let 61 registrations silently reference students who didn't exist, producing 61 unawardable grades that only a manual audit eventually caught.",
+          "keyPoints": [
+            "Entity integrity: PK never NULL, never duplicated — every row addressable",
+            "Referential integrity: every FK points at a row that actually exists",
+            "Beacon's ghosts specifically violated referential integrity",
+            "Entity integrity failures would show up as unaddressable or ambiguous rows"
+          ]
+        },
+        {
+          "question": "A colleague sets ON DELETE CASCADE on the foreign key from members to payments, reasoning that a departed member's payments are no longer needed. Explain what will happen at the next audit, and state what the policy should have been.",
+          "modelAnswer": "With ON DELETE CASCADE on the foreign key from members to payments, deleting a member row will automatically and silently delete every payment record that member ever made. At the next financial audit, this becomes a serious problem: payment records are financial history that organisations are typically required to retain for accounting, tax, and dispute-resolution purposes, regardless of whether the member who made them is still active. If a member is deleted from the system (whether through a genuine departure or an accidental deletion), the CASCADE policy destroys the historical record of every transaction they ever made, which the audit would flag as a significant gap in financial records — money that appears to have simply vanished from the books with no trace of who paid it or when. The correct policy here is RESTRICT (preventing the member from being deleted at all while payment records still reference them, forcing a deliberate decision about what to do with the payment history first) or, if the member record genuinely needs to be removable, SET NULL on a nullable foreign key so the payment rows survive with their member reference cleared rather than the rows themselves being destroyed. Payments are financial evidence, not owner-part data — they should never be treated as disposable just because the member who made them left.",
+          "keyPoints": [
+            "CASCADE here would silently delete all of a departed member's payment history",
+            "Financial/payment records typically must be retained regardless of member status",
+            "At audit, this shows up as missing transaction history, a real compliance problem",
+            "Correct policy: RESTRICT (or SET NULL) — payments are not owner-part data like a student's phone numbers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch8",
+      "number": 8,
+      "title": "Semi-Structured Data: XML and NoSQL — Topic 4",
+      "cards": [
+        {
+          "heading": "Seventeen ALTER TABLEs later",
+          "body": "The campus app's activity feed table is up to 43 columns, and most of every row is NULL. Lectures, polls, badges, quizzes — every fortnight brings a genuinely new shape of record, and every new shape has meant another migration on a giant, live table. rsvp_limit only means something for a lecture. poll_opts only means something for a poll. Everyone else's row just carries dead weight.\n\nDown the corridor, a second unrelated headache: JAMB delivers candidate data as XML files, and nobody currently on the team can actually read past the angle brackets.\n\nTwo completely different problems, one chapter, and one honest conclusion this chapter keeps circling back to: Chapter 7's iron rules are brilliant — right up until the shape of your data genuinely won't hold still, at which point they start actively fighting you instead of protecting you."
+        },
+        {
+          "heading": "Schema-first vs. schema-on-read",
+          "body": "Everything built so far in this course has been schema-first: declare every column and type up front, and any new shape of data means a migration — an ALTER TABLE, on a table that might already have millions of rows in it, potentially locking things up while it runs.\n\nSchema-on-read flips this entirely: each individual record carries its own shape, decided the moment it's written, and a brand-new kind of record just... shows up, with zero migration and zero ceremony. The feed table's real problem isn't bad design — it's a schema-first structure being asked to survive a schema-on-read workload, which is precisely the mismatch this whole chapter exists to fix.\n\nNeither approach is universally correct. Schema-first strains exactly where record shapes genuinely vary week to week; schema-on-read strains exactly where you need Chapter 7's iron-clad guarantees — and knowing which symptom you're looking at is half the battle."
+        },
+        {
+          "heading": "XML: documents as trees",
+          "body": "An XML document is a tree, full stop — one root element, nested child elements branching off it, optional attributes riding along on the elements themselves, and actual text sitting at the leaves. JAMB's own candidate file is the perfect worked example:\n\n`<candidate jamb_no=\"24567823JA\"><name>Amina Yusuf</name><state>Kano</state><scores><subject name=\"ENG\">72</subject><subject name=\"MTH\">81</subject></scores></candidate>`\n\ncandidate is the root. jamb_no is an attribute sitting ON the candidate element, not a child of it. name, state, and scores are children of candidate, and scores itself has further children — two separate subject elements, each carrying its OWN name attribute plus a text value.\n\nXPath is the language for walking this tree: `/candidate/name` grabs the name element directly under the root. `//subject[@name=\"MTH\"]` searches anywhere in the document for a subject element whose name attribute is specifically \"MTH\" — exactly how you'd pull out one candidate's Maths score without caring where else in the tree it happens to sit."
+        },
+        {
+          "heading": "The four NoSQL families",
+          "body": "\"NoSQL\" isn't one thing — it's four genuinely different families, each making its own deliberate trade against the relational model:\n\nDocument — JSON-like documents stored in collections (MongoDB, CouchDB). Shines at user profiles, catalogues, feeds — exactly the campus feed table's actual problem.\n\nKey-value — an opaque value sitting behind a lookup key, nothing more (Redis, DynamoDB). Shines at caching, sessions, shopping carts — anywhere you just need \"give me back what I stored under this key,\" fast.\n\nWide-column — sparse rows organised into column families (Cassandra, HBase). Shines at telemetry and time-series data at genuine scale — millions of sensor readings, not 4,000 student records.\n\nGraph — nodes and edges, relationships treated as first-class citizens instead of an afterthought (Neo4j). Shines at social networks and fraud-ring detection, where the CONNECTIONS between records matter as much as the records themselves.\n\nOne shared trade across all four: give up some of the relational model's guarantees, gain flexibility and genuine horizontal scale-out."
+        },
+        {
+          "heading": "One transcript, two models",
+          "body": "The relational version normalises one student's transcript across three separate tables — students, courses, registrations — linked by foreign keys. Renaming CSC201 touches exactly one row, anywhere in the whole database. Any question can be answered via joins, and Chapter 7's integrity rules guard every single write.\n\nThe document version nests the entire transcript into one record: `{ \"_id\": 1043, \"matric_no\": \"MTR/25/0143\", \"name\": \"Amina Yusuf\", \"registrations\": [ { \"course\": \"CSC201\", \"title\": \"Databases\", \"score\": 74 }, { \"course\": \"CSC305\", \"title\": \"Networks\", \"score\": 68 } ] }`. The whole transcript arrives in one single read, no joins required, and each document can vary its own shape freely as needs change.\n\nThe cost: \"Databases\" is now copied into every single registered student's transcript document. Renaming that course means updating potentially thousands of documents instead of one row — same facts, genuinely opposite optimisations."
+        },
+        {
+          "heading": "Documents inside MySQL — no new software required",
+          "body": "Here's the twist: you don't actually need to install MongoDB to get document flexibility. MySQL's native JSON column type does the job right inside a database you already know:\n\n`CREATE TABLE feed_events (event_id INT AUTO_INCREMENT PRIMARY KEY, details JSON NOT NULL);`\n\n`SELECT event_id, details->>'$.title' AS title FROM feed_events WHERE details->>'$.type' = 'poll';`\n\nThe ->> operator reaches directly into the JSON and pulls out a field by path — no ALTER TABLE required, ever again, even when a brand-new event type with fields nobody's seen before shows up tomorrow. MySQL will also flatly refuse to store malformed JSON — genuinely useful, but noticeably weaker than a real CHECK constraint, since it only validates that the JSON is syntactically valid, not that any particular field inside it is actually present or correctly typed."
+        },
+        {
+          "heading": "The decision: relational vs. semi-structured",
+          "body": "Six dimensions, compared honestly:\n\nSchema — declared first, changes need migrations (relational) vs. carried per record, change is just a new field (document).\nIntegrity — engine-enforced via Chapter 7's rules (relational) vs. mostly the application's own job to get right (document).\nRedundancy — one fact lives in one place (relational) vs. facts get copied around for read speed (document).\nQuestions — anything at all, via joins (relational) vs. great within one document, genuinely awkward across many (document).\nTransactions — real multi-table ACID from Chapter 12 (relational) vs. strong only within a single document (document).\nScaling — scale-up first, and joins actively resist being split across machines (relational) vs. scale-out comes naturally (document).\n\nThe rule of thumb this whole chapter builds toward: money and grades are relational — you need those integrity guarantees. Feeds and catalogues are documents — you need the flexibility more than the guarantees. And the hybrid pattern — typed columns for the stable core, one JSON column for the varying tail — is quietly how a huge share of the real industry resolves this exact debate."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "The campus feed table has 43 columns after 17 ALTER TABLEs, most of them NULL on any given row. What is the actual root cause?",
+          "options": [
+            "The database ran out of storage space",
+            "A schema-first structure is being asked to survive a schema-on-read workload — record shapes genuinely vary week to week",
+            "The table is missing a primary key",
+            "MySQL doesn't support more than 20 columns"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is a schema-first vs. schema-on-read mismatch — the feed's records genuinely vary in shape every fortnight, and forcing that variety into one fixed-column table means most columns are irrelevant to most rows."
+        },
+        {
+          "question": "In `<candidate jamb_no=\"24567823JA\"><name>Amina Yusuf</name></candidate>`, what is jamb_no?",
+          "options": [
+            "A child element of candidate",
+            "An attribute on the candidate element",
+            "The root element",
+            "Text content"
+          ],
+          "correctIndex": 1,
+          "explanation": "jamb_no is an attribute sitting on the candidate element itself, distinct from name, which is a genuine child element with its own text content."
+        },
+        {
+          "question": "A social network needs to efficiently find mutual connections and detect fraud rings based on relationship patterns. Which NoSQL family fits best?",
+          "options": [
+            "Document",
+            "Key-value",
+            "Wide-column",
+            "Graph"
+          ],
+          "correctIndex": 3,
+          "explanation": "Graph — nodes and edges, with relationships treated as first-class citizens, is specifically built for exactly this kind of connection-pattern analysis, unlike the other three families."
+        },
+        {
+          "question": "In the document version of a student transcript, why does renaming a course like CSC201 require updating potentially thousands of documents, instead of just one row?",
+          "options": [
+            "Document databases don't support renaming at all",
+            "The course title is copied into every student's transcript document that references it, rather than living in one shared place",
+            "It's a bug in MongoDB specifically",
+            "Document databases are always slower than relational ones"
+          ],
+          "correctIndex": 1,
+          "explanation": "Document models trade redundancy for read speed — each transcript carries its own copy of the course title, so a rename has to touch every document that copied it, unlike the relational model's one-fact-one-place guarantee."
+        },
+        {
+          "question": "What does MySQL's native JSON column type NOT protect against, unlike a real CHECK constraint?",
+          "options": [
+            "Storing syntactically malformed JSON — MySQL refuses this",
+            "A specific expected field being missing or wrongly typed inside otherwise valid JSON",
+            "Any kind of validation at all",
+            "Storing text data"
+          ],
+          "correctIndex": 1,
+          "explanation": "MySQL will refuse genuinely malformed JSON, but it has no way to enforce that a specific field is present or correctly typed inside otherwise valid JSON — a real gap compared to a CHECK constraint's precision."
+        },
+        {
+          "question": "According to the decision framework in this chapter, which workload should be modelled relationally rather than as documents?",
+          "options": [
+            "A social media activity feed",
+            "A product catalogue with widely varying attributes",
+            "Money and grades",
+            "A shopping cart session"
+          ],
+          "correctIndex": 2,
+          "explanation": "Money and grades need the strong, engine-enforced integrity guarantees relational databases provide (Chapter 7's rules, multi-table ACID transactions) — exactly the kind of data where 'mostly correct' isn't good enough."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain schema-first versus schema-on-read, and use the campus feed table's 43-column problem to illustrate what goes wrong when the wrong one is used for a given workload.",
+          "modelAnswer": "Schema-first means the structure of the data is declared up front — every column and its type fixed before any data is stored — so any genuinely new shape of record requires a migration (an ALTER TABLE), potentially on a table already holding a large amount of live data. Schema-on-read means each individual record carries its own shape at the moment it's written, so a new kind of record can simply appear with no migration required at all. The campus feed table went schema-first, declaring a fixed set of columns meant to cover every possible event type — lectures, polls, badges, quizzes. But because a genuinely new kind of event shows up roughly every fortnight, each new type meant another ALTER TABLE on an already-massive, live table, and because most columns are only relevant to one specific event type, most cells in most rows end up NULL. This produced the 43-column, mostly-empty mess described in the opening scenario — a schema-first structure being forced to survive a workload that's fundamentally schema-on-read in nature, where record shapes are supposed to vary freely and frequently rather than being fixed in advance.",
+          "keyPoints": [
+            "Schema-first: structure declared up front, new shapes need a migration",
+            "Schema-on-read: each record carries its own shape, no migration needed",
+            "Feed table's problem: schema-first structure, schema-on-read workload (event types vary weekly)",
+            "Symptom: constant ALTER TABLEs, most columns NULL on most rows"
+          ]
+        },
+        {
+          "question": "Compare the relational and document models across at least four of the dimensions covered in this chapter, and explain when the hybrid pattern (typed columns plus a JSON column) is the right answer.",
+          "modelAnswer": "Across four dimensions: Schema — relational declares structure first and requires migrations for change, while document models carry schema per record, letting new fields appear freely. Integrity — relational integrity is engine-enforced through mechanisms like Chapter 7's entity and referential integrity rules, while document integrity is mostly left to the application to get right. Redundancy — relational design keeps one fact in one place, while document models often copy facts across multiple documents to enable fast, join-free reads. Transactions — relational databases support real multi-table ACID transactions spanning several tables at once, while document databases typically only guarantee strong consistency within a single document. The hybrid pattern — typed columns for the stable, well-understood core of a record, plus one JSON column for whatever varying 'tail' of attributes doesn't fit a fixed schema — is the right answer when a workload has BOTH a genuinely stable part that benefits from real integrity guarantees (like a feed event's ID and timestamp) AND a genuinely variable part that would otherwise demand constant schema migrations (like each event type's unique extra fields). This is exactly what MySQL's native JSON column type enables without needing to adopt an entirely separate NoSQL system.",
+          "keyPoints": [
+            "Schema: declared-first + migrations vs. per-record + free new fields",
+            "Integrity: engine-enforced vs. mostly the application's job",
+            "Redundancy: one fact, one place vs. facts copied for read speed",
+            "Transactions: multi-table ACID vs. strong only per-document",
+            "Hybrid: typed columns for the stable core + JSON for the varying tail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch9a",
+      "number": "9a",
+      "title": "SQL I: Algebra, SELECT Anatomy and Joins — Topic 5",
       "cards": [
         {
           "heading": "The question the Registrar couldn't answer",
@@ -684,16 +1560,273 @@
           "body": "Every SQL query, no matter how complex, is built from five underlying moves:\n\n• SELECT (σ) — picks ROWS that pass a condition (σ score ≥ 70)\n• PROJECT (π) — picks COLUMNS, drops the rest (π name, score)\n• JOIN — pairs rows across tables on a match (students JOIN registrations)\n• UNION / DIFFERENCE — combines or subtracts row sets (2024 students − 2025 students)\n\nThe database's query optimiser (Chapter 11) literally rearranges these five moves behind the scenes to run your query faster — it's rewriting your SQL into a more efficient version of the exact same algebra."
         },
         {
+          "heading": "Anatomy of a SELECT statement",
+          "body": "Before joins, before anything clever, a SELECT statement is just a handful of clauses, each doing exactly one job: SELECT names which columns come back. FROM names which table (or tables) to start from. WHERE filters individual rows before anything else happens to them. ORDER BY sorts the final result. LIMIT caps how many rows actually come back.\n\n`SELECT full_name, matric_no FROM students WHERE programme_id = 7 ORDER BY full_name LIMIT 20;` — pull two columns, starting from students, keep only programme 7's rows, alphabetise them, show the first 20.\n\nEvery one of these clauses is a direct SQL translation of one of the relational algebra operations from the previous card: WHERE is σ (SELECT/filter rows), the column list after SELECT is π (PROJECT/pick columns). Knowing the anatomy means knowing exactly which clause is responsible when a query returns the wrong thing — is it grabbing the wrong rows (WHERE), or the wrong columns (the SELECT list itself)?"
+        },
+        {
+          "heading": "Translating both ways: algebra ⇄ SQL",
+          "body": "This is the exact skill your AOC won't let you dodge: given an algebra expression, write the SQL. Given SQL, write the algebra. Same grammar, two different handwritings — like relaying your guy's full gist in vernacular, then repeating the same gist in English for the roommate who no gree hear grammar. The MEANING never moves, only the notation.\n\nRead algebra INSIDE-OUT, exactly like a maths bracket — innermost operation runs first:\n\nπ matric_no, full_name (σ programme_id=7 (students))\nInnermost first: σ (filter) keeps only programme_id=7's rows. Then π (project) trims down to two columns. SQL writes these in the OPPOSITE order algebra nests them — filter clause after the column list, not before:\nSELECT matric_no, full_name FROM students WHERE programme_id = 7;\n\nNow the other direction — SQL to algebra, same logic, worked backwards. Given:\nSELECT c.title FROM courses c JOIN registrations r ON c.course_id=r.course_id WHERE r.grade='F';\nSpot the three moves in the order they actually happen to the data: JOIN first (courses ⋈ registrations), then WHERE filters (σ grade='F'), then SELECT trims columns (π title) — and π sits OUTERMOST in algebra notation because trimming columns is genuinely the last thing done before the answer reaches you:\nπ title (σ grade='F' (courses ⋈ registrations))\n\nThe exam trick, stated as one rule: algebra nests filter-then-project from the INSIDE out; SQL writes select-then-filter from the OUTSIDE in. Not two different logics — the same logic, dressed for two different parties."
+        },
+        {
           "heading": "Written order vs. thinking order",
           "body": "You WRITE a query as SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT. But SQL doesn't THINK in that order — it actually executes: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT.\n\nThis gap explains two classic beginner errors: WHERE runs before GROUP BY even exists, so it can't see an aggregate like AVG(score) — that's exactly why HAVING exists, to filter groups after they've formed. And a column alias defined in SELECT doesn't exist yet when WHERE runs, so you can't filter on it there.\n\nDebug any broken query by mentally walking the THINKING order, not the order it's written in."
         },
         {
           "heading": "Joins: choosing which rows may disappear",
-          "body": "students: Amina, Chidi, Tunde, Ngozi. registrations: only Amina (×2) and Tunde have any. Chidi and Ngozi have registered for nothing yet.\n\nINNER JOIN (matches only) — students JOIN registrations returns just Amina and Tunde's rows. Chidi and Ngozi silently vanish. Fine for a transcript. Wrong if the question is \"who hasn't registered?\"\n\nLEFT JOIN (keep every left row) — every student appears at least once; where there's no match, the right side fills with NULLs. Those NULL rows ARE the answer: add `WHERE r.student_id IS NULL` after a LEFT JOIN and you get exactly the students who haven't registered. Choosing the join type is choosing which rows are allowed to disappear."
+          "body": "students: Amina, Chidi, Tunde, Ngozi. registrations: only Amina (×2) and Tunde have any. Chidi and Ngozi have registered for nothing yet.\n\nINNER JOIN (matches only) — students JOIN registrations returns just Amina and Tunde's rows. Chidi and Ngozi silently vanish. Fine for a transcript. Wrong if the question is \"who hasn't registered?\"\n\nLEFT JOIN (keep every left row) — every student appears at least once; where there's no match, the right side fills with NULLs. Those NULL rows ARE the answer: add `WHERE r.student_id IS NULL` after a LEFT JOIN and you get exactly the students who haven't registered. Choosing the join type is choosing which rows are allowed to disappear.",
+          "visual": {
+            "type": "animation",
+            "width": 680,
+            "height": 340,
+            "steps": [
+              {
+                "caption": "Step 1 — INNER JOIN: only the overlap survives. Chidi and Ngozi vanish.",
+                "shapes": [
+                  {
+                    "id": "students_c",
+                    "type": "circle",
+                    "x": 60,
+                    "y": 40,
+                    "w": 220,
+                    "h": 220,
+                    "filled": false,
+                    "label": "STUDENTS",
+                    "labelDy": -85
+                  },
+                  {
+                    "id": "regs_c",
+                    "type": "circle",
+                    "x": 260,
+                    "y": 40,
+                    "w": 220,
+                    "h": 220,
+                    "filled": false,
+                    "label": "REGISTRATIONS",
+                    "labelDy": -85
+                  },
+                  {
+                    "id": "note1",
+                    "type": "note",
+                    "x": 60,
+                    "y": 285,
+                    "w": 560,
+                    "h": 30,
+                    "label": "Amina and Tunde have registrations — they're the only ones kept."
+                  }
+                ],
+                "regions": [
+                  {
+                    "type": "intersection",
+                    "a": "students_c",
+                    "b": "regs_c",
+                    "fill": "#58cc02",
+                    "opacity": 0.85
+                  }
+                ]
+              },
+              {
+                "caption": "Step 2 — LEFT JOIN: every student survives. Unmatched rows get NULL on the right.",
+                "shapes": [
+                  {
+                    "id": "students_c",
+                    "type": "circle",
+                    "x": 60,
+                    "y": 40,
+                    "w": 220,
+                    "h": 220,
+                    "filled": true,
+                    "fill": "#1cb0f6",
+                    "opacity": 0.55,
+                    "label": "STUDENTS",
+                    "labelDy": -85
+                  },
+                  {
+                    "id": "regs_c",
+                    "type": "circle",
+                    "x": 260,
+                    "y": 40,
+                    "w": 220,
+                    "h": 220,
+                    "filled": false,
+                    "label": "REGISTRATIONS",
+                    "labelDy": -85
+                  },
+                  {
+                    "id": "note2",
+                    "type": "note",
+                    "x": 60,
+                    "y": 285,
+                    "w": 560,
+                    "h": 30,
+                    "label": "Chidi and Ngozi are still here — just with NULL where a registration would be."
+                  }
+                ],
+                "regions": []
+              },
+              {
+                "caption": "Step 3 — Isolating the gap: add WHERE r.student_id IS NULL to see only the non-registered.",
+                "shapes": [
+                  {
+                    "id": "result",
+                    "type": "table",
+                    "x": 190,
+                    "y": 60,
+                    "w": 300,
+                    "h": 130,
+                    "label": "students LEFT JOIN registrations",
+                    "rows": [
+                      "Chidi   | registration = NULL",
+                      "Ngozi   | registration = NULL"
+                    ]
+                  },
+                  {
+                    "id": "note3",
+                    "type": "note",
+                    "x": 60,
+                    "y": 220,
+                    "w": 560,
+                    "h": 30,
+                    "label": "This exact filter answers \"who hasn't registered?\" — impossible with INNER JOIN alone."
+                  }
+                ],
+                "connectors": []
+              }
+            ]
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "SQL is written SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY, but which clause does it actually evaluate FIRST when running the query?",
+          "options": [
+            "SELECT",
+            "WHERE",
+            "FROM",
+            "HAVING"
+          ],
+          "correctIndex": 2,
+          "explanation": "FROM — SQL's real 'thinking order' is FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT, which is why WHERE can't see an aggregate (HAVING's job) and SELECT's aliases don't exist yet inside WHERE."
         },
         {
+          "question": "In `students LEFT JOIN registrations`, what do the NULL-filled rows in the result actually represent?",
+          "options": [
+            "A database error that needs fixing",
+            "Students who HAVE registered, shown twice",
+            "Students who have NOT registered for anything",
+            "Duplicate rows that should be removed"
+          ],
+          "correctIndex": 2,
+          "explanation": "Students with no matching registration — LEFT JOIN keeps every row from the left table (students) and fills in NULLs where there's no match on the right, which is exactly the answer to 'who hasn't registered?'"
+        },
+        {
+          "question": "Which relational algebra operation 'picks ROWS that pass a condition' — the algebra equivalent of a SQL WHERE clause?",
+          "options": [
+            "PROJECT (π)",
+            "JOIN",
+            "SELECT (σ)",
+            "UNION"
+          ],
+          "correctIndex": 2,
+          "explanation": "SELECT (σ) — it filters rows by a condition. PROJECT (π) picks columns instead of rows, JOIN pairs rows across tables, and UNION/DIFFERENCE combine or subtract row sets."
+        },
+        {
+          "question": "In `SELECT full_name FROM students WHERE programme_id = 7 ORDER BY full_name LIMIT 20;`, which clause is responsible for keeping only programme 7's students?",
+          "options": [
+            "SELECT",
+            "WHERE",
+            "ORDER BY",
+            "LIMIT"
+          ],
+          "correctIndex": 1,
+          "explanation": "WHERE — it filters individual rows before anything else happens to them, which is exactly the algebra equivalent of σ (SELECT/filter)."
+        },
+        {
+          "question": "A registrar needs a list of every student who has NEVER registered for any course. Which join, combined with which condition, answers this?",
+          "options": [
+            "INNER JOIN, no extra condition needed",
+            "LEFT JOIN students to registrations, then WHERE the registration side IS NULL",
+            "RIGHT JOIN with no WHERE clause",
+            "This cannot be answered with a join at all"
+          ],
+          "correctIndex": 1,
+          "explanation": "LEFT JOIN keeps every student row even with no match, filling the registration side with NULL — filtering WHERE that side IS NULL isolates exactly the students who never registered."
+        },
+        {
+          "question": "What does a table alias (e.g. `FROM registrations r JOIN students s ON s.student_id = r.student_id`) actually buy you in a multi-table query?",
+          "options": [
+            "It makes the query run faster",
+            "A short, readable way to refer to each table when the same column name (like student_id) exists in more than one table",
+            "It automatically creates an index",
+            "Aliases are purely decorative and have no real function"
+          ],
+          "correctIndex": 1,
+          "explanation": "Aliases give each table a short handle, making it possible (and readable) to specify exactly which table's column you mean when multiple tables share a column name — essential once a query joins more than one table."
+        },
+        {
+          "question": "Convert this algebra expression to SQL: π course_code, title (σ units>3 (courses))",
+          "options": [
+            "SELECT course_code, title FROM courses WHERE units > 3;",
+            "SELECT * FROM courses WHERE units > 3;",
+            "SELECT course_code, title FROM courses;",
+            "WHERE units > 3 SELECT course_code, title FROM courses;"
+          ],
+          "correctIndex": 0,
+          "explanation": "σ (filter) becomes WHERE units > 3, and π (project) becomes the SELECT column list — course_code, title, nothing else. Option B drops the projection, C drops the filter, D isn't valid SQL syntax."
+        },
+        {
+          "question": "Which algebra expression correctly represents: SELECT full_name FROM students WHERE dob < '2000-01-01';",
+          "options": [
+            "σ dob<'2000-01-01' (π full_name (students))",
+            "π full_name (σ dob<'2000-01-01' (students))",
+            "π dob (σ full_name (students))",
+            "students (σ dob<'2000-01-01', π full_name)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Filter happens first (innermost): σ dob<'2000-01-01' (students). Projection happens last (outermost): π full_name wrapped around that. Option A has the nesting backwards — it would filter on a table that's already been stripped down to one column, which breaks the filter."
+        },
+        {
+          "question": "When converting an algebra expression to SQL, which operation almost always ends up OUTERMOST in the algebra notation, even though it's the LAST thing conceptually applied to the data?",
+          "options": [
+            "SELECT / σ (filter)",
+            "PROJECT / π (column trim)",
+            "JOIN",
+            "UNION"
+          ],
+          "correctIndex": 1,
+          "explanation": "π (PROJECT) sits outermost — you filter and join the full rows first, and only trim down to the specific columns you actually want as the very last step, right before the answer reaches you."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the difference between SQL's written order and its thinking/execution order, and use that difference to explain why filtering on an aggregate (like an average score) has to go in HAVING instead of WHERE.",
+          "modelAnswer": "SQL is written in the order SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, but it doesn't execute in that order — it actually thinks FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY. WHERE runs early, right after FROM, filtering individual rows before any grouping has happened — at that point, aggregate values like AVG(score) don't exist yet, because no groups have been formed. HAVING runs later, specifically after GROUP BY has already collapsed the rows into groups and computed their aggregates, so it's the only clause that can filter based on an aggregate condition. Trying to put that condition in WHERE fails because WHERE simply doesn't have access to a value that doesn't exist until grouping is complete.",
+          "keyPoints": [
+            "Written order: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+            "Thinking/execution order: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+            "WHERE filters rows, before grouping — no aggregates exist yet",
+            "HAVING filters groups, after GROUP BY has computed aggregates"
+          ]
+        },
+        {
+          "question": "Explain why choosing between INNER JOIN and LEFT JOIN is a deliberate business decision, not just a technical one, using a specific scenario where the two would give genuinely different answers.",
+          "modelAnswer": "The choice between INNER JOIN and LEFT JOIN decides which rows are allowed to disappear from the result, which directly changes what business question the query is actually answering. An INNER JOIN between students and registrations returns only students who have at least one matching registration — any student with zero registrations vanishes from the result entirely, silently. This is fine for a question like 'show me every course each student is taking,' where a student with no registrations genuinely has nothing to show. But for a question like 'which students have NOT registered for anything this session?', an INNER JOIN would be actively wrong, because it removes exactly the students the question is asking about. A LEFT JOIN keeps every student row regardless of whether a match exists, filling in NULLs on the registration side where there's no match — filtering for those NULL rows afterward gives precisely the list of students who haven't registered. Choosing the wrong join type here wouldn't cause an error; it would silently produce a plausible-looking but wrong answer to the actual business question being asked.",
+          "keyPoints": [
+            "Join type decides which rows are allowed to disappear from the result",
+            "INNER JOIN: only rows with a match on both sides survive",
+            "LEFT JOIN: every left-side row survives, NULLs fill unmatched right-side columns",
+            "Wrong choice doesn't error — it silently answers a different question than intended"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch9b",
+      "number": "9b",
+      "title": "SQL II: Aggregation, Subqueries, Views and BI — Topic 6",
+      "cards": [
+        {
           "heading": "The GROUP BY machine",
-          "body": "Individual rows arrive: Amina/Data Sci/74, Chidi/Data Sci/68, Tunde/Comp Sci/81, Ngozi/Data Sci/55, Efe/Comp Sci/63.\n\nGROUP BY programme sorts them into buckets — Data Sci gets Amina, Chidi, Ngozi; Comp Sci gets Tunde, Efe. Aggregate functions (COUNT, AVG) then collapse each bucket into exactly one summary row: Data Sci → 3 students, 65.7 average; Comp Sci → 2 students, 72.0 average.\n\nThe iron rule of GROUP BY: every SELECTed column must be either grouped or aggregated — nothing else survives the collapse. This is the single most common GROUP BY error to debug."
+          "body": "Individual rows arrive: Amina/Data Sci/74, Chidi/Data Sci/68, Tunde/Comp Sci/81, Ngozi/Data Sci/55, Efe/Comp Sci/63.\n\nGROUP BY programme sorts them into buckets — Data Sci gets Amina, Chidi, Ngozi; Comp Sci gets Tunde, Efe. Aggregate functions (COUNT, AVG) then collapse each bucket into exactly one summary row: Data Sci → 3 students, 65.7 average; Comp Sci → 2 students, 72.0 average.\n\nThe iron rule of GROUP BY: every SELECTed column must be either grouped or aggregated — nothing else survives the collapse. This is the single most common GROUP BY error to debug.\n\nThe exact same collapsing-into-buckets logic as a WAEC results slip — hundreds of raw subject scores upstream, one clean summary line per candidate downstream, nobody reading the final sheet ever sees the individual working."
         },
         {
           "heading": "The VC's question, answered",
@@ -713,28 +1846,6 @@
         }
       ],
       "quiz": [
-        {
-          "question": "SQL is written SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY, but which clause does it actually evaluate FIRST when running the query?",
-          "options": [
-            "SELECT",
-            "WHERE",
-            "FROM",
-            "HAVING"
-          ],
-          "correctIndex": 2,
-          "explanation": "FROM — SQL's real \"thinking order\" is FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT, which is why WHERE can't see an aggregate (HAVING's job) and SELECT's aliases don't exist yet inside WHERE."
-        },
-        {
-          "question": "In `students LEFT JOIN registrations`, what do the NULL-filled rows in the result actually represent?",
-          "options": [
-            "A database error that needs fixing",
-            "Students who HAVE registered, shown twice",
-            "Students who have NOT registered for anything",
-            "Duplicate rows that should be removed"
-          ],
-          "correctIndex": 2,
-          "explanation": "Students with no matching registration — LEFT JOIN keeps every row from the left table (students) and fills in NULLs where there's no match on the right. Those NULL rows are exactly the answer to \"who hasn't registered?\""
-        },
         {
           "question": "In the VC's query — `WHERE r.session = '2025/2026' ... HAVING AVG(r.score) < 50` — what does each clause filter?",
           "options": [
@@ -758,7 +1869,7 @@
           "explanation": "No WHERE clause means the UPDATE applies to every single row in the table — and there's no undo button. This is exactly why the SELECT-first seatbelt pattern exists."
         },
         {
-          "question": "What is the \"iron rule\" of GROUP BY?",
+          "question": "What is the 'iron rule' of GROUP BY?",
           "options": [
             "Every table must have a GROUP BY clause",
             "Every SELECTed column must be either grouped or aggregated",
@@ -766,59 +1877,614 @@
             "You can only GROUP BY one column at a time"
           ],
           "correctIndex": 1,
-          "explanation": "Every column in SELECT must be either part of the GROUP BY list or wrapped in an aggregate function (COUNT, AVG, etc.) — nothing else survives the collapse from many rows into one summary row per group."
+          "explanation": "Every column in SELECT must be either part of the GROUP BY list or wrapped in an aggregate function — nothing else survives the collapse from many rows into one summary row per group."
         },
         {
-          "question": "Which relational algebra operation \"picks ROWS that pass a condition\" — the algebra equivalent of a SQL WHERE clause?",
+          "question": "Why can `COUNT(*)`, `COUNT(column)`, and `COUNT(DISTINCT column)` give three different answers on the exact same rows?",
           "options": [
-            "PROJECT (π)",
-            "JOIN",
-            "SELECT (σ)",
-            "UNION"
+            "They are actually identical and always return the same number",
+            "COUNT(*) counts all rows, COUNT(column) skips NULLs in that column, and COUNT(DISTINCT column) additionally collapses duplicate values",
+            "COUNT(DISTINCT column) always returns zero",
+            "Only COUNT(*) is valid SQL"
           ],
-          "correctIndex": 2,
-          "explanation": "SELECT (σ) — it filters rows by a condition, like σ score ≥ 70. PROJECT (π) picks columns instead of rows, JOIN pairs rows across tables, and UNION/DIFFERENCE combine or subtract row sets."
+          "correctIndex": 1,
+          "explanation": "COUNT(*) counts every row regardless of NULLs, COUNT(column) only counts rows where that specific column isn't NULL, and COUNT(DISTINCT column) further collapses repeated values down to their unique count."
+        },
+        {
+          "question": "When does a subquery genuinely earn its place over a plain join?",
+          "options": [
+            "Subqueries are always better than joins",
+            "When the question itself nests — like comparing each row against an aggregate computed from the whole table, e.g. 'above the average'",
+            "Subqueries should never be used in production code",
+            "Only when the table has a primary key"
+          ],
+          "correctIndex": 1,
+          "explanation": "A subquery earns its place when the question genuinely nests — needing an aggregate value computed first (like the overall average) before filtering individual rows against it — something a plain join doesn't naturally express."
+        },
+        {
+          "question": "What does a database VIEW actually buy you, beyond just being a saved query?",
+          "options": [
+            "Views make the underlying tables run faster automatically",
+            "Packaged, reusable logic (write the complex join once) plus a least-privilege access boundary (grant access to the view, not the raw tables)",
+            "Views permanently duplicate all the underlying data",
+            "Views can only be used by database administrators"
+          ],
+          "correctIndex": 1,
+          "explanation": "A view packages complex logic (like a multi-table join) so it doesn't need rewriting every time, and it can be used to grant access to a controlled subset of data without exposing the raw underlying tables — both a convenience and a security tool."
         }
       ],
       "theory": [
         {
-          "question": "Explain the difference between SQL's written order and its thinking/execution order, and use that difference to explain why filtering on an aggregate (like an average score) has to go in HAVING instead of WHERE.",
-          "modelAnswer": "SQL is written in the order SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, but it doesn't execute in that order — it actually thinks FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY. WHERE runs early, right after FROM, filtering individual rows before any grouping has happened — at that point, aggregate values like AVG(score) don't exist yet, because no groups have been formed. HAVING runs later, specifically after GROUP BY has already collapsed the rows into groups and computed their aggregates, so it's the only clause that can filter based on an aggregate condition like AVG(score) < 50. Trying to put that condition in WHERE fails because WHERE simply doesn't have access to a value that doesn't exist until grouping is complete.",
-          "keyPoints": [
-            "Written order: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
-            "Thinking/execution order: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
-            "WHERE filters rows, before grouping — no aggregates exist yet",
-            "HAVING filters groups, after GROUP BY has computed aggregates"
-          ]
-        },
-        {
-          "question": "Using the payments disaster (`UPDATE payments SET amount = 0;` with no WHERE) as your example, explain the SELECT-first \"seatbelt\" pattern for writing safe UPDATE and DELETE statements.",
-          "modelAnswer": "An UPDATE or DELETE statement with no WHERE clause applies to every single row in the table, and there's no undo button — running `UPDATE payments SET amount = 0;` without a WHERE zeroes every payment in the entire table instantly. The seatbelt pattern prevents this: before running any UPDATE or DELETE, first run a SELECT COUNT(*) using the exact same WHERE clause you're about to use, e.g. `SELECT COUNT(*) FROM registrations WHERE session='2025/2026' AND grade IS NULL;`. If that count matches what you expect, it's safe to run the real statement with the identical WHERE clause. If the count is surprisingly large (or the whole table), that's the warning sign that the WHERE clause is missing or wrong — caught before any data was actually changed, not after.",
+          "question": "Using the 'seatbelt' pattern, explain how to safely test an UPDATE or DELETE before running it, using the payments disaster as a cautionary example.",
+          "modelAnswer": "An UPDATE or DELETE statement with no WHERE clause applies to every single row in the table, and there's no undo button — running `UPDATE payments SET amount = 0;` without a WHERE zeroes every payment in the entire table instantly. The seatbelt pattern prevents this: before running any UPDATE or DELETE, first run a SELECT COUNT(*) using the exact same WHERE clause you're about to use. If that count matches what you expect, it's safe to run the real statement with the identical WHERE clause. If the count is surprisingly large (or matches the whole table), that's the warning sign that the WHERE clause is missing or wrong — caught before any data was actually changed, not after.",
           "keyPoints": [
             "No WHERE clause = every row affected, no undo",
             "Seatbelt: run SELECT COUNT(*) with the same WHERE clause first",
             "Compare the count against expectations before running the real UPDATE/DELETE",
             "Catches mistakes before data is changed, not after"
           ]
+        },
+        {
+          "question": "Explain the iron rule of GROUP BY, and describe how a VIEW built on top of a GROUP BY query can turn a complex report into something a non-technical manager can actually use.",
+          "modelAnswer": "The iron rule of GROUP BY is that every column in the SELECT list must be either part of the GROUP BY grouping itself, or wrapped inside an aggregate function like COUNT, AVG, or SUM — any column that's neither grouped nor aggregated has no single well-defined value once many rows have been collapsed into one summary row per group, so SQL refuses it. A view built on top of a GROUP BY query packages that entire calculation — the joins needed to pull data together, the grouping, the aggregation — into a single named object that behaves like a simple table from the outside. Once that view exists, a manager (or a reporting tool) can run a plain `SELECT * FROM v_results` or a simple filtered query against it, getting the benefit of a genuinely complex underlying calculation without needing to understand joins, GROUP BY, or the iron rule at all — the complexity is written once by whoever built the view, and reused effortlessly by everyone else afterward.",
+          "keyPoints": [
+            "Iron rule: every SELECTed column must be grouped or aggregated, nothing else",
+            "A view packages a complex join+GROUP BY calculation into one reusable object",
+            "Once built, the view behaves like a simple table for anyone querying it",
+            "Complexity is written once, reused by non-technical users afterward"
+          ]
         }
       ]
     },
     {
-      "id": "dts304-ch12",
-      "number": 12,
-      "title": "Security, Integrity, Concurrency and Recovery",
+      "id": "dts304-ch10",
+      "number": 10,
+      "title": "Database Design: Normalisation — Topic 7",
       "cards": [
         {
-          "heading": "One weekend, three near-disasters",
-          "body": "Four failures hit Beacon on one bad Friday — each belongs to a different field of this final chapter.\n\n12 noon: a leaver still has full admin rights and downloads the students table to sell. (Authorisation.)\n\n3 p.m.: an attacker types a few characters into the search box and dumps every password. (Injection defence.)\n\n5 p.m.: two clerks confirm the same award at once — one silently overwrites the other. This is Chapter 4's very first scenario, unfixed for eleven chapters. Today it finally dies. (Concurrency.)\n\n9 p.m.: a power cut kills the server mid-transaction. (Recovery.)\n\n9 p.m. is peak \"NEPA has taken light\" hour in half of Nigeria — no warning, no UPS, just straight darkness mid-save, which is exactly why this scenario needed its own chapter."
+          "heading": "The spreadsheet that ate the session",
+          "body": "One flat sheet, course_sheet, holding matric number, student, programme, course, title, lecturer, and score — every fact about every registration, all crammed into a single wide table. Three separate accidents happen in the same week.\n\nDr Bello hands CSC201 over to Dr Ade. Whoever's updating it manually gets bored (or distracted) after 4 of the 7 copies — and now Beacon's own reports disagree with each other about who actually teaches CSC201. A new elective gets approved, but with zero students enrolled yet, there's no row to even put it in — the course itself can't be recorded until someone happens to sign up. The very last Comp Sci student on the sheet withdraws, and with his row goes the only surviving record that Comp Sci students ever took that course at all.\n\nThree completely different-looking accidents. One disease: facts about genuinely different things, trapped together in the same row."
+        },
+        {
+          "heading": "One disease, three symptoms",
+          "body": "Update anomaly: the same fact is stored in multiple places, and an edit misses one of the copies — Dr Bello's name still sitting in three leftover rows after the handover, quietly contradicting the four rows that got updated correctly.\n\nInsertion anomaly: a fact can't be recorded because there's nowhere to put it yet — the new elective literally cannot be entered until a student happens to register for it, because the course only exists as a side-effect of a registration row.\n\nDeletion anomaly: deleting one fact accidentally destroys an unrelated fact riding along in the same row — the last Comp Sci student's withdrawal doesn't just remove his registration, it erases the only evidence that the course-programme pairing ever existed.\n\nThe tell, every time: a column repeating the exact same value across multiple rows is a table quietly waiting to contradict itself the moment someone updates it inconsistently."
+        },
+        {
+          "heading": "Functional dependencies: the diagnostic instrument",
+          "body": "A functional dependency, written X → Y, means: know X, and Y is completely fixed — one X value never pairs with two different Y values. Discover every FD in a table by asking, of every single column: what is the SMALLEST thing that actually determines this?\n\nThe composite key {matric, course, session} → score is a FULL functional dependency — the entire key is genuinely needed to pin down one score, since the same student in a different course, or the same course in a different session, could have a completely different number.\n\nBut matric → {student, programme} is a PARTIAL dependency — only a PIECE of the composite key (just matric alone) is needed to determine the student's name and programme, the course and session are irrelevant to those two facts. Similarly, course → {title, lecturer} is partial on the other side.\n\nAnd programme → dept is a TRANSITIVE dependency riding on top of matric → programme → dept — dept doesn't depend on the key directly, it rides along via a NON-key attribute. Full dependencies on the whole key are healthy. Partial and transitive dependencies ARE the disease, now visible under a microscope instead of just felt as three separate accidents."
+        },
+        {
+          "heading": "The cure, in measured doses: 1NF through BCNF",
+          "body": "Each normal form removes exactly one disease, one step at a time, never all at once:\n\n1NF fixes messy cells — atomic values only, no repeating groups crammed into one field, and a proper key actually chosen.\n\n2NF removes partial dependencies — split off anything that only depends on PART of a composite key. matric → {student, programme} peels away into its own students table; course → {title, lecturer} peels away into its own courses table; what's left in the original table, registrations(matric, course, session, score), now depends on the WHOLE key, properly.\n\n3NF removes transitive dependencies — programme → dept doesn't belong bolted onto students either; it peels away into its own programmes(programme, dept) table, with students simply referencing it.\n\nBCNF tightens the last bolt: additionally, every determinant (everything on the left side of an FD arrow) must itself be a candidate key — a stricter, cleaner version of 3NF that usually falls out for free once 3NF is done properly.",
+          "visual": {
+            "type": "animation",
+            "width": 700,
+            "height": 380,
+            "steps": [
+              {
+                "caption": "Step 1 — 1NF: one flat, diseased sheet. Every fact about everything, crammed into one row.",
+                "shapes": [
+                  {
+                    "id": "flat",
+                    "type": "table",
+                    "x": 190,
+                    "y": 40,
+                    "w": 320,
+                    "h": 170,
+                    "label": "course_sheet",
+                    "rows": [
+                      "matric, student, programme, dept",
+                      "course, title, lecturer",
+                      "session, score, grade"
+                    ]
+                  },
+                  {
+                    "id": "note1",
+                    "type": "note",
+                    "x": 60,
+                    "y": 240,
+                    "w": 580,
+                    "h": 30,
+                    "label": "Partial dependencies AND a transitive dependency, both hiding in this one row."
+                  }
+                ]
+              },
+              {
+                "caption": "Step 2 — 2NF: split off anything that only depends on PART of the key.",
+                "shapes": [
+                  {
+                    "id": "students",
+                    "type": "table",
+                    "x": 20,
+                    "y": 40,
+                    "w": 210,
+                    "h": 95,
+                    "label": "students",
+                    "rows": [
+                      "matric (PK)",
+                      "student, programme, dept"
+                    ]
+                  },
+                  {
+                    "id": "courses",
+                    "type": "table",
+                    "x": 470,
+                    "y": 40,
+                    "w": 210,
+                    "h": 95,
+                    "label": "courses",
+                    "rows": [
+                      "course (PK)",
+                      "title, lecturer"
+                    ]
+                  },
+                  {
+                    "id": "regs",
+                    "type": "table",
+                    "x": 245,
+                    "y": 190,
+                    "w": 210,
+                    "h": 95,
+                    "label": "registrations",
+                    "rows": [
+                      "matric, course (FK)",
+                      "session, score, grade"
+                    ]
+                  }
+                ],
+                "connectors": [
+                  {
+                    "from": "regs",
+                    "to": "students",
+                    "style": "dashed"
+                  },
+                  {
+                    "from": "regs",
+                    "to": "courses",
+                    "style": "dashed"
+                  }
+                ]
+              },
+              {
+                "caption": "Step 3 — 3NF: programme -> dept was riding along transitively. Peel it into its own table too.",
+                "shapes": [
+                  {
+                    "id": "students",
+                    "type": "table",
+                    "x": 20,
+                    "y": 40,
+                    "w": 200,
+                    "h": 80,
+                    "label": "students",
+                    "rows": [
+                      "matric (PK)",
+                      "student, programme (FK)"
+                    ]
+                  },
+                  {
+                    "id": "programmes",
+                    "type": "table",
+                    "x": 20,
+                    "y": 190,
+                    "w": 200,
+                    "h": 80,
+                    "label": "programmes",
+                    "rows": [
+                      "programme (PK)",
+                      "dept"
+                    ]
+                  },
+                  {
+                    "id": "courses",
+                    "type": "table",
+                    "x": 480,
+                    "y": 40,
+                    "w": 200,
+                    "h": 80,
+                    "label": "courses",
+                    "rows": [
+                      "course (PK)",
+                      "title, lecturer"
+                    ]
+                  },
+                  {
+                    "id": "regs",
+                    "type": "table",
+                    "x": 250,
+                    "y": 260,
+                    "w": 200,
+                    "h": 95,
+                    "label": "registrations",
+                    "rows": [
+                      "matric, course (FK)",
+                      "session, score, grade"
+                    ]
+                  }
+                ],
+                "connectors": [
+                  {
+                    "from": "students",
+                    "to": "programmes",
+                    "style": "dashed"
+                  },
+                  {
+                    "from": "regs",
+                    "to": "students",
+                    "style": "dashed"
+                  },
+                  {
+                    "from": "regs",
+                    "to": "courses",
+                    "style": "dashed"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "heading": "The quiet punchline: you've been doing this all along",
+          "body": "Decompose the bursar's diseased sheet all the way to 3NF, following the functional dependencies exactly, and the result is... the beacon_v2 schema already built back in Chapter 7's lab. Not a coincidence, and not a new design.\n\nER modelling (Chapter 6) designs top-down — hunt entities, settle relationships, attach attributes, working from an understanding of the real-world domain outward into a schema. Normalisation repairs bottom-up — start from a diseased flat sheet, trace every functional dependency, and decompose your way back to the exact same clean structure, working from the data's own internal logic inward.\n\nTwo completely different roads, arriving at the identical destination. In practice: model first with ER diagrams, then verify the design with functional dependencies — normalisation isn't a replacement for ER modelling, it's the receipt proving the modelling was actually done correctly."
+        },
+        {
+          "heading": "The efficiency question, answered honestly",
+          "body": "Normalisation is a genuine trade, not a free upgrade — pretending otherwise is exactly how arguments about database design go wrong.\n\nWrites: normalised is fast and safe (each fact exists exactly once); denormalised is slow and risky (every duplicate copy is a chance for the copies to drift apart).\n\nPoint reads: both are genuinely fine — looking up one specific row barely notices the difference.\n\nBig analytical reads: normalised needs many joins, more work; denormalised needs few joins, wide scans that genuinely fly.\n\nStorage: normalised is compact; denormalised is larger, by deliberate design.\n\nIntegrity: normalised is structurally enforced by Chapter 7's constraints; denormalised makes it the application's problem all over again.\n\nThe honest verdict: \"joins are slow\" is very often a missing-index problem wearing a design costume, not proof normalisation itself was the wrong call. For anything you WRITE continuously, normalise — full stop.\n\nSame trade-off as a market trader who could recount their entire stock from scratch every morning (safe, slow) versus trusting a rough estimate scribbled from memory (fast, and one bad guess away from a very confusing afternoon)."
+        },
+        {
+          "heading": "When the pros break the rules on purpose: the star schema",
+          "body": "Analytics is the one place denormalisation is a genuine, deliberate design decision, not a shortcut someone got lazy about. The Transactional (OLTP) side stays properly normalised: students, programmes, courses, registrations, payments, each fact living in exactly one place, writes staying fast and safe.\n\nThe Analytical (BI) side deliberately denormalises into a star schema: one central FACT table (results — holding the actual score plus keys pointing outward) surrounded by DIMENSION tables (dim_student, dim_course, dim_session, dim_programme) radiating off it like points on a star. Every question a dashboard asks is now exactly one hop from the fact table to whichever dimension it needs — dashboards fly.\n\nThe cost: dimensions repeat facts on purpose, and the star schema gets rebuilt periodically from the clean source, never hand-edited directly. The professional rule this whole chapter has been building toward: normalise where you write; denormalise — deliberately, downstream, rebuilt not edited — where you only read."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Dr Bello hands CSC201 to Dr Ade, but only 4 of 7 duplicate rows get updated, leaving reports disagreeing about who teaches the course. Which anomaly is this?",
+          "options": [
+            "Insertion anomaly",
+            "Update anomaly",
+            "Deletion anomaly",
+            "Referential integrity violation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Update anomaly — the same fact (who teaches CSC201) is stored in multiple places, and an edit missed some of the copies, leaving the table contradicting itself."
+        },
+        {
+          "question": "A brand-new elective course can't be entered into the system at all until at least one student registers for it. Which anomaly is this?",
+          "options": [
+            "Insertion anomaly",
+            "Update anomaly",
+            "Deletion anomaly",
+            "A functional dependency violation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Insertion anomaly — a fact (the course exists) can't be recorded because there's nowhere to put it yet, since the course only exists as a side-effect of a registration row in the flat sheet."
+        },
+        {
+          "question": "In a table with composite key {matric, course, session}, the dependency matric → {student, programme} is best classified as which type?",
+          "options": [
+            "Full functional dependency",
+            "Partial functional dependency",
+            "Transitive functional dependency",
+            "Not a functional dependency at all"
+          ],
+          "correctIndex": 1,
+          "explanation": "Partial — only PART of the composite key (matric alone) is needed to determine the student and programme; course and session are irrelevant to those facts, which is exactly what 2NF removes."
+        },
+        {
+          "question": "In matric → programme → dept, where dept depends on programme rather than directly on matric, what type of dependency is programme → dept?",
+          "options": [
+            "Full",
+            "Partial",
+            "Transitive",
+            "Composite"
+          ],
+          "correctIndex": 2,
+          "explanation": "Transitive — dept doesn't depend on the key directly, it rides along via a non-key attribute (programme), which is exactly what 3NF removes by peeling programme and dept into their own table."
+        },
+        {
+          "question": "According to this chapter's honest efficiency comparison, what happens to WRITE speed and safety when a design is denormalised?",
+          "options": [
+            "Writes become faster and safer",
+            "Writes become slower and riskier, since every duplicated copy of a fact is a chance for the copies to drift apart",
+            "Denormalisation has no effect on writes at all",
+            "Writes are only affected in cloud databases"
+          ],
+          "correctIndex": 1,
+          "explanation": "Denormalised writes are slow and risky — duplicated facts can drift out of sync with each other, exactly the update-anomaly problem normalisation exists to prevent."
+        },
+        {
+          "question": "In a star schema built for BI reporting, what does the central FACT table typically hold?",
+          "options": [
+            "Descriptive text about each dimension",
+            "The actual measures (like scores) plus foreign keys pointing out to the surrounding dimension tables",
+            "A full duplicate of every dimension table's data",
+            "Only primary keys, with no other data at all"
+          ],
+          "correctIndex": 1,
+          "explanation": "The fact table holds the measures being analysed (like scores) plus keys linking out to each dimension (student, course, session, programme) — one hop from fact to any dimension is what makes dashboards fast."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Define the three anomalies and trace all three back to their single common cause, using the course_sheet scenario as your example.",
+          "modelAnswer": "The three anomalies are: an update anomaly, where the same fact is stored redundantly in multiple rows and an edit misses some of the copies, leaving the table internally contradictory (Dr Bello's name surviving in 3 of 7 rows after being handed to Dr Ade); an insertion anomaly, where a fact cannot be recorded because the table's structure gives it nowhere to live until an unrelated fact also exists (a new elective course can't be entered until a student happens to register for it); and a deletion anomaly, where deleting one fact accidentally destroys an unrelated fact that was only surviving by riding along in the same row (the last Comp Sci student withdrawing erases the only record that Comp Sci students ever took that course). All three trace back to one single cause: facts about genuinely different things — a lecturer, a course, a student, a registration — being trapped together in one flat row instead of being separated according to what they actually depend on. Because the row mixes independent facts, any operation touching one fact risks corrupting, blocking, or accidentally destroying another fact that happened to share the same row.",
+          "keyPoints": [
+            "Update anomaly: redundant copies of a fact, an edit misses one",
+            "Insertion anomaly: a fact has nowhere to live until an unrelated fact exists",
+            "Deletion anomaly: deleting one fact destroys an unrelated fact sharing the row",
+            "Common cause: facts about different things trapped in the same row"
+          ]
+        },
+        {
+          "question": "State the requirements of 1NF, 2NF, 3NF, and BCNF, naming the specific disease each step removes, and explain the professional rule for when to normalise versus deliberately denormalise.",
+          "modelAnswer": "1NF requires atomic values in every cell and a properly chosen key, removing the disease of messy, multi-valued cells and repeating groups. 2NF additionally requires no partial dependencies — every non-key attribute must depend on the WHOLE of a composite key, not just part of it — removing the disease of partial dependencies by splitting off anything that only depends on part of the key into its own table. 3NF additionally requires no transitive dependencies — every non-key attribute must depend directly on the key, not on another non-key attribute — removing the disease of transitive dependencies by splitting off anything riding along indirectly into its own table. BCNF tightens this further: every determinant (left-hand side of a functional dependency) must itself be a candidate key, removing subtler anomalies that can survive 3NF in rare cases. The professional rule for when to normalise versus denormalise is: normalise where you write, since normalisation keeps writes fast and safe by ensuring each fact exists in exactly one place; denormalise deliberately and downstream where you only read, as with a star schema built specifically for BI reporting, since a denormalised structure trades write-safety for dramatically faster analytical reads — and that denormalised copy should be rebuilt periodically from the clean normalised source, never hand-edited directly.",
+          "keyPoints": [
+            "1NF: atomic cells, proper key — removes messy-cell disease",
+            "2NF: no partial dependencies — removes partial-dependency disease",
+            "3NF: no transitive dependencies — removes transitive-dependency disease",
+            "BCNF: every determinant is a candidate key — tightens the last bolt",
+            "Rule: normalise where you write; denormalise deliberately, downstream, where you only read"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch11",
+      "number": 11,
+      "title": "Query Processing and Optimisation — Topic 8",
+      "cards": [
+        {
+          "heading": "Correct and fast are different achievements",
+          "body": "During registration week, a query to check whether a matric number is already enrolled returns exactly the right answer — every single time. It just takes 40 seconds to do it, with 4,000 students hammering the portal at once and the queue behind that one query growing by the second.\n\nNobody's disputing the SQL is CORRECT. Correctness was never the problem — Chapter 7's constraints and Chapter 9's joins already guarantee that part. The problem is that \"technically right\" and \"fast enough to actually use\" are two completely separate achievements, and this whole chapter is entirely evidence-based because of it: every claim here needs a real before-and-after measurement standing behind it, not a vibe. \"It feels faster\" doesn't count. A timed number, before and after, does."
+        },
+        {
+          "heading": "Three stages: parse, optimise, execute",
+          "body": "Every query you run goes through the exact same three-stage pipeline before a single row comes back:\n\nParse — takes raw SQL text as input, checks it's syntactically valid and that every table and column actually exists, and produces a parse tree representing the query's structure.\n\nOptimise — takes that parse tree as input, and produces an execution plan: a concrete decision about which indexes to use, which order to join tables in, and how to filter early versus late. This is the stage doing the actual thinking.\n\nExecute — takes the execution plan as input, and produces the actual rows you see back on screen, following the plan's decisions exactly.\n\nThree stages, three distinct jobs — and the entire discipline of query optimisation lives almost entirely in that middle stage, where the same question can turn into wildly different amounts of real work depending on the plan chosen."
+        },
+        {
+          "heading": "The plan is what actually runs — not your SQL text",
+          "body": "This is the single most important idea in the whole chapter: the SQL you type is a REQUEST, not an instruction. The optimiser is free to reorder joins, choose a completely different index than the one you were thinking of, or restructure the whole approach — as long as the final answer matches what your SQL logically asked for. Two people can type identical-looking queries and get different plans, or the SAME query can get a different plan tomorrow if the data has changed shape.\n\nThis connects directly back to physical data independence from Chapter 5: you write logical, declarative SQL — WHAT you want — and the database decides HOW to actually get it, based on indexes, table sizes, and statistics that can change underneath you without your query needing to change at all. The same separation that let Beacon's weekend server upgrade go unnoticed is exactly what lets the optimiser silently swap plans as the data grows, with your SQL never needing to know or care."
+        },
+        {
+          "heading": "Reading EXPLAIN: the type ladder",
+          "body": "EXPLAIN's type column ranks how expensive a step actually is, worst to best — and reciting this ladder correctly, with a query of your own producing each rung, is exactly the kind of thing this topic gets tested on:\n\nALL (worst) — a full table scan, every row checked, one by one. const/eq_ref (best) — at most one matching row, found essentially instantly via a unique or primary key. In between, roughly worst to best: index (scans the whole index instead of the whole table — better, still not great), range (a bounded slice of an index, like BETWEEN or a date range), ref (an index lookup on a non-unique column, possibly matching several rows).\n\nPredicting the type BEFORE running EXPLAIN, then checking yourself against what actually comes back, is the single fastest way to build real intuition for this — guessing wrong and seeing exactly where the intuition broke teaches more than getting it right by luck ever does."
+        },
+        {
+          "heading": "Fix 1: the missing index, measured properly",
+          "body": "The most basic optimisation in the whole toolkit, done with actual discipline instead of guesswork: time a query on a genuinely large table — past 300,000 rows, since small data proves nothing here — and log the number. Run EXPLAIN and confirm type: ALL, the full-scan disaster. CREATE INDEX on the searched column. Re-time the identical query. Re-run EXPLAIN and confirm the type actually changed to something cheaper.\n\nDivide the old time by the new time for a real, defensible speed-up factor — not \"it feels faster,\" an actual number you measured yourself, twice, on the same query, on the same data. This before-and-after log is the entire evidentiary backbone of this whole topic — every fix that follows uses the identical discipline."
+        },
+        {
+          "heading": "Fix 2: the composite index, and the leftmost-prefix rule",
+          "body": "A composite index on (programme_id, session) serves a query filtering on BOTH columns together beautifully — EXPLAIN shows a cheap type, a tiny row estimate. Filter on programme_id ALONE, and the same index still helps, because programme_id is the leftmost column.\n\nBut filter on session ALONE, skipping programme_id entirely, and EXPLAIN refuses to use that index at all — back to type: ALL, even though session is technically part of the index. This is the leftmost-prefix rule: a composite index can only be used starting from its LEFTMOST column and working rightward, never by skipping straight to a middle or trailing column. Think of it like a phone book sorted by surname-then-first-name — brilliant for finding \"Okafor, Amina,\" completely useless for finding everyone whose first name happens to be Amina, regardless of surname, because the book was never sorted that way in the first place.\n\nPredicting correctly which queries can and can't use a given composite index is a direct, named exam skill from this topic's brief — not a minor footnote."
+        },
+        {
+          "heading": "Fix 3: sargability — don't blind your own index",
+          "body": "Wrap a column in a function inside your WHERE clause — `WHERE YEAR(reg_date) = 2025` — and watch a perfectly good index on reg_date go completely blind. MySQL can't peek inside the function to figure out which index entries might qualify, so it falls back to checking every single row, running YEAR() on each one to see if it matches. type: ALL, right back where Fix 1 started.\n\nThe general rewriting rule: rewrite the function-wrapped condition as a plain RANGE on the raw column instead — `WHERE reg_date >= '2025-01-01' AND reg_date < '2026-01-01'`. Same logical result, but now the index is genuinely usable, because the column itself is being compared directly, with nothing hiding it from the optimiser's view.\n\nThis property — whether an index CAN be used to help answer a condition — is called sargability (Search ARGument ABLE). A function around a column, a leading wildcard in LIKE, or an implicit type conversion are all classic ways to accidentally make an otherwise-perfectly-good condition unsargable, and therefore invisible to every index sitting right there waiting to help."
+        },
+        {
+          "heading": "Fix 4: the covering index, and the real cost of indexing",
+          "body": "A covering index contains EVERY column a query actually needs — not just the column being filtered on, but the columns being selected too. When that happens, EXPLAIN's Extra column reports \"Using index,\" and the underlying table itself is never even touched — the answer comes entirely out of the index, which is smaller and faster to scan than the full table row.\n\nBut indexes are never free, and this is the honest other half of the story: every index has to be updated on every single INSERT, UPDATE, or DELETE that touches its columns. Time a bulk insert of several thousand rows with zero indexes present, then time the identical bulk insert with three or four indexes already built — the second one is measurably, sometimes dramatically, slower. Read speed and write speed are in genuine, permanent tension, and every index is a deliberate trade of one for the other, never a pure win."
+        },
+        {
+          "heading": "\"Let's index every column to be safe\" — a costed reply",
+          "body": "This suggestion sounds cautious. It's actually the most expensive possible mistake this whole topic can catch you making, and answering it correctly with real numbers — not just an opinion — is explicitly named as an expected outcome.\n\nEvery additional index means slower writes across the board (Fix 4's measurement), more disk space consumed permanently, and a genuinely harder job for the optimiser itself, which now has more competing plans to weigh before picking one. Indexing every column doesn't make every query faster — most columns are never filtered on at all, so an index there is pure write-cost with zero read benefit, forever.\n\nThe disciplined answer: measure which specific columns actually appear in WHERE clauses, JOIN conditions, and ORDER BY — on the queries that are genuinely run often and at genuine scale — and index exactly those, deliberately. Then measure again after each change, the same discipline threaded through every single fix in this chapter: change one thing, measure, don't guess.\n\nIt's the database version of an okada rider who insists on taking a shortcut down every possible street just in case one of them is faster today — more routes memorised doesn't automatically mean a faster ride, it just means more time spent maintaining routes nobody actually takes."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A query takes 40 seconds during registration rush but always returns the exactly correct answer. What does this scenario illustrate?",
+          "options": [
+            "The query is wrong and needs fixing for correctness",
+            "Correctness and performance are separate achievements — a query can be completely correct and still be unacceptably slow",
+            "Slow queries are always caused by missing constraints",
+            "This is a referential integrity failure"
+          ],
+          "correctIndex": 1,
+          "explanation": "Being correct (guaranteed by constraints and proper joins) and being fast (a separate, measurable property) are two different achievements — this chapter is specifically about the second one."
+        },
+        {
+          "question": "Which stage of query processing is responsible for deciding WHICH INDEX to use and in what order to join tables?",
+          "options": [
+            "Parse",
+            "Optimise",
+            "Execute",
+            "None of these — this is decided when the SQL is typed"
+          ],
+          "correctIndex": 1,
+          "explanation": "Optimise — it takes the parse tree and produces an actual execution plan, including index choice and join order, which the execute stage then simply follows."
+        },
+        {
+          "question": "Why is it true that 'the plan, not the SQL text, is what actually runs'?",
+          "options": [
+            "SQL text is never actually executed by the database",
+            "The optimiser can choose different indexes or join orders than what the SQL text might suggest, as long as the logical result is correct — connecting directly to physical data independence",
+            "Every database ignores the SQL text entirely",
+            "This is only true for very old database systems"
+          ],
+          "correctIndex": 1,
+          "explanation": "SQL is a declarative request for WHAT you want; the optimiser decides HOW to get it, free to pick a different plan than what the text might suggest — the same separation that lets physical-level changes stay invisible to the logical query."
+        },
+        {
+          "question": "A composite index exists on (programme_id, session). A query filters ONLY on session, without mentioning programme_id. Can this query use the index?",
+          "options": [
+            "Yes, always, since session is technically part of the index",
+            "No — the leftmost-prefix rule means a composite index can only be used starting from its leftmost column",
+            "Only if session is a primary key",
+            "Only during off-peak hours"
+          ],
+          "correctIndex": 1,
+          "explanation": "The leftmost-prefix rule means a composite index can only be used working from its leftmost column rightward — skipping straight to session alone means the index can't help, and EXPLAIN falls back to type: ALL."
+        },
+        {
+          "question": "`WHERE YEAR(reg_date) = 2025` causes an existing index on reg_date to go unused, forcing a full scan. What is the general fix?",
+          "options": [
+            "Delete the index since it's clearly broken",
+            "Rewrite the condition as a plain range directly on the raw column, e.g. reg_date >= '2025-01-01' AND reg_date < '2026-01-01'",
+            "Add a second identical index",
+            "This cannot be fixed"
+          ],
+          "correctIndex": 1,
+          "explanation": "Wrapping a column in a function makes a condition unsargable — the optimiser can't peek inside the function. Rewriting as a direct range on the raw column restores sargability, letting the existing index be used again."
+        },
+        {
+          "question": "What is the honest, costed answer to 'let's index every column to be safe'?",
+          "options": [
+            "It's a good idea with no real downside",
+            "Every additional index slows down every write that touches it, consumes permanent disk space, and gives zero benefit for columns never actually filtered on — index deliberately, based on measured query patterns",
+            "Indexes are always free once created",
+            "Only primary keys should ever be indexed"
+          ],
+          "correctIndex": 1,
+          "explanation": "Indexing is a genuine trade-off, not a free safety net — every index costs write speed and storage, whether or not it ever actually helps a real query, which is exactly why deliberate, measured indexing beats indexing everything 'to be safe.'"
+        }
+      ],
+      "theory": [
+        {
+          "question": "Name the three stages of query processing, state what each consumes and produces, and explain why the plan rather than the SQL text is what actually determines a query's performance.",
+          "modelAnswer": "The three stages are Parse, Optimise, and Execute. Parse consumes raw SQL text as input, checks it for syntactic validity and confirms every referenced table and column exists, and produces a parse tree representing the query's logical structure. Optimise consumes that parse tree, and produces a concrete execution plan — a specific decision about which indexes to use, what order to join tables in, and how to filter rows early versus late. Execute consumes that execution plan, and produces the actual result rows returned to the user, simply carrying out whatever the plan decided. The plan, not the SQL text, is what actually determines performance because SQL is a declarative request describing WHAT result is wanted, not a set of instructions describing HOW to get it — the optimiser is free to choose any plan that produces the logically correct answer, including different index choices or join orders than what the SQL's structure might suggest, and that choice can change over time as data volume and statistics change, even if the SQL text itself never changes. This is the same principle behind physical data independence: the logical request stays stable while the physical execution strategy underneath it is free to adapt.",
+          "keyPoints": [
+            "Parse: SQL text in, parse tree out (checks syntax/validity)",
+            "Optimise: parse tree in, execution plan out (chooses indexes, join order)",
+            "Execute: execution plan in, actual rows out",
+            "SQL is declarative (what); the plan decides how — connects to physical data independence"
+          ]
+        },
+        {
+          "question": "Explain the leftmost-prefix rule and the concept of sargability, using specific examples, and describe the general discipline this chapter argues for when deciding what to index.",
+          "modelAnswer": "The leftmost-prefix rule states that a composite index (built on multiple columns in a specific order) can only be used starting from its leftmost column and working rightward — an index on (programme_id, session) can serve a query filtering on programme_id alone, or on both columns together, but cannot serve a query filtering on session alone, since that skips the leftmost column entirely. Sargability refers to whether a condition in a WHERE clause can actually make use of an available index at all — wrapping a column in a function, like `WHERE YEAR(reg_date) = 2025`, makes that condition unsargable, because the optimiser cannot peek inside the function to determine which index entries might satisfy it, forcing a full table scan even though a perfectly good index exists on reg_date. The fix is to rewrite the condition as a direct range on the raw column instead, restoring sargability. The general discipline this chapter argues for is measured, deliberate indexing rather than indexing everything preemptively: identify which specific columns actually appear in WHERE clauses, JOIN conditions, and ORDER BY on queries that run often and at real scale, index exactly those, and then measure again after each change — since every index carries a genuine, permanent cost to write speed and storage, indexing without evidence is exactly the kind of unmeasured decision this entire evidence-based topic exists to argue against.",
+          "keyPoints": [
+            "Leftmost-prefix rule: composite index usable only from its leftmost column rightward",
+            "Sargability: whether a condition can actually use an available index",
+            "A function around a column (or leading wildcard) makes a condition unsargable",
+            "Discipline: index deliberately based on measured query patterns, not preemptively"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch12a",
+      "number": "12a",
+      "title": "Securing the Database — Topic 9",
+      "cards": [
+        {
+          "heading": "One weekend, two security disasters",
+          "body": "Two failures hit Beacon before lunch was even over. 12 noon: a leaver still has full admin rights and downloads the students table to sell — nobody ever revoked their access after they left. 3 p.m.: an attacker types a few characters into the search box and dumps every single password — no clever hacking tool required, just a search box that trusted its input too much.\n\n(The same Friday has two more disasters waiting at 5 p.m. and 9 p.m. — those belong to the next topic, Transactions, Concurrency and Recovery. This topic is entirely about the first two: who's allowed in, and what happens when input becomes code.)\n\nBoth failures share the same root shape: a boundary that should have stopped something, and didn't. Today's job is building boundaries that actually hold."
         },
         {
           "heading": "Security: defence in depth",
           "body": "No single wall is trusted — the data sits behind concentric rings, and an attacker must defeat every one:\n\n• Authentication — WHO are you? Strong passwords, least-privilege accounts.\n• Authorisation (DCL) — WHAT may you do? GRANT / REVOKE, roles, views used as windows onto only what a role needs.\n• Input validation — is this input SAFE? Parameterised queries stop SQL injection.\n• Encryption — unreadable if stolen? TLS in transit, encryption at rest.\n\nBeacon's noon disaster was a failure of the second ring: a leaver's account should have been REVOKEd the moment they left, not discovered weeks later still holding full admin rights."
         },
         {
+          "heading": "Least privilege in practice: roles, GRANT/REVOKE, and the leaver drill",
+          "body": "The principle of least privilege: every account gets EXACTLY what its job needs, and nothing more — not \"probably won't need it,\" not \"just in case,\" exactly what's required and no further.\n\nIn practice, this means designing real role accounts for real jobs: a Bursary clerk's account can SELECT and UPDATE payments, but has no business anywhere near results. An Exams officer's account can touch results, but not payments. Neither account can run DDL — no ordinary clerk should be able to DROP a table. `GRANT SELECT, UPDATE ON payments TO 'bursary_clerk'@'%';` grants exactly one privilege on exactly one table to exactly one role.\n\nThe leaver drill, live: `REVOKE ALL PRIVILEGES ON *.* FROM 'departed_staff'@'%';` — then, on that SAME still-open connection the departed staff member was already using, attempt one more query. It's denied, immediately, mid-session. This is exactly what should have happened to Beacon's noon leaver, on the day they actually left, not weeks later after damage was already done."
+        },
+        {
           "heading": "SQL injection — the one rule that stops it",
-          "body": "The world's most famous database vulnerability has a single cause. Vulnerable code glues user input straight into SQL text: `query = \"SELECT * FROM users WHERE name = '\" + input + \"';\"`. Type `' OR '1'='1` into the name box, and the database actually receives `SELECT * FROM users WHERE name = '' OR '1'='1';` — always true, every row returned. The attacker's text became CODE, not data.\n\nThe fix: a parameterised query (prepared statement) — `query = \"SELECT * FROM users WHERE name = ?\"; execute(query, [input])`. The same malicious input arrives as one harmless string value, never parsed as SQL. Code and data stay in separate lanes. The one rule: never build SQL by string concatenation — always parameterise.\n\nIt's the database equivalent of a classic scam-format trick — a few extra characters slipped into an ordinary-looking sentence quietly change what it actually means, except here the \"sentence\" is your SQL query and the \"scam\" hands over the whole users table."
+          "body": "The world's most famous database vulnerability has a single cause. Vulnerable code glues user input straight into SQL text: `query = \"SELECT * FROM users WHERE name = '\" + input + \"';\"`. Type `' OR '1'='1` into the name box, and the database actually receives `SELECT * FROM users WHERE name = '' OR '1'='1';` — always true, every row returned. The attacker's text became CODE, not data.\n\nThe fix: a parameterised query (prepared statement) — `query = \"SELECT * FROM users WHERE name = ?\"; execute(query, [input])`. The same malicious input arrives as one harmless string value, never parsed as SQL. Code and data stay in separate lanes. The one rule: never build SQL by string concatenation — always parameterise.\n\nIt's the database equivalent of a classic scam-format trick — a few extra characters slipped into an ordinary-looking sentence quietly change what it actually means, except here the \"sentence\" is your SQL query and the \"scam\" hands over the whole users table.\n\nThe database version of the classic scam-format trick already flagged back in Module 1's cybersecurity material — a few extra characters slipped into an ordinary-looking input quietly change what the whole sentence actually means."
+        },
+        {
+          "heading": "Views as the scalpel of authorisation, plus TLS and encryption at rest",
+          "body": "GRANT and REVOKE work at the table level — all of a table's columns, or none. But real jobs rarely need ALL of a table. A views-based grant is the scalpel: `CREATE VIEW bursary_view AS SELECT student_id, full_name, amount_paid FROM students JOIN payments ...;` then `GRANT SELECT ON bursary_view TO 'bursary_clerk'@'%';` — the clerk can query the view freely, but has no access to the underlying students or payments tables directly, and never sees a single column the view didn't deliberately expose.\n\nTwo more layers, quickly: TLS encrypts data IN TRANSIT — while it's travelling across the network between a client and the server, so nobody sniffing the connection can read it. Encryption at rest protects data SITTING on disk — if someone steals the physical hard drive or an unauthorised backup copy, the files are unreadable without the key.\n\nNeither one protects against everything: TLS does nothing once data has already arrived and been decrypted at its destination; encryption at rest does nothing against an attacker who's already authenticated as a legitimate, over-privileged user. Layers, again — never just one."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "In the defence-in-depth model, which layer specifically answers the question \"WHAT may you do?\"",
+          "options": [
+            "Authentication",
+            "Authorisation (DCL)",
+            "Input validation",
+            "Encryption"
+          ],
+          "correctIndex": 1,
+          "explanation": "Authorisation (DCL) — implemented with GRANT/REVOKE, roles, and views. Authentication answers \"who are you?\", validation asks \"is this input safe?\", and encryption asks \"is it unreadable if stolen?\""
+        },
+        {
+          "question": "What is the single rule that prevents SQL injection?",
+          "options": [
+            "Always use a stronger admin password",
+            "Never build SQL by string concatenation — always parameterise",
+            "Encrypt the database at rest",
+            "Disable the search box entirely"
+          ],
+          "correctIndex": 1,
+          "explanation": "Never build SQL by gluing in user input as text — always use a parameterised query, so input is bound as DATA and can never be parsed as CODE, no matter what the attacker types."
+        },
+        {
+          "question": "A Bursary clerk's account is granted SELECT and UPDATE on the payments table only, with no access to results and no ability to run DDL. What principle does this design follow?",
+          "options": [
+            "Defence in depth",
+            "The principle of least privilege",
+            "Two-phase locking",
+            "Referential integrity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Least privilege — the account gets exactly what its job requires (payments access) and nothing more, not broad access 'just in case.'"
+        },
+        {
+          "question": "In the leaver drill, REVOKE ALL is run on a departed staff account. What happens to a query attempted on that account's ALREADY-OPEN connection immediately afterward?",
+          "options": [
+            "It succeeds, since the connection was already established",
+            "It's denied immediately — the revoke takes effect on the next query, even on an existing open session",
+            "The database crashes",
+            "Nothing happens until the connection is manually closed and reopened"
+          ],
+          "correctIndex": 1,
+          "explanation": "REVOKE takes effect immediately — the next query attempted on that connection is denied, exactly the drill that should have happened to Beacon's noon leaver the day they actually left."
+        },
+        {
+          "question": "Why is a views-based grant described as 'the scalpel' of authorisation, compared to a plain table-level GRANT?",
+          "options": [
+            "Views are always faster than direct table access",
+            "A view can expose exactly the columns and rows a role needs, while a table-level GRANT is all-or-nothing across every column",
+            "Views don't require any GRANT at all",
+            "Views are only used for reporting, never for security"
+          ],
+          "correctIndex": 1,
+          "explanation": "A table-level GRANT gives access to all of a table's columns or none; a view can be built to expose only specific columns and rows, giving precise, surgical control over exactly what a role can see."
+        },
+        {
+          "question": "What does encryption at rest specifically protect against, that TLS in transit does not?",
+          "options": [
+            "Nothing — they protect against the exact same threat",
+            "Someone stealing the physical disk or an unauthorised backup copy, where the data is unreadable without the key even though it's not moving across a network",
+            "SQL injection attacks",
+            "Lost updates during concurrent transactions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Encryption at rest protects data sitting on disk (e.g. a stolen drive or backup), which TLS — protecting only data in transit across a network — has no bearing on at all."
+        }
+      ],
+      "theory": [
+        {
+          "question": "Explain the principle of least privilege and design a simple role scheme for Beacon's Bursary and Exams offices, naming what each role can and cannot do.",
+          "modelAnswer": "The principle of least privilege states that every account should be granted exactly the access its job requires, and nothing more — not broad access granted 'just in case' it might be needed later. Applied to Beacon: a Bursary clerk role would be granted SELECT and UPDATE on the payments table only, since their job is processing and checking payment records — they would have no access whatsoever to the results table, since exam scores are outside their responsibility, and no ability to run DDL statements like CREATE or DROP, since altering the database's structure is a DBA function, not a clerical one. An Exams officer role would be the mirror image: SELECT and UPDATE on results, no access to payments, no DDL rights. Neither role would be granted DELETE on their respective tables unless record removal was a genuine, regular part of that job, and neither would have any GRANT or REVOKE rights themselves, since managing other accounts' privileges is a DBA-level responsibility, not something either operational role needs to do their actual job.",
+          "keyPoints": [
+            "Least privilege: exactly what the job needs, nothing more",
+            "Bursary role: SELECT/UPDATE on payments only, no results access, no DDL",
+            "Exams role: SELECT/UPDATE on results only, no payments access, no DDL",
+            "Neither role gets GRANT/REVOKE rights — that's a DBA responsibility"
+          ]
+        },
+        {
+          "question": "Explain SQL injection precisely — why does the input become executable code? — and explain why filtering out bad characters fails while parameterisation succeeds.",
+          "modelAnswer": "SQL injection happens when user input is glued directly into SQL text through string concatenation, rather than being kept separate from the query's actual structure. When a login check builds a query like `\"SELECT * FROM users WHERE name = '\" + input + \"';\"`, and an attacker types `' OR '1'='1` as the input, the database doesn't receive a name to search for — it receives an entirely restructured SQL statement, because the attacker's quote character closed the intended string early, and the rest of their input became a new, always-true condition that gets parsed as actual SQL syntax. The input became executable code because the database engine has no way to distinguish 'text the programmer wrote' from 'text the attacker supplied' once they've been concatenated into one string — both look identical to the SQL parser. Filtering out bad characters fails because it's a blacklist approach trying to anticipate every possible dangerous pattern in advance, and attackers routinely find characters, encodings, or patterns the filter didn't think to block. Parameterisation succeeds because it's a fundamentally different mechanism, not a better filter: the query structure and the user's input are sent to the database separately, with the input always bound as a literal DATA value that can never be reinterpreted as SQL syntax, no matter what characters it contains — the ' OR '1'='1 trick becomes a harmless, literal search string instead of a structural change to the query.",
+          "keyPoints": [
+            "Injection: user input concatenated directly into SQL text, becoming part of the query's structure",
+            "Attacker's quote character closes the intended string early, turning input into new SQL syntax",
+            "Filtering bad characters = an incomplete blacklist, always guessable around",
+            "Parameterisation: input bound as data, never parsed as code — a mechanism change, not a better filter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dts304-ch12b",
+      "number": "12b",
+      "title": "Transactions, Concurrency and Recovery — Topic 10",
+      "cards": [
+        {
+          "heading": "One weekend, two more disasters",
+          "body": "The same bad Friday, later on. 5 p.m.: two clerks confirm the same award at once — one silently overwrites the other. This is Chapter 4's very first scenario at Beacon, unfixed for seven chapters. Today it finally dies. 9 p.m.: a power cut kills the server mid-transaction.\n\n(Noon's leaver and 3 p.m.'s injection attack already got dealt with in the previous topic, Securing the Database. This topic picks up from here: what happens when two things happen at once, and what happens when everything stops happening at all.)\n\nBoth of these are the database defending itself against a different enemy than security does — not a malicious outsider, but ordinary contention and ordinary catastrophe, which arrive eventually no matter how well-behaved every single user is."
         },
         {
           "heading": "Transactions and ACID",
@@ -858,28 +2524,6 @@
           "explanation": "The lost update — first seen unnamed as Chapter 4's opening scenario, now formally named and finally cured with locking, eleven chapters later."
         },
         {
-          "question": "In the defence-in-depth model, which layer specifically answers the question \"WHAT may you do?\"",
-          "options": [
-            "Authentication",
-            "Authorisation (DCL)",
-            "Input validation",
-            "Encryption"
-          ],
-          "correctIndex": 1,
-          "explanation": "Authorisation (DCL) — implemented with GRANT/REVOKE, roles, and views. Authentication answers \"who are you?\", validation asks \"is this input safe?\", and encryption asks \"is it unreadable if stolen?\""
-        },
-        {
-          "question": "What is the single rule that prevents SQL injection?",
-          "options": [
-            "Always use a stronger admin password",
-            "Never build SQL by string concatenation — always parameterise",
-            "Encrypt the database at rest",
-            "Disable the search box entirely"
-          ],
-          "correctIndex": 1,
-          "explanation": "Never build SQL by gluing in user input as text — always use a parameterised query, so input is bound as DATA and can never be parsed as CODE, no matter what the attacker types."
-        },
-        {
           "question": "Which ACID property specifically guarantees that once a transaction commits, it survives a crash?",
           "options": [
             "Atomicity",
@@ -911,6 +2555,28 @@
           ],
           "correctIndex": 1,
           "explanation": "They defend against different disaster classes — the log lets you REDO/UNDO work after a crash because the data is still physically on the same disk, while a backup is the only defence if that disk itself is destroyed or corrupted entirely."
+        },
+        {
+          "question": "MySQL/InnoDB defaults to which isolation level?",
+          "options": [
+            "READ UNCOMMITTED",
+            "READ COMMITTED",
+            "REPEATABLE READ",
+            "SERIALIZABLE"
+          ],
+          "correctIndex": 2,
+          "explanation": "REPEATABLE READ is InnoDB's default — higher isolation than READ COMMITTED, but not as strict (or as slow) as SERIALIZABLE, a deliberate middle-ground default for typical workloads."
+        },
+        {
+          "question": "After a crash, recovery finds T1 and T2 already committed, and T3 still running when the crash hit. What does recovery do to each?",
+          "options": [
+            "REDO both T1 and T2; REDO T3 as well",
+            "REDO T1 and T2 (replay their committed work); UNDO T3 (roll back the unfinished transaction)",
+            "UNDO all three transactions",
+            "REDO T3 only; ignore T1 and T2"
+          ],
+          "correctIndex": 1,
+          "explanation": "REDO applies to committed work (T1, T2) so nothing committed is ever lost; UNDO applies to unfinished work (T3) so nothing half-done survives the crash."
         }
       ],
       "theory": [

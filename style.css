@@ -395,6 +395,87 @@ body::before {
   color: var(--text);
 }
 
+/* ---------- Visuals (diagrams + step animations) ---------- */
+.visual-block {
+  margin-top: 18px;
+}
+
+.visual-frame {
+  background: var(--panel);
+  border: 1px solid var(--gray);
+  border-radius: 12px;
+  padding: 8px;
+  overflow-x: auto;
+}
+
+.visual-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 480px;
+}
+
+.visual-svg .visual-label {
+  fill: var(--text);
+}
+
+.visual-svg .visual-label-soft {
+  fill: var(--text-soft);
+}
+
+.visual-svg .visual-label-bg {
+  fill: var(--panel);
+}
+
+.visual-svg .visual-connector,
+.visual-svg .visual-underline {
+  stroke: var(--text-soft);
+}
+
+.visual-caption {
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.visual-anim-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.visual-step-btn {
+  border: 1px solid var(--gray);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.visual-step-btn:hover:not(:disabled) {
+  background: var(--panel);
+}
+
+.visual-step-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.visual-step-indicator {
+  font-size: 12px;
+  color: var(--text-soft);
+  min-width: 90px;
+  text-align: center;
+}
+
 /* ---------- Quiz ---------- */
 
 .quiz-question {

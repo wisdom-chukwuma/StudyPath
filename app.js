@@ -494,8 +494,10 @@ function renderLessonCard() {
   const card = ch.cards[lessonIndex];
   const cardEl = document.createElement("div");
   cardEl.className = "card glass";
-  cardEl.innerHTML = `<h2>${escapeHtml(card.heading)}</h2><p>${escapeHtml(card.body)}</p>`;
+  const visualHtml = card.visual ? renderVisualHTML(card.visual, `${ch.id}-${lessonIndex}`) : "";
+  cardEl.innerHTML = `<h2>${escapeHtml(card.heading)}</h2><p>${escapeHtml(card.body)}</p>${visualHtml}`;
   app.appendChild(cardEl);
+  if (card.visual) initVisual(cardEl, card.visual);
 
   const bar = document.createElement("div");
   bar.className = "bottom-bar";
