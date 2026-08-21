@@ -69,12 +69,12 @@ function renderShapeSVG(s) {
     shapeMarkup += `<text x="${cx}" y="${s.y + 17}" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">${vEsc(s.label)}</text>`;
     rows.forEach((r, i) => {
       const ry = s.y + 26 + rowH * i;
-      shapeMarkup += `<text class="visual-label" x="${s.x + 8}" y="${ry + rowH / 2 + 4}" font-size="11">${vEsc(r)}</text>`;
+      shapeMarkup += `<text fill="#2b2b2b" x="${s.x + 8}" y="${ry + rowH / 2 + 4}" font-size="11">${vEsc(r)}</text>`;
       if (i > 0) shapeMarkup += `<line x1="${s.x}" y1="${ry}" x2="${s.x + s.w}" y2="${ry}" stroke="${colors.stroke}" stroke-width="0.75" opacity="0.4"/>`;
     });
     return shapeMarkup; // table draws its own label inside the header, skip generic label below
   } else if (s.type === "note") {
-    return `<text class="visual-label-soft" x="${cx}" y="${cy}" text-anchor="middle" font-size="12" font-style="italic">${vEsc(s.label)}</text>`;
+    return `<text fill="#5a5a5a" x="${cx}" y="${cy}" text-anchor="middle" font-size="12" font-style="italic">${vEsc(s.label)}</text>`;
   }
 
   let labelMarkup = "";
@@ -83,11 +83,11 @@ function renderShapeSVG(s) {
     const lineH = 14;
     const startY = cy - ((lines.length - 1) * lineH) / 2 + 4 + (s.labelDy || 0);
     labelMarkup = lines
-      .map((line, i) => `<text class="visual-label" x="${cx}" y="${startY + i * lineH}" text-anchor="middle" font-size="12" font-weight="${s.type === "entity" || s.type === "weak-entity" || s.type === "relationship" || s.type === "circle" ? 700 : 500}">${vEsc(line)}</text>`)
+      .map((line, i) => `<text fill="#2b2b2b" x="${cx}" y="${startY + i * lineH}" text-anchor="middle" font-size="12" font-weight="${s.type === "entity" || s.type === "weak-entity" || s.type === "relationship" || s.type === "circle" ? 700 : 500}">${vEsc(line)}</text>`)
       .join("");
     if (s.type === "key-attribute") {
       const w = Math.max(...lines.map(l => l.length)) * 6.2;
-      labelMarkup += `<line class="visual-underline" x1="${cx - w / 2}" y1="${startY + 6}" x2="${cx + w / 2}" y2="${startY + 6}" stroke-width="1"/>`;
+      labelMarkup += `<line stroke="#2b2b2b" x1="${cx - w / 2}" y1="${startY + 6}" x2="${cx + w / 2}" y2="${startY + 6}" stroke-width="1"/>`;
     }
   }
   return shapeMarkup + labelMarkup;
@@ -129,12 +129,12 @@ function renderConnectorSVG(shapesById, c) {
   const p2 = clipToBox(cb.x, cb.y, b.w / 2, b.h / 2, ca.x, ca.y);
   const dash = c.style === "dashed" ? ` stroke-dasharray="5,4"` : "";
   const strokeW = c.style === "double" ? 3 : 1.5;
-  let line = `<line class="visual-connector" x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke-width="${strokeW}"${dash}/>`;
+  let line = `<line stroke="#5a5a5a" x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke-width="${strokeW}"${dash}/>`;
   let labelMarkup = "";
   if (c.label) {
     const mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
     const w = String(c.label).length * 6.5 + 6;
-    labelMarkup = `<rect class="visual-label-bg" x="${mx - w / 2}" y="${my - 9}" width="${w}" height="16"/><text class="visual-label-soft" x="${mx}" y="${my + 3}" text-anchor="middle" font-size="11" font-weight="600">${vEsc(c.label)}</text>`;
+    labelMarkup = `<rect fill="#f7f7f7" x="${mx - w / 2}" y="${my - 9}" width="${w}" height="16"/><text fill="#5a5a5a" x="${mx}" y="${my + 3}" text-anchor="middle" font-size="11" font-weight="600">${vEsc(c.label)}</text>`;
   }
   return line + labelMarkup;
 }

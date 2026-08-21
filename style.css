@@ -440,8 +440,12 @@ ul.card-list li::before {
 }
 
 .visual-frame {
-  background: var(--panel);
-  border: 1px solid var(--gray);
+  /* Fixed, theme-independent surface: the diagram's own shape colors are a
+     fixed light pastel palette (not dark-mode aware), so the frame and all
+     label/connector colors inside it must stay fixed too, or dark mode
+     produces low-contrast text against light shapes. */
+  background: #f7f7f7;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 8px;
   overflow-x: auto;
@@ -454,22 +458,6 @@ ul.card-list li::before {
   min-width: 480px;
 }
 
-.visual-svg .visual-label {
-  fill: var(--text);
-}
-
-.visual-svg .visual-label-soft {
-  fill: var(--text-soft);
-}
-
-.visual-svg .visual-label-bg {
-  fill: var(--panel);
-}
-
-.visual-svg .visual-connector,
-.visual-svg .visual-underline {
-  stroke: var(--text-soft);
-}
 
 .visual-caption {
   margin-top: 8px;
