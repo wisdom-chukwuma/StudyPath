@@ -826,6 +826,7 @@ function handleAnswer(qIndex, chosenIndex, optsEl) {
       cs.earnedQuiz.push(earnedKey);
       state.xp += XP_PER_QUESTION;
     }
+    delete cs.weakSpots[earnedKey]; // a later correct answer clears an earlier miss, same as Review Mistakes does
     saveState();
   } else {
     const cs = ensureCourseState(nav.courseId);
@@ -961,6 +962,7 @@ function handleFitbSubmit(fIndex, inputs) {
       cs.earnedFitb.push(earnedKey);
       state.xp += XP_PER_FITB;
     }
+    delete cs.weakSpots[`${ch.id}:fitb:${fIndex}`]; // a later correct answer clears an earlier miss, same as Review Mistakes does
     saveState();
   } else {
     const cs = ensureCourseState(nav.courseId);
@@ -1098,6 +1100,7 @@ function handleTheoryRate(tIndex, gotIt) {
       cs.earnedTheory.push(earnedKey);
       state.xp += XP_PER_THEORY;
     }
+    delete cs.weakSpots[`${ch.id}:theory:${tIndex}`]; // a later "Got it" clears an earlier "Need review", same as Review Mistakes does
     saveState();
   } else {
     const key = `${ch.id}:theory:${tIndex}`;
