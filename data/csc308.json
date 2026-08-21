@@ -133,7 +133,33 @@
           "Be able to compare batch and time-sharing systems.",
           "Use a simple real-life example when explaining scheduling."
         ]
-      }
+      },
+      "match": [
+        {
+          "term": "Process Management",
+          "definition": "Juggles CPU time between every open app"
+        },
+        {
+          "term": "Memory Management",
+          "definition": "Decides who gets how much RAM"
+        },
+        {
+          "term": "File System Management",
+          "definition": "Turns raw disk bytes into folders"
+        },
+        {
+          "term": "I/O Management",
+          "definition": "Translates between hardware and the OS"
+        },
+        {
+          "term": "Security and Protection",
+          "definition": "Stops apps reading each other's data"
+        },
+        {
+          "term": "User Interface",
+          "definition": "Windows and icons instead of raw commands"
+        }
+      ]
     },
     {
       "id": "csc308-ch2",

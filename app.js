@@ -5,6 +5,7 @@ const XP_PER_QUESTION = 1;
 const XP_PER_THEORY = 1;
 const XP_PER_FITB = 1;
 const XP_CHAPTER_BONUS = 10;
+const XP_PER_MATCH_PAIR = 1;
 
 const ICONS = {
   star: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 6.9L12 17l-6.3 3.8 1.7-6.9L2 8.2l7.1-.6z"/></svg>',
@@ -42,6 +43,10 @@ function goChapter(courseId, chapterId) {
   history.pushState({ view: "chapter", courseId, chapterId }, "");
   if (!resumeChapterProgress(courseId, chapterId)) startLesson(courseId, chapterId);
 }
+function goReview(courseId) {
+  history.pushState({ view: "review", courseId }, "");
+  startReview(courseId);
+}
 
 window.addEventListener("popstate", (e) => {
   const s = e.state || { view: "home" };
@@ -51,6 +56,7 @@ window.addEventListener("popstate", (e) => {
   // progress, since per-chapter progress is preserved (not cleared) on exit
   // and will silently resume next time this chapter is entered.
   else if (s.view === "chapter") withTransition(() => renderPath(s.courseId));
+  else if (s.view === "review") withTransition(() => renderPath(s.courseId));
   else withTransition(renderHome);
 });
 
@@ -71,6 +77,20 @@ let currentTheory = null;
 let fitbQueue = [];       // array of fill-in-the-blank question indices, wrong answers pushed to back
 let fitbAwarded = new Set();
 let currentFitb = null;
+
+// review mode: a cross-chapter queue of previously-missed quiz/fitb/theory
+// items, sourced from weakSpots. Not chapter-scoped like the fields above.
+let reviewQueue = [];
+let reviewTotal = 0;
+let reviewCleared = 0;
+
+// term-matching round
+let matchTermOrder = [];
+let matchDefOrder = [];
+let matchSolved = new Set();
+let matchSelectedTerm = null;
+let matchSelectedDef = null;
+let matchWrongPair = null; // { term, def } — transient, clears after a brief flash
 
 // ---------------- state ----------------
 
@@ -104,6 +124,7 @@ function ensureCourseState(courseId) {
   if (!cs.earnedQuiz) cs.earnedQuiz = [];
   if (!cs.earnedTheory) cs.earnedTheory = [];
   if (!cs.earnedFitb) cs.earnedFitb = [];
+  if (!cs.earnedMatch) cs.earnedMatch = [];
   return cs;
 }
 
@@ -236,6 +257,12 @@ function resumeChapterProgress(courseId, chapterId) {
     renderFitbQuestion(currentFitb);
     return true;
   }
+  if (p.phase === "match" && chapter.match && chapter.match.length > 0) {
+    // Match rounds are short and low-stakes — resume just restarts the round
+    // fresh (new shuffle) rather than restoring exact solved/selected state.
+    startMatch();
+    return true;
+  }
   clearChapterProgress(chapterId);
   return false;
 }
@@ -333,7 +360,8 @@ function progressTrackHtml(filled, total) {
 }
 
 function hasContent(ch) {
-  return (ch.cards && ch.cards.length > 0) || (ch.quiz && ch.quiz.length > 0) || (ch.theory && ch.theory.length > 0);
+  return (ch.cards && ch.cards.length > 0) || (ch.quiz && ch.quiz.length > 0) ||
+    (ch.theory && ch.theory.length > 0) || (ch.fitb && ch.fitb.length > 0) || (ch.match && ch.match.length > 0);
 }
 
 function getChapterStatus(chapters, i, completedSet) {
@@ -428,6 +456,15 @@ function renderPath(courseId) {
   heading.innerHTML = `<h1>${escapeHtml(course.code)}</h1><p>${escapeHtml(course.title)}</p>` +
     (course.note ? `<p class="course-note">${escapeHtml(course.note)}</p>` : "");
   app.appendChild(heading);
+
+  const weakSpotCount = Object.values(cs.weakSpots).filter(Boolean).length;
+  if (weakSpotCount > 0) {
+    const reviewBtn = document.createElement("button");
+    reviewBtn.className = "review-mistakes-btn";
+    reviewBtn.innerHTML = `${icon("flame")} Review mistakes <span class="review-count">${weakSpotCount}</span>`;
+    reviewBtn.addEventListener("click", () => withTransition(() => goReview(courseId)));
+    app.appendChild(reviewBtn);
+  }
 
   const path = document.createElement("div");
   path.className = "path";
@@ -532,6 +569,7 @@ function renderLessonCard() {
 
 function nextPhaseLabel() {
   const ch = currentChapter();
+  if (ch.match && ch.match.length > 0) return "Start matching";
   if (ch.quiz && ch.quiz.length > 0) return "Start quiz";
   if (ch.fitb && ch.fitb.length > 0) return "Start fill-in-the-blank";
   if (ch.theory && ch.theory.length > 0) return "Start practice";
@@ -539,6 +577,12 @@ function nextPhaseLabel() {
 }
 
 function afterLesson() {
+  const ch = currentChapter();
+  if (ch.match && ch.match.length > 0) startMatch();
+  else afterMatch();
+}
+
+function afterMatch() {
   const ch = currentChapter();
   if (ch.quiz && ch.quiz.length > 0) startQuiz();
   else if (ch.fitb && ch.fitb.length > 0) startFitb();
@@ -551,6 +595,126 @@ function afterQuiz() {
   if (ch.fitb && ch.fitb.length > 0) startFitb();
   else if (ch.theory && ch.theory.length > 0) startTheory();
   else finishChapter();
+}
+
+// ---------------- term matching ----------------
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function startMatch() {
+  nav.view = "match";
+  const ch = currentChapter();
+  const n = ch.match.length;
+  matchTermOrder = shuffleArray(ch.match.map((_, i) => i));
+  matchDefOrder = shuffleArray(ch.match.map((_, i) => i));
+  matchSolved = new Set();
+  matchSelectedTerm = null;
+  matchSelectedDef = null;
+  matchWrongPair = null;
+  renderMatchRound();
+  saveChapterProgress();
+}
+
+function renderMatchRound() {
+  const ch = currentChapter();
+  const pairs = ch.match;
+  app.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back-btn";
+  back.innerHTML = icon("x") + "Exit lesson";
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
+  app.appendChild(back);
+
+  const progress = document.createElement("div");
+  progress.innerHTML = progressTrackHtml(matchSolved.size, pairs.length);
+  app.appendChild(progress.firstChild);
+
+  const label = document.createElement("div");
+  label.className = "theory-label";
+  label.textContent = "Match each term to its definition";
+  app.appendChild(label);
+
+  const grid = document.createElement("div");
+  grid.className = "match-grid";
+
+  function buildCol(order, kind, handler) {
+    const col = document.createElement("div");
+    col.className = "match-col";
+    order.forEach(idx => {
+      const btn = document.createElement("button");
+      btn.className = `match-item match-${kind}`;
+      btn.textContent = kind === "term" ? pairs[idx].term : pairs[idx].definition;
+      if (matchSolved.has(idx)) { btn.classList.add("matched"); btn.disabled = true; }
+      const selected = kind === "term" ? matchSelectedTerm === idx : matchSelectedDef === idx;
+      if (selected && !matchWrongPair) btn.classList.add("selected");
+      const wrong = matchWrongPair && (kind === "term" ? matchWrongPair.term === idx : matchWrongPair.def === idx);
+      if (wrong) btn.classList.add("wrong");
+      if (!matchSolved.has(idx) && !matchWrongPair) {
+        btn.addEventListener("click", () => handler(idx));
+      }
+      col.appendChild(btn);
+    });
+    return col;
+  }
+
+  grid.appendChild(buildCol(matchTermOrder, "term", handleMatchTermClick));
+  grid.appendChild(buildCol(matchDefOrder, "def", handleMatchDefClick));
+  app.appendChild(grid);
+}
+
+function handleMatchTermClick(idx) {
+  matchSelectedTerm = matchSelectedTerm === idx ? null : idx;
+  resolveMatchSelection();
+}
+function handleMatchDefClick(idx) {
+  matchSelectedDef = matchSelectedDef === idx ? null : idx;
+  resolveMatchSelection();
+}
+
+function resolveMatchSelection() {
+  if (matchSelectedTerm === null || matchSelectedDef === null) {
+    renderMatchRound();
+    return;
+  }
+  const ch = currentChapter();
+  if (matchSelectedTerm === matchSelectedDef) {
+    matchSolved.add(matchSelectedTerm);
+    matchSelectedTerm = null;
+    matchSelectedDef = null;
+    saveChapterProgress();
+    renderMatchRound();
+    if (matchSolved.size === ch.match.length) {
+      setTimeout(() => withTransition(finishMatchRound), 400);
+    }
+  } else {
+    matchWrongPair = { term: matchSelectedTerm, def: matchSelectedDef };
+    renderMatchRound();
+    setTimeout(() => {
+      matchWrongPair = null;
+      matchSelectedTerm = null;
+      matchSelectedDef = null;
+      renderMatchRound();
+    }, 500);
+  }
+}
+
+function finishMatchRound() {
+  const ch = currentChapter();
+  const cs = ensureCourseState(nav.courseId);
+  const earnedKey = `${ch.id}:match`;
+  if (!cs.earnedMatch.includes(earnedKey)) {
+    cs.earnedMatch.push(earnedKey);
+    state.xp += ch.match.length * XP_PER_MATCH_PAIR;
+  }
+  saveState();
+  afterMatch();
 }
 
 function afterFitb() {
@@ -963,6 +1127,311 @@ function finishChapter() {
   btn.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   bar.appendChild(btn);
   app.appendChild(done);
+  app.appendChild(bar);
+}
+
+// ---------------- review mistakes ----------------
+//
+// Pulls together every quiz/fitb/theory item currently sitting in a course's
+// weakSpots (questions missed at least once, tracked but never previously
+// surfaced anywhere) into one cross-chapter practice queue. Answering an
+// item correctly here clears it from weakSpots for good; missing it again
+// bumps the count and keeps it in this session's queue. No chapter is
+// "entered" for this — nav.chapterId stays null throughout.
+
+function buildReviewQueue(courseId) {
+  const cs = ensureCourseState(courseId);
+  const course = getCourse(courseId);
+  const items = [];
+  for (const key of Object.keys(cs.weakSpots)) {
+    const misses = cs.weakSpots[key];
+    if (!misses) continue;
+    const parts = key.split(":");
+    let chapterId, type, index;
+    if (parts.length === 2) { chapterId = parts[0]; type = "quiz"; index = parts[1]; }
+    else if (parts.length === 3) { chapterId = parts[0]; type = parts[1]; index = parts[2]; }
+    else continue;
+    index = parseInt(index, 10);
+    const ch = course.chapters.find(c => c.id === chapterId);
+    if (!ch) continue;
+    const arr = type === "quiz" ? ch.quiz : type === "fitb" ? ch.fitb : type === "theory" ? ch.theory : null;
+    if (!arr || !arr[index]) continue;
+    items.push({ chapterId, chapterTitle: ch.title, type, index, misses });
+  }
+  items.sort((a, b) => b.misses - a.misses);
+  return items;
+}
+
+function startReview(courseId) {
+  nav = { view: "review", courseId, chapterId: null };
+  reviewQueue = buildReviewQueue(courseId);
+  reviewTotal = reviewQueue.length;
+  reviewCleared = 0;
+  nextReviewItem();
+}
+
+function nextReviewItem() {
+  if (reviewQueue.length === 0) {
+    renderReviewComplete();
+    return;
+  }
+  renderReviewItem(reviewQueue.shift());
+}
+
+function reviewHeader(item) {
+  const back = document.createElement("button");
+  back.className = "back-btn";
+  back.innerHTML = icon("x") + "Exit review";
+  back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
+  app.appendChild(back);
+
+  const progress = document.createElement("div");
+  progress.innerHTML = progressTrackHtml(reviewCleared, reviewTotal);
+  app.appendChild(progress.firstChild);
+
+  const label = document.createElement("div");
+  label.className = "theory-label";
+  label.textContent = `Reviewing a mistake · ${item.chapterTitle}`;
+  app.appendChild(label);
+}
+
+function renderReviewItem(item) {
+  app.innerHTML = "";
+  if (item.type === "quiz") renderReviewQuiz(item);
+  else if (item.type === "fitb") renderReviewFitb(item);
+  else renderReviewTheory(item, false, "");
+}
+
+function reviewSourceChapter(item) {
+  return getCourse(nav.courseId).chapters.find(c => c.id === item.chapterId);
+}
+
+function renderReviewQuiz(item) {
+  reviewHeader(item);
+  const q = reviewSourceChapter(item).quiz[item.index];
+
+  const qEl = document.createElement("div");
+  qEl.className = "quiz-question";
+  qEl.textContent = q.question;
+  app.appendChild(qEl);
+
+  const optsEl = document.createElement("div");
+  optsEl.className = "options";
+  q.options.forEach((opt, i) => {
+    const optBtn = document.createElement("button");
+    optBtn.className = "option";
+    optBtn.textContent = opt;
+    optBtn.addEventListener("click", () => handleReviewQuizAnswer(item, i, optsEl));
+    optsEl.appendChild(optBtn);
+  });
+  app.appendChild(optsEl);
+}
+
+function handleReviewQuizAnswer(item, chosenIndex, optsEl) {
+  const ch = reviewSourceChapter(item);
+  const q = ch.quiz[item.index];
+  const correct = chosenIndex === q.correctIndex;
+
+  [...optsEl.children].forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.correctIndex) btn.classList.add("correct");
+    else if (i === chosenIndex) btn.classList.add("incorrect");
+  });
+
+  settleReviewAnswer(item, correct, () => {
+    const fb = document.createElement("div");
+    fb.className = "feedback-box " + (correct ? "correct" : "incorrect");
+    fb.innerHTML = `<div class="fb-title">${correct ? "Correct!" : "Not quite"}</div>${renderBodyHtml(q.explanation)}`;
+    app.appendChild(fb);
+  });
+}
+
+function renderReviewFitb(item) {
+  reviewHeader(item);
+  const fitbItem = reviewSourceChapter(item).fitb[item.index];
+
+  const sentence = document.createElement("div");
+  sentence.className = "fitb-sentence";
+  const parts = fitbItem.text.split("___");
+  const inputs = [];
+  parts.forEach((part, i) => {
+    sentence.appendChild(document.createTextNode(part));
+    if (i < parts.length - 1) {
+      const inp = document.createElement("input");
+      inp.type = "text";
+      inp.className = "fitb-input";
+      inp.autocomplete = "off";
+      inp.spellcheck = false;
+      inp.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") { e.preventDefault(); checkBtn.click(); }
+      });
+      inputs.push(inp);
+      sentence.appendChild(inp);
+    }
+  });
+  app.appendChild(sentence);
+
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "btn-primary";
+  checkBtn.textContent = "Check answer";
+  checkBtn.addEventListener("click", () => {
+    bar.remove();
+    handleReviewFitbSubmit(item, inputs);
+  });
+  bar.appendChild(checkBtn);
+  app.appendChild(bar);
+  if (inputs[0]) inputs[0].focus();
+}
+
+function handleReviewFitbSubmit(item, inputs) {
+  const ch = reviewSourceChapter(item);
+  const fitbItem = ch.fitb[item.index];
+  const given = inputs.map(i => i.value);
+  const results = fitbItem.answers.map((ans, i) => fitbAnswerMatches(given[i], ans));
+  const allCorrect = results.every(Boolean);
+
+  inputs.forEach((inp, i) => {
+    inp.disabled = true;
+    inp.classList.add(results[i] ? "correct" : "incorrect");
+  });
+
+  settleReviewAnswer(item, allCorrect, () => {
+    const correctAnswers = fitbItem.answers.map(a => Array.isArray(a) ? a[0] : a).join(", ");
+    const fb = document.createElement("div");
+    fb.className = "feedback-box " + (allCorrect ? "correct" : "incorrect");
+    fb.innerHTML = `<div class="fb-title">${allCorrect ? "Correct!" : "Not quite"}</div>` +
+      `<p>Answer: ${inlineFormat(correctAnswers)}</p>` +
+      (fitbItem.explanation ? renderBodyHtml(fitbItem.explanation) : "");
+    app.appendChild(fb);
+  });
+}
+
+function renderReviewTheory(item, revealed, draftAnswer) {
+  app.innerHTML = "";
+  reviewHeader(item);
+  const t = reviewSourceChapter(item).theory[item.index];
+
+  const qEl = document.createElement("div");
+  qEl.className = "quiz-question";
+  qEl.textContent = t.question;
+  app.appendChild(qEl);
+
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+
+  if (!revealed) {
+    const draftBox = document.createElement("textarea");
+    draftBox.className = "theory-draft";
+    draftBox.placeholder = "Type your answer here — actually write it out, don't just think it.";
+    draftBox.value = draftAnswer;
+    app.appendChild(draftBox);
+
+    const revealBtn = document.createElement("button");
+    revealBtn.className = "btn-primary";
+    revealBtn.textContent = "Reveal model answer";
+    revealBtn.addEventListener("click", () => withTransition(() => renderReviewTheory(item, true, draftBox.value)));
+    bar.appendChild(revealBtn);
+    app.appendChild(bar);
+    return;
+  }
+
+  if (draftAnswer.trim()) {
+    const yourBox = document.createElement("div");
+    yourBox.className = "feedback-box your-answer";
+    yourBox.innerHTML = `<div class="fb-title">Your answer</div><p>${inlineFormat(draftAnswer)}</p>`;
+    app.appendChild(yourBox);
+  }
+
+  const answerBox = document.createElement("div");
+  answerBox.className = "feedback-box theory-answer";
+  let html = `<div class="fb-title">Model answer</div>${renderBodyHtml(t.modelAnswer)}`;
+  if (t.keyPoints && t.keyPoints.length) {
+    html += `<ul class="key-points">${t.keyPoints.map(k => `<li>${inlineFormat(k)}</li>`).join("")}</ul>`;
+  }
+  answerBox.innerHTML = html;
+  app.appendChild(answerBox);
+
+  const rateRow = document.createElement("div");
+  rateRow.className = "bottom-bar";
+  rateRow.style.justifyContent = "space-between";
+
+  const needReviewBtn = document.createElement("button");
+  needReviewBtn.className = "btn-secondary";
+  needReviewBtn.textContent = "Still need review";
+  needReviewBtn.addEventListener("click", () => withTransition(() => settleReviewAnswer(item, false, () => {})));
+  rateRow.appendChild(needReviewBtn);
+
+  const gotItBtn = document.createElement("button");
+  gotItBtn.className = "btn-primary";
+  gotItBtn.textContent = "Got it now";
+  gotItBtn.addEventListener("click", () => withTransition(() => settleReviewAnswer(item, true, () => {})));
+  rateRow.appendChild(gotItBtn);
+
+  app.appendChild(rateRow);
+}
+
+// Shared close-out for a review item: updates weakSpots, XP (reusing the
+// normal earned-tracking so already-earned questions never double-award),
+// requeues on a miss, then either shows feedback + Continue (quiz/fitb) or
+// advances immediately (theory, which has no separate feedback step).
+function settleReviewAnswer(item, correct, renderFeedback) {
+  const ch = reviewSourceChapter(item);
+  const cs = ensureCourseState(nav.courseId);
+  const key = item.type === "quiz" ? `${item.chapterId}:${item.index}` : `${item.chapterId}:${item.type}:${item.index}`;
+  const earnedArr = item.type === "quiz" ? cs.earnedQuiz : item.type === "fitb" ? cs.earnedFitb : cs.earnedTheory;
+  const xpPerItem = item.type === "quiz" ? XP_PER_QUESTION : item.type === "fitb" ? XP_PER_FITB : XP_PER_THEORY;
+
+  if (correct) {
+    delete cs.weakSpots[key];
+    reviewCleared++;
+    if (!earnedArr.includes(key)) {
+      earnedArr.push(key);
+      state.xp += xpPerItem;
+    }
+  } else {
+    cs.weakSpots[key] = (cs.weakSpots[key] || 0) + 1;
+    reviewQueue.push(item);
+  }
+  saveState();
+
+  if (item.type === "theory") {
+    nextReviewItem();
+    return;
+  }
+
+  renderFeedback();
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+  const btn = document.createElement("button");
+  btn.className = "btn-primary";
+  btn.textContent = "Continue";
+  btn.addEventListener("click", () => withTransition(nextReviewItem));
+  bar.appendChild(btn);
+  app.appendChild(bar);
+}
+
+function renderReviewComplete() {
+  app.innerHTML = "";
+  const done = document.createElement("div");
+  done.className = "complete-screen";
+  done.innerHTML = `
+    ${reviewTotal > 0 ? confettiHtml() : ""}
+    <div class="complete-badge">${icon("checkCircle")}</div>
+    <h1>${reviewTotal > 0 ? "All caught up!" : "No mistakes to review"}</h1>
+    <p>${reviewTotal > 0 ? `You cleared ${reviewTotal} weak spot${reviewTotal === 1 ? "" : "s"}.` : "Nothing's sitting in your weak spots for this course right now."}</p>
+  `;
+  app.appendChild(done);
+
+  const bar = document.createElement("div");
+  bar.className = "bottom-bar";
+  bar.style.justifyContent = "center";
+  const btn = document.createElement("button");
+  btn.className = "btn-primary";
+  btn.textContent = "Back to path";
+  btn.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
+  bar.appendChild(btn);
   app.appendChild(bar);
 }
 

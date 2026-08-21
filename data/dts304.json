@@ -132,7 +132,33 @@
           "explanation": "That's an IR system — you search, it finds, same job as Googling something. RMS is about long-term official record-keeping (transcripts, staff files), not searching for something specific."
         }
       ],
-      "theory": []
+      "theory": [],
+      "match": [
+        {
+          "term": "TPS",
+          "definition": "Many fast writes, right now — e.g. course registration"
+        },
+        {
+          "term": "MIS",
+          "definition": "Routine, scheduled report for management"
+        },
+        {
+          "term": "DSS",
+          "definition": "Answers one specific decision question"
+        },
+        {
+          "term": "BI",
+          "definition": "Dashboards of trends over time"
+        },
+        {
+          "term": "IR",
+          "definition": "You search, it finds"
+        },
+        {
+          "term": "RMS",
+          "definition": "Long-term official records, rarely written"
+        }
+      ]
     },
     {
       "id": "dts304-ch2",
