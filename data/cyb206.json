@@ -13,7 +13,7 @@
       "cards": [
         {
           "heading": "Cyber vs Security vs Information Security",
-          "body": "Cyber — the environment where digital stuff happens: the internet, local networks, cloud infrastructure. Basically anywhere your data can travel.\n\nSecurity — the measures and protocols that protect systems, networks and data from unauthorized access, tampering, or destruction.\n\nInformation Security vs Cybersecurity — these get mixed up constantly on exams, but they're not the same:\n• Information Security = the whole umbrella — protecting sensitive info generally, whether it's digital OR physical (your WAEC result in a filing cabinet counts too).\n• Cybersecurity = specifically the slice of that umbrella covering networks and digital/cyber systems.\n\nIt's the difference between \"don't tell anybody your business\" (Information Security — could be gist, could be a paper file, could be anything) and \"don't fall for anything online\" (Cybersecurity — specifically the internet/network side)."
+          "body": "Cyber — the environment where digital stuff happens: the internet, local networks, cloud infrastructure. Basically anywhere your data can travel.\n\nSecurity — the measures and protocols that protect systems, networks and data from unauthorized access, tampering, or destruction.\n\n**Information Security** vs **Cybersecurity** — these get mixed up constantly on exams, but they're not the same:\n• Information Security = the whole umbrella — protecting sensitive info generally, whether it's digital OR physical (your WAEC result in a filing cabinet counts too).\n• Cybersecurity = specifically the slice of that umbrella covering networks and digital/cyber systems.\n\nIt's the difference between \"don't tell anybody your business\" (Information Security — could be gist, could be a paper file, could be anything) and \"don't fall for anything online\" (Cybersecurity — specifically the internet/network side)."
         },
         {
           "heading": "Vulnerability — the open door nobody noticed yet",
@@ -21,15 +21,15 @@
         },
         {
           "heading": "Threat, Exploit, Attack — the chain reaction",
-          "body": "Picture a Nollywood heist scene. The vulnerability is the compound with a weak back fence. Now:\n\n• Threat — the possibility that someone COULD come exploit that weak fence. Just the danger existing, nobody's acted yet.\n• Exploit — the specific tool or method used once someone decides to act. The wire cutters for the fence, the fake key, whatever gets them through.\n• Attack — them actually doing it. Can be Passive (someone just watching who comes and goes, taking notes — like network sniffing/eavesdropping, nothing's touched yet) or Active (they're actually inside now, moving things, breaking things — like malware or a denial-of-service attack).\n\nExam-safe chain: a vulnerability exists → a threat could exploit it → an exploit is the tool that does it → an attack is the act itself happening."
+          "body": "Picture a Nollywood heist scene. The vulnerability is the compound with a weak back fence. Now:\n\n• **Threat** — the possibility that someone COULD come exploit that weak fence. Just the danger existing, nobody's acted yet.\n• **Exploit** — the specific tool or method used once someone decides to act. The wire cutters for the fence, the fake key, whatever gets them through.\n• **Attack** — them actually doing it. Can be **Passive** (someone just watching who comes and goes, taking notes — like network sniffing/eavesdropping, nothing's touched yet) or **Active** (they're actually inside now, moving things, breaking things — like malware or a denial-of-service attack).\n\nExam-safe chain: a vulnerability exists → a threat could exploit it → an exploit is the tool that does it → an attack is the act itself happening."
         },
         {
           "heading": "Defence — the toolkit",
-          "body": "Defence is the strategies and tools used to protect against threats and attacks: firewalls, antivirus software, encryption, incident response protocols. The goal is minimizing risk and keeping systems/data secure.\n\nNobody serious relies on just ONE layer. Think of your compound: a gate AND a gateman AND dogs AND cameras. If the gate fails, the dogs are still there. Defence in cybersecurity works the same way — layered, on purpose, because any single tool WILL eventually fail on its own."
+          "body": "**Defence** is the strategies and tools used to protect against threats and attacks: firewalls, antivirus software, encryption, incident response protocols. The goal is minimizing risk and keeping systems/data secure.\n\nNobody serious relies on just ONE layer. Think of your compound: a gate AND a gateman AND dogs AND cameras. If the gate fails, the dogs are still there. Defence in cybersecurity works the same way — layered, on purpose, because any single tool WILL eventually fail on its own."
         },
         {
           "heading": "Operations — the 24/7 job, not a one-time setup",
-          "body": "Operations is the ongoing, day-to-day activity that maintains security: threat monitoring, incident detection, forensic analysis, system recovery after an attack.\n\nDefence is buying the cameras. Operations is someone actually watching the live feed at 3am. Cybersecurity isn't \"set it and forget it\" — it's the diary session every single day, not just the launch night. If nobody's watching, the cameras were decoration."
+          "body": "**Operations** is the ongoing, day-to-day activity that maintains security: threat monitoring, incident detection, forensic analysis, system recovery after an attack.\n\n**Defence** is buying the cameras. Operations is someone actually watching the live feed at 3am. **Cybersecurity** isn't \"set it and forget it\" — it's the diary session every single day, not just the launch night. If nobody's watching, the cameras were decoration."
         },
         {
           "heading": "Firewall — the bouncer at the door",
@@ -37,15 +37,15 @@
         },
         {
           "heading": "Encryption — writing gist nobody else can read",
-          "body": "Encryption converts plain text into coded text (ciphertext) so only someone with the correct decryption key can read it.\n\nYou already do a version of this in real life — slang your parents can't decode, or that WhatsApp notice \"messages are end-to-end encrypted\" that everyone ignores but is literally this exact concept in action. Even if someone intercepts the message, all they get is gibberish without the key. No key, no gist."
+          "body": "**Encryption** converts plain text into coded text (ciphertext) so only someone with the correct decryption key can read it.\n\nYou already do a version of this in real life — slang your parents can't decode, or that WhatsApp notice \"messages are end-to-end encrypted\" that everyone ignores but is literally this exact concept in action. Even if someone intercepts the message, all they get is gibberish without the key. No key, no gist."
         },
         {
           "heading": "A phishing attack, told term by term — part 1: the setup",
-          "body": "Instead of memorizing the rest of the glossary as a list, here's how it actually plays out as one story:\n\nSomeone gets a call: \"Hi, this is IT Support, we need your password to fix your account.\" That's Social Engineering — manipulating a PERSON, not a system. It works because it targets trust, not code.\n\nThey fall for it, click the link. It exploits a Zero-Day Vulnerability — a flaw nobody had patched yet, because nobody, including the software vendor, even knew it existed. If the company had stayed strict on Patch Management (regularly updating software to close known holes), this exact door might already be shut — but zero-days by definition sneak past that, since there's no patch for a hole nobody's found yet.\n\nMalware quietly drops onto the laptop, turning it into one soldier in a Botnet — a small army of hijacked devices the attacker now controls remotely, with the owner having zero clue their laptop is part of someone else's crime."
+          "body": "Instead of memorizing the rest of the glossary as a list, here's how it actually plays out as one story:\n\nSomeone gets a call: \"Hi, this is IT Support, we need your password to fix your account.\" That's **Social Engineering** — manipulating a PERSON, not a system. It works because it targets trust, not code.\n\nThey fall for it, click the link. It exploits a Zero-Day **Vulnerability** — a flaw nobody had patched yet, because nobody, including the software vendor, even knew it existed. If the company had stayed strict on **Patch Management** (regularly updating software to close known holes), this exact door might already be shut — but zero-days by definition sneak past that, since there's no patch for a hole nobody's found yet.\n\nMalware quietly drops onto the laptop, turning it into one soldier in a **Botnet** — a small army of hijacked devices the attacker now controls remotely, with the owner having zero clue their laptop is part of someone else's crime."
         },
         {
           "heading": "A phishing attack, told term by term — part 2: the payoff",
-          "body": "Weeks later, that botnet gets used to fire a Denial-of-Service (DoS) Attack at a completely different target — flooding it with traffic until real users can't get through, like a road so jammed with fake cars that nobody's actual commute moves.\n\nMeanwhile, back at the original company, their Intrusion Detection System (IDS) finally flags weird outbound traffic at 2am. Security investigates and confirms it: a Data Breach — sensitive info accessed without authorization.\n\nAfterward, the security team feeds what they learned into their Threat Intelligence (so they can spot the next one faster) and rolls out Multi-Factor Authentication (MFA) company-wide, so a stolen password alone is never enough again.\n\nOne more term worth bolting on here: Penetration Testing — ethically hacking your OWN system on purpose. Exactly what should've found that zero-day before the real attacker did. Nine terms, one story: Social Engineering, Zero-Day Vulnerability, Patch Management, Botnet, DoS Attack, IDS, Data Breach, Threat Intelligence, MFA, Pen Testing."
+          "body": "Weeks later, that botnet gets used to fire a Denial-of-Service (DoS) **Attack** at a completely different target — flooding it with traffic until real users can't get through, like a road so jammed with fake cars that nobody's actual commute moves.\n\nMeanwhile, back at the original company, their **Intrusion Detection System (IDS)** finally flags weird outbound traffic at 2am. Security investigates and confirms it: a **Data Breach** — sensitive info accessed without authorization.\n\nAfterward, the security team feeds what they learned into their **Threat** Intelligence (so they can spot the next one faster) and rolls out **Multi-Factor Authentication (MFA)** company-wide, so a stolen password alone is never enough again.\n\nOne more term worth bolting on here: **Penetration Testing** — ethically hacking your OWN system on purpose. Exactly what should've found that zero-day before the real attacker did. Nine terms, one story: **Social Engineering**, Zero-Day **Vulnerability**, **Patch Management**, **Botnet**, DoS Attack, IDS, Data Breach, **Threat Intelligence**, MFA, Pen Testing."
         }
       ],
       "quiz": [
@@ -287,7 +287,7 @@
         },
         {
           "heading": "Incident Response — the four-step cleanup",
-          "body": "What happens right after a threat is detected, minimizing damage in order:\n\n1. Containment — isolate the affected system so it can't spread further.\n2. Eradication — actually remove the threat from the system.\n3. Recovery — restore everything to normal operation.\n4. Post-Incident Analysis — evaluate what happened to improve future defenses.\n\nSame order as rice burning on the stove: pot off the heat first (containment), scrape out the burnt part (eradication), salvage or cook a fresh pot (recovery), then figure out why it burnt so it doesn't happen next Sunday too (post-incident analysis)."
+          "body": "What happens right after a threat is detected, minimizing damage in order:\n\n1. **Containment** — isolate the affected system so it can't spread further.\n2. **Eradication** — actually remove the threat from the system.\n3. **Recovery** — restore everything to normal operation.\n4. **Post-Incident Analysis** — evaluate what happened to improve future defenses.\n\nSame order as rice burning on the stove: pot off the heat first (containment), scrape out the burnt part (eradication), salvage or cook a fresh pot (recovery), then figure out why it burnt so it doesn't happen next Sunday too (post-incident analysis)."
         },
         {
           "heading": "Risk Management — planning an Owambe, basically",
@@ -299,23 +299,23 @@
         },
         {
           "heading": "Confidentiality — your DM privacy settings, but for real stakes",
-          "body": "Confidentiality ensures sensitive information is accessible only to authorized individuals. Common techniques: Encryption (encoding data so it's unreadable without the key) and Access Controls (restricting who can even attempt to view it).\n\nIt's the same instinct as controlling who can see your private account — except here, the \"account\" might be a hospital's patient records or a bank's transaction history, so the stakes are a bit higher than who sees your story."
+          "body": "**Confidentiality** ensures sensitive information is accessible only to authorized individuals. Common techniques: Encryption (encoding data so it's unreadable without the key) and Access Controls (restricting who can even attempt to view it).\n\nIt's the same instinct as controlling who can see your private account — except here, the \"account\" might be a hospital's patient records or a bank's transaction history, so the stakes are a bit higher than who sees your story."
         },
         {
           "heading": "Integrity — the screenshot that looks a little too edited",
-          "body": "Integrity protects data from unauthorized alteration, ensuring its accuracy and reliability. Methods: Hashing (creating a unique fingerprint for data to detect any change) and Digital Signatures (verifying authenticity and integrity of digital messages).\n\nYou already do this instinctively — when a screenshot of a chat has weird spacing or a font that doesn't match, you immediately suspect it's been edited. Hashing is that same instinct, automated: change even one character in a file and its fingerprint changes completely, so tampering can't hide."
+          "body": "**Integrity** protects data from unauthorized alteration, ensuring its accuracy and reliability. Methods: Hashing (creating a unique fingerprint for data to detect any change) and Digital Signatures (verifying authenticity and integrity of digital messages).\n\nYou already do this instinctively — when a screenshot of a chat has weird spacing or a font that doesn't match, you immediately suspect it's been edited. Hashing is that same instinct, automated: change even one character in a file and its fingerprint changes completely, so tampering can't hide."
         },
         {
           "heading": "Availability — your network NOT dying at 11:58pm",
-          "body": "Availability ensures that systems and data are accessible when needed. Techniques: Redundancy (backup systems to minimize downtime) and Load Balancing (distributing workloads to prevent system overloads).\n\nEveryone who has ever tried to submit an assignment online two minutes before the portal closes, only for the site to crash from everyone doing the same thing at once, has personally experienced an Availability failure. Redundancy and load balancing exist specifically so that never happens to a system that actually invested in it."
+          "body": "**Availability** ensures that systems and data are accessible when needed. Techniques: Redundancy (backup systems to minimize downtime) and Load Balancing (distributing workloads to prevent system overloads).\n\nEveryone who has ever tried to submit an assignment online two minutes before the portal closes, only for the site to crash from everyone doing the same thing at once, has personally experienced an Availability failure. Redundancy and load balancing exist specifically so that never happens to a system that actually invested in it."
         },
         {
           "heading": "Authentication — proving it's really you",
-          "body": "Authentication verifies the identity of users or systems. Common methods: Passwords (traditional, widely used), Biometrics (fingerprints, facial recognition), and Multi-Factor Authentication — MFA (combining multiple methods for stronger security).\n\nLike the layered ways a serious event checks you're actually on the list: your name against the guest list (password), your face matching your ID (biometrics), and sometimes a wristband stamp on top of both (MFA). One layer alone is easy to fake. Three layers together, much harder."
+          "body": "**Authentication** verifies the identity of users or systems. Common methods: Passwords (traditional, widely used), Biometrics (fingerprints, facial recognition), and Multi-Factor Authentication — MFA (combining multiple methods for stronger security).\n\nLike the layered ways a serious event checks you're actually on the list: your name against the guest list (password), your face matching your ID (biometrics), and sometimes a wristband stamp on top of both (MFA). One layer alone is easy to fake. Three layers together, much harder."
         },
         {
           "heading": "Non-Repudiation & Accountability — the receipts don't lie",
-          "body": "Non-Repudiation ensures actions or communications can't be denied by the people involved — achieved through Digital Signatures (proof of authenticity) and Audit Trails (recording activities for accountability). It's the \"seen\" tick that kills any \"I never got your message\" excuse.\n\nAccountability ensures actions within a system can always be traced back to a specific individual, through Logging (recording system events) and Monitoring (observing activity in real time). Basically CCTV footage for your network — it doesn't stop anything by itself, but it guarantees nobody can act and disappear without a trace."
+          "body": "**Non-Repudiation** ensures actions or communications can't be denied by the people involved — achieved through Digital Signatures (proof of authenticity) and Audit Trails (recording activities for accountability). It's the \"seen\" tick that kills any \"I never got your message\" excuse.\n\n**Accountability** ensures actions within a system can always be traced back to a specific individual, through Logging (recording system events) and Monitoring (observing activity in real time). Basically CCTV footage for your network — it doesn't stop anything by itself, but it guarantees nobody can act and disappear without a trace."
         }
       ],
       "quiz": [
@@ -615,19 +615,19 @@
       "cards": [
         {
           "heading": "Cyber threat — the danger before the damage",
-          "body": "A cyber threat is anything that could exploit a weakness in a system, network, or person. It may be malware, phishing, ransomware, a weak password, or a careless user opening the wrong link. A threat is the possibility of harm, not the harm itself.\n\nThink of it like leaving your gate unlocked overnight — nothing's happened yet, but the risk is sitting right there."
+          "body": "A **cyber threat** is anything that could exploit a weakness in a system, network, or person. It may be malware, phishing, ransomware, a weak password, or a careless user opening the wrong link. A threat is the possibility of harm, not the harm itself.\n\nThink of it like leaving your gate unlocked overnight — nothing's happened yet, but the risk is sitting right there."
         },
         {
           "heading": "Malware — the digital parasite",
-          "body": "Malware is malicious software designed to disrupt, damage, or gain unauthorized access. Common forms include viruses, worms, Trojans, spyware, and ransomware. The difference is mostly in how they spread and what damage they cause.\n\nDifferent species, same family — like different types of scam calls, they all just want access."
+          "body": "**Malware** is malicious software designed to disrupt, damage, or gain unauthorized access. Common forms include viruses, worms, Trojans, spyware, and ransomware. The difference is mostly in how they spread and what damage they cause.\n\nDifferent species, same family — like different types of scam calls, they all just want access."
         },
         {
           "heading": "Phishing — tricking the human first",
-          "body": "Phishing is a form of social engineering where attackers pretend to be trustworthy to get users to reveal information. It often comes through fake emails, messages, or login pages that look real. The weakness is often the human user, not just the technology.\n\nBasically the digital version of someone calling pretending to be your network provider to get your PIN.\n\nThe exact format of every fake bank SMS you've ever gotten: \"Your account has been credited with 500,000 naira, click here to claim\" — the tech doesn't need to be clever if the message convinces you to click before you think."
+          "body": "**Phishing** is a form of social engineering where attackers pretend to be trustworthy to get users to reveal information. It often comes through fake emails, messages, or login pages that look real. The weakness is often the human user, not just the technology.\n\nBasically the digital version of someone calling pretending to be your network provider to get your PIN.\n\nThe exact format of every fake bank SMS you've ever gotten: \"Your account has been credited with 500,000 naira, click here to claim\" — the tech doesn't need to be clever if the message convinces you to click before you think."
         },
         {
           "heading": "DoS and DDoS — too much traffic, no service",
-          "body": "A Denial-of-Service attack overwhelms a system with excessive traffic so that real users cannot access it. A Distributed Denial-of-Service attack uses many devices at once, making it harder to stop. The goal is usually disruption and downtime.\n\nImagine 10,000 people trying to squeeze into one small shop at once — nobody gets served, including the real customers."
+          "body": "A **Denial-of-Service attack** overwhelms a system with excessive traffic so that real users cannot access it. A **Distributed Denial-of-Service attack** uses many devices at once, making it harder to stop. The goal is usually disruption and downtime.\n\nImagine 10,000 people trying to squeeze into one small shop at once — nobody gets served, including the real customers."
         },
         {
           "heading": "Insider threat — the danger from the inside",
@@ -700,19 +700,19 @@
       "cards": [
         {
           "heading": "Defensive measures — stopping the attack before it wins",
-          "body": "Defensive measures are controls used to reduce risk and minimize damage. They include firewalls, antivirus, access controls, encryption, regular updates, and backups. Good defense is usually layered.\n\nSame logic as a compound with a gate, a gateman, AND a dog — one layer failing shouldn't mean game over."
+          "body": "**Defensive measures** are controls used to reduce risk and minimize damage. They include firewalls, antivirus, access controls, encryption, regular updates, and backups. Good defense is usually layered.\n\nSame logic as a compound with a gate, a gateman, AND a dog — one layer failing shouldn't mean game over."
         },
         {
           "heading": "Firewalls and access control",
-          "body": "A firewall filters traffic based on rules and blocks suspicious connections. Access control limits what users can see or do depending on their role. These two controls strengthen the first line of defense.\n\nA firewall is the bouncer; access control is the bouncer also checking your wristband colour before letting you past VIP."
+          "body": "A firewall filters traffic based on rules and blocks suspicious connections. **Access control** limits what users can see or do depending on their role. These two controls strengthen the first line of defense.\n\nA firewall is the bouncer; access control is the bouncer also checking your wristband colour before letting you past VIP."
         },
         {
           "heading": "Encryption — protecting the content",
-          "body": "Encryption scrambles data so that only someone with the proper key can read it. It helps protect sensitive information both while it is stored and while it is being transmitted.\n\nLike sending gist in coded slang only your close friend understands — useless to anyone who intercepts it.\n\nThe little padlock icon everyone's now trained to check before typing card details into a Paystack or Flutterwave checkout page — that padlock IS encryption doing its job."
+          "body": "**Encryption** scrambles data so that only someone with the proper key can read it. It helps protect sensitive information both while it is stored and while it is being transmitted.\n\nLike sending gist in coded slang only your close friend understands — useless to anyone who intercepts it.\n\nThe little padlock icon everyone's now trained to check before typing card details into a Paystack or Flutterwave checkout page — that padlock IS encryption doing its job."
         },
         {
           "heading": "Updates and patching",
-          "body": "Software updates close known security holes. Patch management is important because many attacks exploit systems that have not been updated. Regular patching reduces avoidable risk.\n\nIgnoring that update notification for months? That's leaving a known crack in the wall unfixed."
+          "body": "Software updates close known security holes. **Patch management** is important because many attacks exploit systems that have not been updated. Regular patching reduces avoidable risk.\n\nIgnoring that update notification for months? That's leaving a known crack in the wall unfixed."
         },
         {
           "heading": "User awareness training",
@@ -784,19 +784,19 @@
       "cards": [
         {
           "heading": "Incident response — what happens when the alarm sounds",
-          "body": "Incident response is the process of handling a security event after it has been detected. It usually involves identifying the problem, containing it, removing the threat, recovering the system, and learning from the incident.\n\nSame as a fire outbreak — contain it, put it out, check the damage, then figure out why the extinguisher wasn't closer.\n\nThe exact panic of an unexpected debit alert hitting your phone — the first move isn't to guess, it's to call the bank's fraud line immediately, which is incident response in miniature."
+          "body": "**Incident response** is the process of handling a security event after it has been detected. It usually involves identifying the problem, containing it, removing the threat, recovering the system, and learning from the incident.\n\nSame as a fire outbreak — contain it, put it out, check the damage, then figure out why the extinguisher wasn't closer.\n\nThe exact panic of an unexpected debit alert hitting your phone — the first move isn't to guess, it's to call the bank's fraud line immediately, which is incident response in miniature."
         },
         {
           "heading": "Containment and eradication",
-          "body": "Containment stops the threat from spreading, while eradication removes it from the infected system. These steps come before full recovery so the organization can regain control safely.\n\nTurn off the tap before you start mopping the floor — stop the spread before you clean up."
+          "body": "**Containment** stops the threat from spreading, while **eradication** removes it from the infected system. These steps come before full recovery so the organization can regain control safely.\n\nTurn off the tap before you start mopping the floor — stop the spread before you clean up."
         },
         {
           "heading": "Recovery and lessons learned",
-          "body": "Recovery restores systems to normal operation and checks that they are safe. The final stage is reviewing what happened so the organization can improve future defenses.\n\nLike reviewing a lost match — not to feel bad, but so the same mistake doesn't repeat next time."
+          "body": "**Recovery** restores systems to normal operation and checks that they are safe. The final stage is reviewing what happened so the organization can improve future defenses.\n\nLike reviewing a lost match — not to feel bad, but so the same mistake doesn't repeat next time."
         },
         {
           "heading": "Risk management — planning for the unexpected",
-          "body": "Risk management is the ongoing process of identifying risks, assessing their impact, choosing controls, and monitoring them. It helps organizations prepare for likely problems before they become disasters.\n\nBasically insurance-thinking — you're not predicting disaster, you're preparing so it doesn't wreck you if it happens.\n\nSame logic as keeping spare data or a backup line ready for when the network goes down mid-transaction — plan for the disruption before it happens, not while it's happening."
+          "body": "**Risk management** is the ongoing process of identifying risks, assessing their impact, choosing controls, and monitoring them. It helps organizations prepare for likely problems before they become disasters.\n\nBasically insurance-thinking — you're not predicting disaster, you're preparing so it doesn't wreck you if it happens.\n\nSame logic as keeping spare data or a backup line ready for when the network goes down mid-transaction — plan for the disruption before it happens, not while it's happening."
         },
         {
           "heading": "The goal of security practice",
@@ -872,19 +872,19 @@
         },
         {
           "heading": "Penetration testing — acting like an attacker on purpose",
-          "body": "Penetration testing is a simulated attack used to test the effectiveness of security controls. It can be black box, white box, or gray box depending on how much information the tester has.\n\nLiterally paying someone to try and break into your own house on purpose, so you find the weak lock first.\n\nLike an estate deliberately paying someone to try and sneak past its own gate security — not to cause harm, but to find the gap before someone with bad intentions does.\n\nBasically like paying your guy to try jump your own fence before an actual thief does — if your guy finds a way in, you patch it quietly; if a real criminal finds it first, you're the one explaining wetin happen."
+          "body": "**Penetration testing** is a simulated attack used to test the effectiveness of security controls. It can be **black box**, **white box**, or **gray box** depending on how much information the tester has.\n\nLiterally paying someone to try and break into your own house on purpose, so you find the weak lock first.\n\nLike an estate deliberately paying someone to try and sneak past its own gate security — not to cause harm, but to find the gap before someone with bad intentions does.\n\nBasically like paying your guy to try jump your own fence before an actual thief does — if your guy finds a way in, you patch it quietly; if a real criminal finds it first, you're the one explaining wetin happen."
         },
         {
           "heading": "Threat hunting — going out to look for hidden danger",
-          "body": "Threat hunting is a proactive approach where security teams search for threats that may have bypassed normal detection systems. It focuses on uncovering hidden actors that may already be inside the environment.\n\nNot waiting for the alarm — actively walking round checking if someone's already inside."
+          "body": "**Threat hunting** is a proactive approach where security teams search for threats that may have bypassed normal detection systems. It focuses on uncovering hidden actors that may already be inside the environment.\n\nNot waiting for the alarm — actively walking round checking if someone's already inside."
         },
         {
           "heading": "Behavioral analytics — spotting strange behavior",
-          "body": "Behavioral analytics examines user and system behavior for unusual patterns. It is useful for identifying suspicious activities that traditional rules-based detection may miss.\n\nLike noticing a friend's account is suddenly typing in a completely different tone at 3am — something's off."
+          "body": "**Behavioral analytics** examines user and system behavior for unusual patterns. It is useful for identifying suspicious activities that traditional rules-based detection may miss.\n\nLike noticing a friend's account is suddenly typing in a completely different tone at 3am — something's off."
         },
         {
           "heading": "Intrusion detection systems — the alarm system",
-          "body": "An Intrusion Detection System monitors network or system activity and alerts administrators when suspicious behavior is detected. IDS helps with early warning, but it does not always stop the attack by itself.\n\nThe security light that flicks on when something moves — it doesn't stop the intruder, it just makes sure somebody notices.\n\nThe digital version of an estate's CCTV-plus-alarm combo — it doesn't stop the intruder by itself, but it makes sure nobody gets in unnoticed."
+          "body": "An **Intrusion Detection System** monitors network or system activity and alerts administrators when suspicious behavior is detected. IDS helps with early warning, but it does not always stop the attack by itself.\n\nThe security light that flicks on when something moves — it doesn't stop the intruder, it just makes sure somebody notices.\n\nThe digital version of an estate's CCTV-plus-alarm combo — it doesn't stop the intruder by itself, but it makes sure nobody gets in unnoticed."
         }
       ],
       "quiz": [
@@ -958,7 +958,7 @@
         },
         {
           "heading": "Endpoint protection — securing devices",
-          "body": "Endpoint protection protects devices such as laptops, desktops, servers, and mobile devices. This includes antivirus, anti-malware, Endpoint Detection and Response (EDR — tools that continuously monitor a device and can automatically respond the moment something looks malicious), encryption, and application control.\n\nLocking every single door in the house, not just the front gate — laptop, phone, all of it.\n\nYour own phone is now basically a bank branch in your pocket — keeping its lock screen, updates, and antivirus current isn't optional caution anymore, it's the same as locking a real vault."
+          "body": "**Endpoint protection** protects devices such as laptops, desktops, servers, and mobile devices. This includes antivirus, anti-malware, **Endpoint Detection and Response** (EDR — tools that continuously monitor a device and can automatically respond the moment something looks malicious), encryption, and application control.\n\nLocking every single door in the house, not just the front gate — laptop, phone, all of it.\n\nYour own phone is now basically a bank branch in your pocket — keeping its lock screen, updates, and antivirus current isn't optional caution anymore, it's the same as locking a real vault."
         },
         {
           "heading": "Access control mechanisms — controlling who gets in",
@@ -966,7 +966,7 @@
         },
         {
           "heading": "Patch management — closing known holes",
-          "body": "Patch management is the process of updating software to fix known weaknesses and improve security. It is essential because many attacks exploit outdated systems.\n\nThe update you keep postponing is exactly the hole an attacker is hoping you postpone.\n\nThat banking-app update notification you keep swiping away — ignoring it for months is exactly how a known, already-fixed hole stays open on your own phone.\n\nSame energy as ignoring that \"update available\" nudge on your banking app for three months — small tin, but that's exactly the gap somebody will use to enter your account."
+          "body": "**Patch management** is the process of updating software to fix known weaknesses and improve security. It is essential because many attacks exploit outdated systems.\n\nThe update you keep postponing is exactly the hole an attacker is hoping you postpone.\n\nThat banking-app update notification you keep swiping away — ignoring it for months is exactly how a known, already-fixed hole stays open on your own phone.\n\nSame energy as ignoring that \"update available\" nudge on your banking app for three months — small tin, but that's exactly the gap somebody will use to enter your account."
         },
         {
           "heading": "Data encryption — making data unreadable to attackers",
@@ -1033,7 +1033,7 @@
       "cards": [
         {
           "heading": "Information assets — what the organization must protect",
-          "body": "Information assets are valuable resources or data that support the operations and goals of an organization. They may be physical, digital, or intellectual and must be protected because loss or compromise can cause major harm.\n\nBasically anything that would genuinely hurt if it leaked or got deleted — that's what's being protected here."
+          "body": "**Information assets** are valuable resources or data that support the operations and goals of an organization. They may be physical, digital, or intellectual and must be protected because loss or compromise can cause major harm.\n\nBasically anything that would genuinely hurt if it leaked or got deleted — that's what's being protected here."
         },
         {
           "heading": "Confidentiality, integrity, and availability",
@@ -1041,7 +1041,7 @@
         },
         {
           "heading": "Data classification — knowing what matters most",
-          "body": "Data classification helps organizations decide how sensitive information is and how strongly it should be protected. Highly sensitive data needs stronger controls than ordinary information.\n\nNot every file deserves a vault — classification is deciding what actually needs the extra locks.\n\nTreat your BVN and NIN the way you'd treat your ATM PIN, not the way you'd treat your Instagram handle — not all personal information carries the same risk if it leaks."
+          "body": "**Data classification** helps organizations decide how sensitive information is and how strongly it should be protected. Highly sensitive data needs stronger controls than ordinary information.\n\nNot every file deserves a vault — classification is deciding what actually needs the extra locks.\n\nTreat your BVN and NIN the way you'd treat your ATM PIN, not the way you'd treat your Instagram handle — not all personal information carries the same risk if it leaks."
         },
         {
           "heading": "Backup and recovery — preparing for loss",
@@ -1049,7 +1049,7 @@
         },
         {
           "heading": "Secure disposal and network segmentation",
-          "body": "Secure disposal removes data safely from outdated devices or documents, while network segmentation limits how far an attack can spread. Both are important for reducing risk.\n\nShredding old documents instead of binning them whole, and building internal walls so one breach doesn't flood the whole building."
+          "body": "**Secure disposal** removes data safely from outdated devices or documents, while **network segmentation** limits how far an attack can spread. Both are important for reducing risk.\n\nShredding old documents instead of binning them whole, and building internal walls so one breach doesn't flood the whole building."
         }
       ],
       "quiz": [
@@ -1121,7 +1121,7 @@
         },
         {
           "heading": "Protection of critical infrastructure",
-          "body": "Critical infrastructure includes energy systems, transport networks, hospitals, and public utilities. A successful cyberattack on these systems can disrupt essential services and cause serious economic and human harm.\n\nThis is the tier where a cyberattack stops being an inconvenience and starts being a real emergency — power, transport, hospitals."
+          "body": "**Critical infrastructure** includes energy systems, transport networks, hospitals, and public utilities. A successful cyberattack on these systems can disrupt essential services and cause serious economic and human harm.\n\nThis is the tier where a cyberattack stops being an inconvenience and starts being a real emergency — power, transport, hospitals."
         },
         {
           "heading": "Safeguarding personal data",
@@ -1265,7 +1265,7 @@
         },
         {
           "heading": "Challenges in cybersecurity",
-          "body": "Cybersecurity faces challenges such as evolving threats, complex systems, lack of skilled professionals, insider threats, privacy concerns, and supply chain vulnerabilities. These challenges affect both civil and military sectors.\n\nThe field never gets to relax — new tech means new holes, faster than defenders can patch them."
+          "body": "Cybersecurity faces challenges such as evolving threats, complex systems, lack of skilled professionals, insider threats, privacy concerns, and **supply chain vulnerabilities**. These challenges affect both civil and military sectors.\n\nThe field never gets to relax — new tech means new holes, faster than defenders can patch them."
         },
         {
           "heading": "Why the field keeps growing",
@@ -1333,7 +1333,7 @@
         },
         {
           "heading": "Who the perpetrators are",
-          "body": "Perpetrators can include black hat hackers, white hat hackers, gray hat hackers, cybercriminals, nation-state actors, insider threats, hacktivists, and script kiddies. Not all of them are equally harmful, but each matters in understanding cyber risk.\n\nNot every \"hacker\" is the villain — some (white hats) are the ones defending you.\n\nNot a single stereotype — lone opportunists, organised crime rings, and state-backed groups all fall under \"perpetrator,\" and each one requires a genuinely different kind of defence."
+          "body": "Perpetrators can include **black hat hackers**, **white hat hackers**, **gray hat hackers**, cybercriminals, nation-state actors, insider threats, **hacktivists**, and **script kiddies**. Not all of them are equally harmful, but each matters in understanding cyber risk.\n\nNot every \"hacker\" is the villain — some (white hats) are the ones defending you.\n\nNot a single stereotype — lone opportunists, organised crime rings, and state-backed groups all fall under \"perpetrator,\" and each one requires a genuinely different kind of defence."
         }
       ],
       "quiz": [
@@ -1385,11 +1385,11 @@
       "cards": [
         {
           "heading": "Defensive measures prevent attacks",
-          "body": "Defensive measures are designed to stop or reduce the risk of cyber attacks before they happen. They include firewalls, encryption, multi-factor authentication, antivirus, access control, patching, network segmentation, and security awareness training.\n\nThe gate, the dog, and the cameras — all working before anything even happens."
+          "body": "**Defensive measures** are designed to stop or reduce the risk of cyber attacks before they happen. They include firewalls, encryption, multi-factor authentication, antivirus, access control, patching, network segmentation, and security awareness training.\n\nThe gate, the dog, and the cameras — all working before anything even happens."
         },
         {
           "heading": "Responsive measures manage incidents",
-          "body": "Responsive measures are used after an attack has been detected. These include incident response plans, real-time monitoring, forensic investigation, backup and disaster recovery, and communication with stakeholders.\n\nWhat kicks in the moment something's already gone wrong — the fire brigade, not the smoke detector."
+          "body": "**Responsive measures** are used after an attack has been detected. These include incident response plans, real-time monitoring, forensic investigation, backup and disaster recovery, and communication with stakeholders.\n\nWhat kicks in the moment something's already gone wrong — the fire brigade, not the smoke detector."
         },
         {
           "heading": "Why layered security matters",
@@ -1449,7 +1449,7 @@
         },
         {
           "heading": "Detection helps teams respond quickly",
-          "body": "Detection involves identifying suspicious activity early so that attacks can be contained before serious damage occurs. This is often supported by IDS/IPS, monitoring systems, and security analytics.\n\nThe smoke detector, not the fire extinguisher — its whole job is noticing fast.\n\nIt's the same system behind a bank flagging \"unusual transaction location\" and pausing a card the instant it's used somewhere unexpected — catching the anomaly fast is most of the battle.\n\nSame reflex as a bank app freezing a transaction and texting \"was this you?\" the second something looks off — catching the wahala early beats explaining it away later."
+          "body": "**Detection** involves identifying suspicious activity early so that attacks can be contained before serious damage occurs. This is often supported by IDS/IPS, monitoring systems, and security analytics.\n\nThe smoke detector, not the fire extinguisher — its whole job is noticing fast.\n\nIt's the same system behind a bank flagging \"unusual transaction location\" and pausing a card the instant it's used somewhere unexpected — catching the anomaly fast is most of the battle.\n\nSame reflex as a bank app freezing a transaction and texting \"was this you?\" the second something looks off — catching the wahala early beats explaining it away later."
         },
         {
           "heading": "Incident handling is about control and recovery",
@@ -1509,11 +1509,11 @@
         },
         {
           "heading": "Standards and procedures make policy practical",
-          "body": "Standards are the minimum technical or operational requirements used to meet policy goals. Procedures explain the step-by-step actions required to carry out those standards. This makes policy easier to follow and easier to enforce."
+          "body": "**Standards** are the minimum technical or operational requirements used to meet policy goals. **Procedures** explain the step-by-step actions required to carry out those standards. This makes policy easier to follow and easier to enforce."
         },
         {
           "heading": "Governance keeps security organized",
-          "body": "Security governance means that leadership, management, and technical teams coordinate their efforts to protect the organization. It ensures that security decisions are aligned with business goals, legal requirements, and risk tolerance."
+          "body": "**Security governance** means that leadership, management, and technical teams coordinate their efforts to protect the organization. It ensures that security decisions are aligned with business goals, legal requirements, and risk tolerance."
         }
       ],
       "quiz": [
@@ -1565,7 +1565,7 @@
       "cards": [
         {
           "heading": "Risk is the chance of harm from a threat",
-          "body": "Risk is the possibility that a vulnerability may be exploited and cause damage to an asset or operation. Risk is usually assessed by looking at the likelihood of an event and the impact it would have.\n\nThe same calculation as deciding whether to walk home at night with no torchlight during a NEPA blackout — weighing how likely something bad is against how serious it would actually be."
+          "body": "**Risk** is the possibility that a vulnerability may be exploited and cause damage to an asset or operation. Risk is usually assessed by looking at the likelihood of an event and the impact it would have.\n\nThe same calculation as deciding whether to walk home at night with no torchlight during a NEPA blackout — weighing how likely something bad is against how serious it would actually be."
         },
         {
           "heading": "Assets must be identified before controls are chosen",
@@ -1573,7 +1573,7 @@
         },
         {
           "heading": "Controls reduce risk in different ways",
-          "body": "Controls can be preventive, detective, corrective, or compensating. Preventive controls stop attacks before they happen, detective controls help reveal them, and corrective controls help restore systems after an event."
+          "body": "Controls can be preventive, detective, corrective, or **compensating**. **Preventive controls** stop attacks before they happen, **detective controls** help reveal them, and **corrective controls** help restore systems after an event."
         }
       ],
       "quiz": [
@@ -1625,7 +1625,7 @@
       "cards": [
         {
           "heading": "Physical security protects the environment around the system",
-          "body": "Physical security controls include locks, guards, security cameras, access cards, and restricted rooms. These controls prevent unauthorized people from reaching devices, servers, or office spaces."
+          "body": "**Physical security** controls include locks, guards, security cameras, access cards, and restricted rooms. These controls prevent unauthorized people from reaching devices, servers, or office spaces."
         },
         {
           "heading": "Backups help recover from failure",
@@ -1633,7 +1633,7 @@
         },
         {
           "heading": "Business continuity keeps operations alive",
-          "body": "Business continuity planning prepares an organization to keep working during disruption. It often includes disaster recovery plans, alternative communication methods, and procedures for restoring essential services.\n\nThe market trader who still keeps a manual receipt book under the till — when the POS network goes down, the business doesn't stop, it just switches to the backup way of working."
+          "body": "**Business continuity planning** prepares an organization to keep working during disruption. It often includes disaster recovery plans, alternative communication methods, and procedures for restoring essential services.\n\nThe market trader who still keeps a manual receipt book under the till — when the POS network goes down, the business doesn't stop, it just switches to the backup way of working."
         }
       ],
       "quiz": [
@@ -1685,19 +1685,19 @@
       "cards": [
         {
           "heading": "Policy, standard, procedure, guideline — not the same thing",
-          "body": "The Security Governance Framework has four layers, each answering a different question. Policy is a formal set of rules protecting an organisation's information systems — it focuses on the WHY (why something should be done), setting strategic direction. Standard is an established norm or requirement, focused on the WHAT (what should be achieved) — a consistent benchmark for quality or security. Procedure is a step-by-step guide focused on the HOW (how tasks should be completed) — practical and action-oriented. Guideline offers practical advice on implementing the policy day to day, focused on best practices and recommendations.\n\nPolicy sits above Standards, which sit above Procedures, which sit above Guidelines — each layer gets more specific and more practical than the one before it."
+          "body": "The Security Governance Framework has four layers, each answering a different question. **Policy** is a formal set of rules protecting an organisation's information systems — it focuses on the WHY (why something should be done), setting strategic direction. **Standard** is an established norm or requirement, focused on the WHAT (what should be achieved) — a consistent benchmark for quality or security. **Procedure** is a step-by-step guide focused on the HOW (how tasks should be completed) — practical and action-oriented. **Guideline** offers practical advice on implementing the policy day to day, focused on best practices and recommendations.\n\nPolicy sits above Standards, which sit above Procedures, which sit above Guidelines — each layer gets more specific and more practical than the one before it."
         },
         {
           "heading": "Five types of cybersecurity policy",
-          "body": "Cybersecurity policies vary by organisation size, industry, and the data involved. Five common types: Enterprise-wide Cybersecurity Policy (a broad policy applying to all systems, employees, and departments), Network Security Policy (focused specifically on securing the network and infrastructure), Information Security Policy (securing organisational data, both in storage and in transit), Incident Response Policy (the specific steps to take when an incident is detected), and BYOD Policy (Bring Your Own Device — rules for personal devices used within the organisation).\n\nA single organisation typically needs several of these at once, not just one — they cover different, overlapping risks."
+          "body": "Cybersecurity policies vary by organisation size, industry, and the data involved. Five common types: Enterprise-wide Cybersecurity **Policy** (a broad policy applying to all systems, employees, and departments), **Network Security Policy** (focused specifically on securing the network and infrastructure), **Information Security Policy** (securing organisational data, both in storage and in transit), **Incident Response Policy** (the specific steps to take when an incident is detected), and **BYOD Policy** (Bring Your Own Device — rules for personal devices used within the organisation).\n\nA single organisation typically needs several of these at once, not just one — they cover different, overlapping risks."
         },
         {
           "heading": "Government regulation of IT: Nigerian bodies",
-          "body": "Government regulation of IT means the legal frameworks and policies set by governmental bodies to control how technology gets used, developed, and deployed — protecting the public interest, ensuring market fairness, safeguarding privacy and security, and promoting responsible innovation.\n\nNigeria's own regulatory landscape: the National Information Technology Development Agency (NITDA) Act promotes IT development and ensures data security; the Cybercrimes (Prohibition, Prevention, etc.) Act 2015 addresses and prevents cybercrimes, providing a legal framework for tackling cyber-related offences; the Nigeria Communications Commission (NCC) regulates the telecommunications and IT sector; the National Cybersecurity Policy and Strategy (2014) guides national cybersecurity measures; and the Nigerian Data Protection Regulation (NDPR) protects individuals' personal data."
+          "body": "Government regulation of IT means the legal frameworks and policies set by governmental bodies to control how technology gets used, developed, and deployed — protecting the public interest, ensuring market fairness, safeguarding privacy and security, and promoting responsible innovation.\n\nNigeria's own regulatory landscape: the **National Information Technology Development Agency (NITDA) Act** promotes IT development and ensures data security; the **Cybercrimes (Prohibition, Prevention, etc.) Act 2015** addresses and prevents cybercrimes, providing a legal framework for tackling cyber-related offences; the **Nigeria Communications Commission (NCC)** regulates the telecommunications and IT sector; the National Cybersecurity **Policy** and Strategy (2014) guides national cybersecurity measures; and the **Nigerian Data Protection Regulation (NDPR)** protects individuals' personal data."
         },
         {
           "heading": "Government regulation of IT: the global landscape",
-          "body": "Beyond Nigeria, major international regulations follow the same purposes: GDPR (General Data Protection Regulation) protects the privacy and personal data of EU residents. The NIS (Network and Information Security) Directive achieves a high common level of cybersecurity across the EU. The FTC Act protects consumers from unfair or deceptive marketplace practices in the US. HIPAA secures and protects health data. CCPA gives California residents the right to access, delete, and control the sale of their personal data. China's Cybersecurity Law and Personal Information Protection Law (PIPL) regulate internet usage, data protection, and cybersecurity domestically.\n\nThe pattern repeats everywhere: different countries, same underlying goal — protect people and data, hold organisations accountable, and keep pace with a technology landscape that keeps changing faster than the law can."
+          "body": "Beyond Nigeria, major international regulations follow the same purposes: **GDPR (General Data Protection Regulation)** protects the privacy and personal data of EU residents. The **NIS (Network and Information Security) Directive** achieves a high common level of cybersecurity across the EU. The FTC Act protects consumers from unfair or deceptive marketplace practices in the US. **HIPAA** secures and protects health data. **CCPA** gives California residents the right to access, delete, and control the sale of their personal data. China's Cybersecurity Law and Personal Information Protection Law (PIPL) regulate internet usage, data protection, and cybersecurity domestically.\n\nThe pattern repeats everywhere: different countries, same underlying goal — protect people and data, hold organisations accountable, and keep pace with a technology landscape that keeps changing faster than the law can."
         }
       ],
       "quiz": [
@@ -1765,19 +1765,19 @@
       "cards": [
         {
           "heading": "Six secure best practices, at a glance",
-          "body": "Secure best practices are guidelines organisations adopt to minimise security risks — implemented correctly, they build a robust foundation for a secure environment. Six key practices: Principle of Least Privilege, Strong Authentication Mechanisms, Encryption, Regular Software Updates, Secure Configuration, and User Training and Awareness.\n\nNone of these is exotic or expensive on its own — the discipline is in applying all six consistently, not picking one favourite and ignoring the rest."
+          "body": "Secure best practices are guidelines organisations adopt to minimise security risks — implemented correctly, they build a robust foundation for a secure environment. Six key practices: **Principle of Least Privilege**, **Strong Authentication Mechanisms**, Encryption, **Regular Software Updates**, **Secure Configuration**, and **User Training and Awareness**.\n\nNone of these is exotic or expensive on its own — the discipline is in applying all six consistently, not picking one favourite and ignoring the rest."
         },
         {
           "heading": "Least privilege and strong authentication",
-          "body": "Principle of Least Privilege: individuals and systems should only have the minimum level of access required to do their job — nothing more. This reduces unauthorised access, limits damage if a breach happens, and improves overall security. Implementation: restrict administrative access, segment networks, and enforce role-based access control (RBAC).\n\nStrong Authentication Mechanisms: ensuring only authorised individuals can access sensitive systems. Multi-factor authentication (MFA) adds an extra layer of security beyond just a password. Implementation: require passwords with a mix of characters, enforce MFA, use biometrics, and implement two-factor authentication (2FA)."
+          "body": "**Principle of Least Privilege**: individuals and systems should only have the minimum level of access required to do their job — nothing more. This reduces unauthorised access, limits damage if a breach happens, and improves overall security. Implementation: restrict administrative access, segment networks, and enforce **role-based access control (RBAC)**.\n\n**Strong Authentication Mechanisms**: ensuring only authorised individuals can access sensitive systems. **Multi-factor authentication (MFA)** adds an extra layer of security beyond just a password. Implementation: require passwords with a mix of characters, enforce MFA, use biometrics, and implement two-factor authentication (2FA)."
         },
         {
           "heading": "Updates, configuration, and training",
-          "body": "Regular Software Updates: keeping software and systems current defends against known vulnerabilities — regular patching mitigates the risk of attacks exploiting outdated systems. Implementation: automate updates where possible, regularly check for patches, and apply them promptly.\n\nSecure Configuration: misconfigured systems are often the weakest link in cybersecurity. Implementation: harden operating systems, disable unused services, and secure web applications by eliminating unnecessary ports and functions.\n\nUser Training and Awareness: educating employees about cybersecurity risks and best practices is essential for preventing incidents like phishing attacks. Implementation: conduct regular cybersecurity training so users can recognise common threats and understand their own role in maintaining security.\n\nSecure Configuration failures are painfully common in Nigeria too — a router still running its factory-default 'admin/admin' login is a Secure Configuration failure sitting in plain sight, not a sophisticated hack."
+          "body": "**Regular Software Updates**: keeping software and systems current defends against known vulnerabilities — regular patching mitigates the risk of attacks exploiting outdated systems. Implementation: automate updates where possible, regularly check for patches, and apply them promptly.\n\n**Secure Configuration**: misconfigured systems are often the weakest link in cybersecurity. Implementation: harden operating systems, disable unused services, and secure web applications by eliminating unnecessary ports and functions.\n\n**User Training and Awareness**: educating employees about cybersecurity risks and best practices is essential for preventing incidents like phishing attacks. Implementation: conduct regular cybersecurity training so users can recognise common threats and understand their own role in maintaining security.\n\nSecure Configuration failures are painfully common in Nigeria too — a router still running its factory-default 'admin/admin' login is a Secure Configuration failure sitting in plain sight, not a sophisticated hack."
         },
         {
           "heading": "Testing for security vulnerabilities",
-          "body": "Testing is a proactive way to uncover weaknesses before attackers can exploit them — the goal is to identify vulnerabilities, assess their severity, and address them before they get leveraged in a real attack. Four testing approaches: Vulnerability Scanning, Penetration Testing, Threat Hunting, and Security Audits.\n\nA Security Audit is a systematic review of an organisation's security policies, controls, and procedures to ensure compliance with security standards and regulations — for example, an external auditor reviewing a company's firewall rules and access controls specifically to confirm they match the organisation's own stated security policies."
+          "body": "Testing is a proactive way to uncover weaknesses before attackers can exploit them — the goal is to identify vulnerabilities, assess their severity, and address them before they get leveraged in a real attack. Four testing approaches: **Vulnerability Scanning**, **Penetration Testing**, **Threat Hunting**, and Security Audits.\n\nA **Security Audit** is a systematic review of an organisation's security policies, controls, and procedures to ensure compliance with security standards and regulations — for example, an external auditor reviewing a company's firewall rules and access controls specifically to confirm they match the organisation's own stated security policies."
         }
       ],
       "quiz": [
@@ -1846,11 +1846,11 @@
       "cards": [
         {
           "heading": "The risk management framework: a five-step cycle",
-          "body": "Risk management is a repeating cycle, not a one-time checklist: 1. Risk identification — spotting what could go wrong. 2. Risk analysis/evaluation — likelihood and consequence analysis, feeding into 3. Risk prioritisation — assessing criticality to decide what matters most. 4. Risk mitigation plan, implementation, monitoring and controlling — actually doing something about it. 5. Risk tracking — which feeds back into reassessing current risk levels and identifying new risks, restarting the cycle from step 1.\n\nIt's genuinely circular: risk management never finishes, because both the threat landscape and the organisation itself keep changing."
+          "body": "Risk management is a repeating cycle, not a one-time checklist: 1. **Risk identification** — spotting what could go wrong. 2. **Risk analysis/evaluation** — likelihood and consequence analysis, feeding into 3. **Risk prioritisation** — assessing criticality to decide what matters most. 4. Risk mitigation plan, implementation, monitoring and controlling — actually doing something about it. 5. Risk tracking — which feeds back into reassessing current risk levels and identifying new risks, restarting the cycle from step 1.\n\nIt's genuinely circular: risk management never finishes, because both the threat landscape and the organisation itself keep changing."
         },
         {
           "heading": "Risk identification and assessment",
-          "body": "Risk identification is the first real step: identifying the risks that could potentially harm the organisation's digital assets, including both external threats (cyberattacks) and internal threats (human error, system failures) — examples include data breaches, ransomware attacks, denial-of-service attacks, and insider threats.\n\nRisk assessment then evaluates each risk's potential impact and likelihood, considering the criticality of the systems and data involved plus any existing vulnerabilities. Two components: Impact Assessment (how severe the consequences would be if the risk occurs) and Likelihood Assessment (how likely the risk is to occur, based on historical data and known vulnerabilities)."
+          "body": "**Risk identification** is the first real step: identifying the risks that could potentially harm the organisation's digital assets, including both external threats (cyberattacks) and internal threats (human error, system failures) — examples include data breaches, ransomware attacks, denial-of-service attacks, and insider threats.\n\nRisk assessment then evaluates each risk's potential impact and likelihood, considering the criticality of the systems and data involved plus any existing vulnerabilities. Two components: Impact Assessment (how severe the consequences would be if the risk occurs) and Likelihood Assessment (how likely the risk is to occur, based on historical data and known vulnerabilities)."
         },
         {
           "heading": "The Risk Severity Matrix: turning judgement into a grid",
@@ -1858,7 +1858,7 @@
         },
         {
           "heading": "Risk prioritisation and mitigation",
-          "body": "After assessment, risks get prioritised by severity and likelihood — high-priority risks get addressed first, while lower-priority ones can be mitigated later or simply monitored regularly. Risk matrices (High/Medium/Low) help categorise and prioritise systematically rather than by gut feeling.\n\nFour mitigation strategies, once a risk is prioritised: Risk Avoidance (changing plans to avoid the risk entirely), Risk Reduction (reducing the impact or likelihood, e.g. through firewalls or encryption, plus organisational practices like training and policy enforcement), Risk Transfer (shifting the risk to another party, often through insurance or outsourcing), and Risk Acceptance (accepting the risk when the cost of mitigating it would outweigh the actual impact)."
+          "body": "After assessment, risks get prioritised by severity and likelihood — high-priority risks get addressed first, while lower-priority ones can be mitigated later or simply monitored regularly. Risk matrices (High/Medium/Low) help categorise and prioritise systematically rather than by gut feeling.\n\nFour mitigation strategies, once a risk is prioritised: **Risk Avoidance** (changing plans to avoid the risk entirely), **Risk Reduction** (reducing the impact or likelihood, e.g. through firewalls or encryption, plus organisational practices like training and policy enforcement), **Risk Transfer** (shifting the risk to another party, often through insurance or outsourcing), and **Risk Acceptance** (accepting the risk when the cost of mitigating it would outweigh the actual impact)."
         }
       ],
       "quiz": [
@@ -1927,15 +1927,15 @@
       "cards": [
         {
           "heading": "Early cyber-attacks: simple, but the first of their kind",
-          "body": "In the early days of computing, cyber-attacks were relatively simple, often carried out by individuals or small groups with limited hacking knowledge, primarily aimed at disrupting systems or gaining unauthorised access. Malware and viruses — worms and trojans designed to spread and infect systems — were the dominant threat: the Morris Worm (1988) infected around 6,000 computers, a huge number for the era.\n\nBy the late 1990s, hacktivism emerged as a tool for political activism, often involving defacing websites or disrupting online services — attacks were no longer purely technical curiosity, they'd started carrying a message."
+          "body": "In the early days of computing, cyber-attacks were relatively simple, often carried out by individuals or small groups with limited hacking knowledge, primarily aimed at disrupting systems or gaining unauthorised access. Malware and viruses — worms and trojans designed to spread and infect systems — were the dominant threat: the **Morris Worm** (1988) infected around 6,000 computers, a huge number for the era.\n\nBy the late 1990s, **hacktivism** emerged as a tool for political activism, often involving defacing websites or disrupting online services — attacks were no longer purely technical curiosity, they'd started carrying a message."
         },
         {
           "heading": "Script kiddies and the rise of cybercrime",
-          "body": "As hacking tools became more available and the internet grew, cybercrime rose as a real threat. \"Script kiddies\" — inexperienced attackers using pre-written scripts they didn't fully understand — became a major issue, since they no longer needed to understand the underlying code to launch destructive attacks.\n\nDenial-of-Service (DoS) attacks became common in the 2000s, overwhelming a system with traffic to make it unavailable to legitimate users. Malware kept evolving too — spyware, adware, and keyloggers let cybercriminals gather sensitive data without the victim ever knowing."
+          "body": "As hacking tools became more available and the internet grew, cybercrime rose as a real threat. \"**Script kiddies**\" — inexperienced attackers using pre-written scripts they didn't fully understand — became a major issue, since they no longer needed to understand the underlying code to launch destructive attacks.\n\nDenial-of-Service (DoS) attacks became common in the 2000s, overwhelming a system with traffic to make it unavailable to legitimate users. Malware kept evolving too — spyware, adware, and keyloggers let cybercriminals gather sensitive data without the victim ever knowing."
         },
         {
           "heading": "Advanced Persistent Threats: the modern evolution",
-          "body": "Advanced Persistent Threats (APTs) represent a significant evolution — highly targeted and persistent, focused on long-term access to systems and data, often going unnoticed for months or even years. Targeted attacks: APTs are typically aimed at high-value targets — governments, corporations, critical infrastructure.\n\nSocial engineering and phishing became central tools too: tricking individuals into opening malicious attachments or clicking links that lead to malware downloads. The through-line across this whole evolution is clear: attacks moved from simple and opportunistic toward targeted, patient, and much harder to detect.\n\nThis mirrors the same evolution Module 1 already covered in Nigeria's own online-scam landscape — from crude, obvious 419 emails to today's far more patient, carefully researched social-engineering attempts that barely resemble a scam at first glance."
+          "body": "**Advanced Persistent Threats** (APTs) represent a significant evolution — highly targeted and persistent, focused on long-term access to systems and data, often going unnoticed for months or even years. Targeted attacks: APTs are typically aimed at high-value targets — governments, corporations, critical infrastructure.\n\nSocial engineering and phishing became central tools too: tricking individuals into opening malicious attachments or clicking links that lead to malware downloads. The through-line across this whole evolution is clear: attacks moved from simple and opportunistic toward targeted, patient, and much harder to detect.\n\nThis mirrors the same evolution Module 1 already covered in Nigeria's own online-scam landscape — from crude, obvious 419 emails to today's far more patient, carefully researched social-engineering attempts that barely resemble a scam at first glance."
         }
       ],
       "quiz": [
@@ -2004,7 +2004,7 @@
       "cards": [
         {
           "heading": "The cybersecurity market, by category",
-          "body": "The cybersecurity market splits into recognisable categories. By Component: Software Services and Hardware Services. By Security Type: Endpoint Security, Cloud Security, Network Security, Application Security, Infrastructure Protection, and Data Security.\n\nThis categorisation matters because it shows cybersecurity isn't one single product — it's an entire industry made of specialised sub-markets, each defending a different layer or asset type."
+          "body": "The cybersecurity market splits into recognisable categories. By Component: Software Services and Hardware Services. By Security Type: **Endpoint Security**, **Cloud Security**, **Network Security**, **Application Security**, **Infrastructure Protection**, and **Data Security**.\n\nThis categorisation matters because it shows cybersecurity isn't one single product — it's an entire industry made of specialised sub-markets, each defending a different layer or asset type."
         },
         {
           "heading": "The cost of cybercrime is climbing fast",
@@ -2081,19 +2081,19 @@
       "cards": [
         {
           "heading": "The core ethical obligation: confidentiality and privacy",
-          "body": "Cybersecurity professionals hold an ethical obligation to protect the confidentiality and privacy of information entrusted to the systems they manage — ensuring sensitive data is accessed only by authorised individuals and used strictly for legitimate purposes.\n\nThis means implementing strong security controls, minimising unnecessary data exposure, and respecting user consent and legal requirements. Professionals must avoid abusing privileged access, maintain discretion, and promptly report or mitigate breaches. Upholding this fosters trust and supports compliance with both legal regulation and organisational policy."
+          "body": "Cybersecurity professionals hold an ethical obligation to protect the **confidentiality and privacy** of information entrusted to the systems they manage — ensuring sensitive data is accessed only by authorised individuals and used strictly for legitimate purposes.\n\nThis means implementing strong security controls, minimising unnecessary data exposure, and respecting user consent and legal requirements. Professionals must avoid abusing privileged access, maintain discretion, and promptly report or mitigate breaches. Upholding this fosters trust and supports compliance with both legal regulation and organisational policy."
         },
         {
           "heading": "Integrity, legal compliance, and ethical hacking",
-          "body": "Integrity and Professional Conduct: acting honestly and in the best interests of the organisations and individuals served — adhering to policies and standards, avoiding conflicts of interest, and accurately reporting vulnerabilities and incidents without exaggeration or concealment.\n\nLegal Compliance: understanding and adhering to the relevant laws and regulations governing cybersecurity, data protection, and digital conduct — avoiding unauthorised activities like illegal surveillance or hacking.\n\nResponsibility for Ethical Hacking: using technical skills only for authorised, legitimate purposes — obtaining explicit permission before testing, following the defined scope of engagement, and never exploiting a discovered weakness for personal gain."
+          "body": "**Integrity and Professional Conduct**: acting honestly and in the best interests of the organisations and individuals served — adhering to policies and standards, avoiding conflicts of interest, and accurately reporting vulnerabilities and incidents without exaggeration or concealment.\n\n**Legal Compliance**: understanding and adhering to the relevant laws and regulations governing cybersecurity, data protection, and digital conduct — avoiding unauthorised activities like illegal surveillance or hacking.\n\n**Responsibility for Ethical Hacking**: using technical skills only for authorised, legitimate purposes — obtaining explicit permission before testing, following the defined scope of engagement, and never exploiting a discovered weakness for personal gain."
         },
         {
           "heading": "Avoiding harm, raising awareness, disclosing responsibly",
-          "body": "Avoiding Malicious Activities: never using one's skills to harm systems, organisations, or individuals — refraining from unauthorised access, data theft, or creating and distributing malware.\n\nPromoting Security Awareness: educating users, employees, and stakeholders about cybersecurity risks and safe digital practices, reducing human-related vulnerabilities across the whole organisation, not just the technical systems.\n\nResponsibly Disclosing Vulnerabilities: when a weakness is found, reporting it promptly through established disclosure channels — never publicly revealing it before it's fixed, since that could expose systems to exploitation before a patch even exists.\n\nEthical Considerations for Emerging Technologies: anticipating the security, privacy, and societal risks of AI, IoT, and cloud computing as they evolve, advocating for secure design and responsible data use from the start.\n\nNigerian fintechs like Paystack and Flutterwave now run their own bug bounty programmes — paying ethical hackers specifically for responsible disclosure instead of silence or public exposure, turning this obligation into an actual paid career path."
+          "body": "**Avoiding Malicious Activities**: never using one's skills to harm systems, organisations, or individuals — refraining from unauthorised access, data theft, or creating and distributing malware.\n\n**Promoting Security Awareness**: educating users, employees, and stakeholders about cybersecurity risks and safe digital practices, reducing human-related vulnerabilities across the whole organisation, not just the technical systems.\n\n**Responsibly Disclosing Vulnerabilities**: when a weakness is found, reporting it promptly through established disclosure channels — never publicly revealing it before it's fixed, since that could expose systems to exploitation before a patch even exists.\n\nEthical Considerations for Emerging Technologies: anticipating the security, privacy, and societal risks of AI, IoT, and cloud computing as they evolve, advocating for secure design and responsible data use from the start.\n\nNigerian fintechs like Paystack and Flutterwave now run their own bug bounty programmes — paying ethical hackers specifically for responsible disclosure instead of silence or public exposure, turning this obligation into an actual paid career path."
         },
         {
           "heading": "Ten ways to strengthen cybersecurity defences",
-          "body": "A practical checklist tying the ethical obligations back to concrete action: Strong Passwords (enhance authentication), Regular Updates (patch vulnerabilities), Multi-factor Authentication (add layers), Employee Training (boost awareness), Secure Networks (isolate traffic), Firewall Protection (block intrusions), Data Encryption (safeguard information), Incident Response (swift action), Security Audits (assess weaknesses), and Backup Solutions (ensure resilience).\n\nNone of these ten is a silver bullet by itself — they work as a layered set, echoing the same defence-in-depth idea seen throughout this course: no single control is trusted to be enough on its own."
+          "body": "A practical checklist tying the ethical obligations back to concrete action: **Strong Passwords** (enhance authentication), **Regular Updates** (patch vulnerabilities), **Multi-factor Authentication** (add layers), **Employee Training** (boost awareness), **Secure Networks** (isolate traffic), **Firewall Protection** (block intrusions), **Data Encryption** (safeguard information), **Incident Response** (swift action), **Security Audits** (assess weaknesses), and **Backup Solutions** (ensure resilience).\n\nNone of these ten is a silver bullet by itself — they work as a layered set, echoing the same defence-in-depth idea seen throughout this course: no single control is trusted to be enough on its own."
         }
       ],
       "quiz": [
@@ -2161,11 +2161,11 @@
       "cards": [
         {
           "heading": "The building blocks: networks, protocols, OS, applications",
-          "body": "Understanding cybersecurity's foundation means examining four critical components: networks, protocols, operating systems, and applications. These are the actual building blocks of the internet and digital infrastructure — and their security is what stands between a working system and a compromised one.\n\nNetworks facilitate communication between systems, while protocols define the RULES for that communication. Protocols like TCP/IP (Transmission Control Protocol/Internet Protocol) and HTTPS (Hypertext Transfer Protocol Secure) are essential for secure data transfer — examining them closely helps identify exactly where an attacker could exploit a weakness.\n\nThis is exactly the layer your phone silently negotiates every time it hands off between MTN, Glo, or Airtel towers as you move — protocols quietly agreeing on the rules so the call or data session never notices the switch."
+          "body": "Understanding cybersecurity's foundation means examining four critical components: networks, protocols, operating systems, and applications. These are the actual building blocks of the internet and digital infrastructure — and their security is what stands between a working system and a compromised one.\n\nNetworks facilitate communication between systems, while protocols define the RULES for that communication. Protocols like **TCP/IP** (Transmission Control Protocol/Internet Protocol) and **HTTPS** (Hypertext Transfer Protocol Secure) are essential for secure data transfer — examining them closely helps identify exactly where an attacker could exploit a weakness.\n\nThis is exactly the layer your phone silently negotiates every time it hands off between MTN, Glo, or Airtel towers as you move — protocols quietly agreeing on the rules so the call or data session never notices the switch."
         },
         {
           "heading": "Security concerns by OSI layer",
-          "body": "Each layer of the network stack carries its own risks and its own defences:\n\n• Application Layer (Layer 7) — highest risk, since it involves direct user interaction. Threats: malware, phishing, SQL injection, cross-site scripting, zero-day exploits. Defences: web application firewalls, HTTPS (SSL/TLS), secure coding practices, vulnerability patching.\n• Network Layer (Layer 3) — protects against unauthorised access, routing attacks, and data interception. Threats: IP spoofing, DDoS attacks, man-in-the-middle attacks. Defences: firewalls, IPsec encryption, intrusion detection/prevention systems.\n• Transport Layer (Layer 4) — ensures secure, reliable data transmission between devices. Threats: port scanning, session hijacking, DoS attacks. Defences: TLS, SSL, port filtering.\n• Data Link Layer (Layer 2) — secures internal network infrastructure and device identity. Threats: MAC spoofing, ARP spoofing, switch hijacking. Defences: MAC filtering, VLAN segmentation, 802.1X authentication, ARP inspection."
+          "body": "Each layer of the network stack carries its own risks and its own defences:\n\n• **Application Layer (Layer 7)** — highest risk, since it involves direct user interaction. Threats: malware, phishing, SQL injection, cross-site scripting, zero-day exploits. Defences: web application firewalls, **HTTPS** (SSL/TLS), secure coding practices, vulnerability patching.\n• **Network Layer (Layer 3)** — protects against unauthorised access, routing attacks, and data interception. Threats: IP spoofing, DDoS attacks, man-in-the-middle attacks. Defences: firewalls, IPsec encryption, intrusion detection/prevention systems.\n• **Transport Layer (Layer 4)** — ensures secure, reliable data transmission between devices. Threats: port scanning, session hijacking, DoS attacks. Defences: TLS, SSL, port filtering.\n• **Data Link Layer (Layer 2)** — secures internal network infrastructure and device identity. Threats: MAC spoofing, ARP spoofing, switch hijacking. Defences: MAC filtering, VLAN segmentation, 802.1X authentication, ARP inspection."
         },
         {
           "heading": "Operating systems and applications as attack surfaces",
@@ -2238,11 +2238,11 @@
       "cards": [
         {
           "heading": "How nations defend against cyber-attacks",
-          "body": "As cyber threats keep evolving, national security strategies are developed so governments can respond effectively — usually involving collaboration between public and private sectors, intelligence agencies, and international organisations.\n\nCyber Defense and Incident Response: national security agencies implement robust defence systems including early warning systems, threat intelligence sharing, and quick-response mechanisms to mitigate attacks as they happen.\n\nCyber Warfare: many countries have developed military cyber units to conduct both offensive and defensive operations in cyberspace — targeting enemy infrastructure while defending against foreign cyber-attacks on their own.\n\nNigeria has its own version of this machinery: the Nigeria Computer Emergency Response Team (ngCERT) plays a comparable coordinating role domestically to CISA in the US or the NCSC in the UK, alongside the National Cybersecurity Policy and Strategy already covered earlier in this course."
+          "body": "As cyber threats keep evolving, national security strategies are developed so governments can respond effectively — usually involving collaboration between public and private sectors, intelligence agencies, and international organisations.\n\n**Cyber Defense and Incident Response**: national security agencies implement robust defence systems including early warning systems, threat intelligence sharing, and quick-response mechanisms to mitigate attacks as they happen.\n\n**Cyber Warfare**: many countries have developed military cyber units to conduct both offensive and defensive operations in cyberspace — targeting enemy infrastructure while defending against foreign cyber-attacks on their own.\n\nNigeria has its own version of this machinery: the **Nigeria Computer Emergency Response Team (ngCERT)** plays a comparable coordinating role domestically to CISA in the US or the NCSC in the UK, alongside the National Cybersecurity Policy and Strategy already covered earlier in this course."
         },
         {
           "heading": "International collaboration and national legislation",
-          "body": "Collaboration: countries work together on a global scale, exchanging cyber threat intelligence to prevent large-scale attacks. International organisations like the European Union Agency for Cybersecurity (ENISA) and Interpol conduct cross-border cyber defence and investigations, since attacks routinely cross national borders even when the response can't just as easily.\n\nLegislation and Policy: national governments create and enforce policies aimed at enhancing cybersecurity and preventing attacks — for example, the U.S. National Cyber Strategy lays out plans for securing critical infrastructure and strengthening the resilience of the nation's digital infrastructure as a whole."
+          "body": "**Collaboration**: countries work together on a global scale, exchanging cyber threat intelligence to prevent large-scale attacks. International organisations like the European Union Agency for Cybersecurity (ENISA) and Interpol conduct cross-border cyber defence and investigations, since attacks routinely cross national borders even when the response can't just as easily.\n\n**Legislation and Policy**: national governments create and enforce policies aimed at enhancing cybersecurity and preventing attacks — for example, the U.S. National Cyber Strategy lays out plans for securing critical infrastructure and strengthening the resilience of the nation's digital infrastructure as a whole."
         }
       ],
       "quiz": [
@@ -2311,15 +2311,15 @@
       "cards": [
         {
           "heading": "Standards vs. frameworks: guidelines vs. structured approach",
-          "body": "Standards and frameworks provide the guidelines and best practices that make cybersecurity consistent and effective across organisations, industries, and even nations — without them, every organisation would essentially reinvent its own approach from scratch.\n\nCybersecurity Standards are widely accepted practices and specifications that guide the protection of digital systems. Cybersecurity Frameworks — like the NIST Cybersecurity Framework (CSF) — go further, providing a structured approach to managing and mitigating risk, helping organisations identify, protect, detect, respond to, and recover from cyber threats in a defined sequence rather than an ad-hoc one."
+          "body": "Standards and frameworks provide the guidelines and best practices that make cybersecurity consistent and effective across organisations, industries, and even nations — without them, every organisation would essentially reinvent its own approach from scratch.\n\n**Cybersecurity Standards** are widely accepted practices and specifications that guide the protection of digital systems. **Cybersecurity Frameworks** — like the **NIST Cybersecurity Framework** (CSF) — go further, providing a structured approach to managing and mitigating risk, helping organisations identify, protect, detect, respond to, and recover from cyber threats in a defined sequence rather than an ad-hoc one."
         },
         {
           "heading": "The major standards and frameworks worth knowing",
-          "body": "ISO/IEC 27001 (International Organization for Standardization / International Electrotechnical Commission) — a leading information security management standard. NIST Cybersecurity Framework — a structured US-developed approach widely used internationally. PCI DSS (Payment Card Industry Data Security Standard) — protects payment card data specifically. HIPAA Security Rule — secures health information. GDPR — protects EU residents' personal data. IEC 62443 — secures industrial automation and control systems.\n\nCompliance with a standard like PCI DSS ensures businesses adhere to security measures protecting sensitive customer data. Industry-specific frameworks exist too — the Critical Infrastructure Protection (CIP) framework for energy and utilities focuses specifically on securing operational technology and industrial control systems, since a power grid has very different security needs from a typical office network."
+          "body": "**ISO/IEC 27001** (International Organization for Standardization / International Electrotechnical Commission) — a leading information security management standard. **NIST Cybersecurity Framework** — a structured US-developed approach widely used internationally. **PCI DSS (Payment Card Industry Data Security Standard)** — protects payment card data specifically. **HIPAA Security Rule** — secures health information. GDPR — protects EU residents' personal data. **IEC 62443** — secures industrial automation and control systems.\n\nCompliance with a standard like PCI DSS ensures businesses adhere to security measures protecting sensitive customer data. Industry-specific frameworks exist too — the Critical Infrastructure Protection (CIP) framework for energy and utilities focuses specifically on securing operational technology and industrial control systems, since a power grid has very different security needs from a typical office network."
         },
         {
           "heading": "Policy tools: legislation, insurance, diplomacy, agencies",
-          "body": "Countries use a range of policy tools to address cyber-attacks and protect national interests, from technical defence measures to legal enforcement and international diplomacy.\n\nCybersecurity Legislation criminalises activities like hacking, data theft, and cyber espionage — the EU's Cybersecurity Act provides guidelines for securing critical infrastructure and protecting individual privacy. Cyber Insurance is increasingly adopted to mitigate the financial impact of attacks, helping businesses recover costs from data breaches and ransomware payments. Cyber Diplomacy plays out on the international stage — the UN Group of Governmental Experts (GGE) works on international norms for responsible state behaviour in cyberspace. Domestic Cybersecurity Agencies oversee security protocols and coordinate national responses — CISA (Cybersecurity and Infrastructure Security Agency) in the US and the NCSC (National Cyber Security Centre) in the UK are the clearest examples.\n\nNigeria's own NDPR (covered earlier in this course) is exactly this kind of policy tool in action — cybersecurity legislation translated into a concrete compliance obligation every Nigerian business handling personal data now has to take seriously."
+          "body": "Countries use a range of policy tools to address cyber-attacks and protect national interests, from technical defence measures to legal enforcement and international diplomacy.\n\n**Cybersecurity Legislation** criminalises activities like hacking, data theft, and cyber espionage — the EU's Cybersecurity Act provides guidelines for securing critical infrastructure and protecting individual privacy. **Cyber Insurance** is increasingly adopted to mitigate the financial impact of attacks, helping businesses recover costs from data breaches and ransomware payments. **Cyber Diplomacy** plays out on the international stage — the UN Group of Governmental Experts (GGE) works on international norms for responsible state behaviour in cyberspace. **Domestic Cybersecurity Agencies** oversee security protocols and coordinate national responses — CISA (Cybersecurity and Infrastructure Security Agency) in the US and the NCSC (National Cyber Security Centre) in the UK are the clearest examples.\n\nNigeria's own NDPR (covered earlier in this course) is exactly this kind of policy tool in action — cybersecurity legislation translated into a concrete compliance obligation every Nigerian business handling personal data now has to take seriously."
         }
       ],
       "quiz": [
