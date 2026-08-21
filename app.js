@@ -621,10 +621,20 @@ function startMatch() {
   saveChapterProgress();
 }
 
+// Built once per round start; click handlers mutate these elements'
+// classes/disabled state directly afterward instead of re-rendering the
+// whole screen, so a single tap never causes the full-page fade-in the
+// rest of the app reserves for actual navigation.
+let matchTermEls = {};
+let matchDefEls = {};
+let matchProgressEl = null;
+
 function renderMatchRound() {
   const ch = currentChapter();
   const pairs = ch.match;
   app.innerHTML = "";
+  matchTermEls = {};
+  matchDefEls = {};
 
   const back = document.createElement("button");
   back.className = "back-btn";
@@ -632,9 +642,9 @@ function renderMatchRound() {
   back.addEventListener("click", () => withTransition(() => goPath(nav.courseId)));
   app.appendChild(back);
 
-  const progress = document.createElement("div");
-  progress.innerHTML = progressTrackHtml(matchSolved.size, pairs.length);
-  app.appendChild(progress.firstChild);
+  matchProgressEl = document.createElement("div");
+  updateMatchProgress();
+  app.appendChild(matchProgressEl);
 
   const label = document.createElement("div");
   label.className = "theory-label";
@@ -644,63 +654,83 @@ function renderMatchRound() {
   const grid = document.createElement("div");
   grid.className = "match-grid";
 
-  function buildCol(order, kind, handler) {
+  function buildCol(order, kind) {
     const col = document.createElement("div");
     col.className = "match-col";
     order.forEach(idx => {
       const btn = document.createElement("button");
       btn.className = `match-item match-${kind}`;
       btn.textContent = kind === "term" ? pairs[idx].term : pairs[idx].definition;
-      if (matchSolved.has(idx)) { btn.classList.add("matched"); btn.disabled = true; }
-      const selected = kind === "term" ? matchSelectedTerm === idx : matchSelectedDef === idx;
-      if (selected && !matchWrongPair) btn.classList.add("selected");
-      const wrong = matchWrongPair && (kind === "term" ? matchWrongPair.term === idx : matchWrongPair.def === idx);
-      if (wrong) btn.classList.add("wrong");
-      if (!matchSolved.has(idx) && !matchWrongPair) {
-        btn.addEventListener("click", () => handler(idx));
-      }
+      btn.addEventListener("click", () => (kind === "term" ? handleMatchTermClick : handleMatchDefClick)(idx));
+      (kind === "term" ? matchTermEls : matchDefEls)[idx] = btn;
       col.appendChild(btn);
     });
     return col;
   }
 
-  grid.appendChild(buildCol(matchTermOrder, "term", handleMatchTermClick));
-  grid.appendChild(buildCol(matchDefOrder, "def", handleMatchDefClick));
+  grid.appendChild(buildCol(matchTermOrder, "term"));
+  grid.appendChild(buildCol(matchDefOrder, "def"));
   app.appendChild(grid);
 }
 
-function handleMatchTermClick(idx) {
-  matchSelectedTerm = matchSelectedTerm === idx ? null : idx;
-  resolveMatchSelection();
-}
-function handleMatchDefClick(idx) {
-  matchSelectedDef = matchSelectedDef === idx ? null : idx;
-  resolveMatchSelection();
+function updateMatchProgress() {
+  matchProgressEl.innerHTML = progressTrackHtml(matchSolved.size, currentChapter().match.length);
 }
 
-function resolveMatchSelection() {
-  if (matchSelectedTerm === null || matchSelectedDef === null) {
-    renderMatchRound();
+function handleMatchTermClick(idx) {
+  if (matchWrongPair || matchSolved.has(idx)) return;
+  if (matchSelectedTerm === idx) {
+    matchTermEls[idx].classList.remove("selected");
+    matchSelectedTerm = null;
     return;
   }
+  if (matchSelectedTerm !== null) matchTermEls[matchSelectedTerm].classList.remove("selected");
+  matchSelectedTerm = idx;
+  matchTermEls[idx].classList.add("selected");
+  tryResolveMatch();
+}
+function handleMatchDefClick(idx) {
+  if (matchWrongPair || matchSolved.has(idx)) return;
+  if (matchSelectedDef === idx) {
+    matchDefEls[idx].classList.remove("selected");
+    matchSelectedDef = null;
+    return;
+  }
+  if (matchSelectedDef !== null) matchDefEls[matchSelectedDef].classList.remove("selected");
+  matchSelectedDef = idx;
+  matchDefEls[idx].classList.add("selected");
+  tryResolveMatch();
+}
+
+function tryResolveMatch() {
+  if (matchSelectedTerm === null || matchSelectedDef === null) return;
   const ch = currentChapter();
   if (matchSelectedTerm === matchSelectedDef) {
-    matchSolved.add(matchSelectedTerm);
+    const idx = matchSelectedTerm;
+    [matchTermEls[idx], matchDefEls[idx]].forEach(el => {
+      el.classList.remove("selected");
+      el.classList.add("matched");
+      el.disabled = true;
+    });
+    matchSolved.add(idx);
     matchSelectedTerm = null;
     matchSelectedDef = null;
+    updateMatchProgress();
     saveChapterProgress();
-    renderMatchRound();
     if (matchSolved.size === ch.match.length) {
       setTimeout(() => withTransition(finishMatchRound), 400);
     }
   } else {
-    matchWrongPair = { term: matchSelectedTerm, def: matchSelectedDef };
-    renderMatchRound();
+    const wrongTerm = matchSelectedTerm, wrongDef = matchSelectedDef;
+    matchWrongPair = { term: wrongTerm, def: wrongDef };
+    matchTermEls[wrongTerm].classList.add("wrong");
+    matchDefEls[wrongDef].classList.add("wrong");
     setTimeout(() => {
+      matchTermEls[wrongTerm]?.classList.remove("wrong", "selected");
+      matchDefEls[wrongDef]?.classList.remove("wrong", "selected");
       matchWrongPair = null;
       matchSelectedTerm = null;
       matchSelectedDef = null;
-      renderMatchRound();
     }, 500);
   }
 }

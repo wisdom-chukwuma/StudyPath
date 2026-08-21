@@ -563,6 +563,9 @@ ul.card-list li::before {
 .match-col { display: flex; flex-direction: column; gap: 10px; }
 
 .match-item {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
   text-align: left;
   padding: 12px 14px;
   border: 2px solid var(--gray);
@@ -574,7 +577,7 @@ ul.card-list li::before {
   cursor: pointer;
   font-family: inherit;
   appearance: none;
-  transition: border-color 0.15s ease, transform 0.1s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
 }
 
 .match-item:hover:not(:disabled) { border-color: var(--blue); }
