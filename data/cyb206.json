@@ -270,6 +270,32 @@
             "Strong answers show the vulnerability → threat → exploit → attack relationship, since it explains several terms at once"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Vulnerability",
+          "definition": "The open door nobody noticed yet"
+        },
+        {
+          "term": "Threat",
+          "definition": "The possibility someone could exploit it"
+        },
+        {
+          "term": "Exploit",
+          "definition": "The tool used to actually take advantage of it"
+        },
+        {
+          "term": "Attack",
+          "definition": "The act of breaching security actually happening"
+        },
+        {
+          "term": "Firewall",
+          "definition": "The bouncer checking every connection at the door"
+        },
+        {
+          "term": "Encryption",
+          "definition": "Writing gist nobody else can read"
+        }
       ]
     },
     {
@@ -482,6 +508,32 @@
             "CIA is the overarching goal every other security measure ultimately serves"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Confidentiality",
+          "definition": "Only authorized people can access it"
+        },
+        {
+          "term": "Integrity",
+          "definition": "Data hasn't been secretly changed"
+        },
+        {
+          "term": "Availability",
+          "definition": "Systems are accessible when needed"
+        },
+        {
+          "term": "Authentication",
+          "definition": "Verifying identity — proving it's really you"
+        },
+        {
+          "term": "Non-Repudiation",
+          "definition": "Actions can't be denied afterward"
+        },
+        {
+          "term": "Accountability",
+          "definition": "Actions can always be traced to someone"
+        }
       ]
     },
     {
@@ -606,6 +658,32 @@
             "Enabling Innovation and Growth"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Protecting Sensitive Information",
+          "definition": "Personal data, financial records, IP"
+        },
+        {
+          "term": "Ensuring Business Continuity",
+          "definition": "Operations survive a cyber threat"
+        },
+        {
+          "term": "Safeguarding Critical Infrastructure",
+          "definition": "Healthcare, energy, transportation"
+        },
+        {
+          "term": "Supporting E-Commerce",
+          "definition": "Secure payments and fraud detection"
+        },
+        {
+          "term": "Protecting National Security",
+          "definition": "Classified info, secure comms"
+        },
+        {
+          "term": "Enhancing User Trust",
+          "definition": "People engage more with secured services"
+        }
       ]
     },
     {
@@ -690,6 +768,24 @@
             "DoS/DDoS disrupt availability",
             "Insider threats come from authorized users"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Malware",
+          "definition": "Malicious software designed to damage or disrupt"
+        },
+        {
+          "term": "Phishing",
+          "definition": "Tricking a person into revealing information"
+        },
+        {
+          "term": "DDoS",
+          "definition": "Overwhelms a system with traffic so real users can't get in"
+        },
+        {
+          "term": "Insider threat",
+          "definition": "Danger from someone with authorized access"
         }
       ]
     },
@@ -945,6 +1041,28 @@
             "IDS raises alerts for suspicious behavior"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Vulnerability assessment",
+          "definition": "Systematic evaluation to discover weaknesses"
+        },
+        {
+          "term": "Penetration testing",
+          "definition": "A simulated attack to test controls"
+        },
+        {
+          "term": "Threat hunting",
+          "definition": "Proactively searching for hidden threats"
+        },
+        {
+          "term": "Behavioral analytics",
+          "definition": "Examines behaviour for unusual patterns"
+        },
+        {
+          "term": "IDS",
+          "definition": "Monitors activity and raises an alert"
+        }
       ]
     },
     {
@@ -1107,6 +1225,24 @@
             "Protection maintains confidentiality, integrity, and availability",
             "Classification, backup, disposal, and segmentation are key controls"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Data classification",
+          "definition": "Deciding how sensitive information is"
+        },
+        {
+          "term": "Backup and recovery",
+          "definition": "Restoring data after loss or attack"
+        },
+        {
+          "term": "Secure disposal",
+          "definition": "Removing data safely from old devices"
+        },
+        {
+          "term": "Network segmentation",
+          "definition": "Limits how far an attack can spread"
         }
       ]
     },
@@ -1376,6 +1512,28 @@
           "question": "Explain the methods and motives of cybersecurity incident perpetrators.",
           "modelAnswer": "Cybersecurity incident perpetrators use methods such as malware, phishing, ransomware, denial-of-service, insider attacks, and SQL injection to exploit weaknesses. Their motives may include financial gain, espionage, sabotage, revenge, hacktivism, or political goals. Understanding both the methods and the motives is important for prevention and defense."
         }
+      ],
+      "match": [
+        {
+          "term": "Black hat hacker",
+          "definition": "Malicious, breaks in for personal gain"
+        },
+        {
+          "term": "White hat hacker",
+          "definition": "Ethical, hacks to help improve security"
+        },
+        {
+          "term": "Gray hat hacker",
+          "definition": "Somewhere between the two, no clear permission"
+        },
+        {
+          "term": "Hacktivist",
+          "definition": "Attacks to make a political statement"
+        },
+        {
+          "term": "Script kiddie",
+          "definition": "Uses pre-written tools without understanding them"
+        }
       ]
     },
     {
@@ -1616,6 +1774,24 @@
           "question": "Discuss how risk assessment helps in choosing security controls.",
           "modelAnswer": "Risk assessment helps organizations understand which assets are valuable, what threats are likely, and how much damage could occur. This information allows the organization to choose the most appropriate controls to reduce or manage risk effectively."
         }
+      ],
+      "match": [
+        {
+          "term": "Preventive control",
+          "definition": "Stops an attack before it happens"
+        },
+        {
+          "term": "Detective control",
+          "definition": "Reveals an attack after it starts"
+        },
+        {
+          "term": "Corrective control",
+          "definition": "Restores systems after an event"
+        },
+        {
+          "term": "Compensating control",
+          "definition": "An alternative when the main control isn't possible"
+        }
       ]
     },
     {
@@ -1755,6 +1931,24 @@
             "Procedure: a step-by-step guide, focused on HOW to implement a standard",
             "Standards are more abstract; procedures are practical and action-oriented"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Policy",
+          "definition": "Sets strategic direction — the WHY"
+        },
+        {
+          "term": "Standard",
+          "definition": "A benchmark to meet — the WHAT"
+        },
+        {
+          "term": "Procedure",
+          "definition": "Step-by-step actions — the HOW"
+        },
+        {
+          "term": "Guideline",
+          "definition": "Practical day-to-day advice"
         }
       ]
     },
@@ -1918,6 +2112,24 @@
             "A static, one-time risk assessment quickly becomes outdated"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Risk Avoidance",
+          "definition": "Changing plans to avoid the risk entirely"
+        },
+        {
+          "term": "Risk Reduction",
+          "definition": "Lowering the impact or likelihood"
+        },
+        {
+          "term": "Risk Transfer",
+          "definition": "Shifting the risk to another party"
+        },
+        {
+          "term": "Risk Acceptance",
+          "definition": "Accepting it when mitigation costs more"
+        }
       ]
     },
     {
@@ -2071,6 +2283,24 @@
             "MFA adds a second layer beyond just a password",
             "Rising costs and low preparedness make both practices essential, not optional"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Endpoint Security",
+          "definition": "Protects individual devices"
+        },
+        {
+          "term": "Cloud Security",
+          "definition": "Protects cloud-hosted systems and data"
+        },
+        {
+          "term": "Network Security",
+          "definition": "Protects the network infrastructure itself"
+        },
+        {
+          "term": "Application Security",
+          "definition": "Protects software applications"
         }
       ]
     },
@@ -2229,6 +2459,24 @@
             "Attackers exploit whichever layer is easiest, so all layers need coordinated defence"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Application Layer",
+          "definition": "Highest risk — direct user interaction"
+        },
+        {
+          "term": "Network Layer",
+          "definition": "Unauthorised access, routing attacks"
+        },
+        {
+          "term": "Transport Layer",
+          "definition": "Secure, reliable data transmission"
+        },
+        {
+          "term": "Data Link Layer",
+          "definition": "Secures internal infrastructure and device identity"
+        }
       ]
     },
     {
@@ -2378,6 +2626,28 @@
             "Interconnected infrastructure means one weak link can compromise partners too",
             "Policy tools (legislation, insurance, diplomacy, agencies) handle the legal/coordination side"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "ISO/IEC 27001",
+          "definition": "A leading information security management standard"
+        },
+        {
+          "term": "NIST Cybersecurity Framework",
+          "definition": "Structured identify/protect/detect/respond/recover"
+        },
+        {
+          "term": "PCI DSS",
+          "definition": "Protects payment card data specifically"
+        },
+        {
+          "term": "HIPAA Security Rule",
+          "definition": "Secures health information"
+        },
+        {
+          "term": "GDPR",
+          "definition": "Protects EU residents' personal data"
         }
       ]
     }

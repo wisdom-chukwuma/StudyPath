@@ -290,6 +290,24 @@
             "Choice depends on the job: flat data vs API communication vs formal document standards"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Type",
+          "definition": "\"score must be a number\""
+        },
+        {
+          "term": "Range",
+          "definition": "\"score between 0 and 100\""
+        },
+        {
+          "term": "Presence",
+          "definition": "\"matric number is required\""
+        },
+        {
+          "term": "Uniqueness",
+          "definition": "no two students share a matric no"
+        }
       ]
     },
     {
@@ -590,6 +608,28 @@
             "People"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Hardware",
+          "definition": "the machine the system runs on"
+        },
+        {
+          "term": "Software",
+          "definition": "the DBMS itself"
+        },
+        {
+          "term": "Data",
+          "definition": "the actual facts being stored"
+        },
+        {
+          "term": "Procedures",
+          "definition": "the documented rules people follow"
+        },
+        {
+          "term": "People",
+          "definition": "everyone who touches the system"
+        }
       ]
     },
     {
@@ -714,6 +754,24 @@
             "Design conservatively: extend rather than rewrite",
             "3-tier middle tier: sole database connection point, holds both business rules and credentials"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "DDL",
+          "definition": "Defines structure — CREATE TABLE, ALTER TABLE"
+        },
+        {
+          "term": "DML",
+          "definition": "Works with data — SELECT, INSERT, UPDATE"
+        },
+        {
+          "term": "DCL",
+          "definition": "Controls access — GRANT, REVOKE"
+        },
+        {
+          "term": "TCL",
+          "definition": "Manages transactions — COMMIT, ROLLBACK"
         }
       ]
     },
@@ -1300,6 +1358,32 @@
             "Multivalued → its own small table"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Entity (rectangle)",
+          "definition": "A thing with facts of its own — STUDENT"
+        },
+        {
+          "term": "Weak entity (double rectangle)",
+          "definition": "Depends on something else to exist"
+        },
+        {
+          "term": "Relationship (diamond)",
+          "definition": "How two entities connect — REGISTERS"
+        },
+        {
+          "term": "Attribute (oval)",
+          "definition": "A single fact — full_name"
+        },
+        {
+          "term": "Key attribute (underlined oval)",
+          "definition": "Uniquely identifies the entity"
+        },
+        {
+          "term": "Multivalued (double oval)",
+          "definition": "An entity can have several — phone numbers"
+        }
       ]
     },
     {
@@ -1444,6 +1528,24 @@
             "Correct policy: RESTRICT (or SET NULL) — payments are not owner-part data like a student's phone numbers"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Superkey",
+          "definition": "Any column set guaranteed unique"
+        },
+        {
+          "term": "Candidate key",
+          "definition": "A minimal superkey"
+        },
+        {
+          "term": "Primary key",
+          "definition": "The candidate key that got chosen"
+        },
+        {
+          "term": "Alternate key",
+          "definition": "A candidate key that didn't get picked"
+        }
       ]
     },
     {
@@ -1569,6 +1671,24 @@
             "Transactions: multi-table ACID vs. strong only per-document",
             "Hybrid: typed columns for the stable core + JSON for the varying tail"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Document",
+          "definition": "JSON-like records — MongoDB, CouchDB"
+        },
+        {
+          "term": "Key-value",
+          "definition": "A value behind a lookup key — Redis"
+        },
+        {
+          "term": "Wide-column",
+          "definition": "Sparse rows, huge scale — Cassandra"
+        },
+        {
+          "term": "Graph",
+          "definition": "Nodes and edges — Neo4j"
         }
       ]
     },
@@ -1842,6 +1962,24 @@
             "LEFT JOIN: every left-side row survives, NULLs fill unmatched right-side columns",
             "Wrong choice doesn't error — it silently answers a different question than intended"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "SELECT (σ)",
+          "definition": "Picks ROWS that pass a condition"
+        },
+        {
+          "term": "PROJECT (π)",
+          "definition": "Picks COLUMNS, drops the rest"
+        },
+        {
+          "term": "JOIN",
+          "definition": "Pairs rows across tables on a match"
+        },
+        {
+          "term": "UNION / DIFFERENCE",
+          "definition": "Combines or subtracts row sets"
         }
       ]
     },
@@ -2251,6 +2389,24 @@
             "Rule: normalise where you write; denormalise deliberately, downstream, where you only read"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "1NF",
+          "definition": "Atomic values only, no repeating groups"
+        },
+        {
+          "term": "2NF",
+          "definition": "Removes partial dependencies"
+        },
+        {
+          "term": "3NF",
+          "definition": "Removes transitive dependencies"
+        },
+        {
+          "term": "BCNF",
+          "definition": "Every determinant is a candidate key"
+        }
       ]
     },
     {
@@ -2501,6 +2657,24 @@
             "Parameterisation: input bound as data, never parsed as code — a mechanism change, not a better filter"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Authentication",
+          "definition": "WHO are you?"
+        },
+        {
+          "term": "Authorisation (DCL)",
+          "definition": "WHAT may you do?"
+        },
+        {
+          "term": "Input validation",
+          "definition": "Is this input SAFE?"
+        },
+        {
+          "term": "Encryption",
+          "definition": "Unreadable if stolen?"
+        }
       ]
     },
     {
@@ -2626,6 +2800,24 @@
             "Durability — committed survives a crash",
             "Write-ahead log records changes first; REDO replays committed work after a crash, delivering Durability"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Atomicity",
+          "definition": "All steps happen, or none do"
+        },
+        {
+          "term": "Consistency",
+          "definition": "The database stays in a valid state"
+        },
+        {
+          "term": "Isolation",
+          "definition": "Concurrent transactions don't corrupt each other"
+        },
+        {
+          "term": "Durability",
+          "definition": "Committed survives a crash"
         }
       ]
     }

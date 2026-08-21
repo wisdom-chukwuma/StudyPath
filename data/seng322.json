@@ -143,6 +143,24 @@
             "Scale — only after product-market fit is demonstrated"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Innovative entrepreneur",
+          "definition": "Introduces genuinely new products or models"
+        },
+        {
+          "term": "Social entrepreneur",
+          "definition": "Builds a business to solve a social problem"
+        },
+        {
+          "term": "Imitative entrepreneur",
+          "definition": "Adapts a proven idea to a local market"
+        },
+        {
+          "term": "Technopreneur",
+          "definition": "Technology itself is the core tool"
+        }
       ]
     },
     {
@@ -275,6 +293,24 @@
             "Typical conversion rate to paid is small (2-5%)",
             "Risk: giving away too much removes any reason to pay"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "SaaS",
+          "definition": "Recurring fee for cloud-hosted software"
+        },
+        {
+          "term": "Freemium",
+          "definition": "Free tier, premium features cost money"
+        },
+        {
+          "term": "Licensing",
+          "definition": "Pay for the right to use the software"
+        },
+        {
+          "term": "Marketplace/platform",
+          "definition": "Connects two sides, takes a commission"
         }
       ]
     },
@@ -413,6 +449,32 @@
             "Radical protects against being disrupted by a competitor's breakthrough",
             "Real companies run both tracks simultaneously, not one or the other"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Product innovation",
+          "definition": "A new product or major feature upgrade"
+        },
+        {
+          "term": "Process innovation",
+          "definition": "A better way of doing the same thing"
+        },
+        {
+          "term": "Service innovation",
+          "definition": "More value/convenience in the service itself"
+        },
+        {
+          "term": "Business model innovation",
+          "definition": "A new way of creating/capturing value"
+        },
+        {
+          "term": "Marketing innovation",
+          "definition": "New promotion or pricing strategies"
+        },
+        {
+          "term": "Digital innovation",
+          "definition": "Digital tech creates new products or processes"
         }
       ]
     },
@@ -555,6 +617,28 @@
             "Amaka's numbers: 4,000 shops → 60% reachable = 2,400 SAM → ×₦18,000 = ₦43.2M SAM revenue → 5% capture = 120 shops / ₦2.16M SOM"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Cost leadership",
+          "definition": "A meaningfully lower price"
+        },
+        {
+          "term": "Feature differentiation",
+          "definition": "Specific capabilities competitors lack"
+        },
+        {
+          "term": "Niche focus",
+          "definition": "Serving one segment exceptionally well"
+        },
+        {
+          "term": "Superior user experience",
+          "definition": "Winning on ease and pleasantness of use"
+        },
+        {
+          "term": "Local advantage",
+          "definition": "Deeper local language/payments/regulation insight"
+        }
       ]
     },
     {
@@ -687,6 +771,24 @@
             "Every founder, employee, and contractor should sign one",
             "Without it, a departing contributor could claim ownership of code the company relies on"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "CEO",
+          "definition": "Vision, strategy, fundraising"
+        },
+        {
+          "term": "CTO",
+          "definition": "Technical architecture and engineering"
+        },
+        {
+          "term": "CPO",
+          "definition": "User research and the product roadmap"
+        },
+        {
+          "term": "CFO",
+          "definition": "Financial planning and compliance"
         }
       ]
     },
@@ -821,6 +923,24 @@
             "One serious weakness + otherwise promising venture = PIVOT, not NO-GO"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Technical feasibility",
+          "definition": "Can the product actually be built?"
+        },
+        {
+          "term": "Market feasibility",
+          "definition": "Will people want it and pay for it?"
+        },
+        {
+          "term": "Financial feasibility",
+          "definition": "Can the venture sustain itself?"
+        },
+        {
+          "term": "Organisational feasibility",
+          "definition": "Can THIS team actually execute it?"
+        }
       ]
     },
     {
@@ -941,6 +1061,28 @@
             "Avoids 'feature list' by stating the benefit (not losing sales), not just features",
             "Names a specific alternative and its shortfall; written in present tense"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Network effects",
+          "definition": "More valuable to each user as more join"
+        },
+        {
+          "term": "Switching costs",
+          "definition": "Time/data/integrations that make leaving costly"
+        },
+        {
+          "term": "Data advantage",
+          "definition": "Proprietary data new entrants can't match"
+        },
+        {
+          "term": "Ecosystem & integrations",
+          "definition": "Deep ties to a customer's other tools"
+        },
+        {
+          "term": "Embedded domain expertise",
+          "definition": "Real insider knowledge built into the workflow"
         }
       ]
     },
@@ -1066,6 +1208,28 @@
             "Onboarding: minimise 'time to value' through an active, guided process",
             "Customer success: proactively watch for churn warning signs and intervene early"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Freemium",
+          "definition": "Free core tier, premium features paid"
+        },
+        {
+          "term": "Tiered",
+          "definition": "Good/Better/Best, nudges toward the higher tier"
+        },
+        {
+          "term": "Usage-based",
+          "definition": "Pay per API call, message, or GB"
+        },
+        {
+          "term": "Per-seat",
+          "definition": "Scales with active users"
+        },
+        {
+          "term": "Enterprise/custom",
+          "definition": "Negotiated pricing with SLAs"
         }
       ]
     }

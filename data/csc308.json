@@ -562,6 +562,28 @@
             "Applications: cloud computing, server consolidation/testing (e.g. university lab server)"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Monolithic",
+          "definition": "Everything in one giant program"
+        },
+        {
+          "term": "Layered",
+          "definition": "Stacked layers, each on top of the last"
+        },
+        {
+          "term": "Microkernel",
+          "definition": "Tiny kernel, everything else pushed out"
+        },
+        {
+          "term": "Modular",
+          "definition": "Kernel built from loadable pieces"
+        },
+        {
+          "term": "Exokernel",
+          "definition": "Manages raw hardware, nothing else"
+        }
       ]
     },
     {
@@ -650,6 +672,28 @@
             "Ready→Running via the scheduler; Running→Waiting needs I/O",
             "Waiting→Ready once I/O completes (back to the queue, not straight to Running)"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "New",
+          "definition": "Just being created"
+        },
+        {
+          "term": "Ready",
+          "definition": "Loaded, waiting for the CPU"
+        },
+        {
+          "term": "Running",
+          "definition": "Actually executing"
+        },
+        {
+          "term": "Waiting",
+          "definition": "Blocked on something external"
+        },
+        {
+          "term": "Terminated",
+          "definition": "Done, gracefully or otherwise"
         }
       ]
     },
@@ -754,6 +798,24 @@
             "Asynchronous improves throughput but needs more careful reliability handling"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Shared Memory",
+          "definition": "Both processes read/write the same chunk directly"
+        },
+        {
+          "term": "Message Passing",
+          "definition": "Structured send()/receive() calls"
+        },
+        {
+          "term": "Pipes",
+          "definition": "An OS-managed buffer, writers and readers taking turns"
+        },
+        {
+          "term": "Mailboxes",
+          "definition": "Queues addressed to a specific recipient"
+        }
       ]
     },
     {
@@ -857,6 +919,32 @@
             "Short-term: which process runs next (which plane takes off now)",
             "Power-aware scheduling: batteries + thermal limits make power a resource like RAM/disk"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Burst Time",
+          "definition": "How long a process actually needs the CPU"
+        },
+        {
+          "term": "Arrival Time",
+          "definition": "When it shows up in the queue"
+        },
+        {
+          "term": "Turnaround Time",
+          "definition": "Submission to completion, the full journey"
+        },
+        {
+          "term": "Waiting Time",
+          "definition": "Time spent just sitting in the queue"
+        },
+        {
+          "term": "Response Time",
+          "definition": "Time until the process FIRST gets touched"
+        },
+        {
+          "term": "Throughput",
+          "definition": "Processes completed per unit time"
         }
       ]
     },
@@ -1061,6 +1149,24 @@
             "Counting semaphore: allows a fixed number of concurrent users (e.g. 2 printers)"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Test-and-Set",
+          "definition": "Checks and locks a variable in one indivisible move"
+        },
+        {
+          "term": "Compare-and-Swap",
+          "definition": "Compares a value and swaps it, atomically"
+        },
+        {
+          "term": "Peterson's Algorithm",
+          "definition": "A two-process trick using flags and a turn variable"
+        },
+        {
+          "term": "Bakery Algorithm",
+          "definition": "Numbered tickets, served strictly in order"
+        }
       ]
     },
     {
@@ -1169,6 +1275,24 @@
             "Most practical in modern systems: detection/recovery or ignoring, since deadlock is rare relative to prevention overhead"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Mutual Exclusion",
+          "definition": "At least one resource can't be shared"
+        },
+        {
+          "term": "Hold and Wait",
+          "definition": "Holding one resource while demanding more"
+        },
+        {
+          "term": "No Preemption",
+          "definition": "Nobody can forcibly take a resource back"
+        },
+        {
+          "term": "Circular Wait",
+          "definition": "A closed loop of processes waiting on each other"
+        }
       ]
     },
     {
@@ -1257,6 +1381,28 @@
             "Internal fragmentation happens because partition size is fixed regardless of actual process need",
             "External fragmentation happens because varying process sizes leave scattered, unusably small gaps"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Registers",
+          "definition": "Tiny, blindingly fast, inside the CPU"
+        },
+        {
+          "term": "Cache",
+          "definition": "Fast, close by, holds what's currently hot"
+        },
+        {
+          "term": "Main Memory",
+          "definition": "The actual working space for apps and the OS"
+        },
+        {
+          "term": "Secondary Storage",
+          "definition": "Slow, but remembers with the power off"
+        },
+        {
+          "term": "Virtual Memory",
+          "definition": "A convincing illusion of more RAM than you have"
         }
       ]
     },
@@ -1360,6 +1506,24 @@
             "Reduced by limiting multiprogramming, using a working-set model, or adding more RAM",
             "Base/limit registers: define a process's allowed address range, MMU enforces it, violation triggers a segfault"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Paging",
+          "definition": "Chops memory into fixed-size pieces"
+        },
+        {
+          "term": "Segmentation",
+          "definition": "Organises memory by meaning, not fixed size"
+        },
+        {
+          "term": "Virtual memory",
+          "definition": "Recruits disk to pretend RAM is bigger"
+        },
+        {
+          "term": "Swapping",
+          "definition": "Moves entire processes between RAM and disk"
         }
       ]
     },
@@ -1881,7 +2045,25 @@
           "Be ready to explain why encryption matters.",
           "Remember that protection is about controlling access."
         ]
-      }
+      },
+      "match": [
+        {
+          "term": "Authentication",
+          "definition": "Confirms who you are"
+        },
+        {
+          "term": "Authorization",
+          "definition": "Decides what you're allowed to do"
+        },
+        {
+          "term": "Encryption",
+          "definition": "Makes data unreadable without the right key"
+        },
+        {
+          "term": "Firewalls",
+          "definition": "Block threats before they reach the system"
+        }
+      ]
     }
   ]
 }

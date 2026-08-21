@@ -146,6 +146,24 @@
             "Quantitative methods: market research, industry reports, trend/usage data"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Incremental innovation",
+          "definition": "Gradual, low-risk improvement"
+        },
+        {
+          "term": "Architectural innovation",
+          "definition": "Existing parts, new arrangement"
+        },
+        {
+          "term": "Radical innovation",
+          "definition": "Entirely new tech, high risk/reward"
+        },
+        {
+          "term": "Disruptive innovation",
+          "definition": "Simple and cheap, overlooked at first"
+        }
       ]
     },
     {
@@ -268,6 +286,28 @@
             "Test — get real feedback before building further",
             "Human-centred = starts with real user understanding, not an assumed solution"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Empathize",
+          "definition": "Understand users through interviews"
+        },
+        {
+          "term": "Define",
+          "definition": "Frame the real problem clearly"
+        },
+        {
+          "term": "Ideate",
+          "definition": "Generate a wide range of solutions"
+        },
+        {
+          "term": "Prototype",
+          "definition": "Build a quick, low-cost version"
+        },
+        {
+          "term": "Test",
+          "definition": "Get real feedback and refine"
         }
       ]
     },
@@ -397,6 +437,24 @@
             "A value proposition explains WHAT gets solved, not HOW the business survives",
             "Without Revenue Streams defined, it's a product idea, not yet a business model"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "SaaS",
+          "definition": "Recurring fee for cloud-hosted software"
+        },
+        {
+          "term": "Freemium",
+          "definition": "Free basic tier, paid advanced features"
+        },
+        {
+          "term": "Marketplace",
+          "definition": "Connects buyers and sellers, takes a commission"
+        },
+        {
+          "term": "Advertising-supported",
+          "definition": "Free for users, revenue from ads"
         }
       ]
     },
@@ -540,6 +598,24 @@
             "Skipping validation risks scaling something unproven, an expensive failure mode"
           ]
         }
+      ],
+      "match": [
+        {
+          "term": "Bootstrapping",
+          "definition": "Funded from personal savings or revenue"
+        },
+        {
+          "term": "Grants",
+          "definition": "Non-repayable support from governments/institutions"
+        },
+        {
+          "term": "Angel investors",
+          "definition": "Wealthy individuals investing for equity"
+        },
+        {
+          "term": "Venture Capital",
+          "definition": "Firms funding high-growth startups for equity"
+        }
       ]
     },
     {
@@ -674,6 +750,24 @@
             "Corporation: low/protected risk, high complexity",
             "Fintech handling real money + seeking investment → LLC balances protection and manageable complexity"
           ]
+        }
+      ],
+      "match": [
+        {
+          "term": "Sole Proprietorship",
+          "definition": "Business and owner are legally the same person"
+        },
+        {
+          "term": "Partnership",
+          "definition": "Two or more people share ownership and risk"
+        },
+        {
+          "term": "LLC",
+          "definition": "Business is legally separate from its owners"
+        },
+        {
+          "term": "Corporation",
+          "definition": "A fully separate entity owned by shareholders"
         }
       ]
     }
