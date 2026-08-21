@@ -495,7 +495,7 @@ function renderLessonCard() {
   const cardEl = document.createElement("div");
   cardEl.className = "card glass";
   const visualHtml = card.visual ? renderVisualHTML(card.visual, `${ch.id}-${lessonIndex}`) : "";
-  cardEl.innerHTML = `<h2>${escapeHtml(card.heading)}</h2><p>${escapeHtml(card.body)}</p>${visualHtml}`;
+  cardEl.innerHTML = `<h2>${escapeHtml(card.heading)}</h2>${renderBodyHtml(card.body)}${visualHtml}`;
   app.appendChild(cardEl);
   if (card.visual) initVisual(cardEl, card.visual);
 
@@ -643,7 +643,7 @@ function handleAnswer(qIndex, chosenIndex, optsEl) {
 
   const fb = document.createElement("div");
   fb.className = "feedback-box " + (correct ? "correct" : "incorrect");
-  fb.innerHTML = `<div class="fb-title">${correct ? "Correct!" : "Not quite"}</div>${escapeHtml(q.explanation)}`;
+  fb.innerHTML = `<div class="fb-title">${correct ? "Correct!" : "Not quite"}</div>${renderBodyHtml(q.explanation)}`;
   app.appendChild(fb);
 
   const bar = document.createElement("div");
@@ -780,8 +780,8 @@ function handleFitbSubmit(fIndex, inputs) {
   const fb = document.createElement("div");
   fb.className = "feedback-box " + (allCorrect ? "correct" : "incorrect");
   fb.innerHTML = `<div class="fb-title">${allCorrect ? "Correct!" : "Not quite"}</div>` +
-    `Answer: ${escapeHtml(correctAnswers)}` +
-    (item.explanation ? `<br>${escapeHtml(item.explanation)}` : "");
+    `<p>Answer: ${inlineFormat(correctAnswers)}</p>` +
+    (item.explanation ? renderBodyHtml(item.explanation) : "");
   app.appendChild(fb);
 
   const bar = document.createElement("div");
@@ -862,15 +862,15 @@ function renderTheoryQuestion(tIndex, revealed, draftAnswer = "") {
   if (draftAnswer.trim()) {
     const yourBox = document.createElement("div");
     yourBox.className = "feedback-box your-answer";
-    yourBox.innerHTML = `<div class="fb-title">Your answer</div>${escapeHtml(draftAnswer)}`;
+    yourBox.innerHTML = `<div class="fb-title">Your answer</div><p>${inlineFormat(draftAnswer)}</p>`;
     app.appendChild(yourBox);
   }
 
   const answerBox = document.createElement("div");
   answerBox.className = "feedback-box theory-answer";
-  let html = `<div class="fb-title">Model answer</div>${escapeHtml(t.modelAnswer)}`;
+  let html = `<div class="fb-title">Model answer</div>${renderBodyHtml(t.modelAnswer)}`;
   if (t.keyPoints && t.keyPoints.length) {
-    html += `<ul class="key-points">${t.keyPoints.map(k => `<li>${escapeHtml(k)}</li>`).join("")}</ul>`;
+    html += `<ul class="key-points">${t.keyPoints.map(k => `<li>${inlineFormat(k)}</li>`).join("")}</ul>`;
   }
   answerBox.innerHTML = html;
   app.appendChild(answerBox);
@@ -972,6 +972,36 @@ function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str;
   return div.innerHTML.replace(/\n/g, "<br>");
+}
+
+// Escapes text, then re-enables **bold** as real <strong> keyword highlighting.
+function inlineFormat(str) {
+  const div = document.createElement("div");
+  div.textContent = String(str ?? "");
+  return div.innerHTML.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+// Renders card/explanation/answer text as real HTML: blank-line-separated
+// blocks become paragraphs; a block whose lines all start with "• "/"- " or
+// "1. " becomes a real <ul>/<ol> instead of bullet characters sitting flat
+// inside one paragraph. **word** becomes a highlighted keyword throughout.
+function renderBodyHtml(str) {
+  const blocks = String(str ?? "").split(/\n\n+/);
+  return blocks
+    .map(block => {
+      const lines = block.split("\n").filter(l => l.length);
+      if (!lines.length) return "";
+      if (lines.every(l => /^[•\-]\s+/.test(l))) {
+        const items = lines.map(l => `<li>${inlineFormat(l.replace(/^[•\-]\s+/, ""))}</li>`).join("");
+        return `<ul class="card-list">${items}</ul>`;
+      }
+      if (lines.every(l => /^\d+\.\s+/.test(l))) {
+        const items = lines.map(l => `<li>${inlineFormat(l.replace(/^\d+\.\s+/, ""))}</li>`).join("");
+        return `<ol class="card-list">${items}</ol>`;
+      }
+      return `<p>${lines.map(inlineFormat).join("<br>")}</p>`;
+    })
+    .join("");
 }
 
 // ---------------- boot ----------------
